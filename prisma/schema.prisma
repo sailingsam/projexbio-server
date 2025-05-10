@@ -15,27 +15,133 @@ datasource db {
 }
 
 model User {
-  id                 String   @id @default(uuid()) @db.Uuid
-  firstName          String
-  middleName         String?
-  lastName           String?
-  username           String   @unique
-  email              String   @unique
-  avatarUrl          String?
-  collegeEmail       String?
-  collegeId          String?  // Assuming UUID stored as String
-  role               UserType
-  isAdmin            Boolean  @default(false)
-  branch             String?
-  githubUsername     String?
-  graduationYear     Int?
-  isAlumni           Boolean?
-  isCollegeVerified  Boolean  @default(false)
-  createdAt          DateTime @default(now())
+  id             String   @id @default(uuid()) @db.Uuid
+  firstName      String
+  middleName     String?
+  lastName       String?
+  username       String   @unique
+  email          String   @unique
+  avatarUrl      String?
+  isSuperAdmin   Boolean  @default(false)
+  githubUsername String?
+  createdAt      DateTime @default(now())
+  websiteUrl     String?
+
+  userColleges        UserCollege[]
+  projectUpvotes      ProjectUpvote[]
+  ProjectCollaborator ProjectCollaborator[]
+}
+
+model UserCollege {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String    @db.Uuid
+  collegeId  String    @db.Uuid
+  userType   UserType // STUDENT | FACULTY
+  isAdmin    Boolean   @default(false) // true if college gave admin rights
+  degreeType String? // e.g., B.Tech, M.Tech, PhD
+  branch     String? // optional
+  verified   Boolean // by college email id
+  joinedAt   DateTime
+  leftAt     DateTime? // when user left the college
+
+  user    User    @relation(fields: [userId], references: [id])
+  college College @relation(fields: [collegeId], references: [id])
 }
 
 enum UserType {
-  GENERAL
   STUDENT
-  FACULTY 
+  FACULTY
 }
+
+model College {
+  id            String   @id @default(uuid()) @db.Uuid
+  name          String
+  slug          String @unique
+  shortName     String? // e.g., IITD, SSN, NITK
+  logoUrl       String? // college logo
+  coverImageUrl String? // optional for profile cover/banner
+  description   String? // about the college
+  location      String? // city, state
+  website       String? // official website
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  userColleges UserCollege[] // all users linked to this college
+  projects     Project[] // college-level project listing if needed
+  emailDomains CollegeEmailDomain[]
+}
+
+model CollegeEmailDomain {
+  id        String  @id @default(uuid()) @db.Uuid
+  domain    String  @unique // e.g., iitd.ac.in, students.ssn.edu
+  collegeId String
+
+  college   College @relation(fields: [collegeId], references: [id])
+}
+
+model Project {
+  id                       String  @id @default(uuid()) @db.Uuid
+  title                    String
+  slug                     String  @unique
+  description              String?
+  collegeId                String?
+  githubUrl                String?
+  isCollaborative          Boolean  @default(false)
+  isLookingForContributors Boolean  @default(false)
+  upvotesCount             Int      @default(0)
+  createdAt                DateTime  @default(now())
+
+  college             College?  @relation(fields: [collegeId], references: [id])
+
+  upvotes             ProjectUpvote[]
+  collaborators       ProjectCollaborator[]
+  tags                ProjectTag[]
+}
+
+model ProjectUpvote {
+  userId    String
+  projectId String
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id])
+  project Project @relation(fields: [projectId], references: [id])
+
+  @@id([userId, projectId]) // composite PK to ensure only one upvote per user per project
+}
+
+enum ProjectUserRole {
+  OWNER
+  MEMBER
+  VIEWER // optional, in case you allow read-only contributors later
+}
+
+model ProjectCollaborator {
+  userId    String
+  projectId String
+  role      ProjectUserRole
+  joinedAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id])
+  project Project @relation(fields: [projectId], references: [id])
+
+  @@id([userId, projectId]) // prevent duplicate roles for same project-user pair
+}
+
+model Tag {
+  id   String @id @default(uuid()) @db.Uuid
+  name String @unique
+  slug String @unique
+
+  projects ProjectTag[]
+}
+
+model ProjectTag {
+  projectId String
+  tagId     String
+
+  project Project @relation(fields: [projectId], references: [id])
+  tag     Tag     @relation(fields: [tagId], references: [id])
+
+  @@id([projectId, tagId]) // composite PK ensures unique project-tag pair
+}
+
