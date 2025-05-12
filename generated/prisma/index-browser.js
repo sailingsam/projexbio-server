@@ -128,16 +128,80 @@ exports.Prisma.UserScalarFieldEnum = {
   username: 'username',
   email: 'email',
   avatarUrl: 'avatarUrl',
-  collegeEmail: 'collegeEmail',
-  collegeId: 'collegeId',
-  role: 'role',
-  isAdmin: 'isAdmin',
-  branch: 'branch',
+  isSuperAdmin: 'isSuperAdmin',
   githubUsername: 'githubUsername',
-  graduationYear: 'graduationYear',
-  isAlumni: 'isAlumni',
-  isCollegeVerified: 'isCollegeVerified',
+  createdAt: 'createdAt',
+  websiteUrl: 'websiteUrl'
+};
+
+exports.Prisma.CollegeScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug',
+  shortName: 'shortName',
+  logoUrl: 'logoUrl',
+  coverImageUrl: 'coverImageUrl',
+  description: 'description',
+  location: 'location',
+  website: 'website',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.UserCollegeScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  collegeId: 'collegeId',
+  userType: 'userType',
+  isAdmin: 'isAdmin',
+  degreeType: 'degreeType',
+  branch: 'branch',
+  verified: 'verified',
+  joinedAt: 'joinedAt',
+  leftAt: 'leftAt'
+};
+
+exports.Prisma.CollegeEmailDomainScalarFieldEnum = {
+  id: 'id',
+  domain: 'domain',
+  collegeId: 'collegeId'
+};
+
+exports.Prisma.ProjectScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  description: 'description',
+  collegeId: 'collegeId',
+  githubUrl: 'githubUrl',
+  isCollaborative: 'isCollaborative',
+  isLookingForContributors: 'isLookingForContributors',
+  upvotesCount: 'upvotesCount',
   createdAt: 'createdAt'
+};
+
+exports.Prisma.ProjectUpvoteScalarFieldEnum = {
+  userId: 'userId',
+  projectId: 'projectId',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.ProjectCollaboratorScalarFieldEnum = {
+  userId: 'userId',
+  projectId: 'projectId',
+  role: 'role',
+  joinedAt: 'joinedAt'
+};
+
+exports.Prisma.TagScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug'
+};
+
+exports.Prisma.ProjectTagScalarFieldEnum = {
+  projectId: 'projectId',
+  tagId: 'tagId'
 };
 
 exports.Prisma.SortOrder = {
@@ -155,13 +219,27 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 exports.UserType = exports.$Enums.UserType = {
-  GENERAL: 'GENERAL',
   STUDENT: 'STUDENT',
-  FACULTY: 'FACULTY'
+  FACULTY: 'FACULTY',
+  GENERAL: 'GENERAL'
+};
+
+exports.ProjectUserRole = exports.$Enums.ProjectUserRole = {
+  OWNER: 'OWNER',
+  MEMBER: 'MEMBER',
+  VIEWER: 'VIEWER'
 };
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  College: 'College',
+  UserCollege: 'UserCollege',
+  CollegeEmailDomain: 'CollegeEmailDomain',
+  Project: 'Project',
+  ProjectUpvote: 'ProjectUpvote',
+  ProjectCollaborator: 'ProjectCollaborator',
+  Tag: 'Tag',
+  ProjectTag: 'ProjectTag'
 };
 
 /**
