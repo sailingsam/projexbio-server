@@ -21,6 +21,7 @@ model User {
   lastName       String?
   username       String   @unique
   email          String   @unique
+  appwriteid     String   @unique
   avatarUrl      String?
   isSuperAdmin   Boolean  @default(false)
   githubUsername String?
