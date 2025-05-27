@@ -1,4 +1,10 @@
 import { Module } from '@nestjs/common';
+import { AuthGuard } from './auth.guard';
+import { AppwriteModule } from '../appwrite/appwrite.module';
 
-@Module({})
+@Module({
+  imports: [AppwriteModule],
+  providers: [AuthGuard],
+  exports: [AuthGuard],
+})
 export class AuthModule {}
