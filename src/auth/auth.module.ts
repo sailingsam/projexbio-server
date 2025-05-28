@@ -5,6 +5,6 @@ import { AppwriteModule } from '../appwrite/appwrite.module';
 @Module({
   imports: [AppwriteModule],
   providers: [AuthGuard],
-  exports: [AuthGuard],
+  exports: [AuthGuard, AppwriteModule],
 })
 export class AuthModule {}
