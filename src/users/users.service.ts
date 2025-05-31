@@ -18,4 +18,14 @@ export class UsersService {
 
     return user;
   }
+
+  async isUsernameAvailable(username: string): Promise<boolean> {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        username: username,
+      },
+    });
+    // agar user null mila mtlb exist nhi krta
+    return user === null;
+  }
 }
