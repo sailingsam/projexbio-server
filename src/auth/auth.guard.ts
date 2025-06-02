@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
   constructor(private readonly appwriteService: AppwriteService) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    return true;
+    // return true;
 
     const request = context.switchToHttp().getRequest<Request>();
     const [type, token] = request.headers.authorization?.split(' ') ?? [];
