@@ -17,7 +17,7 @@ export class SuperAdminGuard implements CanActivate {
       throw new UnauthorizedException('User not authenticated');
     }
 
-    if (!appwriteUser.labels.includes('superadmin')) {
+    if (!appwriteUser.labels.includes('superuser')) {
       throw new UnauthorizedException('User is not a super admin');
     }
 

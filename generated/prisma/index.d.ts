@@ -1628,15 +1628,15 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    userColleges: number
-    projectUpvotes: number
     ProjectCollaborator: number
+    projectUpvotes: number
+    userColleges: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    userColleges?: boolean | UserCountOutputTypeCountUserCollegesArgs
-    projectUpvotes?: boolean | UserCountOutputTypeCountProjectUpvotesArgs
     ProjectCollaborator?: boolean | UserCountOutputTypeCountProjectCollaboratorArgs
+    projectUpvotes?: boolean | UserCountOutputTypeCountProjectUpvotesArgs
+    userColleges?: boolean | UserCountOutputTypeCountUserCollegesArgs
   }
 
   // Custom InputTypes
@@ -1653,8 +1653,8 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountUserCollegesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserCollegeWhereInput
+  export type UserCountOutputTypeCountProjectCollaboratorArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProjectCollaboratorWhereInput
   }
 
   /**
@@ -1667,8 +1667,8 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountProjectCollaboratorArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProjectCollaboratorWhereInput
+  export type UserCountOutputTypeCountUserCollegesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserCollegeWhereInput
   }
 
 
@@ -1677,15 +1677,15 @@ export namespace Prisma {
    */
 
   export type CollegeCountOutputType = {
-    userColleges: number
-    projects: number
     emailDomains: number
+    projects: number
+    userColleges: number
   }
 
   export type CollegeCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    userColleges?: boolean | CollegeCountOutputTypeCountUserCollegesArgs
-    projects?: boolean | CollegeCountOutputTypeCountProjectsArgs
     emailDomains?: boolean | CollegeCountOutputTypeCountEmailDomainsArgs
+    projects?: boolean | CollegeCountOutputTypeCountProjectsArgs
+    userColleges?: boolean | CollegeCountOutputTypeCountUserCollegesArgs
   }
 
   // Custom InputTypes
@@ -1702,8 +1702,8 @@ export namespace Prisma {
   /**
    * CollegeCountOutputType without action
    */
-  export type CollegeCountOutputTypeCountUserCollegesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserCollegeWhereInput
+  export type CollegeCountOutputTypeCountEmailDomainsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CollegeEmailDomainWhereInput
   }
 
   /**
@@ -1716,8 +1716,8 @@ export namespace Prisma {
   /**
    * CollegeCountOutputType without action
    */
-  export type CollegeCountOutputTypeCountEmailDomainsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CollegeEmailDomainWhereInput
+  export type CollegeCountOutputTypeCountUserCollegesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserCollegeWhereInput
   }
 
 
@@ -1726,15 +1726,15 @@ export namespace Prisma {
    */
 
   export type ProjectCountOutputType = {
-    upvotes: number
     collaborators: number
     tags: number
+    upvotes: number
   }
 
   export type ProjectCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    upvotes?: boolean | ProjectCountOutputTypeCountUpvotesArgs
     collaborators?: boolean | ProjectCountOutputTypeCountCollaboratorsArgs
     tags?: boolean | ProjectCountOutputTypeCountTagsArgs
+    upvotes?: boolean | ProjectCountOutputTypeCountUpvotesArgs
   }
 
   // Custom InputTypes
@@ -1751,13 +1751,6 @@ export namespace Prisma {
   /**
    * ProjectCountOutputType without action
    */
-  export type ProjectCountOutputTypeCountUpvotesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ProjectUpvoteWhereInput
-  }
-
-  /**
-   * ProjectCountOutputType without action
-   */
   export type ProjectCountOutputTypeCountCollaboratorsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ProjectCollaboratorWhereInput
   }
@@ -1767,6 +1760,13 @@ export namespace Prisma {
    */
   export type ProjectCountOutputTypeCountTagsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ProjectTagWhereInput
+  }
+
+  /**
+   * ProjectCountOutputType without action
+   */
+  export type ProjectCountOutputTypeCountUpvotesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProjectUpvoteWhereInput
   }
 
 
@@ -2025,9 +2025,9 @@ export namespace Prisma {
     githubUsername?: boolean
     createdAt?: boolean
     websiteUrl?: boolean
-    userColleges?: boolean | User$userCollegesArgs<ExtArgs>
-    projectUpvotes?: boolean | User$projectUpvotesArgs<ExtArgs>
     ProjectCollaborator?: boolean | User$ProjectCollaboratorArgs<ExtArgs>
+    projectUpvotes?: boolean | User$projectUpvotesArgs<ExtArgs>
+    userColleges?: boolean | User$userCollegesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -2078,9 +2078,9 @@ export namespace Prisma {
 
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstName" | "middleName" | "lastName" | "username" | "email" | "appwriteid" | "avatarUrl" | "isSuperAdmin" | "githubUsername" | "createdAt" | "websiteUrl", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    userColleges?: boolean | User$userCollegesArgs<ExtArgs>
-    projectUpvotes?: boolean | User$projectUpvotesArgs<ExtArgs>
     ProjectCollaborator?: boolean | User$ProjectCollaboratorArgs<ExtArgs>
+    projectUpvotes?: boolean | User$projectUpvotesArgs<ExtArgs>
+    userColleges?: boolean | User$userCollegesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -2089,9 +2089,9 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      userColleges: Prisma.$UserCollegePayload<ExtArgs>[]
-      projectUpvotes: Prisma.$ProjectUpvotePayload<ExtArgs>[]
       ProjectCollaborator: Prisma.$ProjectCollaboratorPayload<ExtArgs>[]
+      projectUpvotes: Prisma.$ProjectUpvotePayload<ExtArgs>[]
+      userColleges: Prisma.$UserCollegePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2500,9 +2500,9 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    userColleges<T extends User$userCollegesArgs<ExtArgs> = {}>(args?: Subset<T, User$userCollegesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserCollegePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    projectUpvotes<T extends User$projectUpvotesArgs<ExtArgs> = {}>(args?: Subset<T, User$projectUpvotesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectUpvotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     ProjectCollaborator<T extends User$ProjectCollaboratorArgs<ExtArgs> = {}>(args?: Subset<T, User$ProjectCollaboratorArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectCollaboratorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    projectUpvotes<T extends User$projectUpvotesArgs<ExtArgs> = {}>(args?: Subset<T, User$projectUpvotesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectUpvotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    userColleges<T extends User$userCollegesArgs<ExtArgs> = {}>(args?: Subset<T, User$userCollegesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserCollegePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2932,27 +2932,27 @@ export namespace Prisma {
   }
 
   /**
-   * User.userColleges
+   * User.ProjectCollaborator
    */
-  export type User$userCollegesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$ProjectCollaboratorArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserCollege
+     * Select specific fields to fetch from the ProjectCollaborator
      */
-    select?: UserCollegeSelect<ExtArgs> | null
+    select?: ProjectCollaboratorSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserCollege
+     * Omit specific fields from the ProjectCollaborator
      */
-    omit?: UserCollegeOmit<ExtArgs> | null
+    omit?: ProjectCollaboratorOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserCollegeInclude<ExtArgs> | null
-    where?: UserCollegeWhereInput
-    orderBy?: UserCollegeOrderByWithRelationInput | UserCollegeOrderByWithRelationInput[]
-    cursor?: UserCollegeWhereUniqueInput
+    include?: ProjectCollaboratorInclude<ExtArgs> | null
+    where?: ProjectCollaboratorWhereInput
+    orderBy?: ProjectCollaboratorOrderByWithRelationInput | ProjectCollaboratorOrderByWithRelationInput[]
+    cursor?: ProjectCollaboratorWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: UserCollegeScalarFieldEnum | UserCollegeScalarFieldEnum[]
+    distinct?: ProjectCollaboratorScalarFieldEnum | ProjectCollaboratorScalarFieldEnum[]
   }
 
   /**
@@ -2980,27 +2980,27 @@ export namespace Prisma {
   }
 
   /**
-   * User.ProjectCollaborator
+   * User.userColleges
    */
-  export type User$ProjectCollaboratorArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$userCollegesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ProjectCollaborator
+     * Select specific fields to fetch from the UserCollege
      */
-    select?: ProjectCollaboratorSelect<ExtArgs> | null
+    select?: UserCollegeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ProjectCollaborator
+     * Omit specific fields from the UserCollege
      */
-    omit?: ProjectCollaboratorOmit<ExtArgs> | null
+    omit?: UserCollegeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProjectCollaboratorInclude<ExtArgs> | null
-    where?: ProjectCollaboratorWhereInput
-    orderBy?: ProjectCollaboratorOrderByWithRelationInput | ProjectCollaboratorOrderByWithRelationInput[]
-    cursor?: ProjectCollaboratorWhereUniqueInput
+    include?: UserCollegeInclude<ExtArgs> | null
+    where?: UserCollegeWhereInput
+    orderBy?: UserCollegeOrderByWithRelationInput | UserCollegeOrderByWithRelationInput[]
+    cursor?: UserCollegeWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: ProjectCollaboratorScalarFieldEnum | ProjectCollaboratorScalarFieldEnum[]
+    distinct?: UserCollegeScalarFieldEnum | UserCollegeScalarFieldEnum[]
   }
 
   /**
@@ -3036,9 +3036,8 @@ export namespace Prisma {
     id: string | null
     name: string | null
     slug: string | null
-    shortName: string | null
-    logoUrl: string | null
-    coverImageUrl: string | null
+    logoFileId: string | null
+    coverImgFileId: string | null
     description: string | null
     location: string | null
     website: string | null
@@ -3050,9 +3049,8 @@ export namespace Prisma {
     id: string | null
     name: string | null
     slug: string | null
-    shortName: string | null
-    logoUrl: string | null
-    coverImageUrl: string | null
+    logoFileId: string | null
+    coverImgFileId: string | null
     description: string | null
     location: string | null
     website: string | null
@@ -3064,9 +3062,8 @@ export namespace Prisma {
     id: number
     name: number
     slug: number
-    shortName: number
-    logoUrl: number
-    coverImageUrl: number
+    logoFileId: number
+    coverImgFileId: number
     description: number
     location: number
     website: number
@@ -3080,9 +3077,8 @@ export namespace Prisma {
     id?: true
     name?: true
     slug?: true
-    shortName?: true
-    logoUrl?: true
-    coverImageUrl?: true
+    logoFileId?: true
+    coverImgFileId?: true
     description?: true
     location?: true
     website?: true
@@ -3094,9 +3090,8 @@ export namespace Prisma {
     id?: true
     name?: true
     slug?: true
-    shortName?: true
-    logoUrl?: true
-    coverImageUrl?: true
+    logoFileId?: true
+    coverImgFileId?: true
     description?: true
     location?: true
     website?: true
@@ -3108,9 +3103,8 @@ export namespace Prisma {
     id?: true
     name?: true
     slug?: true
-    shortName?: true
-    logoUrl?: true
-    coverImageUrl?: true
+    logoFileId?: true
+    coverImgFileId?: true
     description?: true
     location?: true
     website?: true
@@ -3195,9 +3189,8 @@ export namespace Prisma {
     id: string
     name: string
     slug: string
-    shortName: string | null
-    logoUrl: string | null
-    coverImageUrl: string | null
+    logoFileId: string | null
+    coverImgFileId: string | null
     description: string | null
     location: string | null
     website: string | null
@@ -3226,17 +3219,16 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     slug?: boolean
-    shortName?: boolean
-    logoUrl?: boolean
-    coverImageUrl?: boolean
+    logoFileId?: boolean
+    coverImgFileId?: boolean
     description?: boolean
     location?: boolean
     website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    userColleges?: boolean | College$userCollegesArgs<ExtArgs>
-    projects?: boolean | College$projectsArgs<ExtArgs>
     emailDomains?: boolean | College$emailDomainsArgs<ExtArgs>
+    projects?: boolean | College$projectsArgs<ExtArgs>
+    userColleges?: boolean | College$userCollegesArgs<ExtArgs>
     _count?: boolean | CollegeCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["college"]>
 
@@ -3244,9 +3236,8 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     slug?: boolean
-    shortName?: boolean
-    logoUrl?: boolean
-    coverImageUrl?: boolean
+    logoFileId?: boolean
+    coverImgFileId?: boolean
     description?: boolean
     location?: boolean
     website?: boolean
@@ -3258,9 +3249,8 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     slug?: boolean
-    shortName?: boolean
-    logoUrl?: boolean
-    coverImageUrl?: boolean
+    logoFileId?: boolean
+    coverImgFileId?: boolean
     description?: boolean
     location?: boolean
     website?: boolean
@@ -3272,9 +3262,8 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     slug?: boolean
-    shortName?: boolean
-    logoUrl?: boolean
-    coverImageUrl?: boolean
+    logoFileId?: boolean
+    coverImgFileId?: boolean
     description?: boolean
     location?: boolean
     website?: boolean
@@ -3282,11 +3271,11 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type CollegeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "slug" | "shortName" | "logoUrl" | "coverImageUrl" | "description" | "location" | "website" | "createdAt" | "updatedAt", ExtArgs["result"]["college"]>
+  export type CollegeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "slug" | "logoFileId" | "coverImgFileId" | "description" | "location" | "website" | "createdAt" | "updatedAt", ExtArgs["result"]["college"]>
   export type CollegeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    userColleges?: boolean | College$userCollegesArgs<ExtArgs>
-    projects?: boolean | College$projectsArgs<ExtArgs>
     emailDomains?: boolean | College$emailDomainsArgs<ExtArgs>
+    projects?: boolean | College$projectsArgs<ExtArgs>
+    userColleges?: boolean | College$userCollegesArgs<ExtArgs>
     _count?: boolean | CollegeCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type CollegeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -3295,17 +3284,16 @@ export namespace Prisma {
   export type $CollegePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "College"
     objects: {
-      userColleges: Prisma.$UserCollegePayload<ExtArgs>[]
-      projects: Prisma.$ProjectPayload<ExtArgs>[]
       emailDomains: Prisma.$CollegeEmailDomainPayload<ExtArgs>[]
+      projects: Prisma.$ProjectPayload<ExtArgs>[]
+      userColleges: Prisma.$UserCollegePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
       slug: string
-      shortName: string | null
-      logoUrl: string | null
-      coverImageUrl: string | null
+      logoFileId: string | null
+      coverImgFileId: string | null
       description: string | null
       location: string | null
       website: string | null
@@ -3705,9 +3693,9 @@ export namespace Prisma {
    */
   export interface Prisma__CollegeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    userColleges<T extends College$userCollegesArgs<ExtArgs> = {}>(args?: Subset<T, College$userCollegesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserCollegePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    projects<T extends College$projectsArgs<ExtArgs> = {}>(args?: Subset<T, College$projectsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     emailDomains<T extends College$emailDomainsArgs<ExtArgs> = {}>(args?: Subset<T, College$emailDomainsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CollegeEmailDomainPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    projects<T extends College$projectsArgs<ExtArgs> = {}>(args?: Subset<T, College$projectsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    userColleges<T extends College$userCollegesArgs<ExtArgs> = {}>(args?: Subset<T, College$userCollegesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserCollegePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3740,9 +3728,8 @@ export namespace Prisma {
     readonly id: FieldRef<"College", 'String'>
     readonly name: FieldRef<"College", 'String'>
     readonly slug: FieldRef<"College", 'String'>
-    readonly shortName: FieldRef<"College", 'String'>
-    readonly logoUrl: FieldRef<"College", 'String'>
-    readonly coverImageUrl: FieldRef<"College", 'String'>
+    readonly logoFileId: FieldRef<"College", 'String'>
+    readonly coverImgFileId: FieldRef<"College", 'String'>
     readonly description: FieldRef<"College", 'String'>
     readonly location: FieldRef<"College", 'String'>
     readonly website: FieldRef<"College", 'String'>
@@ -4136,27 +4123,27 @@ export namespace Prisma {
   }
 
   /**
-   * College.userColleges
+   * College.emailDomains
    */
-  export type College$userCollegesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type College$emailDomainsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserCollege
+     * Select specific fields to fetch from the CollegeEmailDomain
      */
-    select?: UserCollegeSelect<ExtArgs> | null
+    select?: CollegeEmailDomainSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserCollege
+     * Omit specific fields from the CollegeEmailDomain
      */
-    omit?: UserCollegeOmit<ExtArgs> | null
+    omit?: CollegeEmailDomainOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserCollegeInclude<ExtArgs> | null
-    where?: UserCollegeWhereInput
-    orderBy?: UserCollegeOrderByWithRelationInput | UserCollegeOrderByWithRelationInput[]
-    cursor?: UserCollegeWhereUniqueInput
+    include?: CollegeEmailDomainInclude<ExtArgs> | null
+    where?: CollegeEmailDomainWhereInput
+    orderBy?: CollegeEmailDomainOrderByWithRelationInput | CollegeEmailDomainOrderByWithRelationInput[]
+    cursor?: CollegeEmailDomainWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: UserCollegeScalarFieldEnum | UserCollegeScalarFieldEnum[]
+    distinct?: CollegeEmailDomainScalarFieldEnum | CollegeEmailDomainScalarFieldEnum[]
   }
 
   /**
@@ -4184,27 +4171,27 @@ export namespace Prisma {
   }
 
   /**
-   * College.emailDomains
+   * College.userColleges
    */
-  export type College$emailDomainsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type College$userCollegesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CollegeEmailDomain
+     * Select specific fields to fetch from the UserCollege
      */
-    select?: CollegeEmailDomainSelect<ExtArgs> | null
+    select?: UserCollegeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CollegeEmailDomain
+     * Omit specific fields from the UserCollege
      */
-    omit?: CollegeEmailDomainOmit<ExtArgs> | null
+    omit?: UserCollegeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CollegeEmailDomainInclude<ExtArgs> | null
-    where?: CollegeEmailDomainWhereInput
-    orderBy?: CollegeEmailDomainOrderByWithRelationInput | CollegeEmailDomainOrderByWithRelationInput[]
-    cursor?: CollegeEmailDomainWhereUniqueInput
+    include?: UserCollegeInclude<ExtArgs> | null
+    where?: UserCollegeWhereInput
+    orderBy?: UserCollegeOrderByWithRelationInput | UserCollegeOrderByWithRelationInput[]
+    cursor?: UserCollegeWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: CollegeEmailDomainScalarFieldEnum | CollegeEmailDomainScalarFieldEnum[]
+    distinct?: UserCollegeScalarFieldEnum | UserCollegeScalarFieldEnum[]
   }
 
   /**
@@ -4430,8 +4417,8 @@ export namespace Prisma {
     verified?: boolean
     joinedAt?: boolean
     leftAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     college?: boolean | CollegeDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userCollege"]>
 
   export type UserCollegeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4445,8 +4432,8 @@ export namespace Prisma {
     verified?: boolean
     joinedAt?: boolean
     leftAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     college?: boolean | CollegeDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userCollege"]>
 
   export type UserCollegeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4460,8 +4447,8 @@ export namespace Prisma {
     verified?: boolean
     joinedAt?: boolean
     leftAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     college?: boolean | CollegeDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userCollege"]>
 
   export type UserCollegeSelectScalar = {
@@ -4479,23 +4466,23 @@ export namespace Prisma {
 
   export type UserCollegeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "collegeId" | "userType" | "isAdmin" | "degreeType" | "branch" | "verified" | "joinedAt" | "leftAt", ExtArgs["result"]["userCollege"]>
   export type UserCollegeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     college?: boolean | CollegeDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type UserCollegeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     college?: boolean | CollegeDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type UserCollegeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     college?: boolean | CollegeDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $UserCollegePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "UserCollege"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
       college: Prisma.$CollegePayload<ExtArgs>
+      user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -4902,8 +4889,8 @@ export namespace Prisma {
    */
   export interface Prisma__UserCollegeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     college<T extends CollegeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CollegeDefaultArgs<ExtArgs>>): Prisma__CollegeClient<$Result.GetResult<Prisma.$CollegePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6628,9 +6615,9 @@ export namespace Prisma {
     upvotesCount?: boolean
     createdAt?: boolean
     college?: boolean | Project$collegeArgs<ExtArgs>
-    upvotes?: boolean | Project$upvotesArgs<ExtArgs>
     collaborators?: boolean | Project$collaboratorsArgs<ExtArgs>
     tags?: boolean | Project$tagsArgs<ExtArgs>
+    upvotes?: boolean | Project$upvotesArgs<ExtArgs>
     _count?: boolean | ProjectCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["project"]>
 
@@ -6678,9 +6665,9 @@ export namespace Prisma {
   export type ProjectOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "slug" | "description" | "collegeId" | "githubUrl" | "isCollaborative" | "isLookingForContributors" | "upvotesCount" | "createdAt", ExtArgs["result"]["project"]>
   export type ProjectInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     college?: boolean | Project$collegeArgs<ExtArgs>
-    upvotes?: boolean | Project$upvotesArgs<ExtArgs>
     collaborators?: boolean | Project$collaboratorsArgs<ExtArgs>
     tags?: boolean | Project$tagsArgs<ExtArgs>
+    upvotes?: boolean | Project$upvotesArgs<ExtArgs>
     _count?: boolean | ProjectCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ProjectIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6694,9 +6681,9 @@ export namespace Prisma {
     name: "Project"
     objects: {
       college: Prisma.$CollegePayload<ExtArgs> | null
-      upvotes: Prisma.$ProjectUpvotePayload<ExtArgs>[]
       collaborators: Prisma.$ProjectCollaboratorPayload<ExtArgs>[]
       tags: Prisma.$ProjectTagPayload<ExtArgs>[]
+      upvotes: Prisma.$ProjectUpvotePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -7104,9 +7091,9 @@ export namespace Prisma {
   export interface Prisma__ProjectClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     college<T extends Project$collegeArgs<ExtArgs> = {}>(args?: Subset<T, Project$collegeArgs<ExtArgs>>): Prisma__CollegeClient<$Result.GetResult<Prisma.$CollegePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    upvotes<T extends Project$upvotesArgs<ExtArgs> = {}>(args?: Subset<T, Project$upvotesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectUpvotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     collaborators<T extends Project$collaboratorsArgs<ExtArgs> = {}>(args?: Subset<T, Project$collaboratorsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectCollaboratorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     tags<T extends Project$tagsArgs<ExtArgs> = {}>(args?: Subset<T, Project$tagsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectTagPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    upvotes<T extends Project$upvotesArgs<ExtArgs> = {}>(args?: Subset<T, Project$upvotesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProjectUpvotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -7561,30 +7548,6 @@ export namespace Prisma {
   }
 
   /**
-   * Project.upvotes
-   */
-  export type Project$upvotesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ProjectUpvote
-     */
-    select?: ProjectUpvoteSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ProjectUpvote
-     */
-    omit?: ProjectUpvoteOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ProjectUpvoteInclude<ExtArgs> | null
-    where?: ProjectUpvoteWhereInput
-    orderBy?: ProjectUpvoteOrderByWithRelationInput | ProjectUpvoteOrderByWithRelationInput[]
-    cursor?: ProjectUpvoteWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ProjectUpvoteScalarFieldEnum | ProjectUpvoteScalarFieldEnum[]
-  }
-
-  /**
    * Project.collaborators
    */
   export type Project$collaboratorsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -7630,6 +7593,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: ProjectTagScalarFieldEnum | ProjectTagScalarFieldEnum[]
+  }
+
+  /**
+   * Project.upvotes
+   */
+  export type Project$upvotesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProjectUpvote
+     */
+    select?: ProjectUpvoteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProjectUpvote
+     */
+    omit?: ProjectUpvoteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProjectUpvoteInclude<ExtArgs> | null
+    where?: ProjectUpvoteWhereInput
+    orderBy?: ProjectUpvoteOrderByWithRelationInput | ProjectUpvoteOrderByWithRelationInput[]
+    cursor?: ProjectUpvoteWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProjectUpvoteScalarFieldEnum | ProjectUpvoteScalarFieldEnum[]
   }
 
   /**
@@ -7799,24 +7786,24 @@ export namespace Prisma {
     userId?: boolean
     projectId?: boolean
     createdAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["projectUpvote"]>
 
   export type ProjectUpvoteSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     userId?: boolean
     projectId?: boolean
     createdAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["projectUpvote"]>
 
   export type ProjectUpvoteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     userId?: boolean
     projectId?: boolean
     createdAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["projectUpvote"]>
 
   export type ProjectUpvoteSelectScalar = {
@@ -7827,23 +7814,23 @@ export namespace Prisma {
 
   export type ProjectUpvoteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "projectId" | "createdAt", ExtArgs["result"]["projectUpvote"]>
   export type ProjectUpvoteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type ProjectUpvoteIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type ProjectUpvoteIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $ProjectUpvotePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ProjectUpvote"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
       project: Prisma.$ProjectPayload<ExtArgs>
+      user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       userId: string
@@ -8243,8 +8230,8 @@ export namespace Prisma {
    */
   export interface Prisma__ProjectUpvoteClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     project<T extends ProjectDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ProjectDefaultArgs<ExtArgs>>): Prisma__ProjectClient<$Result.GetResult<Prisma.$ProjectPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -8847,8 +8834,8 @@ export namespace Prisma {
     projectId?: boolean
     role?: boolean
     joinedAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["projectCollaborator"]>
 
   export type ProjectCollaboratorSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -8856,8 +8843,8 @@ export namespace Prisma {
     projectId?: boolean
     role?: boolean
     joinedAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["projectCollaborator"]>
 
   export type ProjectCollaboratorSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -8865,8 +8852,8 @@ export namespace Prisma {
     projectId?: boolean
     role?: boolean
     joinedAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["projectCollaborator"]>
 
   export type ProjectCollaboratorSelectScalar = {
@@ -8878,23 +8865,23 @@ export namespace Prisma {
 
   export type ProjectCollaboratorOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "projectId" | "role" | "joinedAt", ExtArgs["result"]["projectCollaborator"]>
   export type ProjectCollaboratorInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type ProjectCollaboratorIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type ProjectCollaboratorIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     project?: boolean | ProjectDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $ProjectCollaboratorPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ProjectCollaborator"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
       project: Prisma.$ProjectPayload<ExtArgs>
+      user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       userId: string
@@ -9295,8 +9282,8 @@ export namespace Prisma {
    */
   export interface Prisma__ProjectCollaboratorClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     project<T extends ProjectDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ProjectDefaultArgs<ExtArgs>>): Prisma__ProjectClient<$Result.GetResult<Prisma.$ProjectPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -11851,9 +11838,8 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     slug: 'slug',
-    shortName: 'shortName',
-    logoUrl: 'logoUrl',
-    coverImageUrl: 'coverImageUrl',
+    logoFileId: 'logoFileId',
+    coverImgFileId: 'coverImgFileId',
     description: 'description',
     location: 'location',
     website: 'website',
@@ -12080,9 +12066,9 @@ export namespace Prisma {
     githubUsername?: StringNullableFilter<"User"> | string | null
     createdAt?: DateTimeFilter<"User"> | Date | string
     websiteUrl?: StringNullableFilter<"User"> | string | null
-    userColleges?: UserCollegeListRelationFilter
-    projectUpvotes?: ProjectUpvoteListRelationFilter
     ProjectCollaborator?: ProjectCollaboratorListRelationFilter
+    projectUpvotes?: ProjectUpvoteListRelationFilter
+    userColleges?: UserCollegeListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -12098,9 +12084,9 @@ export namespace Prisma {
     githubUsername?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     websiteUrl?: SortOrderInput | SortOrder
-    userColleges?: UserCollegeOrderByRelationAggregateInput
-    projectUpvotes?: ProjectUpvoteOrderByRelationAggregateInput
     ProjectCollaborator?: ProjectCollaboratorOrderByRelationAggregateInput
+    projectUpvotes?: ProjectUpvoteOrderByRelationAggregateInput
+    userColleges?: UserCollegeOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -12119,9 +12105,9 @@ export namespace Prisma {
     githubUsername?: StringNullableFilter<"User"> | string | null
     createdAt?: DateTimeFilter<"User"> | Date | string
     websiteUrl?: StringNullableFilter<"User"> | string | null
-    userColleges?: UserCollegeListRelationFilter
-    projectUpvotes?: ProjectUpvoteListRelationFilter
     ProjectCollaborator?: ProjectCollaboratorListRelationFilter
+    projectUpvotes?: ProjectUpvoteListRelationFilter
+    userColleges?: UserCollegeListRelationFilter
   }, "id" | "username" | "email" | "appwriteid">
 
   export type UserOrderByWithAggregationInput = {
@@ -12167,34 +12153,32 @@ export namespace Prisma {
     id?: UuidFilter<"College"> | string
     name?: StringFilter<"College"> | string
     slug?: StringFilter<"College"> | string
-    shortName?: StringNullableFilter<"College"> | string | null
-    logoUrl?: StringNullableFilter<"College"> | string | null
-    coverImageUrl?: StringNullableFilter<"College"> | string | null
+    logoFileId?: StringNullableFilter<"College"> | string | null
+    coverImgFileId?: StringNullableFilter<"College"> | string | null
     description?: StringNullableFilter<"College"> | string | null
     location?: StringNullableFilter<"College"> | string | null
     website?: StringNullableFilter<"College"> | string | null
     createdAt?: DateTimeFilter<"College"> | Date | string
     updatedAt?: DateTimeFilter<"College"> | Date | string
-    userColleges?: UserCollegeListRelationFilter
-    projects?: ProjectListRelationFilter
     emailDomains?: CollegeEmailDomainListRelationFilter
+    projects?: ProjectListRelationFilter
+    userColleges?: UserCollegeListRelationFilter
   }
 
   export type CollegeOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    shortName?: SortOrderInput | SortOrder
-    logoUrl?: SortOrderInput | SortOrder
-    coverImageUrl?: SortOrderInput | SortOrder
+    logoFileId?: SortOrderInput | SortOrder
+    coverImgFileId?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
     location?: SortOrderInput | SortOrder
     website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    userColleges?: UserCollegeOrderByRelationAggregateInput
-    projects?: ProjectOrderByRelationAggregateInput
     emailDomains?: CollegeEmailDomainOrderByRelationAggregateInput
+    projects?: ProjectOrderByRelationAggregateInput
+    userColleges?: UserCollegeOrderByRelationAggregateInput
   }
 
   export type CollegeWhereUniqueInput = Prisma.AtLeast<{
@@ -12204,26 +12188,24 @@ export namespace Prisma {
     OR?: CollegeWhereInput[]
     NOT?: CollegeWhereInput | CollegeWhereInput[]
     name?: StringFilter<"College"> | string
-    shortName?: StringNullableFilter<"College"> | string | null
-    logoUrl?: StringNullableFilter<"College"> | string | null
-    coverImageUrl?: StringNullableFilter<"College"> | string | null
+    logoFileId?: StringNullableFilter<"College"> | string | null
+    coverImgFileId?: StringNullableFilter<"College"> | string | null
     description?: StringNullableFilter<"College"> | string | null
     location?: StringNullableFilter<"College"> | string | null
     website?: StringNullableFilter<"College"> | string | null
     createdAt?: DateTimeFilter<"College"> | Date | string
     updatedAt?: DateTimeFilter<"College"> | Date | string
-    userColleges?: UserCollegeListRelationFilter
-    projects?: ProjectListRelationFilter
     emailDomains?: CollegeEmailDomainListRelationFilter
+    projects?: ProjectListRelationFilter
+    userColleges?: UserCollegeListRelationFilter
   }, "id" | "slug">
 
   export type CollegeOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    shortName?: SortOrderInput | SortOrder
-    logoUrl?: SortOrderInput | SortOrder
-    coverImageUrl?: SortOrderInput | SortOrder
+    logoFileId?: SortOrderInput | SortOrder
+    coverImgFileId?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
     location?: SortOrderInput | SortOrder
     website?: SortOrderInput | SortOrder
@@ -12241,9 +12223,8 @@ export namespace Prisma {
     id?: UuidWithAggregatesFilter<"College"> | string
     name?: StringWithAggregatesFilter<"College"> | string
     slug?: StringWithAggregatesFilter<"College"> | string
-    shortName?: StringNullableWithAggregatesFilter<"College"> | string | null
-    logoUrl?: StringNullableWithAggregatesFilter<"College"> | string | null
-    coverImageUrl?: StringNullableWithAggregatesFilter<"College"> | string | null
+    logoFileId?: StringNullableWithAggregatesFilter<"College"> | string | null
+    coverImgFileId?: StringNullableWithAggregatesFilter<"College"> | string | null
     description?: StringNullableWithAggregatesFilter<"College"> | string | null
     location?: StringNullableWithAggregatesFilter<"College"> | string | null
     website?: StringNullableWithAggregatesFilter<"College"> | string | null
@@ -12265,8 +12246,8 @@ export namespace Prisma {
     verified?: BoolFilter<"UserCollege"> | boolean
     joinedAt?: DateTimeFilter<"UserCollege"> | Date | string
     leftAt?: DateTimeNullableFilter<"UserCollege"> | Date | string | null
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type UserCollegeOrderByWithRelationInput = {
@@ -12280,8 +12261,8 @@ export namespace Prisma {
     verified?: SortOrder
     joinedAt?: SortOrder
     leftAt?: SortOrderInput | SortOrder
-    user?: UserOrderByWithRelationInput
     college?: CollegeOrderByWithRelationInput
+    user?: UserOrderByWithRelationInput
   }
 
   export type UserCollegeWhereUniqueInput = Prisma.AtLeast<{
@@ -12298,8 +12279,8 @@ export namespace Prisma {
     verified?: BoolFilter<"UserCollege"> | boolean
     joinedAt?: DateTimeFilter<"UserCollege"> | Date | string
     leftAt?: DateTimeNullableFilter<"UserCollege"> | Date | string | null
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
   export type UserCollegeOrderByWithAggregationInput = {
@@ -12394,9 +12375,9 @@ export namespace Prisma {
     upvotesCount?: IntFilter<"Project"> | number
     createdAt?: DateTimeFilter<"Project"> | Date | string
     college?: XOR<CollegeNullableScalarRelationFilter, CollegeWhereInput> | null
-    upvotes?: ProjectUpvoteListRelationFilter
     collaborators?: ProjectCollaboratorListRelationFilter
     tags?: ProjectTagListRelationFilter
+    upvotes?: ProjectUpvoteListRelationFilter
   }
 
   export type ProjectOrderByWithRelationInput = {
@@ -12411,9 +12392,9 @@ export namespace Prisma {
     upvotesCount?: SortOrder
     createdAt?: SortOrder
     college?: CollegeOrderByWithRelationInput
-    upvotes?: ProjectUpvoteOrderByRelationAggregateInput
     collaborators?: ProjectCollaboratorOrderByRelationAggregateInput
     tags?: ProjectTagOrderByRelationAggregateInput
+    upvotes?: ProjectUpvoteOrderByRelationAggregateInput
   }
 
   export type ProjectWhereUniqueInput = Prisma.AtLeast<{
@@ -12431,9 +12412,9 @@ export namespace Prisma {
     upvotesCount?: IntFilter<"Project"> | number
     createdAt?: DateTimeFilter<"Project"> | Date | string
     college?: XOR<CollegeNullableScalarRelationFilter, CollegeWhereInput> | null
-    upvotes?: ProjectUpvoteListRelationFilter
     collaborators?: ProjectCollaboratorListRelationFilter
     tags?: ProjectTagListRelationFilter
+    upvotes?: ProjectUpvoteListRelationFilter
   }, "id" | "slug">
 
   export type ProjectOrderByWithAggregationInput = {
@@ -12477,16 +12458,16 @@ export namespace Prisma {
     userId?: UuidFilter<"ProjectUpvote"> | string
     projectId?: UuidFilter<"ProjectUpvote"> | string
     createdAt?: DateTimeFilter<"ProjectUpvote"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type ProjectUpvoteOrderByWithRelationInput = {
     userId?: SortOrder
     projectId?: SortOrder
     createdAt?: SortOrder
-    user?: UserOrderByWithRelationInput
     project?: ProjectOrderByWithRelationInput
+    user?: UserOrderByWithRelationInput
   }
 
   export type ProjectUpvoteWhereUniqueInput = Prisma.AtLeast<{
@@ -12497,8 +12478,8 @@ export namespace Prisma {
     userId?: UuidFilter<"ProjectUpvote"> | string
     projectId?: UuidFilter<"ProjectUpvote"> | string
     createdAt?: DateTimeFilter<"ProjectUpvote"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "userId_projectId">
 
   export type ProjectUpvoteOrderByWithAggregationInput = {
@@ -12527,8 +12508,8 @@ export namespace Prisma {
     projectId?: UuidFilter<"ProjectCollaborator"> | string
     role?: EnumProjectUserRoleFilter<"ProjectCollaborator"> | $Enums.ProjectUserRole
     joinedAt?: DateTimeFilter<"ProjectCollaborator"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type ProjectCollaboratorOrderByWithRelationInput = {
@@ -12536,8 +12517,8 @@ export namespace Prisma {
     projectId?: SortOrder
     role?: SortOrder
     joinedAt?: SortOrder
-    user?: UserOrderByWithRelationInput
     project?: ProjectOrderByWithRelationInput
+    user?: UserOrderByWithRelationInput
   }
 
   export type ProjectCollaboratorWhereUniqueInput = Prisma.AtLeast<{
@@ -12549,8 +12530,8 @@ export namespace Prisma {
     projectId?: UuidFilter<"ProjectCollaborator"> | string
     role?: EnumProjectUserRoleFilter<"ProjectCollaborator"> | $Enums.ProjectUserRole
     joinedAt?: DateTimeFilter<"ProjectCollaborator"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "userId_projectId">
 
   export type ProjectCollaboratorOrderByWithAggregationInput = {
@@ -12675,9 +12656,9 @@ export namespace Prisma {
     githubUsername?: string | null
     createdAt?: Date | string
     websiteUrl?: string | null
-    userColleges?: UserCollegeCreateNestedManyWithoutUserInput
-    projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput
+    projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput
+    userColleges?: UserCollegeCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -12693,9 +12674,9 @@ export namespace Prisma {
     githubUsername?: string | null
     createdAt?: Date | string
     websiteUrl?: string | null
-    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput
-    projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput
+    projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput
+    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -12711,9 +12692,9 @@ export namespace Prisma {
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    userColleges?: UserCollegeUpdateManyWithoutUserNestedInput
-    projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput
+    projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput
+    userColleges?: UserCollegeUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -12729,9 +12710,9 @@ export namespace Prisma {
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput
-    projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput
+    projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput
+    userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -12783,77 +12764,72 @@ export namespace Prisma {
     id?: string
     name: string
     slug: string
-    shortName?: string | null
-    logoUrl?: string | null
-    coverImageUrl?: string | null
+    logoFileId?: string | null
+    coverImgFileId?: string | null
     description?: string | null
     location?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput
-    projects?: ProjectCreateNestedManyWithoutCollegeInput
     emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput
+    projects?: ProjectCreateNestedManyWithoutCollegeInput
+    userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput
   }
 
   export type CollegeUncheckedCreateInput = {
     id?: string
     name: string
     slug: string
-    shortName?: string | null
-    logoUrl?: string | null
-    coverImageUrl?: string | null
+    logoFileId?: string | null
+    coverImgFileId?: string | null
     description?: string | null
     location?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput
-    projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput
     emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput
+    projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput
+    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput
   }
 
   export type CollegeUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput
-    projects?: ProjectUpdateManyWithoutCollegeNestedInput
     emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput
+    projects?: ProjectUpdateManyWithoutCollegeNestedInput
+    userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput
   }
 
   export type CollegeUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput
-    projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput
     emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput
+    projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput
+    userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput
   }
 
   export type CollegeCreateManyInput = {
     id?: string
     name: string
     slug: string
-    shortName?: string | null
-    logoUrl?: string | null
-    coverImageUrl?: string | null
+    logoFileId?: string | null
+    coverImgFileId?: string | null
     description?: string | null
     location?: string | null
     website?: string | null
@@ -12865,9 +12841,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
@@ -12879,9 +12854,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
@@ -12898,8 +12872,8 @@ export namespace Prisma {
     verified: boolean
     joinedAt: Date | string
     leftAt?: Date | string | null
-    user: UserCreateNestedOneWithoutUserCollegesInput
     college: CollegeCreateNestedOneWithoutUserCollegesInput
+    user: UserCreateNestedOneWithoutUserCollegesInput
   }
 
   export type UserCollegeUncheckedCreateInput = {
@@ -12924,8 +12898,8 @@ export namespace Prisma {
     verified?: BoolFieldUpdateOperationsInput | boolean
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     leftAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    user?: UserUpdateOneRequiredWithoutUserCollegesNestedInput
     college?: CollegeUpdateOneRequiredWithoutUserCollegesNestedInput
+    user?: UserUpdateOneRequiredWithoutUserCollegesNestedInput
   }
 
   export type UserCollegeUncheckedUpdateInput = {
@@ -13030,9 +13004,9 @@ export namespace Prisma {
     upvotesCount?: number
     createdAt?: Date | string
     college?: CollegeCreateNestedOneWithoutProjectsInput
-    upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput
     collaborators?: ProjectCollaboratorCreateNestedManyWithoutProjectInput
     tags?: ProjectTagCreateNestedManyWithoutProjectInput
+    upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput
   }
 
   export type ProjectUncheckedCreateInput = {
@@ -13046,9 +13020,9 @@ export namespace Prisma {
     isLookingForContributors?: boolean
     upvotesCount?: number
     createdAt?: Date | string
-    upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput
     collaborators?: ProjectCollaboratorUncheckedCreateNestedManyWithoutProjectInput
     tags?: ProjectTagUncheckedCreateNestedManyWithoutProjectInput
+    upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type ProjectUpdateInput = {
@@ -13062,9 +13036,9 @@ export namespace Prisma {
     upvotesCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     college?: CollegeUpdateOneWithoutProjectsNestedInput
-    upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput
     collaborators?: ProjectCollaboratorUpdateManyWithoutProjectNestedInput
     tags?: ProjectTagUpdateManyWithoutProjectNestedInput
+    upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput
   }
 
   export type ProjectUncheckedUpdateInput = {
@@ -13078,9 +13052,9 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
     upvotesCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput
     collaborators?: ProjectCollaboratorUncheckedUpdateManyWithoutProjectNestedInput
     tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput
+    upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type ProjectCreateManyInput = {
@@ -13123,8 +13097,8 @@ export namespace Prisma {
 
   export type ProjectUpvoteCreateInput = {
     createdAt?: Date | string
-    user: UserCreateNestedOneWithoutProjectUpvotesInput
     project: ProjectCreateNestedOneWithoutUpvotesInput
+    user: UserCreateNestedOneWithoutProjectUpvotesInput
   }
 
   export type ProjectUpvoteUncheckedCreateInput = {
@@ -13135,8 +13109,8 @@ export namespace Prisma {
 
   export type ProjectUpvoteUpdateInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutProjectUpvotesNestedInput
     project?: ProjectUpdateOneRequiredWithoutUpvotesNestedInput
+    user?: UserUpdateOneRequiredWithoutProjectUpvotesNestedInput
   }
 
   export type ProjectUpvoteUncheckedUpdateInput = {
@@ -13164,8 +13138,8 @@ export namespace Prisma {
   export type ProjectCollaboratorCreateInput = {
     role: $Enums.ProjectUserRole
     joinedAt?: Date | string
-    user: UserCreateNestedOneWithoutProjectCollaboratorInput
     project: ProjectCreateNestedOneWithoutCollaboratorsInput
+    user: UserCreateNestedOneWithoutProjectCollaboratorInput
   }
 
   export type ProjectCollaboratorUncheckedCreateInput = {
@@ -13178,8 +13152,8 @@ export namespace Prisma {
   export type ProjectCollaboratorUpdateInput = {
     role?: EnumProjectUserRoleFieldUpdateOperationsInput | $Enums.ProjectUserRole
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutProjectCollaboratorNestedInput
     project?: ProjectUpdateOneRequiredWithoutCollaboratorsNestedInput
+    user?: UserUpdateOneRequiredWithoutProjectCollaboratorNestedInput
   }
 
   export type ProjectCollaboratorUncheckedUpdateInput = {
@@ -13346,10 +13320,10 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type UserCollegeListRelationFilter = {
-    every?: UserCollegeWhereInput
-    some?: UserCollegeWhereInput
-    none?: UserCollegeWhereInput
+  export type ProjectCollaboratorListRelationFilter = {
+    every?: ProjectCollaboratorWhereInput
+    some?: ProjectCollaboratorWhereInput
+    none?: ProjectCollaboratorWhereInput
   }
 
   export type ProjectUpvoteListRelationFilter = {
@@ -13358,10 +13332,10 @@ export namespace Prisma {
     none?: ProjectUpvoteWhereInput
   }
 
-  export type ProjectCollaboratorListRelationFilter = {
-    every?: ProjectCollaboratorWhereInput
-    some?: ProjectCollaboratorWhereInput
-    none?: ProjectCollaboratorWhereInput
+  export type UserCollegeListRelationFilter = {
+    every?: UserCollegeWhereInput
+    some?: UserCollegeWhereInput
+    none?: UserCollegeWhereInput
   }
 
   export type SortOrderInput = {
@@ -13369,7 +13343,7 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type UserCollegeOrderByRelationAggregateInput = {
+  export type ProjectCollaboratorOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -13377,7 +13351,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type ProjectCollaboratorOrderByRelationAggregateInput = {
+  export type UserCollegeOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -13499,23 +13473,23 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type ProjectListRelationFilter = {
-    every?: ProjectWhereInput
-    some?: ProjectWhereInput
-    none?: ProjectWhereInput
-  }
-
   export type CollegeEmailDomainListRelationFilter = {
     every?: CollegeEmailDomainWhereInput
     some?: CollegeEmailDomainWhereInput
     none?: CollegeEmailDomainWhereInput
   }
 
-  export type ProjectOrderByRelationAggregateInput = {
-    _count?: SortOrder
+  export type ProjectListRelationFilter = {
+    every?: ProjectWhereInput
+    some?: ProjectWhereInput
+    none?: ProjectWhereInput
   }
 
   export type CollegeEmailDomainOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ProjectOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -13523,9 +13497,8 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    shortName?: SortOrder
-    logoUrl?: SortOrder
-    coverImageUrl?: SortOrder
+    logoFileId?: SortOrder
+    coverImgFileId?: SortOrder
     description?: SortOrder
     location?: SortOrder
     website?: SortOrder
@@ -13537,9 +13510,8 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    shortName?: SortOrder
-    logoUrl?: SortOrder
-    coverImageUrl?: SortOrder
+    logoFileId?: SortOrder
+    coverImgFileId?: SortOrder
     description?: SortOrder
     location?: SortOrder
     website?: SortOrder
@@ -13551,9 +13523,8 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     slug?: SortOrder
-    shortName?: SortOrder
-    logoUrl?: SortOrder
-    coverImageUrl?: SortOrder
+    logoFileId?: SortOrder
+    coverImgFileId?: SortOrder
     description?: SortOrder
     location?: SortOrder
     website?: SortOrder
@@ -13579,14 +13550,14 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
-  export type UserScalarRelationFilter = {
-    is?: UserWhereInput
-    isNot?: UserWhereInput
-  }
-
   export type CollegeScalarRelationFilter = {
     is?: CollegeWhereInput
     isNot?: CollegeWhereInput
+  }
+
+  export type UserScalarRelationFilter = {
+    is?: UserWhereInput
+    isNot?: UserWhereInput
   }
 
   export type UserCollegeCountOrderByAggregateInput = {
@@ -13900,11 +13871,11 @@ export namespace Prisma {
     tagId?: SortOrder
   }
 
-  export type UserCollegeCreateNestedManyWithoutUserInput = {
-    create?: XOR<UserCollegeCreateWithoutUserInput, UserCollegeUncheckedCreateWithoutUserInput> | UserCollegeCreateWithoutUserInput[] | UserCollegeUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserCollegeCreateOrConnectWithoutUserInput | UserCollegeCreateOrConnectWithoutUserInput[]
-    createMany?: UserCollegeCreateManyUserInputEnvelope
-    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+  export type ProjectCollaboratorCreateNestedManyWithoutUserInput = {
+    create?: XOR<ProjectCollaboratorCreateWithoutUserInput, ProjectCollaboratorUncheckedCreateWithoutUserInput> | ProjectCollaboratorCreateWithoutUserInput[] | ProjectCollaboratorUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProjectCollaboratorCreateOrConnectWithoutUserInput | ProjectCollaboratorCreateOrConnectWithoutUserInput[]
+    createMany?: ProjectCollaboratorCreateManyUserInputEnvelope
+    connect?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
   }
 
   export type ProjectUpvoteCreateNestedManyWithoutUserInput = {
@@ -13914,18 +13885,18 @@ export namespace Prisma {
     connect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
   }
 
-  export type ProjectCollaboratorCreateNestedManyWithoutUserInput = {
-    create?: XOR<ProjectCollaboratorCreateWithoutUserInput, ProjectCollaboratorUncheckedCreateWithoutUserInput> | ProjectCollaboratorCreateWithoutUserInput[] | ProjectCollaboratorUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProjectCollaboratorCreateOrConnectWithoutUserInput | ProjectCollaboratorCreateOrConnectWithoutUserInput[]
-    createMany?: ProjectCollaboratorCreateManyUserInputEnvelope
-    connect?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
-  }
-
-  export type UserCollegeUncheckedCreateNestedManyWithoutUserInput = {
+  export type UserCollegeCreateNestedManyWithoutUserInput = {
     create?: XOR<UserCollegeCreateWithoutUserInput, UserCollegeUncheckedCreateWithoutUserInput> | UserCollegeCreateWithoutUserInput[] | UserCollegeUncheckedCreateWithoutUserInput[]
     connectOrCreate?: UserCollegeCreateOrConnectWithoutUserInput | UserCollegeCreateOrConnectWithoutUserInput[]
     createMany?: UserCollegeCreateManyUserInputEnvelope
     connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+  }
+
+  export type ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<ProjectCollaboratorCreateWithoutUserInput, ProjectCollaboratorUncheckedCreateWithoutUserInput> | ProjectCollaboratorCreateWithoutUserInput[] | ProjectCollaboratorUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProjectCollaboratorCreateOrConnectWithoutUserInput | ProjectCollaboratorCreateOrConnectWithoutUserInput[]
+    createMany?: ProjectCollaboratorCreateManyUserInputEnvelope
+    connect?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
   }
 
   export type ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput = {
@@ -13935,11 +13906,11 @@ export namespace Prisma {
     connect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
   }
 
-  export type ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<ProjectCollaboratorCreateWithoutUserInput, ProjectCollaboratorUncheckedCreateWithoutUserInput> | ProjectCollaboratorCreateWithoutUserInput[] | ProjectCollaboratorUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProjectCollaboratorCreateOrConnectWithoutUserInput | ProjectCollaboratorCreateOrConnectWithoutUserInput[]
-    createMany?: ProjectCollaboratorCreateManyUserInputEnvelope
-    connect?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
+  export type UserCollegeUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<UserCollegeCreateWithoutUserInput, UserCollegeUncheckedCreateWithoutUserInput> | UserCollegeCreateWithoutUserInput[] | UserCollegeUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserCollegeCreateOrConnectWithoutUserInput | UserCollegeCreateOrConnectWithoutUserInput[]
+    createMany?: UserCollegeCreateManyUserInputEnvelope
+    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -13958,18 +13929,18 @@ export namespace Prisma {
     set?: Date | string
   }
 
-  export type UserCollegeUpdateManyWithoutUserNestedInput = {
-    create?: XOR<UserCollegeCreateWithoutUserInput, UserCollegeUncheckedCreateWithoutUserInput> | UserCollegeCreateWithoutUserInput[] | UserCollegeUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserCollegeCreateOrConnectWithoutUserInput | UserCollegeCreateOrConnectWithoutUserInput[]
-    upsert?: UserCollegeUpsertWithWhereUniqueWithoutUserInput | UserCollegeUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: UserCollegeCreateManyUserInputEnvelope
-    set?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    disconnect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    delete?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    update?: UserCollegeUpdateWithWhereUniqueWithoutUserInput | UserCollegeUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: UserCollegeUpdateManyWithWhereWithoutUserInput | UserCollegeUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: UserCollegeScalarWhereInput | UserCollegeScalarWhereInput[]
+  export type ProjectCollaboratorUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ProjectCollaboratorCreateWithoutUserInput, ProjectCollaboratorUncheckedCreateWithoutUserInput> | ProjectCollaboratorCreateWithoutUserInput[] | ProjectCollaboratorUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProjectCollaboratorCreateOrConnectWithoutUserInput | ProjectCollaboratorCreateOrConnectWithoutUserInput[]
+    upsert?: ProjectCollaboratorUpsertWithWhereUniqueWithoutUserInput | ProjectCollaboratorUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ProjectCollaboratorCreateManyUserInputEnvelope
+    set?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
+    disconnect?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
+    delete?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
+    connect?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
+    update?: ProjectCollaboratorUpdateWithWhereUniqueWithoutUserInput | ProjectCollaboratorUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ProjectCollaboratorUpdateManyWithWhereWithoutUserInput | ProjectCollaboratorUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ProjectCollaboratorScalarWhereInput | ProjectCollaboratorScalarWhereInput[]
   }
 
   export type ProjectUpvoteUpdateManyWithoutUserNestedInput = {
@@ -13986,21 +13957,7 @@ export namespace Prisma {
     deleteMany?: ProjectUpvoteScalarWhereInput | ProjectUpvoteScalarWhereInput[]
   }
 
-  export type ProjectCollaboratorUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ProjectCollaboratorCreateWithoutUserInput, ProjectCollaboratorUncheckedCreateWithoutUserInput> | ProjectCollaboratorCreateWithoutUserInput[] | ProjectCollaboratorUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProjectCollaboratorCreateOrConnectWithoutUserInput | ProjectCollaboratorCreateOrConnectWithoutUserInput[]
-    upsert?: ProjectCollaboratorUpsertWithWhereUniqueWithoutUserInput | ProjectCollaboratorUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ProjectCollaboratorCreateManyUserInputEnvelope
-    set?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
-    disconnect?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
-    delete?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
-    connect?: ProjectCollaboratorWhereUniqueInput | ProjectCollaboratorWhereUniqueInput[]
-    update?: ProjectCollaboratorUpdateWithWhereUniqueWithoutUserInput | ProjectCollaboratorUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ProjectCollaboratorUpdateManyWithWhereWithoutUserInput | ProjectCollaboratorUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ProjectCollaboratorScalarWhereInput | ProjectCollaboratorScalarWhereInput[]
-  }
-
-  export type UserCollegeUncheckedUpdateManyWithoutUserNestedInput = {
+  export type UserCollegeUpdateManyWithoutUserNestedInput = {
     create?: XOR<UserCollegeCreateWithoutUserInput, UserCollegeUncheckedCreateWithoutUserInput> | UserCollegeCreateWithoutUserInput[] | UserCollegeUncheckedCreateWithoutUserInput[]
     connectOrCreate?: UserCollegeCreateOrConnectWithoutUserInput | UserCollegeCreateOrConnectWithoutUserInput[]
     upsert?: UserCollegeUpsertWithWhereUniqueWithoutUserInput | UserCollegeUpsertWithWhereUniqueWithoutUserInput[]
@@ -14012,20 +13969,6 @@ export namespace Prisma {
     update?: UserCollegeUpdateWithWhereUniqueWithoutUserInput | UserCollegeUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: UserCollegeUpdateManyWithWhereWithoutUserInput | UserCollegeUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: UserCollegeScalarWhereInput | UserCollegeScalarWhereInput[]
-  }
-
-  export type ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ProjectUpvoteCreateWithoutUserInput, ProjectUpvoteUncheckedCreateWithoutUserInput> | ProjectUpvoteCreateWithoutUserInput[] | ProjectUpvoteUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ProjectUpvoteCreateOrConnectWithoutUserInput | ProjectUpvoteCreateOrConnectWithoutUserInput[]
-    upsert?: ProjectUpvoteUpsertWithWhereUniqueWithoutUserInput | ProjectUpvoteUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ProjectUpvoteCreateManyUserInputEnvelope
-    set?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
-    disconnect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
-    delete?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
-    connect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
-    update?: ProjectUpvoteUpdateWithWhereUniqueWithoutUserInput | ProjectUpvoteUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ProjectUpvoteUpdateManyWithWhereWithoutUserInput | ProjectUpvoteUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ProjectUpvoteScalarWhereInput | ProjectUpvoteScalarWhereInput[]
   }
 
   export type ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput = {
@@ -14042,18 +13985,32 @@ export namespace Prisma {
     deleteMany?: ProjectCollaboratorScalarWhereInput | ProjectCollaboratorScalarWhereInput[]
   }
 
-  export type UserCollegeCreateNestedManyWithoutCollegeInput = {
-    create?: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput> | UserCollegeCreateWithoutCollegeInput[] | UserCollegeUncheckedCreateWithoutCollegeInput[]
-    connectOrCreate?: UserCollegeCreateOrConnectWithoutCollegeInput | UserCollegeCreateOrConnectWithoutCollegeInput[]
-    createMany?: UserCollegeCreateManyCollegeInputEnvelope
-    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+  export type ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ProjectUpvoteCreateWithoutUserInput, ProjectUpvoteUncheckedCreateWithoutUserInput> | ProjectUpvoteCreateWithoutUserInput[] | ProjectUpvoteUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProjectUpvoteCreateOrConnectWithoutUserInput | ProjectUpvoteCreateOrConnectWithoutUserInput[]
+    upsert?: ProjectUpvoteUpsertWithWhereUniqueWithoutUserInput | ProjectUpvoteUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ProjectUpvoteCreateManyUserInputEnvelope
+    set?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
+    disconnect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
+    delete?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
+    connect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
+    update?: ProjectUpvoteUpdateWithWhereUniqueWithoutUserInput | ProjectUpvoteUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ProjectUpvoteUpdateManyWithWhereWithoutUserInput | ProjectUpvoteUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ProjectUpvoteScalarWhereInput | ProjectUpvoteScalarWhereInput[]
   }
 
-  export type ProjectCreateNestedManyWithoutCollegeInput = {
-    create?: XOR<ProjectCreateWithoutCollegeInput, ProjectUncheckedCreateWithoutCollegeInput> | ProjectCreateWithoutCollegeInput[] | ProjectUncheckedCreateWithoutCollegeInput[]
-    connectOrCreate?: ProjectCreateOrConnectWithoutCollegeInput | ProjectCreateOrConnectWithoutCollegeInput[]
-    createMany?: ProjectCreateManyCollegeInputEnvelope
-    connect?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
+  export type UserCollegeUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<UserCollegeCreateWithoutUserInput, UserCollegeUncheckedCreateWithoutUserInput> | UserCollegeCreateWithoutUserInput[] | UserCollegeUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserCollegeCreateOrConnectWithoutUserInput | UserCollegeCreateOrConnectWithoutUserInput[]
+    upsert?: UserCollegeUpsertWithWhereUniqueWithoutUserInput | UserCollegeUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: UserCollegeCreateManyUserInputEnvelope
+    set?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    disconnect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    delete?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    update?: UserCollegeUpdateWithWhereUniqueWithoutUserInput | UserCollegeUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: UserCollegeUpdateManyWithWhereWithoutUserInput | UserCollegeUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: UserCollegeScalarWhereInput | UserCollegeScalarWhereInput[]
   }
 
   export type CollegeEmailDomainCreateNestedManyWithoutCollegeInput = {
@@ -14063,18 +14020,18 @@ export namespace Prisma {
     connect?: CollegeEmailDomainWhereUniqueInput | CollegeEmailDomainWhereUniqueInput[]
   }
 
-  export type UserCollegeUncheckedCreateNestedManyWithoutCollegeInput = {
-    create?: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput> | UserCollegeCreateWithoutCollegeInput[] | UserCollegeUncheckedCreateWithoutCollegeInput[]
-    connectOrCreate?: UserCollegeCreateOrConnectWithoutCollegeInput | UserCollegeCreateOrConnectWithoutCollegeInput[]
-    createMany?: UserCollegeCreateManyCollegeInputEnvelope
-    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-  }
-
-  export type ProjectUncheckedCreateNestedManyWithoutCollegeInput = {
+  export type ProjectCreateNestedManyWithoutCollegeInput = {
     create?: XOR<ProjectCreateWithoutCollegeInput, ProjectUncheckedCreateWithoutCollegeInput> | ProjectCreateWithoutCollegeInput[] | ProjectUncheckedCreateWithoutCollegeInput[]
     connectOrCreate?: ProjectCreateOrConnectWithoutCollegeInput | ProjectCreateOrConnectWithoutCollegeInput[]
     createMany?: ProjectCreateManyCollegeInputEnvelope
     connect?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
+  }
+
+  export type UserCollegeCreateNestedManyWithoutCollegeInput = {
+    create?: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput> | UserCollegeCreateWithoutCollegeInput[] | UserCollegeUncheckedCreateWithoutCollegeInput[]
+    connectOrCreate?: UserCollegeCreateOrConnectWithoutCollegeInput | UserCollegeCreateOrConnectWithoutCollegeInput[]
+    createMany?: UserCollegeCreateManyCollegeInputEnvelope
+    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
   }
 
   export type CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput = {
@@ -14084,32 +14041,18 @@ export namespace Prisma {
     connect?: CollegeEmailDomainWhereUniqueInput | CollegeEmailDomainWhereUniqueInput[]
   }
 
-  export type UserCollegeUpdateManyWithoutCollegeNestedInput = {
-    create?: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput> | UserCollegeCreateWithoutCollegeInput[] | UserCollegeUncheckedCreateWithoutCollegeInput[]
-    connectOrCreate?: UserCollegeCreateOrConnectWithoutCollegeInput | UserCollegeCreateOrConnectWithoutCollegeInput[]
-    upsert?: UserCollegeUpsertWithWhereUniqueWithoutCollegeInput | UserCollegeUpsertWithWhereUniqueWithoutCollegeInput[]
-    createMany?: UserCollegeCreateManyCollegeInputEnvelope
-    set?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    disconnect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    delete?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    update?: UserCollegeUpdateWithWhereUniqueWithoutCollegeInput | UserCollegeUpdateWithWhereUniqueWithoutCollegeInput[]
-    updateMany?: UserCollegeUpdateManyWithWhereWithoutCollegeInput | UserCollegeUpdateManyWithWhereWithoutCollegeInput[]
-    deleteMany?: UserCollegeScalarWhereInput | UserCollegeScalarWhereInput[]
-  }
-
-  export type ProjectUpdateManyWithoutCollegeNestedInput = {
+  export type ProjectUncheckedCreateNestedManyWithoutCollegeInput = {
     create?: XOR<ProjectCreateWithoutCollegeInput, ProjectUncheckedCreateWithoutCollegeInput> | ProjectCreateWithoutCollegeInput[] | ProjectUncheckedCreateWithoutCollegeInput[]
     connectOrCreate?: ProjectCreateOrConnectWithoutCollegeInput | ProjectCreateOrConnectWithoutCollegeInput[]
-    upsert?: ProjectUpsertWithWhereUniqueWithoutCollegeInput | ProjectUpsertWithWhereUniqueWithoutCollegeInput[]
     createMany?: ProjectCreateManyCollegeInputEnvelope
-    set?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
-    disconnect?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
-    delete?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
     connect?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
-    update?: ProjectUpdateWithWhereUniqueWithoutCollegeInput | ProjectUpdateWithWhereUniqueWithoutCollegeInput[]
-    updateMany?: ProjectUpdateManyWithWhereWithoutCollegeInput | ProjectUpdateManyWithWhereWithoutCollegeInput[]
-    deleteMany?: ProjectScalarWhereInput | ProjectScalarWhereInput[]
+  }
+
+  export type UserCollegeUncheckedCreateNestedManyWithoutCollegeInput = {
+    create?: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput> | UserCollegeCreateWithoutCollegeInput[] | UserCollegeUncheckedCreateWithoutCollegeInput[]
+    connectOrCreate?: UserCollegeCreateOrConnectWithoutCollegeInput | UserCollegeCreateOrConnectWithoutCollegeInput[]
+    createMany?: UserCollegeCreateManyCollegeInputEnvelope
+    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
   }
 
   export type CollegeEmailDomainUpdateManyWithoutCollegeNestedInput = {
@@ -14126,21 +14069,7 @@ export namespace Prisma {
     deleteMany?: CollegeEmailDomainScalarWhereInput | CollegeEmailDomainScalarWhereInput[]
   }
 
-  export type UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput = {
-    create?: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput> | UserCollegeCreateWithoutCollegeInput[] | UserCollegeUncheckedCreateWithoutCollegeInput[]
-    connectOrCreate?: UserCollegeCreateOrConnectWithoutCollegeInput | UserCollegeCreateOrConnectWithoutCollegeInput[]
-    upsert?: UserCollegeUpsertWithWhereUniqueWithoutCollegeInput | UserCollegeUpsertWithWhereUniqueWithoutCollegeInput[]
-    createMany?: UserCollegeCreateManyCollegeInputEnvelope
-    set?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    disconnect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    delete?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
-    update?: UserCollegeUpdateWithWhereUniqueWithoutCollegeInput | UserCollegeUpdateWithWhereUniqueWithoutCollegeInput[]
-    updateMany?: UserCollegeUpdateManyWithWhereWithoutCollegeInput | UserCollegeUpdateManyWithWhereWithoutCollegeInput[]
-    deleteMany?: UserCollegeScalarWhereInput | UserCollegeScalarWhereInput[]
-  }
-
-  export type ProjectUncheckedUpdateManyWithoutCollegeNestedInput = {
+  export type ProjectUpdateManyWithoutCollegeNestedInput = {
     create?: XOR<ProjectCreateWithoutCollegeInput, ProjectUncheckedCreateWithoutCollegeInput> | ProjectCreateWithoutCollegeInput[] | ProjectUncheckedCreateWithoutCollegeInput[]
     connectOrCreate?: ProjectCreateOrConnectWithoutCollegeInput | ProjectCreateOrConnectWithoutCollegeInput[]
     upsert?: ProjectUpsertWithWhereUniqueWithoutCollegeInput | ProjectUpsertWithWhereUniqueWithoutCollegeInput[]
@@ -14152,6 +14081,20 @@ export namespace Prisma {
     update?: ProjectUpdateWithWhereUniqueWithoutCollegeInput | ProjectUpdateWithWhereUniqueWithoutCollegeInput[]
     updateMany?: ProjectUpdateManyWithWhereWithoutCollegeInput | ProjectUpdateManyWithWhereWithoutCollegeInput[]
     deleteMany?: ProjectScalarWhereInput | ProjectScalarWhereInput[]
+  }
+
+  export type UserCollegeUpdateManyWithoutCollegeNestedInput = {
+    create?: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput> | UserCollegeCreateWithoutCollegeInput[] | UserCollegeUncheckedCreateWithoutCollegeInput[]
+    connectOrCreate?: UserCollegeCreateOrConnectWithoutCollegeInput | UserCollegeCreateOrConnectWithoutCollegeInput[]
+    upsert?: UserCollegeUpsertWithWhereUniqueWithoutCollegeInput | UserCollegeUpsertWithWhereUniqueWithoutCollegeInput[]
+    createMany?: UserCollegeCreateManyCollegeInputEnvelope
+    set?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    disconnect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    delete?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    update?: UserCollegeUpdateWithWhereUniqueWithoutCollegeInput | UserCollegeUpdateWithWhereUniqueWithoutCollegeInput[]
+    updateMany?: UserCollegeUpdateManyWithWhereWithoutCollegeInput | UserCollegeUpdateManyWithWhereWithoutCollegeInput[]
+    deleteMany?: UserCollegeScalarWhereInput | UserCollegeScalarWhereInput[]
   }
 
   export type CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput = {
@@ -14168,16 +14111,44 @@ export namespace Prisma {
     deleteMany?: CollegeEmailDomainScalarWhereInput | CollegeEmailDomainScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutUserCollegesInput = {
-    create?: XOR<UserCreateWithoutUserCollegesInput, UserUncheckedCreateWithoutUserCollegesInput>
-    connectOrCreate?: UserCreateOrConnectWithoutUserCollegesInput
-    connect?: UserWhereUniqueInput
+  export type ProjectUncheckedUpdateManyWithoutCollegeNestedInput = {
+    create?: XOR<ProjectCreateWithoutCollegeInput, ProjectUncheckedCreateWithoutCollegeInput> | ProjectCreateWithoutCollegeInput[] | ProjectUncheckedCreateWithoutCollegeInput[]
+    connectOrCreate?: ProjectCreateOrConnectWithoutCollegeInput | ProjectCreateOrConnectWithoutCollegeInput[]
+    upsert?: ProjectUpsertWithWhereUniqueWithoutCollegeInput | ProjectUpsertWithWhereUniqueWithoutCollegeInput[]
+    createMany?: ProjectCreateManyCollegeInputEnvelope
+    set?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
+    disconnect?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
+    delete?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
+    connect?: ProjectWhereUniqueInput | ProjectWhereUniqueInput[]
+    update?: ProjectUpdateWithWhereUniqueWithoutCollegeInput | ProjectUpdateWithWhereUniqueWithoutCollegeInput[]
+    updateMany?: ProjectUpdateManyWithWhereWithoutCollegeInput | ProjectUpdateManyWithWhereWithoutCollegeInput[]
+    deleteMany?: ProjectScalarWhereInput | ProjectScalarWhereInput[]
+  }
+
+  export type UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput = {
+    create?: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput> | UserCollegeCreateWithoutCollegeInput[] | UserCollegeUncheckedCreateWithoutCollegeInput[]
+    connectOrCreate?: UserCollegeCreateOrConnectWithoutCollegeInput | UserCollegeCreateOrConnectWithoutCollegeInput[]
+    upsert?: UserCollegeUpsertWithWhereUniqueWithoutCollegeInput | UserCollegeUpsertWithWhereUniqueWithoutCollegeInput[]
+    createMany?: UserCollegeCreateManyCollegeInputEnvelope
+    set?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    disconnect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    delete?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[]
+    update?: UserCollegeUpdateWithWhereUniqueWithoutCollegeInput | UserCollegeUpdateWithWhereUniqueWithoutCollegeInput[]
+    updateMany?: UserCollegeUpdateManyWithWhereWithoutCollegeInput | UserCollegeUpdateManyWithWhereWithoutCollegeInput[]
+    deleteMany?: UserCollegeScalarWhereInput | UserCollegeScalarWhereInput[]
   }
 
   export type CollegeCreateNestedOneWithoutUserCollegesInput = {
     create?: XOR<CollegeCreateWithoutUserCollegesInput, CollegeUncheckedCreateWithoutUserCollegesInput>
     connectOrCreate?: CollegeCreateOrConnectWithoutUserCollegesInput
     connect?: CollegeWhereUniqueInput
+  }
+
+  export type UserCreateNestedOneWithoutUserCollegesInput = {
+    create?: XOR<UserCreateWithoutUserCollegesInput, UserUncheckedCreateWithoutUserCollegesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutUserCollegesInput
+    connect?: UserWhereUniqueInput
   }
 
   export type EnumUserTypeFieldUpdateOperationsInput = {
@@ -14188,20 +14159,20 @@ export namespace Prisma {
     set?: Date | string | null
   }
 
-  export type UserUpdateOneRequiredWithoutUserCollegesNestedInput = {
-    create?: XOR<UserCreateWithoutUserCollegesInput, UserUncheckedCreateWithoutUserCollegesInput>
-    connectOrCreate?: UserCreateOrConnectWithoutUserCollegesInput
-    upsert?: UserUpsertWithoutUserCollegesInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutUserCollegesInput, UserUpdateWithoutUserCollegesInput>, UserUncheckedUpdateWithoutUserCollegesInput>
-  }
-
   export type CollegeUpdateOneRequiredWithoutUserCollegesNestedInput = {
     create?: XOR<CollegeCreateWithoutUserCollegesInput, CollegeUncheckedCreateWithoutUserCollegesInput>
     connectOrCreate?: CollegeCreateOrConnectWithoutUserCollegesInput
     upsert?: CollegeUpsertWithoutUserCollegesInput
     connect?: CollegeWhereUniqueInput
     update?: XOR<XOR<CollegeUpdateToOneWithWhereWithoutUserCollegesInput, CollegeUpdateWithoutUserCollegesInput>, CollegeUncheckedUpdateWithoutUserCollegesInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutUserCollegesNestedInput = {
+    create?: XOR<UserCreateWithoutUserCollegesInput, UserUncheckedCreateWithoutUserCollegesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutUserCollegesInput
+    upsert?: UserUpsertWithoutUserCollegesInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutUserCollegesInput, UserUpdateWithoutUserCollegesInput>, UserUncheckedUpdateWithoutUserCollegesInput>
   }
 
   export type CollegeCreateNestedOneWithoutEmailDomainsInput = {
@@ -14224,13 +14195,6 @@ export namespace Prisma {
     connect?: CollegeWhereUniqueInput
   }
 
-  export type ProjectUpvoteCreateNestedManyWithoutProjectInput = {
-    create?: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput> | ProjectUpvoteCreateWithoutProjectInput[] | ProjectUpvoteUncheckedCreateWithoutProjectInput[]
-    connectOrCreate?: ProjectUpvoteCreateOrConnectWithoutProjectInput | ProjectUpvoteCreateOrConnectWithoutProjectInput[]
-    createMany?: ProjectUpvoteCreateManyProjectInputEnvelope
-    connect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
-  }
-
   export type ProjectCollaboratorCreateNestedManyWithoutProjectInput = {
     create?: XOR<ProjectCollaboratorCreateWithoutProjectInput, ProjectCollaboratorUncheckedCreateWithoutProjectInput> | ProjectCollaboratorCreateWithoutProjectInput[] | ProjectCollaboratorUncheckedCreateWithoutProjectInput[]
     connectOrCreate?: ProjectCollaboratorCreateOrConnectWithoutProjectInput | ProjectCollaboratorCreateOrConnectWithoutProjectInput[]
@@ -14245,7 +14209,7 @@ export namespace Prisma {
     connect?: ProjectTagWhereUniqueInput | ProjectTagWhereUniqueInput[]
   }
 
-  export type ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput = {
+  export type ProjectUpvoteCreateNestedManyWithoutProjectInput = {
     create?: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput> | ProjectUpvoteCreateWithoutProjectInput[] | ProjectUpvoteUncheckedCreateWithoutProjectInput[]
     connectOrCreate?: ProjectUpvoteCreateOrConnectWithoutProjectInput | ProjectUpvoteCreateOrConnectWithoutProjectInput[]
     createMany?: ProjectUpvoteCreateManyProjectInputEnvelope
@@ -14266,6 +14230,13 @@ export namespace Prisma {
     connect?: ProjectTagWhereUniqueInput | ProjectTagWhereUniqueInput[]
   }
 
+  export type ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput = {
+    create?: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput> | ProjectUpvoteCreateWithoutProjectInput[] | ProjectUpvoteUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: ProjectUpvoteCreateOrConnectWithoutProjectInput | ProjectUpvoteCreateOrConnectWithoutProjectInput[]
+    createMany?: ProjectUpvoteCreateManyProjectInputEnvelope
+    connect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
@@ -14282,20 +14253,6 @@ export namespace Prisma {
     delete?: CollegeWhereInput | boolean
     connect?: CollegeWhereUniqueInput
     update?: XOR<XOR<CollegeUpdateToOneWithWhereWithoutProjectsInput, CollegeUpdateWithoutProjectsInput>, CollegeUncheckedUpdateWithoutProjectsInput>
-  }
-
-  export type ProjectUpvoteUpdateManyWithoutProjectNestedInput = {
-    create?: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput> | ProjectUpvoteCreateWithoutProjectInput[] | ProjectUpvoteUncheckedCreateWithoutProjectInput[]
-    connectOrCreate?: ProjectUpvoteCreateOrConnectWithoutProjectInput | ProjectUpvoteCreateOrConnectWithoutProjectInput[]
-    upsert?: ProjectUpvoteUpsertWithWhereUniqueWithoutProjectInput | ProjectUpvoteUpsertWithWhereUniqueWithoutProjectInput[]
-    createMany?: ProjectUpvoteCreateManyProjectInputEnvelope
-    set?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
-    disconnect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
-    delete?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
-    connect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
-    update?: ProjectUpvoteUpdateWithWhereUniqueWithoutProjectInput | ProjectUpvoteUpdateWithWhereUniqueWithoutProjectInput[]
-    updateMany?: ProjectUpvoteUpdateManyWithWhereWithoutProjectInput | ProjectUpvoteUpdateManyWithWhereWithoutProjectInput[]
-    deleteMany?: ProjectUpvoteScalarWhereInput | ProjectUpvoteScalarWhereInput[]
   }
 
   export type ProjectCollaboratorUpdateManyWithoutProjectNestedInput = {
@@ -14326,7 +14283,7 @@ export namespace Prisma {
     deleteMany?: ProjectTagScalarWhereInput | ProjectTagScalarWhereInput[]
   }
 
-  export type ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput = {
+  export type ProjectUpvoteUpdateManyWithoutProjectNestedInput = {
     create?: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput> | ProjectUpvoteCreateWithoutProjectInput[] | ProjectUpvoteUncheckedCreateWithoutProjectInput[]
     connectOrCreate?: ProjectUpvoteCreateOrConnectWithoutProjectInput | ProjectUpvoteCreateOrConnectWithoutProjectInput[]
     upsert?: ProjectUpvoteUpsertWithWhereUniqueWithoutProjectInput | ProjectUpvoteUpsertWithWhereUniqueWithoutProjectInput[]
@@ -14368,10 +14325,18 @@ export namespace Prisma {
     deleteMany?: ProjectTagScalarWhereInput | ProjectTagScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutProjectUpvotesInput = {
-    create?: XOR<UserCreateWithoutProjectUpvotesInput, UserUncheckedCreateWithoutProjectUpvotesInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProjectUpvotesInput
-    connect?: UserWhereUniqueInput
+  export type ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput = {
+    create?: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput> | ProjectUpvoteCreateWithoutProjectInput[] | ProjectUpvoteUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: ProjectUpvoteCreateOrConnectWithoutProjectInput | ProjectUpvoteCreateOrConnectWithoutProjectInput[]
+    upsert?: ProjectUpvoteUpsertWithWhereUniqueWithoutProjectInput | ProjectUpvoteUpsertWithWhereUniqueWithoutProjectInput[]
+    createMany?: ProjectUpvoteCreateManyProjectInputEnvelope
+    set?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
+    disconnect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
+    delete?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
+    connect?: ProjectUpvoteWhereUniqueInput | ProjectUpvoteWhereUniqueInput[]
+    update?: ProjectUpvoteUpdateWithWhereUniqueWithoutProjectInput | ProjectUpvoteUpdateWithWhereUniqueWithoutProjectInput[]
+    updateMany?: ProjectUpvoteUpdateManyWithWhereWithoutProjectInput | ProjectUpvoteUpdateManyWithWhereWithoutProjectInput[]
+    deleteMany?: ProjectUpvoteScalarWhereInput | ProjectUpvoteScalarWhereInput[]
   }
 
   export type ProjectCreateNestedOneWithoutUpvotesInput = {
@@ -14380,12 +14345,10 @@ export namespace Prisma {
     connect?: ProjectWhereUniqueInput
   }
 
-  export type UserUpdateOneRequiredWithoutProjectUpvotesNestedInput = {
+  export type UserCreateNestedOneWithoutProjectUpvotesInput = {
     create?: XOR<UserCreateWithoutProjectUpvotesInput, UserUncheckedCreateWithoutProjectUpvotesInput>
     connectOrCreate?: UserCreateOrConnectWithoutProjectUpvotesInput
-    upsert?: UserUpsertWithoutProjectUpvotesInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProjectUpvotesInput, UserUpdateWithoutProjectUpvotesInput>, UserUncheckedUpdateWithoutProjectUpvotesInput>
   }
 
   export type ProjectUpdateOneRequiredWithoutUpvotesNestedInput = {
@@ -14396,10 +14359,12 @@ export namespace Prisma {
     update?: XOR<XOR<ProjectUpdateToOneWithWhereWithoutUpvotesInput, ProjectUpdateWithoutUpvotesInput>, ProjectUncheckedUpdateWithoutUpvotesInput>
   }
 
-  export type UserCreateNestedOneWithoutProjectCollaboratorInput = {
-    create?: XOR<UserCreateWithoutProjectCollaboratorInput, UserUncheckedCreateWithoutProjectCollaboratorInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProjectCollaboratorInput
+  export type UserUpdateOneRequiredWithoutProjectUpvotesNestedInput = {
+    create?: XOR<UserCreateWithoutProjectUpvotesInput, UserUncheckedCreateWithoutProjectUpvotesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutProjectUpvotesInput
+    upsert?: UserUpsertWithoutProjectUpvotesInput
     connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProjectUpvotesInput, UserUpdateWithoutProjectUpvotesInput>, UserUncheckedUpdateWithoutProjectUpvotesInput>
   }
 
   export type ProjectCreateNestedOneWithoutCollaboratorsInput = {
@@ -14408,16 +14373,14 @@ export namespace Prisma {
     connect?: ProjectWhereUniqueInput
   }
 
-  export type EnumProjectUserRoleFieldUpdateOperationsInput = {
-    set?: $Enums.ProjectUserRole
-  }
-
-  export type UserUpdateOneRequiredWithoutProjectCollaboratorNestedInput = {
+  export type UserCreateNestedOneWithoutProjectCollaboratorInput = {
     create?: XOR<UserCreateWithoutProjectCollaboratorInput, UserUncheckedCreateWithoutProjectCollaboratorInput>
     connectOrCreate?: UserCreateOrConnectWithoutProjectCollaboratorInput
-    upsert?: UserUpsertWithoutProjectCollaboratorInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProjectCollaboratorInput, UserUpdateWithoutProjectCollaboratorInput>, UserUncheckedUpdateWithoutProjectCollaboratorInput>
+  }
+
+  export type EnumProjectUserRoleFieldUpdateOperationsInput = {
+    set?: $Enums.ProjectUserRole
   }
 
   export type ProjectUpdateOneRequiredWithoutCollaboratorsNestedInput = {
@@ -14426,6 +14389,14 @@ export namespace Prisma {
     upsert?: ProjectUpsertWithoutCollaboratorsInput
     connect?: ProjectWhereUniqueInput
     update?: XOR<XOR<ProjectUpdateToOneWithWhereWithoutCollaboratorsInput, ProjectUpdateWithoutCollaboratorsInput>, ProjectUncheckedUpdateWithoutCollaboratorsInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutProjectCollaboratorNestedInput = {
+    create?: XOR<UserCreateWithoutProjectCollaboratorInput, UserUncheckedCreateWithoutProjectCollaboratorInput>
+    connectOrCreate?: UserCreateOrConnectWithoutProjectCollaboratorInput
+    upsert?: UserUpsertWithoutProjectCollaboratorInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProjectCollaboratorInput, UserUpdateWithoutProjectCollaboratorInput>, UserUncheckedUpdateWithoutProjectCollaboratorInput>
   }
 
   export type ProjectTagCreateNestedManyWithoutTagInput = {
@@ -14756,6 +14727,48 @@ export namespace Prisma {
     _max?: NestedEnumProjectUserRoleFilter<$PrismaModel>
   }
 
+  export type ProjectCollaboratorCreateWithoutUserInput = {
+    role: $Enums.ProjectUserRole
+    joinedAt?: Date | string
+    project: ProjectCreateNestedOneWithoutCollaboratorsInput
+  }
+
+  export type ProjectCollaboratorUncheckedCreateWithoutUserInput = {
+    projectId: string
+    role: $Enums.ProjectUserRole
+    joinedAt?: Date | string
+  }
+
+  export type ProjectCollaboratorCreateOrConnectWithoutUserInput = {
+    where: ProjectCollaboratorWhereUniqueInput
+    create: XOR<ProjectCollaboratorCreateWithoutUserInput, ProjectCollaboratorUncheckedCreateWithoutUserInput>
+  }
+
+  export type ProjectCollaboratorCreateManyUserInputEnvelope = {
+    data: ProjectCollaboratorCreateManyUserInput | ProjectCollaboratorCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ProjectUpvoteCreateWithoutUserInput = {
+    createdAt?: Date | string
+    project: ProjectCreateNestedOneWithoutUpvotesInput
+  }
+
+  export type ProjectUpvoteUncheckedCreateWithoutUserInput = {
+    projectId: string
+    createdAt?: Date | string
+  }
+
+  export type ProjectUpvoteCreateOrConnectWithoutUserInput = {
+    where: ProjectUpvoteWhereUniqueInput
+    create: XOR<ProjectUpvoteCreateWithoutUserInput, ProjectUpvoteUncheckedCreateWithoutUserInput>
+  }
+
+  export type ProjectUpvoteCreateManyUserInputEnvelope = {
+    data: ProjectUpvoteCreateManyUserInput | ProjectUpvoteCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type UserCollegeCreateWithoutUserInput = {
     id?: string
     userType: $Enums.UserType
@@ -14790,46 +14803,55 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type ProjectUpvoteCreateWithoutUserInput = {
-    createdAt?: Date | string
-    project: ProjectCreateNestedOneWithoutUpvotesInput
-  }
-
-  export type ProjectUpvoteUncheckedCreateWithoutUserInput = {
-    projectId: string
-    createdAt?: Date | string
-  }
-
-  export type ProjectUpvoteCreateOrConnectWithoutUserInput = {
-    where: ProjectUpvoteWhereUniqueInput
-    create: XOR<ProjectUpvoteCreateWithoutUserInput, ProjectUpvoteUncheckedCreateWithoutUserInput>
-  }
-
-  export type ProjectUpvoteCreateManyUserInputEnvelope = {
-    data: ProjectUpvoteCreateManyUserInput | ProjectUpvoteCreateManyUserInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ProjectCollaboratorCreateWithoutUserInput = {
-    role: $Enums.ProjectUserRole
-    joinedAt?: Date | string
-    project: ProjectCreateNestedOneWithoutCollaboratorsInput
-  }
-
-  export type ProjectCollaboratorUncheckedCreateWithoutUserInput = {
-    projectId: string
-    role: $Enums.ProjectUserRole
-    joinedAt?: Date | string
-  }
-
-  export type ProjectCollaboratorCreateOrConnectWithoutUserInput = {
+  export type ProjectCollaboratorUpsertWithWhereUniqueWithoutUserInput = {
     where: ProjectCollaboratorWhereUniqueInput
+    update: XOR<ProjectCollaboratorUpdateWithoutUserInput, ProjectCollaboratorUncheckedUpdateWithoutUserInput>
     create: XOR<ProjectCollaboratorCreateWithoutUserInput, ProjectCollaboratorUncheckedCreateWithoutUserInput>
   }
 
-  export type ProjectCollaboratorCreateManyUserInputEnvelope = {
-    data: ProjectCollaboratorCreateManyUserInput | ProjectCollaboratorCreateManyUserInput[]
-    skipDuplicates?: boolean
+  export type ProjectCollaboratorUpdateWithWhereUniqueWithoutUserInput = {
+    where: ProjectCollaboratorWhereUniqueInput
+    data: XOR<ProjectCollaboratorUpdateWithoutUserInput, ProjectCollaboratorUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ProjectCollaboratorUpdateManyWithWhereWithoutUserInput = {
+    where: ProjectCollaboratorScalarWhereInput
+    data: XOR<ProjectCollaboratorUpdateManyMutationInput, ProjectCollaboratorUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type ProjectCollaboratorScalarWhereInput = {
+    AND?: ProjectCollaboratorScalarWhereInput | ProjectCollaboratorScalarWhereInput[]
+    OR?: ProjectCollaboratorScalarWhereInput[]
+    NOT?: ProjectCollaboratorScalarWhereInput | ProjectCollaboratorScalarWhereInput[]
+    userId?: UuidFilter<"ProjectCollaborator"> | string
+    projectId?: UuidFilter<"ProjectCollaborator"> | string
+    role?: EnumProjectUserRoleFilter<"ProjectCollaborator"> | $Enums.ProjectUserRole
+    joinedAt?: DateTimeFilter<"ProjectCollaborator"> | Date | string
+  }
+
+  export type ProjectUpvoteUpsertWithWhereUniqueWithoutUserInput = {
+    where: ProjectUpvoteWhereUniqueInput
+    update: XOR<ProjectUpvoteUpdateWithoutUserInput, ProjectUpvoteUncheckedUpdateWithoutUserInput>
+    create: XOR<ProjectUpvoteCreateWithoutUserInput, ProjectUpvoteUncheckedCreateWithoutUserInput>
+  }
+
+  export type ProjectUpvoteUpdateWithWhereUniqueWithoutUserInput = {
+    where: ProjectUpvoteWhereUniqueInput
+    data: XOR<ProjectUpvoteUpdateWithoutUserInput, ProjectUpvoteUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ProjectUpvoteUpdateManyWithWhereWithoutUserInput = {
+    where: ProjectUpvoteScalarWhereInput
+    data: XOR<ProjectUpvoteUpdateManyMutationInput, ProjectUpvoteUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type ProjectUpvoteScalarWhereInput = {
+    AND?: ProjectUpvoteScalarWhereInput | ProjectUpvoteScalarWhereInput[]
+    OR?: ProjectUpvoteScalarWhereInput[]
+    NOT?: ProjectUpvoteScalarWhereInput | ProjectUpvoteScalarWhereInput[]
+    userId?: UuidFilter<"ProjectUpvote"> | string
+    projectId?: UuidFilter<"ProjectUpvote"> | string
+    createdAt?: DateTimeFilter<"ProjectUpvote"> | Date | string
   }
 
   export type UserCollegeUpsertWithWhereUniqueWithoutUserInput = {
@@ -14864,55 +14886,64 @@ export namespace Prisma {
     leftAt?: DateTimeNullableFilter<"UserCollege"> | Date | string | null
   }
 
-  export type ProjectUpvoteUpsertWithWhereUniqueWithoutUserInput = {
-    where: ProjectUpvoteWhereUniqueInput
-    update: XOR<ProjectUpvoteUpdateWithoutUserInput, ProjectUpvoteUncheckedUpdateWithoutUserInput>
-    create: XOR<ProjectUpvoteCreateWithoutUserInput, ProjectUpvoteUncheckedCreateWithoutUserInput>
+  export type CollegeEmailDomainCreateWithoutCollegeInput = {
+    id?: string
+    domain: string
   }
 
-  export type ProjectUpvoteUpdateWithWhereUniqueWithoutUserInput = {
-    where: ProjectUpvoteWhereUniqueInput
-    data: XOR<ProjectUpvoteUpdateWithoutUserInput, ProjectUpvoteUncheckedUpdateWithoutUserInput>
+  export type CollegeEmailDomainUncheckedCreateWithoutCollegeInput = {
+    id?: string
+    domain: string
   }
 
-  export type ProjectUpvoteUpdateManyWithWhereWithoutUserInput = {
-    where: ProjectUpvoteScalarWhereInput
-    data: XOR<ProjectUpvoteUpdateManyMutationInput, ProjectUpvoteUncheckedUpdateManyWithoutUserInput>
+  export type CollegeEmailDomainCreateOrConnectWithoutCollegeInput = {
+    where: CollegeEmailDomainWhereUniqueInput
+    create: XOR<CollegeEmailDomainCreateWithoutCollegeInput, CollegeEmailDomainUncheckedCreateWithoutCollegeInput>
   }
 
-  export type ProjectUpvoteScalarWhereInput = {
-    AND?: ProjectUpvoteScalarWhereInput | ProjectUpvoteScalarWhereInput[]
-    OR?: ProjectUpvoteScalarWhereInput[]
-    NOT?: ProjectUpvoteScalarWhereInput | ProjectUpvoteScalarWhereInput[]
-    userId?: UuidFilter<"ProjectUpvote"> | string
-    projectId?: UuidFilter<"ProjectUpvote"> | string
-    createdAt?: DateTimeFilter<"ProjectUpvote"> | Date | string
+  export type CollegeEmailDomainCreateManyCollegeInputEnvelope = {
+    data: CollegeEmailDomainCreateManyCollegeInput | CollegeEmailDomainCreateManyCollegeInput[]
+    skipDuplicates?: boolean
   }
 
-  export type ProjectCollaboratorUpsertWithWhereUniqueWithoutUserInput = {
-    where: ProjectCollaboratorWhereUniqueInput
-    update: XOR<ProjectCollaboratorUpdateWithoutUserInput, ProjectCollaboratorUncheckedUpdateWithoutUserInput>
-    create: XOR<ProjectCollaboratorCreateWithoutUserInput, ProjectCollaboratorUncheckedCreateWithoutUserInput>
+  export type ProjectCreateWithoutCollegeInput = {
+    id?: string
+    title: string
+    slug: string
+    description?: string | null
+    githubUrl?: string | null
+    isCollaborative?: boolean
+    isLookingForContributors?: boolean
+    upvotesCount?: number
+    createdAt?: Date | string
+    collaborators?: ProjectCollaboratorCreateNestedManyWithoutProjectInput
+    tags?: ProjectTagCreateNestedManyWithoutProjectInput
+    upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput
   }
 
-  export type ProjectCollaboratorUpdateWithWhereUniqueWithoutUserInput = {
-    where: ProjectCollaboratorWhereUniqueInput
-    data: XOR<ProjectCollaboratorUpdateWithoutUserInput, ProjectCollaboratorUncheckedUpdateWithoutUserInput>
+  export type ProjectUncheckedCreateWithoutCollegeInput = {
+    id?: string
+    title: string
+    slug: string
+    description?: string | null
+    githubUrl?: string | null
+    isCollaborative?: boolean
+    isLookingForContributors?: boolean
+    upvotesCount?: number
+    createdAt?: Date | string
+    collaborators?: ProjectCollaboratorUncheckedCreateNestedManyWithoutProjectInput
+    tags?: ProjectTagUncheckedCreateNestedManyWithoutProjectInput
+    upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput
   }
 
-  export type ProjectCollaboratorUpdateManyWithWhereWithoutUserInput = {
-    where: ProjectCollaboratorScalarWhereInput
-    data: XOR<ProjectCollaboratorUpdateManyMutationInput, ProjectCollaboratorUncheckedUpdateManyWithoutUserInput>
+  export type ProjectCreateOrConnectWithoutCollegeInput = {
+    where: ProjectWhereUniqueInput
+    create: XOR<ProjectCreateWithoutCollegeInput, ProjectUncheckedCreateWithoutCollegeInput>
   }
 
-  export type ProjectCollaboratorScalarWhereInput = {
-    AND?: ProjectCollaboratorScalarWhereInput | ProjectCollaboratorScalarWhereInput[]
-    OR?: ProjectCollaboratorScalarWhereInput[]
-    NOT?: ProjectCollaboratorScalarWhereInput | ProjectCollaboratorScalarWhereInput[]
-    userId?: UuidFilter<"ProjectCollaborator"> | string
-    projectId?: UuidFilter<"ProjectCollaborator"> | string
-    role?: EnumProjectUserRoleFilter<"ProjectCollaborator"> | $Enums.ProjectUserRole
-    joinedAt?: DateTimeFilter<"ProjectCollaborator"> | Date | string
+  export type ProjectCreateManyCollegeInputEnvelope = {
+    data: ProjectCreateManyCollegeInput | ProjectCreateManyCollegeInput[]
+    skipDuplicates?: boolean
   }
 
   export type UserCollegeCreateWithoutCollegeInput = {
@@ -14949,80 +14980,29 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type ProjectCreateWithoutCollegeInput = {
-    id?: string
-    title: string
-    slug: string
-    description?: string | null
-    githubUrl?: string | null
-    isCollaborative?: boolean
-    isLookingForContributors?: boolean
-    upvotesCount?: number
-    createdAt?: Date | string
-    upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput
-    collaborators?: ProjectCollaboratorCreateNestedManyWithoutProjectInput
-    tags?: ProjectTagCreateNestedManyWithoutProjectInput
-  }
-
-  export type ProjectUncheckedCreateWithoutCollegeInput = {
-    id?: string
-    title: string
-    slug: string
-    description?: string | null
-    githubUrl?: string | null
-    isCollaborative?: boolean
-    isLookingForContributors?: boolean
-    upvotesCount?: number
-    createdAt?: Date | string
-    upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput
-    collaborators?: ProjectCollaboratorUncheckedCreateNestedManyWithoutProjectInput
-    tags?: ProjectTagUncheckedCreateNestedManyWithoutProjectInput
-  }
-
-  export type ProjectCreateOrConnectWithoutCollegeInput = {
-    where: ProjectWhereUniqueInput
-    create: XOR<ProjectCreateWithoutCollegeInput, ProjectUncheckedCreateWithoutCollegeInput>
-  }
-
-  export type ProjectCreateManyCollegeInputEnvelope = {
-    data: ProjectCreateManyCollegeInput | ProjectCreateManyCollegeInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type CollegeEmailDomainCreateWithoutCollegeInput = {
-    id?: string
-    domain: string
-  }
-
-  export type CollegeEmailDomainUncheckedCreateWithoutCollegeInput = {
-    id?: string
-    domain: string
-  }
-
-  export type CollegeEmailDomainCreateOrConnectWithoutCollegeInput = {
+  export type CollegeEmailDomainUpsertWithWhereUniqueWithoutCollegeInput = {
     where: CollegeEmailDomainWhereUniqueInput
+    update: XOR<CollegeEmailDomainUpdateWithoutCollegeInput, CollegeEmailDomainUncheckedUpdateWithoutCollegeInput>
     create: XOR<CollegeEmailDomainCreateWithoutCollegeInput, CollegeEmailDomainUncheckedCreateWithoutCollegeInput>
   }
 
-  export type CollegeEmailDomainCreateManyCollegeInputEnvelope = {
-    data: CollegeEmailDomainCreateManyCollegeInput | CollegeEmailDomainCreateManyCollegeInput[]
-    skipDuplicates?: boolean
+  export type CollegeEmailDomainUpdateWithWhereUniqueWithoutCollegeInput = {
+    where: CollegeEmailDomainWhereUniqueInput
+    data: XOR<CollegeEmailDomainUpdateWithoutCollegeInput, CollegeEmailDomainUncheckedUpdateWithoutCollegeInput>
   }
 
-  export type UserCollegeUpsertWithWhereUniqueWithoutCollegeInput = {
-    where: UserCollegeWhereUniqueInput
-    update: XOR<UserCollegeUpdateWithoutCollegeInput, UserCollegeUncheckedUpdateWithoutCollegeInput>
-    create: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput>
+  export type CollegeEmailDomainUpdateManyWithWhereWithoutCollegeInput = {
+    where: CollegeEmailDomainScalarWhereInput
+    data: XOR<CollegeEmailDomainUpdateManyMutationInput, CollegeEmailDomainUncheckedUpdateManyWithoutCollegeInput>
   }
 
-  export type UserCollegeUpdateWithWhereUniqueWithoutCollegeInput = {
-    where: UserCollegeWhereUniqueInput
-    data: XOR<UserCollegeUpdateWithoutCollegeInput, UserCollegeUncheckedUpdateWithoutCollegeInput>
-  }
-
-  export type UserCollegeUpdateManyWithWhereWithoutCollegeInput = {
-    where: UserCollegeScalarWhereInput
-    data: XOR<UserCollegeUpdateManyMutationInput, UserCollegeUncheckedUpdateManyWithoutCollegeInput>
+  export type CollegeEmailDomainScalarWhereInput = {
+    AND?: CollegeEmailDomainScalarWhereInput | CollegeEmailDomainScalarWhereInput[]
+    OR?: CollegeEmailDomainScalarWhereInput[]
+    NOT?: CollegeEmailDomainScalarWhereInput | CollegeEmailDomainScalarWhereInput[]
+    id?: UuidFilter<"CollegeEmailDomain"> | string
+    domain?: StringFilter<"CollegeEmailDomain"> | string
+    collegeId?: UuidFilter<"CollegeEmailDomain"> | string
   }
 
   export type ProjectUpsertWithWhereUniqueWithoutCollegeInput = {
@@ -15057,29 +15037,55 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Project"> | Date | string
   }
 
-  export type CollegeEmailDomainUpsertWithWhereUniqueWithoutCollegeInput = {
-    where: CollegeEmailDomainWhereUniqueInput
-    update: XOR<CollegeEmailDomainUpdateWithoutCollegeInput, CollegeEmailDomainUncheckedUpdateWithoutCollegeInput>
-    create: XOR<CollegeEmailDomainCreateWithoutCollegeInput, CollegeEmailDomainUncheckedCreateWithoutCollegeInput>
+  export type UserCollegeUpsertWithWhereUniqueWithoutCollegeInput = {
+    where: UserCollegeWhereUniqueInput
+    update: XOR<UserCollegeUpdateWithoutCollegeInput, UserCollegeUncheckedUpdateWithoutCollegeInput>
+    create: XOR<UserCollegeCreateWithoutCollegeInput, UserCollegeUncheckedCreateWithoutCollegeInput>
   }
 
-  export type CollegeEmailDomainUpdateWithWhereUniqueWithoutCollegeInput = {
-    where: CollegeEmailDomainWhereUniqueInput
-    data: XOR<CollegeEmailDomainUpdateWithoutCollegeInput, CollegeEmailDomainUncheckedUpdateWithoutCollegeInput>
+  export type UserCollegeUpdateWithWhereUniqueWithoutCollegeInput = {
+    where: UserCollegeWhereUniqueInput
+    data: XOR<UserCollegeUpdateWithoutCollegeInput, UserCollegeUncheckedUpdateWithoutCollegeInput>
   }
 
-  export type CollegeEmailDomainUpdateManyWithWhereWithoutCollegeInput = {
-    where: CollegeEmailDomainScalarWhereInput
-    data: XOR<CollegeEmailDomainUpdateManyMutationInput, CollegeEmailDomainUncheckedUpdateManyWithoutCollegeInput>
+  export type UserCollegeUpdateManyWithWhereWithoutCollegeInput = {
+    where: UserCollegeScalarWhereInput
+    data: XOR<UserCollegeUpdateManyMutationInput, UserCollegeUncheckedUpdateManyWithoutCollegeInput>
   }
 
-  export type CollegeEmailDomainScalarWhereInput = {
-    AND?: CollegeEmailDomainScalarWhereInput | CollegeEmailDomainScalarWhereInput[]
-    OR?: CollegeEmailDomainScalarWhereInput[]
-    NOT?: CollegeEmailDomainScalarWhereInput | CollegeEmailDomainScalarWhereInput[]
-    id?: UuidFilter<"CollegeEmailDomain"> | string
-    domain?: StringFilter<"CollegeEmailDomain"> | string
-    collegeId?: UuidFilter<"CollegeEmailDomain"> | string
+  export type CollegeCreateWithoutUserCollegesInput = {
+    id?: string
+    name: string
+    slug: string
+    logoFileId?: string | null
+    coverImgFileId?: string | null
+    description?: string | null
+    location?: string | null
+    website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput
+    projects?: ProjectCreateNestedManyWithoutCollegeInput
+  }
+
+  export type CollegeUncheckedCreateWithoutUserCollegesInput = {
+    id?: string
+    name: string
+    slug: string
+    logoFileId?: string | null
+    coverImgFileId?: string | null
+    description?: string | null
+    location?: string | null
+    website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput
+    projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput
+  }
+
+  export type CollegeCreateOrConnectWithoutUserCollegesInput = {
+    where: CollegeWhereUniqueInput
+    create: XOR<CollegeCreateWithoutUserCollegesInput, CollegeUncheckedCreateWithoutUserCollegesInput>
   }
 
   export type UserCreateWithoutUserCollegesInput = {
@@ -15095,8 +15101,8 @@ export namespace Prisma {
     githubUsername?: string | null
     createdAt?: Date | string
     websiteUrl?: string | null
-    projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput
+    projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutUserCollegesInput = {
@@ -15112,8 +15118,8 @@ export namespace Prisma {
     githubUsername?: string | null
     createdAt?: Date | string
     websiteUrl?: string | null
-    projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput
+    projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutUserCollegesInput = {
@@ -15121,41 +15127,45 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutUserCollegesInput, UserUncheckedCreateWithoutUserCollegesInput>
   }
 
-  export type CollegeCreateWithoutUserCollegesInput = {
-    id?: string
-    name: string
-    slug: string
-    shortName?: string | null
-    logoUrl?: string | null
-    coverImageUrl?: string | null
-    description?: string | null
-    location?: string | null
-    website?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    projects?: ProjectCreateNestedManyWithoutCollegeInput
-    emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput
-  }
-
-  export type CollegeUncheckedCreateWithoutUserCollegesInput = {
-    id?: string
-    name: string
-    slug: string
-    shortName?: string | null
-    logoUrl?: string | null
-    coverImageUrl?: string | null
-    description?: string | null
-    location?: string | null
-    website?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput
-    emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput
-  }
-
-  export type CollegeCreateOrConnectWithoutUserCollegesInput = {
-    where: CollegeWhereUniqueInput
+  export type CollegeUpsertWithoutUserCollegesInput = {
+    update: XOR<CollegeUpdateWithoutUserCollegesInput, CollegeUncheckedUpdateWithoutUserCollegesInput>
     create: XOR<CollegeCreateWithoutUserCollegesInput, CollegeUncheckedCreateWithoutUserCollegesInput>
+    where?: CollegeWhereInput
+  }
+
+  export type CollegeUpdateToOneWithWhereWithoutUserCollegesInput = {
+    where?: CollegeWhereInput
+    data: XOR<CollegeUpdateWithoutUserCollegesInput, CollegeUncheckedUpdateWithoutUserCollegesInput>
+  }
+
+  export type CollegeUpdateWithoutUserCollegesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput
+    projects?: ProjectUpdateManyWithoutCollegeNestedInput
+  }
+
+  export type CollegeUncheckedUpdateWithoutUserCollegesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput
+    projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput
   }
 
   export type UserUpsertWithoutUserCollegesInput = {
@@ -15182,8 +15192,8 @@ export namespace Prisma {
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput
+    projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutUserCollegesInput = {
@@ -15199,83 +15209,38 @@ export namespace Prisma {
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type CollegeUpsertWithoutUserCollegesInput = {
-    update: XOR<CollegeUpdateWithoutUserCollegesInput, CollegeUncheckedUpdateWithoutUserCollegesInput>
-    create: XOR<CollegeCreateWithoutUserCollegesInput, CollegeUncheckedCreateWithoutUserCollegesInput>
-    where?: CollegeWhereInput
-  }
-
-  export type CollegeUpdateToOneWithWhereWithoutUserCollegesInput = {
-    where?: CollegeWhereInput
-    data: XOR<CollegeUpdateWithoutUserCollegesInput, CollegeUncheckedUpdateWithoutUserCollegesInput>
-  }
-
-  export type CollegeUpdateWithoutUserCollegesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    location?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    projects?: ProjectUpdateManyWithoutCollegeNestedInput
-    emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput
-  }
-
-  export type CollegeUncheckedUpdateWithoutUserCollegesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    location?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput
-    emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput
+    projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type CollegeCreateWithoutEmailDomainsInput = {
     id?: string
     name: string
     slug: string
-    shortName?: string | null
-    logoUrl?: string | null
-    coverImageUrl?: string | null
+    logoFileId?: string | null
+    coverImgFileId?: string | null
     description?: string | null
     location?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput
     projects?: ProjectCreateNestedManyWithoutCollegeInput
+    userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput
   }
 
   export type CollegeUncheckedCreateWithoutEmailDomainsInput = {
     id?: string
     name: string
     slug: string
-    shortName?: string | null
-    logoUrl?: string | null
-    coverImageUrl?: string | null
+    logoFileId?: string | null
+    coverImgFileId?: string | null
     description?: string | null
     location?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput
     projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput
+    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput
   }
 
   export type CollegeCreateOrConnectWithoutEmailDomainsInput = {
@@ -15298,89 +15263,65 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput
     projects?: ProjectUpdateManyWithoutCollegeNestedInput
+    userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput
   }
 
   export type CollegeUncheckedUpdateWithoutEmailDomainsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput
     projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput
+    userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput
   }
 
   export type CollegeCreateWithoutProjectsInput = {
     id?: string
     name: string
     slug: string
-    shortName?: string | null
-    logoUrl?: string | null
-    coverImageUrl?: string | null
+    logoFileId?: string | null
+    coverImgFileId?: string | null
     description?: string | null
     location?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput
     emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput
+    userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput
   }
 
   export type CollegeUncheckedCreateWithoutProjectsInput = {
     id?: string
     name: string
     slug: string
-    shortName?: string | null
-    logoUrl?: string | null
-    coverImageUrl?: string | null
+    logoFileId?: string | null
+    coverImgFileId?: string | null
     description?: string | null
     location?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput
     emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput
+    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput
   }
 
   export type CollegeCreateOrConnectWithoutProjectsInput = {
     where: CollegeWhereUniqueInput
     create: XOR<CollegeCreateWithoutProjectsInput, CollegeUncheckedCreateWithoutProjectsInput>
-  }
-
-  export type ProjectUpvoteCreateWithoutProjectInput = {
-    createdAt?: Date | string
-    user: UserCreateNestedOneWithoutProjectUpvotesInput
-  }
-
-  export type ProjectUpvoteUncheckedCreateWithoutProjectInput = {
-    userId: string
-    createdAt?: Date | string
-  }
-
-  export type ProjectUpvoteCreateOrConnectWithoutProjectInput = {
-    where: ProjectUpvoteWhereUniqueInput
-    create: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput>
-  }
-
-  export type ProjectUpvoteCreateManyProjectInputEnvelope = {
-    data: ProjectUpvoteCreateManyProjectInput | ProjectUpvoteCreateManyProjectInput[]
-    skipDuplicates?: boolean
   }
 
   export type ProjectCollaboratorCreateWithoutProjectInput = {
@@ -15423,6 +15364,26 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type ProjectUpvoteCreateWithoutProjectInput = {
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutProjectUpvotesInput
+  }
+
+  export type ProjectUpvoteUncheckedCreateWithoutProjectInput = {
+    userId: string
+    createdAt?: Date | string
+  }
+
+  export type ProjectUpvoteCreateOrConnectWithoutProjectInput = {
+    where: ProjectUpvoteWhereUniqueInput
+    create: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput>
+  }
+
+  export type ProjectUpvoteCreateManyProjectInputEnvelope = {
+    data: ProjectUpvoteCreateManyProjectInput | ProjectUpvoteCreateManyProjectInput[]
+    skipDuplicates?: boolean
+  }
+
   export type CollegeUpsertWithoutProjectsInput = {
     update: XOR<CollegeUpdateWithoutProjectsInput, CollegeUncheckedUpdateWithoutProjectsInput>
     create: XOR<CollegeCreateWithoutProjectsInput, CollegeUncheckedCreateWithoutProjectsInput>
@@ -15438,48 +15399,30 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput
     emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput
+    userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput
   }
 
   export type CollegeUncheckedUpdateWithoutProjectsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    shortName?: NullableStringFieldUpdateOperationsInput | string | null
-    logoUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    coverImageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput
     emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput
-  }
-
-  export type ProjectUpvoteUpsertWithWhereUniqueWithoutProjectInput = {
-    where: ProjectUpvoteWhereUniqueInput
-    update: XOR<ProjectUpvoteUpdateWithoutProjectInput, ProjectUpvoteUncheckedUpdateWithoutProjectInput>
-    create: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput>
-  }
-
-  export type ProjectUpvoteUpdateWithWhereUniqueWithoutProjectInput = {
-    where: ProjectUpvoteWhereUniqueInput
-    data: XOR<ProjectUpvoteUpdateWithoutProjectInput, ProjectUpvoteUncheckedUpdateWithoutProjectInput>
-  }
-
-  export type ProjectUpvoteUpdateManyWithWhereWithoutProjectInput = {
-    where: ProjectUpvoteScalarWhereInput
-    data: XOR<ProjectUpvoteUpdateManyMutationInput, ProjectUpvoteUncheckedUpdateManyWithoutProjectInput>
+    userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput
   }
 
   export type ProjectCollaboratorUpsertWithWhereUniqueWithoutProjectInput = {
@@ -15522,43 +15465,20 @@ export namespace Prisma {
     tagId?: UuidFilter<"ProjectTag"> | string
   }
 
-  export type UserCreateWithoutProjectUpvotesInput = {
-    id?: string
-    firstName: string
-    middleName?: string | null
-    lastName?: string | null
-    username: string
-    email: string
-    appwriteid: string
-    avatarUrl?: string | null
-    isSuperAdmin?: boolean
-    githubUsername?: string | null
-    createdAt?: Date | string
-    websiteUrl?: string | null
-    userColleges?: UserCollegeCreateNestedManyWithoutUserInput
-    ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput
+  export type ProjectUpvoteUpsertWithWhereUniqueWithoutProjectInput = {
+    where: ProjectUpvoteWhereUniqueInput
+    update: XOR<ProjectUpvoteUpdateWithoutProjectInput, ProjectUpvoteUncheckedUpdateWithoutProjectInput>
+    create: XOR<ProjectUpvoteCreateWithoutProjectInput, ProjectUpvoteUncheckedCreateWithoutProjectInput>
   }
 
-  export type UserUncheckedCreateWithoutProjectUpvotesInput = {
-    id?: string
-    firstName: string
-    middleName?: string | null
-    lastName?: string | null
-    username: string
-    email: string
-    appwriteid: string
-    avatarUrl?: string | null
-    isSuperAdmin?: boolean
-    githubUsername?: string | null
-    createdAt?: Date | string
-    websiteUrl?: string | null
-    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput
-    ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput
+  export type ProjectUpvoteUpdateWithWhereUniqueWithoutProjectInput = {
+    where: ProjectUpvoteWhereUniqueInput
+    data: XOR<ProjectUpvoteUpdateWithoutProjectInput, ProjectUpvoteUncheckedUpdateWithoutProjectInput>
   }
 
-  export type UserCreateOrConnectWithoutProjectUpvotesInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutProjectUpvotesInput, UserUncheckedCreateWithoutProjectUpvotesInput>
+  export type ProjectUpvoteUpdateManyWithWhereWithoutProjectInput = {
+    where: ProjectUpvoteScalarWhereInput
+    data: XOR<ProjectUpvoteUpdateManyMutationInput, ProjectUpvoteUncheckedUpdateManyWithoutProjectInput>
   }
 
   export type ProjectCreateWithoutUpvotesInput = {
@@ -15596,49 +15516,43 @@ export namespace Prisma {
     create: XOR<ProjectCreateWithoutUpvotesInput, ProjectUncheckedCreateWithoutUpvotesInput>
   }
 
-  export type UserUpsertWithoutProjectUpvotesInput = {
-    update: XOR<UserUpdateWithoutProjectUpvotesInput, UserUncheckedUpdateWithoutProjectUpvotesInput>
+  export type UserCreateWithoutProjectUpvotesInput = {
+    id?: string
+    firstName: string
+    middleName?: string | null
+    lastName?: string | null
+    username: string
+    email: string
+    appwriteid: string
+    avatarUrl?: string | null
+    isSuperAdmin?: boolean
+    githubUsername?: string | null
+    createdAt?: Date | string
+    websiteUrl?: string | null
+    ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput
+    userColleges?: UserCollegeCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutProjectUpvotesInput = {
+    id?: string
+    firstName: string
+    middleName?: string | null
+    lastName?: string | null
+    username: string
+    email: string
+    appwriteid: string
+    avatarUrl?: string | null
+    isSuperAdmin?: boolean
+    githubUsername?: string | null
+    createdAt?: Date | string
+    websiteUrl?: string | null
+    ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput
+    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutProjectUpvotesInput = {
+    where: UserWhereUniqueInput
     create: XOR<UserCreateWithoutProjectUpvotesInput, UserUncheckedCreateWithoutProjectUpvotesInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutProjectUpvotesInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutProjectUpvotesInput, UserUncheckedUpdateWithoutProjectUpvotesInput>
-  }
-
-  export type UserUpdateWithoutProjectUpvotesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    middleName?: NullableStringFieldUpdateOperationsInput | string | null
-    lastName?: NullableStringFieldUpdateOperationsInput | string | null
-    username?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    appwriteid?: StringFieldUpdateOperationsInput | string
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    userColleges?: UserCollegeUpdateManyWithoutUserNestedInput
-    ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutProjectUpvotesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    middleName?: NullableStringFieldUpdateOperationsInput | string | null
-    lastName?: NullableStringFieldUpdateOperationsInput | string | null
-    username?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    appwriteid?: StringFieldUpdateOperationsInput | string
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput
-    ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type ProjectUpsertWithoutUpvotesInput = {
@@ -15682,6 +15596,86 @@ export namespace Prisma {
     tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput
   }
 
+  export type UserUpsertWithoutProjectUpvotesInput = {
+    update: XOR<UserUpdateWithoutProjectUpvotesInput, UserUncheckedUpdateWithoutProjectUpvotesInput>
+    create: XOR<UserCreateWithoutProjectUpvotesInput, UserUncheckedCreateWithoutProjectUpvotesInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutProjectUpvotesInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutProjectUpvotesInput, UserUncheckedUpdateWithoutProjectUpvotesInput>
+  }
+
+  export type UserUpdateWithoutProjectUpvotesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    middleName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+    username?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    appwriteid?: StringFieldUpdateOperationsInput | string
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean
+    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput
+    userColleges?: UserCollegeUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutProjectUpvotesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    middleName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+    username?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    appwriteid?: StringFieldUpdateOperationsInput | string
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean
+    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput
+    userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type ProjectCreateWithoutCollaboratorsInput = {
+    id?: string
+    title: string
+    slug: string
+    description?: string | null
+    githubUrl?: string | null
+    isCollaborative?: boolean
+    isLookingForContributors?: boolean
+    upvotesCount?: number
+    createdAt?: Date | string
+    college?: CollegeCreateNestedOneWithoutProjectsInput
+    tags?: ProjectTagCreateNestedManyWithoutProjectInput
+    upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput
+  }
+
+  export type ProjectUncheckedCreateWithoutCollaboratorsInput = {
+    id?: string
+    title: string
+    slug: string
+    description?: string | null
+    collegeId?: string | null
+    githubUrl?: string | null
+    isCollaborative?: boolean
+    isLookingForContributors?: boolean
+    upvotesCount?: number
+    createdAt?: Date | string
+    tags?: ProjectTagUncheckedCreateNestedManyWithoutProjectInput
+    upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput
+  }
+
+  export type ProjectCreateOrConnectWithoutCollaboratorsInput = {
+    where: ProjectWhereUniqueInput
+    create: XOR<ProjectCreateWithoutCollaboratorsInput, ProjectUncheckedCreateWithoutCollaboratorsInput>
+  }
+
   export type UserCreateWithoutProjectCollaboratorInput = {
     id?: string
     firstName: string
@@ -15695,8 +15689,8 @@ export namespace Prisma {
     githubUsername?: string | null
     createdAt?: Date | string
     websiteUrl?: string | null
-    userColleges?: UserCollegeCreateNestedManyWithoutUserInput
     projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput
+    userColleges?: UserCollegeCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutProjectCollaboratorInput = {
@@ -15712,8 +15706,8 @@ export namespace Prisma {
     githubUsername?: string | null
     createdAt?: Date | string
     websiteUrl?: string | null
-    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput
     projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput
+    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutProjectCollaboratorInput = {
@@ -15721,39 +15715,45 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutProjectCollaboratorInput, UserUncheckedCreateWithoutProjectCollaboratorInput>
   }
 
-  export type ProjectCreateWithoutCollaboratorsInput = {
-    id?: string
-    title: string
-    slug: string
-    description?: string | null
-    githubUrl?: string | null
-    isCollaborative?: boolean
-    isLookingForContributors?: boolean
-    upvotesCount?: number
-    createdAt?: Date | string
-    college?: CollegeCreateNestedOneWithoutProjectsInput
-    upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput
-    tags?: ProjectTagCreateNestedManyWithoutProjectInput
-  }
-
-  export type ProjectUncheckedCreateWithoutCollaboratorsInput = {
-    id?: string
-    title: string
-    slug: string
-    description?: string | null
-    collegeId?: string | null
-    githubUrl?: string | null
-    isCollaborative?: boolean
-    isLookingForContributors?: boolean
-    upvotesCount?: number
-    createdAt?: Date | string
-    upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput
-    tags?: ProjectTagUncheckedCreateNestedManyWithoutProjectInput
-  }
-
-  export type ProjectCreateOrConnectWithoutCollaboratorsInput = {
-    where: ProjectWhereUniqueInput
+  export type ProjectUpsertWithoutCollaboratorsInput = {
+    update: XOR<ProjectUpdateWithoutCollaboratorsInput, ProjectUncheckedUpdateWithoutCollaboratorsInput>
     create: XOR<ProjectCreateWithoutCollaboratorsInput, ProjectUncheckedCreateWithoutCollaboratorsInput>
+    where?: ProjectWhereInput
+  }
+
+  export type ProjectUpdateToOneWithWhereWithoutCollaboratorsInput = {
+    where?: ProjectWhereInput
+    data: XOR<ProjectUpdateWithoutCollaboratorsInput, ProjectUncheckedUpdateWithoutCollaboratorsInput>
+  }
+
+  export type ProjectUpdateWithoutCollaboratorsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
+    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
+    upvotesCount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    college?: CollegeUpdateOneWithoutProjectsNestedInput
+    tags?: ProjectTagUpdateManyWithoutProjectNestedInput
+    upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput
+  }
+
+  export type ProjectUncheckedUpdateWithoutCollaboratorsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    collegeId?: NullableStringFieldUpdateOperationsInput | string | null
+    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
+    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
+    upvotesCount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput
+    upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type UserUpsertWithoutProjectCollaboratorInput = {
@@ -15780,8 +15780,8 @@ export namespace Prisma {
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    userColleges?: UserCollegeUpdateManyWithoutUserNestedInput
     projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput
+    userColleges?: UserCollegeUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutProjectCollaboratorInput = {
@@ -15797,49 +15797,8 @@ export namespace Prisma {
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput
     projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type ProjectUpsertWithoutCollaboratorsInput = {
-    update: XOR<ProjectUpdateWithoutCollaboratorsInput, ProjectUncheckedUpdateWithoutCollaboratorsInput>
-    create: XOR<ProjectCreateWithoutCollaboratorsInput, ProjectUncheckedCreateWithoutCollaboratorsInput>
-    where?: ProjectWhereInput
-  }
-
-  export type ProjectUpdateToOneWithWhereWithoutCollaboratorsInput = {
-    where?: ProjectWhereInput
-    data: XOR<ProjectUpdateWithoutCollaboratorsInput, ProjectUncheckedUpdateWithoutCollaboratorsInput>
-  }
-
-  export type ProjectUpdateWithoutCollaboratorsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    slug?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
-    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
-    upvotesCount?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    college?: CollegeUpdateOneWithoutProjectsNestedInput
-    upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput
-    tags?: ProjectTagUpdateManyWithoutProjectNestedInput
-  }
-
-  export type ProjectUncheckedUpdateWithoutCollaboratorsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    slug?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    collegeId?: NullableStringFieldUpdateOperationsInput | string | null
-    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
-    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
-    upvotesCount?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput
-    tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput
+    userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type ProjectTagCreateWithoutTagInput = {
@@ -15887,8 +15846,8 @@ export namespace Prisma {
     upvotesCount?: number
     createdAt?: Date | string
     college?: CollegeCreateNestedOneWithoutProjectsInput
-    upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput
     collaborators?: ProjectCollaboratorCreateNestedManyWithoutProjectInput
+    upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput
   }
 
   export type ProjectUncheckedCreateWithoutTagsInput = {
@@ -15902,8 +15861,8 @@ export namespace Prisma {
     isLookingForContributors?: boolean
     upvotesCount?: number
     createdAt?: Date | string
-    upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput
     collaborators?: ProjectCollaboratorUncheckedCreateNestedManyWithoutProjectInput
+    upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type ProjectCreateOrConnectWithoutTagsInput = {
@@ -15950,8 +15909,8 @@ export namespace Prisma {
     upvotesCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     college?: CollegeUpdateOneWithoutProjectsNestedInput
-    upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput
     collaborators?: ProjectCollaboratorUpdateManyWithoutProjectNestedInput
+    upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput
   }
 
   export type ProjectUncheckedUpdateWithoutTagsInput = {
@@ -15965,8 +15924,8 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
     upvotesCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput
     collaborators?: ProjectCollaboratorUncheckedUpdateManyWithoutProjectNestedInput
+    upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type TagUpsertWithoutProjectsInput = {
@@ -15992,6 +15951,17 @@ export namespace Prisma {
     slug?: StringFieldUpdateOperationsInput | string
   }
 
+  export type ProjectCollaboratorCreateManyUserInput = {
+    projectId: string
+    role: $Enums.ProjectUserRole
+    joinedAt?: Date | string
+  }
+
+  export type ProjectUpvoteCreateManyUserInput = {
+    projectId: string
+    createdAt?: Date | string
+  }
+
   export type UserCollegeCreateManyUserInput = {
     id?: string
     collegeId: string
@@ -16004,15 +15974,37 @@ export namespace Prisma {
     leftAt?: Date | string | null
   }
 
-  export type ProjectUpvoteCreateManyUserInput = {
-    projectId: string
-    createdAt?: Date | string
+  export type ProjectCollaboratorUpdateWithoutUserInput = {
+    role?: EnumProjectUserRoleFieldUpdateOperationsInput | $Enums.ProjectUserRole
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    project?: ProjectUpdateOneRequiredWithoutCollaboratorsNestedInput
   }
 
-  export type ProjectCollaboratorCreateManyUserInput = {
-    projectId: string
-    role: $Enums.ProjectUserRole
-    joinedAt?: Date | string
+  export type ProjectCollaboratorUncheckedUpdateWithoutUserInput = {
+    projectId?: StringFieldUpdateOperationsInput | string
+    role?: EnumProjectUserRoleFieldUpdateOperationsInput | $Enums.ProjectUserRole
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProjectCollaboratorUncheckedUpdateManyWithoutUserInput = {
+    projectId?: StringFieldUpdateOperationsInput | string
+    role?: EnumProjectUserRoleFieldUpdateOperationsInput | $Enums.ProjectUserRole
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProjectUpvoteUpdateWithoutUserInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    project?: ProjectUpdateOneRequiredWithoutUpvotesNestedInput
+  }
+
+  export type ProjectUpvoteUncheckedUpdateWithoutUserInput = {
+    projectId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProjectUpvoteUncheckedUpdateManyWithoutUserInput = {
+    projectId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserCollegeUpdateWithoutUserInput = {
@@ -16051,49 +16043,9 @@ export namespace Prisma {
     leftAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type ProjectUpvoteUpdateWithoutUserInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    project?: ProjectUpdateOneRequiredWithoutUpvotesNestedInput
-  }
-
-  export type ProjectUpvoteUncheckedUpdateWithoutUserInput = {
-    projectId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ProjectUpvoteUncheckedUpdateManyWithoutUserInput = {
-    projectId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ProjectCollaboratorUpdateWithoutUserInput = {
-    role?: EnumProjectUserRoleFieldUpdateOperationsInput | $Enums.ProjectUserRole
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    project?: ProjectUpdateOneRequiredWithoutCollaboratorsNestedInput
-  }
-
-  export type ProjectCollaboratorUncheckedUpdateWithoutUserInput = {
-    projectId?: StringFieldUpdateOperationsInput | string
-    role?: EnumProjectUserRoleFieldUpdateOperationsInput | $Enums.ProjectUserRole
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ProjectCollaboratorUncheckedUpdateManyWithoutUserInput = {
-    projectId?: StringFieldUpdateOperationsInput | string
-    role?: EnumProjectUserRoleFieldUpdateOperationsInput | $Enums.ProjectUserRole
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type UserCollegeCreateManyCollegeInput = {
+  export type CollegeEmailDomainCreateManyCollegeInput = {
     id?: string
-    userId: string
-    userType: $Enums.UserType
-    isAdmin?: boolean
-    degreeType?: string | null
-    branch?: string | null
-    verified: boolean
-    joinedAt: Date | string
-    leftAt?: Date | string | null
+    domain: string
   }
 
   export type ProjectCreateManyCollegeInput = {
@@ -16108,9 +16060,73 @@ export namespace Prisma {
     createdAt?: Date | string
   }
 
-  export type CollegeEmailDomainCreateManyCollegeInput = {
+  export type UserCollegeCreateManyCollegeInput = {
     id?: string
-    domain: string
+    userId: string
+    userType: $Enums.UserType
+    isAdmin?: boolean
+    degreeType?: string | null
+    branch?: string | null
+    verified: boolean
+    joinedAt: Date | string
+    leftAt?: Date | string | null
+  }
+
+  export type CollegeEmailDomainUpdateWithoutCollegeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    domain?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type CollegeEmailDomainUncheckedUpdateWithoutCollegeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    domain?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type CollegeEmailDomainUncheckedUpdateManyWithoutCollegeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    domain?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProjectUpdateWithoutCollegeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
+    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
+    upvotesCount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    collaborators?: ProjectCollaboratorUpdateManyWithoutProjectNestedInput
+    tags?: ProjectTagUpdateManyWithoutProjectNestedInput
+    upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput
+  }
+
+  export type ProjectUncheckedUpdateWithoutCollegeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
+    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
+    upvotesCount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    collaborators?: ProjectCollaboratorUncheckedUpdateManyWithoutProjectNestedInput
+    tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput
+    upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput
+  }
+
+  export type ProjectUncheckedUpdateManyWithoutCollegeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
+    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
+    upvotesCount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserCollegeUpdateWithoutCollegeInput = {
@@ -16149,68 +16165,6 @@ export namespace Prisma {
     leftAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type ProjectUpdateWithoutCollegeInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    slug?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
-    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
-    upvotesCount?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput
-    collaborators?: ProjectCollaboratorUpdateManyWithoutProjectNestedInput
-    tags?: ProjectTagUpdateManyWithoutProjectNestedInput
-  }
-
-  export type ProjectUncheckedUpdateWithoutCollegeInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    slug?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
-    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
-    upvotesCount?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput
-    collaborators?: ProjectCollaboratorUncheckedUpdateManyWithoutProjectNestedInput
-    tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput
-  }
-
-  export type ProjectUncheckedUpdateManyWithoutCollegeInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    slug?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
-    isCollaborative?: BoolFieldUpdateOperationsInput | boolean
-    isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean
-    upvotesCount?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type CollegeEmailDomainUpdateWithoutCollegeInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    domain?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type CollegeEmailDomainUncheckedUpdateWithoutCollegeInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    domain?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type CollegeEmailDomainUncheckedUpdateManyWithoutCollegeInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    domain?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ProjectUpvoteCreateManyProjectInput = {
-    userId: string
-    createdAt?: Date | string
-  }
-
   export type ProjectCollaboratorCreateManyProjectInput = {
     userId: string
     role: $Enums.ProjectUserRole
@@ -16221,19 +16175,9 @@ export namespace Prisma {
     tagId: string
   }
 
-  export type ProjectUpvoteUpdateWithoutProjectInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutProjectUpvotesNestedInput
-  }
-
-  export type ProjectUpvoteUncheckedUpdateWithoutProjectInput = {
-    userId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ProjectUpvoteUncheckedUpdateManyWithoutProjectInput = {
-    userId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type ProjectUpvoteCreateManyProjectInput = {
+    userId: string
+    createdAt?: Date | string
   }
 
   export type ProjectCollaboratorUpdateWithoutProjectInput = {
@@ -16264,6 +16208,21 @@ export namespace Prisma {
 
   export type ProjectTagUncheckedUpdateManyWithoutProjectInput = {
     tagId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProjectUpvoteUpdateWithoutProjectInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutProjectUpvotesNestedInput
+  }
+
+  export type ProjectUpvoteUncheckedUpdateWithoutProjectInput = {
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProjectUpvoteUncheckedUpdateManyWithoutProjectInput = {
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProjectTagCreateManyTagInput = {

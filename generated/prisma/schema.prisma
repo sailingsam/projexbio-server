@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
@@ -15,56 +9,113 @@ datasource db {
 }
 
 model User {
-  id             String   @id @default(uuid()) @db.Uuid
-  firstName      String
-  middleName     String?
-  lastName       String?
-  username       String   @unique
-  email          String   @unique
-  appwriteid     String   @unique
-  avatarUrl      String?
-  isSuperAdmin   Boolean  @default(false)
-  githubUsername String?
-  createdAt      DateTime @default(now())
-  websiteUrl     String?
-
-  userColleges        UserCollege[]
-  projectUpvotes      ProjectUpvote[]
+  id                  String                @id @default(uuid()) @db.Uuid
+  firstName           String
+  middleName          String?
+  lastName            String?
+  username            String                @unique
+  email               String                @unique
+  appwriteid          String                @unique
+  avatarUrl           String?
+  isSuperAdmin        Boolean               @default(false)
+  githubUsername      String?
+  createdAt           DateTime              @default(now())
+  websiteUrl          String?
   ProjectCollaborator ProjectCollaborator[]
+  projectUpvotes      ProjectUpvote[]
+  userColleges        UserCollege[]
 }
 
 model College {
-  id            String   @id @default(uuid()) @db.Uuid
-  name          String
-  slug          String   @unique
-  shortName     String? // e.g., IITD, SSN, NITK
-  logoUrl       String? // college logo
-  coverImageUrl String? // optional for profile cover/banner
-  description   String? // about the college
-  location      String? // city, state
-  website       String? // official website
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-
-  userColleges UserCollege[] // all users linked to this college
-  projects     Project[] // college-level project listing if needed
-  emailDomains CollegeEmailDomain[]
+  id             String               @id @default(uuid()) @db.Uuid
+  name           String
+  slug           String               @unique
+  logoFileId     String?
+  coverImgFileId String?
+  description    String?
+  location       String?
+  website        String?
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
+  emailDomains   CollegeEmailDomain[]
+  projects       Project[]
+  userColleges   UserCollege[]
 }
 
 model UserCollege {
   id         String    @id @default(uuid()) @db.Uuid
   userId     String    @db.Uuid
   collegeId  String    @db.Uuid
-  userType   UserType // STUDENT | FACULTY
-  isAdmin    Boolean   @default(false) // true if college gave admin rights
-  degreeType String? // e.g., B.Tech, M.Tech, PhD
-  branch     String? // optional
-  verified   Boolean // by college email id
+  userType   UserType
+  isAdmin    Boolean   @default(false)
+  degreeType String?
+  branch     String?
+  verified   Boolean
   joinedAt   DateTime
-  leftAt     DateTime? // when user left the college
+  leftAt     DateTime?
+  college    College   @relation(fields: [collegeId], references: [id])
+  user       User      @relation(fields: [userId], references: [id])
+}
 
-  user    User    @relation(fields: [userId], references: [id])
-  college College @relation(fields: [collegeId], references: [id])
+model CollegeEmailDomain {
+  id        String  @id @default(uuid()) @db.Uuid
+  domain    String  @unique
+  collegeId String  @db.Uuid
+  college   College @relation(fields: [collegeId], references: [id])
+}
+
+model Project {
+  id                       String                @id @default(uuid()) @db.Uuid
+  title                    String
+  slug                     String                @unique
+  description              String?
+  collegeId                String?               @db.Uuid
+  githubUrl                String?
+  isCollaborative          Boolean               @default(false)
+  isLookingForContributors Boolean               @default(false)
+  upvotesCount             Int                   @default(0)
+  createdAt                DateTime              @default(now())
+  college                  College?              @relation(fields: [collegeId], references: [id])
+  collaborators            ProjectCollaborator[]
+  tags                     ProjectTag[]
+  upvotes                  ProjectUpvote[]
+}
+
+model ProjectUpvote {
+  userId    String   @db.Uuid
+  projectId String   @db.Uuid
+  createdAt DateTime @default(now())
+  project   Project  @relation(fields: [projectId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@id([userId, projectId])
+}
+
+model ProjectCollaborator {
+  userId    String          @db.Uuid
+  projectId String          @db.Uuid
+  role      ProjectUserRole
+  joinedAt  DateTime        @default(now())
+  project   Project         @relation(fields: [projectId], references: [id])
+  user      User            @relation(fields: [userId], references: [id])
+
+  @@id([userId, projectId])
+}
+
+model Tag {
+  id       String       @id @default(uuid()) @db.Uuid
+  name     String       @unique
+  slug     String       @unique
+  projects ProjectTag[]
+}
+
+model ProjectTag {
+  projectId String  @db.Uuid
+  tagId     String  @db.Uuid
+  project   Project @relation(fields: [projectId], references: [id])
+  tag       Tag     @relation(fields: [tagId], references: [id])
+
+  @@id([projectId, tagId])
 }
 
 enum UserType {
@@ -73,76 +124,8 @@ enum UserType {
   GENERAL
 }
 
-model CollegeEmailDomain {
-  id        String @id @default(uuid()) @db.Uuid
-  domain    String @unique // e.g., iitd.ac.in, students.ssn.edu
-  collegeId String @db.Uuid
-
-  college College @relation(fields: [collegeId], references: [id])
-}
-
-model Project {
-  id                       String   @id @default(uuid()) @db.Uuid
-  title                    String
-  slug                     String   @unique
-  description              String?
-  collegeId                String?  @db.Uuid
-  githubUrl                String?
-  isCollaborative          Boolean  @default(false)
-  isLookingForContributors Boolean  @default(false)
-  upvotesCount             Int      @default(0)
-  createdAt                DateTime @default(now())
-
-  college College? @relation(fields: [collegeId], references: [id])
-
-  upvotes       ProjectUpvote[]
-  collaborators ProjectCollaborator[]
-  tags          ProjectTag[]
-}
-
-model ProjectUpvote {
-  userId    String   @db.Uuid
-  projectId String   @db.Uuid
-  createdAt DateTime @default(now())
-
-  user    User    @relation(fields: [userId], references: [id])
-  project Project @relation(fields: [projectId], references: [id])
-
-  @@id([userId, projectId]) // composite PK to ensure only one upvote per user per project
-}
-
 enum ProjectUserRole {
   OWNER
   MEMBER
-  VIEWER // optional, in case you allow read-only contributors later
-}
-
-model ProjectCollaborator {
-  userId    String          @db.Uuid
-  projectId String          @db.Uuid
-  role      ProjectUserRole
-  joinedAt  DateTime        @default(now())
-
-  user    User    @relation(fields: [userId], references: [id])
-  project Project @relation(fields: [projectId], references: [id])
-
-  @@id([userId, projectId]) // prevent duplicate roles for same project-user pair
-}
-
-model Tag {
-  id   String @id @default(uuid()) @db.Uuid
-  name String @unique
-  slug String @unique
-
-  projects ProjectTag[]
-}
-
-model ProjectTag {
-  projectId String @db.Uuid
-  tagId     String @db.Uuid
-
-  project Project @relation(fields: [projectId], references: [id])
-  tag     Tag     @relation(fields: [tagId], references: [id])
-
-  @@id([projectId, tagId]) // composite PK ensures unique project-tag pair
+  VIEWER
 }

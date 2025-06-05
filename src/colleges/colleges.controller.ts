@@ -11,13 +11,14 @@ import { CollegesService } from './colleges.service';
 import { CreateCollegeDto } from './dto/create-college.dto';
 import { SuperAdminGuard } from '../auth/super-admin.guard';
 import { Express } from 'express';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('colleges')
 export class CollegesController {
   constructor(private readonly collegesService: CollegesService) {}
 
   @Post('create')
-  @UseGuards(SuperAdminGuard)
+  @UseGuards(AuthGuard, SuperAdminGuard)
   @UseInterceptors(
     FileFieldsInterceptor([
       { name: 'logo', maxCount: 1 },
