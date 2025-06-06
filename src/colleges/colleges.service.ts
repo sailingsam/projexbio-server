@@ -42,14 +42,13 @@ export class CollegesService {
     // Upload logo file if provided
     let logoFileId: string | undefined;
     if (logo) {
-      const logoFileId =
-        await this.collegeStorageService.uploadCollegeAsset(logo);
+      logoFileId = await this.collegeStorageService.uploadCollegeAsset(logo);
     }
 
     // Upload cover image if provided
     let coverFileId: string | undefined;
     if (coverImage) {
-      const coverFileId =
+      coverFileId =
         await this.collegeStorageService.uploadCollegeAsset(coverImage);
     }
 
