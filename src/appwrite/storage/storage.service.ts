@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Storage } from 'node-appwrite';
-import { IStorageService, StorageFile } from './interfaces/storage.interface';
+import { IStorageService } from './interfaces/storage.interface';
 import { Express } from 'express';
 import { ID } from 'node-appwrite';
 import { AppwriteService } from '../appwrite.service';
 import { InputFile } from 'node-appwrite/file';
 
 @Injectable()
-export class StorageService implements IStorageService {
+export class StorageService {
   private readonly storage: Storage;
   private readonly buckets: Record<string, string>;
   constructor(
@@ -30,8 +30,7 @@ export class StorageService implements IStorageService {
   async uploadFile(
     bucketId: string,
     file: Express.Multer.File,
-    path?: string,
-  ): Promise<StorageFile> {
+  ): Promise<string> {
     try {
       const fileId = ID.unique();
       const inputFile = InputFile.fromBuffer(file.buffer, file.originalname);
@@ -41,14 +40,7 @@ export class StorageService implements IStorageService {
         inputFile,
       );
 
-      const fileUrl = await this.storage
-        .getFileView(bucketId, fileId)
-        .toString();
-
-      return {
-        url: fileUrl,
-        fileId: uploadedFile.$id,
-      };
+      return uploadedFile.$id;
     } catch (error) {
       throw new Error(`Failed to upload file: ${error.message}`);
     }

@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Express } from 'express';
 import { StorageService } from '../storage.service';
-import { StorageFile } from '../interfaces/storage.interface';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()
@@ -11,20 +10,21 @@ export class CollegeStorageService {
     private readonly configService: ConfigService,
   ) {}
 
-  async uploadCollegeAsset(
-    file: Express.Multer.File,
-    path?: string,
-  ): Promise<StorageFile> {
+  async uploadCollegeAsset(file: Express.Multer.File): Promise<string> {
     const bucketId = this.configService.getOrThrow(
       'APPWRITE_COLLEGE_BUCKET_ID',
     );
-    return this.storageService.uploadFile(bucketId, file, path);
+    return this.storageService.uploadFile(bucketId, file);
   }
 
   async deleteCollegeAsset(fileId: string): Promise<void> {
-    const bucketId = this.configService.getOrThrow(
-      'APPWRITE_COLLEGE_BUCKET_ID',
-    );
-    return this.storageService.deleteFile(bucketId, fileId);
+    try {
+      const bucketId = this.configService.getOrThrow(
+        'APPWRITE_COLLEGE_BUCKET_ID',
+      );
+      return this.storageService.deleteFile(bucketId, fileId);
+    } catch (error) {
+      console.error(`Failed to delete file ${fileId}:`, error);
+    }
   }
 }

@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 import { AppwriteService } from '../appwrite/appwrite.service';
-import { AppwriteUser } from '../types/appwrite.types';
+import { AppwriteUser } from '../common/types/appwrite.types';
 
 // Extend the Request interface to include user
 declare global {

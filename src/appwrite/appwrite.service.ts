@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Client, Account } from 'node-appwrite';
-import { AppwriteUser } from '../types/appwrite.types';
+import { AppwriteUser } from '../common/types/appwrite.types';
 
 @Injectable()
 export class AppwriteService {
