@@ -1,6 +1,7 @@
 import {
   Controller,
   Post,
+  Get,
   Body,
   UseGuards,
   UploadedFiles,
@@ -12,10 +13,25 @@ import { CreateCollegeDto } from './dto/create-college.dto';
 import { SuperAdminGuard } from '../auth/super-admin.guard';
 import { Express } from 'express';
 import { AuthGuard } from '../auth/auth.guard';
+import { CollegeResponseDto } from './dto/college-response.dto';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('colleges')
 @Controller('colleges')
 export class CollegesController {
   constructor(private readonly collegesService: CollegesService) {}
+
+  @Get()
+  @UseGuards(AuthGuard)
+  @ApiOperation({ summary: 'Get all colleges with their email domains' })
+  @ApiResponse({
+    status: 200,
+    description: 'List of colleges with their email domains',
+    type: [CollegeResponseDto],
+  })
+  async findAll(): Promise<CollegeResponseDto[]> {
+    return this.collegesService.findAll();
+  }
 
   @Post('create')
   @UseGuards(AuthGuard, SuperAdminGuard)

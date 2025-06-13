@@ -13,7 +13,7 @@ export class CollegesService {
   ) {}
 
   private async generateUniqueSlug(baseName: string): Promise<string> {
-    let slug = generateSlug(baseName);
+    const slug = generateSlug(baseName);
     let counter = 1;
     let uniqueSlug = slug;
 
@@ -93,5 +93,28 @@ export class CollegesService {
 
       throw error;
     }
+  }
+
+  async findAll() {
+    const colleges = await this.prisma.college.findMany({
+      include: {
+        emailDomains: {
+          select: {
+            domain: true,
+          },
+        },
+      },
+    });
+
+    return colleges.map((college) => ({
+      ...college,
+      description: college.description || undefined,
+      location: college.location || undefined,
+      website: college.website || undefined,
+      logoFileId: college.logoFileId || undefined,
+      coverImgFileId: college.coverImgFileId || undefined,
+      domains: college.emailDomains.map((domain) => domain.domain),
+      emailDomains: undefined, // Remove the nested emailDomains object
+    }));
   }
 }
