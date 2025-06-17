@@ -3,10 +3,21 @@ import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 import { PrismaExceptionFilter } from './common/filters/prisma-exception.filter';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
+
+  // Swagger setup
+  const config = new DocumentBuilder()
+    .setTitle('ProjexBio API')
+    .setDescription('The ProjexBio API documentation')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
 
   // Register global validation pipe
   app.useGlobalPipes(
@@ -29,5 +40,8 @@ async function bootstrap() {
 
   await app.listen(port);
   console.log(`Application is running on http://localhost:${port}`);
+  console.log(
+    `Swagger documentation is available at http://localhost:${port}/api`,
+  );
 }
 bootstrap();
