@@ -1,6 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { OTPContext } from './dto/send-otp.dto';
 import { MailerService } from '@nestjs-modules/mailer';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import { Cache } from 'cache-manager';
 
 interface OTPConfig {
   length: number;
@@ -10,9 +12,10 @@ interface OTPConfig {
 
 @Injectable()
 export class AuthService {
-  private otpStore: Map<string, { otp: string; expiry: Date }> = new Map();
-
-  constructor(private readonly mailerService: MailerService) {}
+  constructor(
+    private readonly mailerService: MailerService,
+    @Inject(CACHE_MANAGER) private cache: Cache,
+  ) {}
 
   private getOTPConfig(context: OTPContext): OTPConfig {
     switch (context) {
@@ -44,13 +47,10 @@ export class AuthService {
   }
 
   async sendOTP(email: string, context: OTPContext): Promise<void> {
-    const config = this.getOTPConfig(context);
-    const otp = this.generateOTP(config.length);
-    const expiry = new Date();
-    expiry.setMinutes(expiry.getMinutes() + config.expiryMinutes);
+    const { length, expiryMinutes } = this.getOTPConfig(context);
+    const otp = this.generateOTP(length);
 
-    // Store OTP in memory (will be replaced with Redis later)
-    this.otpStore.set(email, { otp, expiry });
+    await this.cache.set(`otp:${email}`, otp, expiryMinutes * 60 * 1000);
 
     // Send email using nodemailer
     await this.mailerService.sendMail({
@@ -60,24 +60,18 @@ export class AuthService {
       context: {
         otp,
         context,
-        expiryMinutes: config.expiryMinutes,
+        expiryMinutes,
       },
     });
   }
 
-  verifyOTP(email: string, otp: string): boolean {
-    const storedData = this.otpStore.get(email);
-    if (!storedData) return false;
+  async verifyOTP(email: string, otp: string): Promise<boolean> {
+    const key = `otp:${email}`;
+    const saved = await this.cache.get<string>(key);
+    if (saved !== otp) return false;
 
-    if (new Date() > storedData.expiry) {
-      this.otpStore.delete(email);
-      return false;
-    }
-
-    const isValid = storedData.otp === otp;
-    if (isValid) {
-      this.otpStore.delete(email);
-    }
-    return isValid;
+    await this.cache.del(key);
+    await this.cache.set(`verified:${email}`, '1', 60 * 60 * 1000);
+    return true;
   }
 }
