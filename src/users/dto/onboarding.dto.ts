@@ -12,6 +12,8 @@ import {
   MaxLength,
 } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { Express } from 'express';
+import 'multer';
 
 export enum UserRole {
   STUDENT = 'STUDENT',
