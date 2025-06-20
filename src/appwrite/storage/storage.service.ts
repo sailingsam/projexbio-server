@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Storage } from 'node-appwrite';
-import { IStorageService } from './interfaces/storage.interface';
 import { Express } from 'express';
 import { ID } from 'node-appwrite';
 import { AppwriteService } from '../appwrite.service';
@@ -17,11 +16,13 @@ export class StorageService {
   ) {
     this.storage = new Storage(this.appwriteService.getServerClient());
     this.buckets = {
-      COLLEGE_ASSETS: this.configService.getOrThrow(
+      COLLEGE_ASSETS: this.configService.getOrThrow<string>(
         'APPWRITE_COLLEGE_BUCKET_ID',
       ),
-      USER_ASSETS: this.configService.getOrThrow('APPWRITE_USERS_BUCKET_ID'),
-      PROJECT_ASSETS: this.configService.getOrThrow(
+      USER_ASSETS: this.configService.getOrThrow<string>(
+        'APPWRITE_USERS_BUCKET_ID',
+      ),
+      PROJECT_ASSETS: this.configService.getOrThrow<string>(
         'APPWRITE_PROJECTS_BUCKET_ID',
       ),
     };
@@ -42,7 +43,9 @@ export class StorageService {
 
       return uploadedFile.$id;
     } catch (error) {
-      throw new Error(`Failed to upload file: ${error.message}`);
+      const errorMessage =
+        error instanceof Error ? error.message : 'Unknown error';
+      throw new Error(`Failed to upload file: ${errorMessage}`);
     }
   }
 
@@ -50,7 +53,9 @@ export class StorageService {
     try {
       await this.storage.deleteFile(bucketId, fileId);
     } catch (error) {
-      throw new Error(`Failed to delete file: ${error.message}`);
+      const errorMessage =
+        error instanceof Error ? error.message : 'Unknown error';
+      throw new Error(`Failed to delete file: ${errorMessage}`);
     }
   }
 }

@@ -11,7 +11,7 @@ export class ProjectStorageService {
   ) {}
 
   async uploadProjectAsset(file: Express.Multer.File): Promise<string> {
-    const bucketId = this.configService.getOrThrow(
+    const bucketId = this.configService.getOrThrow<string>(
       'APPWRITE_PROJECTS_BUCKET_ID',
     );
     return this.storageService.uploadFile(bucketId, file);
@@ -19,7 +19,7 @@ export class ProjectStorageService {
 
   async deleteProjectAsset(fileId: string): Promise<void> {
     try {
-      const bucketId = this.configService.getOrThrow(
+      const bucketId = this.configService.getOrThrow<string>(
         'APPWRITE_PROJECTS_BUCKET_ID',
       );
       return this.storageService.deleteFile(bucketId, fileId);

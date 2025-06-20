@@ -73,8 +73,10 @@ export class AuthController {
     status: 401,
     description: 'Unauthorized - Invalid or missing token',
   })
-  verifyOTP(@Body() verifyOTPDto: VerifyOTPDto): { message: string } {
-    const isValid = this.authService.verifyOTP(
+  async verifyOTP(
+    @Body() verifyOTPDto: VerifyOTPDto,
+  ): Promise<{ message: string }> {
+    const isValid = await this.authService.verifyOTP(
       verifyOTPDto.email,
       verifyOTPDto.otp,
     );

@@ -43,18 +43,20 @@ model College {
 }
 
 model UserCollege {
-  id         String    @id @default(uuid()) @db.Uuid
-  userId     String    @db.Uuid
-  collegeId  String    @db.Uuid
-  userType   UserType
-  isAdmin    Boolean   @default(false)
-  degreeType String?
-  branch     String?
-  verified   Boolean
-  joinedAt   DateTime
-  leftAt     DateTime?
-  college    College   @relation(fields: [collegeId], references: [id])
-  user       User      @relation(fields: [userId], references: [id])
+  id           String    @id @default(uuid()) @db.Uuid
+  userId       String    @db.Uuid
+  collegeId    String    @db.Uuid
+  userType     UserType
+  isAdmin      Boolean   @default(false)
+  degreeType   String?
+  branch       String?
+  collegeEmail String    @unique
+  designation  String?
+  verified     Boolean
+  joinedAt     DateTime
+  leftAt       DateTime
+  college      College   @relation(fields: [collegeId], references: [id])
+  user         User      @relation(fields: [userId], references: [id])
 }
 
 model CollegeEmailDomain {

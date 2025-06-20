@@ -1,10 +1,11 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { OTPContext } from './dto/send-otp.dto';
 import { MailerService } from '@nestjs-modules/mailer';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
 
 interface OTPConfig {
+  subject: string;
   length: number;
   expiryMinutes: number;
   message: string;
@@ -21,18 +22,21 @@ export class AuthService {
     switch (context) {
       case OTPContext.VERIFY_EMAIL:
         return {
+          subject: 'Email Verification Code',
           length: 6,
           expiryMinutes: 10,
           message: 'Your email verification code is: {otp}',
         };
       case OTPContext.PASSWORD_RESET:
         return {
+          subject: 'Password Reset Code',
           length: 6,
           expiryMinutes: 10,
           message: 'Your password reset code is: {otp}',
         };
       default:
         return {
+          subject: 'Verification Code',
           length: 4,
           expiryMinutes: 10,
           message: 'Your verification code is: {otp}',
@@ -47,28 +51,34 @@ export class AuthService {
   }
 
   async sendOTP(email: string, context: OTPContext): Promise<void> {
-    const { length, expiryMinutes } = this.getOTPConfig(context);
-    const otp = this.generateOTP(length);
+    try {
+      const { length, expiryMinutes, subject } = this.getOTPConfig(context);
+      const otp = this.generateOTP(length);
 
-    await this.cache.set(`otp:${email}`, otp, expiryMinutes * 60 * 1000);
+      await this.cache.set(`otp:${email}`, otp, expiryMinutes * 60 * 1000);
 
-    // Send email using nodemailer
-    await this.mailerService.sendMail({
-      to: email,
-      subject: `Your ${context} verification code`,
-      template: 'otp',
-      context: {
-        otp,
-        context,
-        expiryMinutes,
-      },
-    });
+      // Send email using nodemailer
+      await this.mailerService.sendMail({
+        to: email,
+        subject,
+        template: 'otp',
+        context: {
+          otp,
+          subject,
+          expiryMinutes,
+        },
+      });
+    } catch {
+      throw new BadRequestException('Failed to send OTP');
+    }
   }
 
   async verifyOTP(email: string, otp: string): Promise<boolean> {
     const key = `otp:${email}`;
-    const saved = await this.cache.get<string>(key);
-    if (saved !== otp) return false;
+    const savedOTP = await this.cache.get<string>(key);
+    if (savedOTP !== otp) {
+      throw new BadRequestException('Invalid OTP');
+    }
 
     await this.cache.del(key);
     await this.cache.set(`verified:${email}`, '1', 60 * 60 * 1000);
