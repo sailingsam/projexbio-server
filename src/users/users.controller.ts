@@ -24,6 +24,8 @@ import {
   ApiResponse,
   ApiConsumes,
 } from '@nestjs/swagger';
+import { Express } from 'express';
+import 'multer';
 
 @ApiTags('Users')
 @Controller('users')
