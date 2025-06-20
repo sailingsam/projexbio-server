@@ -273,7 +273,7 @@ declare const ColumnTypeEnum: {
 
 declare type CompactedBatchResponse = {
   type: 'compacted';
-  plan: object;
+  plan: {};
   arguments: Record<string, {}>[];
   nestedSelection: string[];
   keys: string[];
@@ -323,6 +323,7 @@ declare type ComputedFieldsMap = {
 declare type ConnectionInfo = {
   schemaName?: string;
   maxBindValues?: number;
+  supportsRelationJoins: boolean;
 };
 
 declare type ConnectorType =
@@ -1541,11 +1542,29 @@ declare type Error_2 =
     }
   | {
       kind: 'UniqueConstraintViolation';
-      fields: string[];
+      constraint?:
+        | {
+            fields: string[];
+          }
+        | {
+            index: string;
+          }
+        | {
+            foreignKey: {};
+          };
     }
   | {
       kind: 'NullConstraintViolation';
-      fields: string[];
+      constraint?:
+        | {
+            fields: string[];
+          }
+        | {
+            index: string;
+          }
+        | {
+            foreignKey: {};
+          };
     }
   | {
       kind: 'ForeignKeyConstraintViolation';
@@ -1592,7 +1611,22 @@ declare type Error_2 =
       cause: string;
     }
   | {
+      kind: 'ValueOutOfRange';
+      cause: string;
+    }
+  | {
+      kind: 'MissingFullTextSearchIndex';
+    }
+  | {
       kind: 'SocketTimeout';
+    }
+  | {
+      kind: 'InconsistentColumnData';
+      cause: string;
+    }
+  | {
+      kind: 'TransactionAlreadyClosed';
+      cause: string;
     }
   | {
       kind: 'postgres';
@@ -1615,6 +1649,11 @@ declare type Error_2 =
        * Sqlite extended error code: https://www.sqlite.org/rescode.html
        */
       extendedCode: number;
+      message: string;
+    }
+  | {
+      kind: 'mssql';
+      code: number;
       message: string;
     };
 
@@ -3124,7 +3163,7 @@ declare const officialPrismaAdapters: readonly [
   '@prisma/adapter-libsql',
   '@prisma/adapter-d1',
   '@prisma/adapter-pg',
-  '@prisma/adapter-pg-worker',
+  '@prisma/adapter-mssql',
 ];
 
 export declare type Omission = Record<string, boolean | Skip>;
@@ -3486,7 +3525,7 @@ declare type PrismaPromiseTransaction<PayloadType = unknown> =
 
 export declare const PrivateResultType: unique symbol;
 
-declare type Provider = 'mysql' | 'postgres' | 'sqlite';
+declare type Provider = 'mysql' | 'postgres' | 'sqlite' | 'sqlserver';
 
 declare namespace Public {
   export { validator };
@@ -3515,7 +3554,7 @@ declare interface Queryable<Query, Result> extends AdapterInfo {
 }
 
 declare type QueryCompiler = {
-  compile(request: string): string;
+  compile(request: string): {};
   compileBatch(batchRequest: string): BatchResponse;
 };
 

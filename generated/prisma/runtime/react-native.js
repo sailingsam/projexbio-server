@@ -1729,7 +1729,7 @@ var qi,
 var $i = Ae((Im, Nl) => {
   Nl.exports = {
     name: '@prisma/internals',
-    version: '6.9.0',
+    version: '6.10.1',
     description: "This package is intended for Prisma's internal use",
     main: 'dist/index.js',
     types: 'dist/index.d.ts',
@@ -1817,9 +1817,9 @@ var $i = Ae((Im, Nl) => {
       '@prisma/generator-helper': 'workspace:*',
       '@prisma/get-platform': 'workspace:*',
       '@prisma/prisma-schema-wasm':
-        '6.9.0-10.81e4af48011447c3cc503a190e86995b66d2a28e',
+        '6.10.1-1.9b628578b3b7cae625e8c927178f15a170e74a9c',
       '@prisma/schema-engine-wasm':
-        '6.9.0-10.81e4af48011447c3cc503a190e86995b66d2a28e',
+        '6.10.1-1.9b628578b3b7cae625e8c927178f15a170e74a9c',
       '@prisma/schema-files-loader': 'workspace:*',
       arg: '5.0.2',
       prompts: '2.4.2',
@@ -2021,12 +2021,12 @@ var So = ge(() => {
 var Yo = Ae((QP, Nc) => {
   Nc.exports = {
     name: '@prisma/engines-version',
-    version: '6.9.0-10.81e4af48011447c3cc503a190e86995b66d2a28e',
+    version: '6.10.1-1.9b628578b3b7cae625e8c927178f15a170e74a9c',
     main: 'index.js',
     types: 'index.d.ts',
     license: 'Apache-2.0',
     author: 'Tim Suchanek <suchanek@prisma.io>',
-    prisma: { enginesVersion: '81e4af48011447c3cc503a190e86995b66d2a28e' },
+    prisma: { enginesVersion: '9b628578b3b7cae625e8c927178f15a170e74a9c' },
     repository: {
       type: 'git',
       url: 'https://github.com/prisma/engines-wrapper.git',
@@ -8494,7 +8494,7 @@ function kp(e, t) {
     }
   };
 }
-var qs = '6.9.0';
+var qs = '6.10.1';
 f();
 c();
 p();
