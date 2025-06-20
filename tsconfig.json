@@ -19,8 +19,6 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true,
-    "allowImportingTsExtensions": false,
-    "typeRoots": ["./node_modules/@types"],
-    "lib": ["ES2022"]
+    "allowImportingTsExtensions": false
   }
 }
