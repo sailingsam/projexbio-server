@@ -19,7 +19,6 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true,
-    "allowImportingTsExtensions": false,
-    "types": ["node"]
+    "allowImportingTsExtensions": false
   }
 }
