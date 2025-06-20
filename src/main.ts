@@ -9,6 +9,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
 
+  const isProduction = configService.get<string>('NODE_ENV') === 'production';
+
   // Swagger setup
   const config = new DocumentBuilder()
     .setTitle('ProjexBio API')
@@ -34,7 +36,9 @@ async function bootstrap() {
   const port = configService.get<number>('PORT', 3002);
 
   app.enableCors({
-    origin: 'http://localhost:3000', // or true to allow all origins (dev only)
+    origin: isProduction
+      ? 'https://projexbio.vercel.app'
+      : 'http://localhost:3000', // or true to allow all origins (dev only)
     credentials: true, // if you're using cookies or need auth headers
   });
 
