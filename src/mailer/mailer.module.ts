@@ -1,8 +1,12 @@
 import { Module } from '@nestjs/common';
 import { MailerModule as NestMailerModule } from '@nestjs-modules/mailer';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { join } from 'path';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
+
+// Simple path join utility to avoid import issues
+const joinPaths = (...paths: string[]): string => {
+  return paths.join('/').replace(/\/+/g, '/');
+};
 
 @Module({
   imports: [
@@ -22,7 +26,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
           from: `"ProjexBio" <${configService.get<string>('MAIL_FROM')}>`,
         },
         template: {
-          dir: join(process.cwd(), 'src', 'mailer', 'templates'),
+          dir: joinPaths(process.cwd(), 'src', 'mailer', 'templates'),
           adapter: new HandlebarsAdapter(),
           options: {
             strict: true,

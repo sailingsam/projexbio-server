@@ -14,11 +14,13 @@ declare global {
 }
 
 declare module 'path' {
-  export function join(...paths: string[]): string;
-  export function resolve(...paths: string[]): string;
-  export function dirname(path: string): string;
-  export function basename(path: string, ext?: string): string;
-  export function extname(path: string): string;
+  function join(...paths: string[]): string;
+  function resolve(...paths: string[]): string;
+  function dirname(path: string): string;
+  function basename(path: string, ext?: string): string;
+  function extname(path: string): string;
+
+  export { join, resolve, dirname, basename, extname };
 }
 
 export {};
