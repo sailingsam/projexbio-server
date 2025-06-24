@@ -4,13 +4,14 @@ import {
   ExecutionContext,
   UnauthorizedException,
 } from '@nestjs/common';
+import { Request } from 'express';
 
 @Injectable()
 export class SuperAdminGuard implements CanActivate {
   constructor() {}
 
-  async canActivate(context: ExecutionContext): Promise<boolean> {
-    const request = context.switchToHttp().getRequest();
+  canActivate(context: ExecutionContext): boolean {
+    const request = context.switchToHttp().getRequest<Request>();
     const appwriteUser = request.appwriteUser;
 
     if (!appwriteUser) {
@@ -18,7 +19,7 @@ export class SuperAdminGuard implements CanActivate {
     }
 
     if (!appwriteUser.labels.includes('superuser')) {
-      throw new UnauthorizedException('User is not a super admin');
+      throw new UnauthorizedException('User is not a super user');
     }
 
     return true;
