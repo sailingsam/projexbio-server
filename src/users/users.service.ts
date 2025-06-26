@@ -33,7 +33,15 @@ export class UsersService {
       throw new NotFoundException('User not found');
     }
 
-    return user;
+    // Replace avatarFileId with avatarUrl
+    const { avatarFileId, ...userWithoutFileId } = user;
+
+    return {
+      ...userWithoutFileId,
+      avatarUrl: avatarFileId
+        ? this.userStorageService.getUserAssetUrl(avatarFileId)
+        : null,
+    };
   }
 
   async isUsernameAvailable(username: string): Promise<boolean> {
@@ -145,7 +153,7 @@ export class UsersService {
             middleName: onboardingData.middleName,
             lastName: onboardingData.lastName,
             email: onboardingData.primaryEmail,
-            avatarUrl: avatarFileId,
+            avatarFileId,
           },
         });
 
@@ -198,7 +206,6 @@ export class UsersService {
           username: result.username,
           firstName: result.firstName,
           email: result.email,
-          role: onboardingData.role,
         },
       };
     } catch {

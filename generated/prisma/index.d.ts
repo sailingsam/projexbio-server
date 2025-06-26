@@ -1967,7 +1967,7 @@ export namespace Prisma {
     username: string | null;
     email: string | null;
     appwriteid: string | null;
-    avatarUrl: string | null;
+    avatarFileId: string | null;
     isSuperAdmin: boolean | null;
     githubUsername: string | null;
     createdAt: Date | null;
@@ -1982,7 +1982,7 @@ export namespace Prisma {
     username: string | null;
     email: string | null;
     appwriteid: string | null;
-    avatarUrl: string | null;
+    avatarFileId: string | null;
     isSuperAdmin: boolean | null;
     githubUsername: string | null;
     createdAt: Date | null;
@@ -1997,7 +1997,7 @@ export namespace Prisma {
     username: number;
     email: number;
     appwriteid: number;
-    avatarUrl: number;
+    avatarFileId: number;
     isSuperAdmin: number;
     githubUsername: number;
     createdAt: number;
@@ -2013,7 +2013,7 @@ export namespace Prisma {
     username?: true;
     email?: true;
     appwriteid?: true;
-    avatarUrl?: true;
+    avatarFileId?: true;
     isSuperAdmin?: true;
     githubUsername?: true;
     createdAt?: true;
@@ -2028,7 +2028,7 @@ export namespace Prisma {
     username?: true;
     email?: true;
     appwriteid?: true;
-    avatarUrl?: true;
+    avatarFileId?: true;
     isSuperAdmin?: true;
     githubUsername?: true;
     createdAt?: true;
@@ -2043,7 +2043,7 @@ export namespace Prisma {
     username?: true;
     email?: true;
     appwriteid?: true;
-    avatarUrl?: true;
+    avatarFileId?: true;
     isSuperAdmin?: true;
     githubUsername?: true;
     createdAt?: true;
@@ -2134,7 +2134,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl: string | null;
+    avatarFileId: string | null;
     isSuperAdmin: boolean;
     githubUsername: string | null;
     createdAt: Date;
@@ -2167,7 +2167,7 @@ export namespace Prisma {
       username?: boolean;
       email?: boolean;
       appwriteid?: boolean;
-      avatarUrl?: boolean;
+      avatarFileId?: boolean;
       isSuperAdmin?: boolean;
       githubUsername?: boolean;
       createdAt?: boolean;
@@ -2191,7 +2191,7 @@ export namespace Prisma {
       username?: boolean;
       email?: boolean;
       appwriteid?: boolean;
-      avatarUrl?: boolean;
+      avatarFileId?: boolean;
       isSuperAdmin?: boolean;
       githubUsername?: boolean;
       createdAt?: boolean;
@@ -2211,7 +2211,7 @@ export namespace Prisma {
       username?: boolean;
       email?: boolean;
       appwriteid?: boolean;
-      avatarUrl?: boolean;
+      avatarFileId?: boolean;
       isSuperAdmin?: boolean;
       githubUsername?: boolean;
       createdAt?: boolean;
@@ -2228,7 +2228,7 @@ export namespace Prisma {
     username?: boolean;
     email?: boolean;
     appwriteid?: boolean;
-    avatarUrl?: boolean;
+    avatarFileId?: boolean;
     isSuperAdmin?: boolean;
     githubUsername?: boolean;
     createdAt?: boolean;
@@ -2245,7 +2245,7 @@ export namespace Prisma {
     | 'username'
     | 'email'
     | 'appwriteid'
-    | 'avatarUrl'
+    | 'avatarFileId'
     | 'isSuperAdmin'
     | 'githubUsername'
     | 'createdAt'
@@ -2285,7 +2285,7 @@ export namespace Prisma {
         username: string;
         email: string;
         appwriteid: string;
-        avatarUrl: string | null;
+        avatarFileId: string | null;
         isSuperAdmin: boolean;
         githubUsername: string | null;
         createdAt: Date;
@@ -2915,7 +2915,7 @@ export namespace Prisma {
     readonly username: FieldRef<'User', 'String'>;
     readonly email: FieldRef<'User', 'String'>;
     readonly appwriteid: FieldRef<'User', 'String'>;
-    readonly avatarUrl: FieldRef<'User', 'String'>;
+    readonly avatarFileId: FieldRef<'User', 'String'>;
     readonly isSuperAdmin: FieldRef<'User', 'Boolean'>;
     readonly githubUsername: FieldRef<'User', 'String'>;
     readonly createdAt: FieldRef<'User', 'DateTime'>;
@@ -3454,39 +3454,39 @@ export namespace Prisma {
     id: string | null;
     name: string | null;
     slug: string | null;
-    logoFileId: string | null;
-    coverImgFileId: string | null;
     description: string | null;
     location: string | null;
     website: string | null;
     createdAt: Date | null;
     updatedAt: Date | null;
+    coverImgFileId: string | null;
+    logoFileId: string | null;
   };
 
   export type CollegeMaxAggregateOutputType = {
     id: string | null;
     name: string | null;
     slug: string | null;
-    logoFileId: string | null;
-    coverImgFileId: string | null;
     description: string | null;
     location: string | null;
     website: string | null;
     createdAt: Date | null;
     updatedAt: Date | null;
+    coverImgFileId: string | null;
+    logoFileId: string | null;
   };
 
   export type CollegeCountAggregateOutputType = {
     id: number;
     name: number;
     slug: number;
-    logoFileId: number;
-    coverImgFileId: number;
     description: number;
     location: number;
     website: number;
     createdAt: number;
     updatedAt: number;
+    coverImgFileId: number;
+    logoFileId: number;
     _all: number;
   };
 
@@ -3494,39 +3494,39 @@ export namespace Prisma {
     id?: true;
     name?: true;
     slug?: true;
-    logoFileId?: true;
-    coverImgFileId?: true;
     description?: true;
     location?: true;
     website?: true;
     createdAt?: true;
     updatedAt?: true;
+    coverImgFileId?: true;
+    logoFileId?: true;
   };
 
   export type CollegeMaxAggregateInputType = {
     id?: true;
     name?: true;
     slug?: true;
-    logoFileId?: true;
-    coverImgFileId?: true;
     description?: true;
     location?: true;
     website?: true;
     createdAt?: true;
     updatedAt?: true;
+    coverImgFileId?: true;
+    logoFileId?: true;
   };
 
   export type CollegeCountAggregateInputType = {
     id?: true;
     name?: true;
     slug?: true;
-    logoFileId?: true;
-    coverImgFileId?: true;
     description?: true;
     location?: true;
     website?: true;
     createdAt?: true;
     updatedAt?: true;
+    coverImgFileId?: true;
+    logoFileId?: true;
     _all?: true;
   };
 
@@ -3611,13 +3611,13 @@ export namespace Prisma {
     id: string;
     name: string;
     slug: string;
-    logoFileId: string | null;
-    coverImgFileId: string | null;
     description: string | null;
     location: string | null;
     website: string | null;
     createdAt: Date;
     updatedAt: Date;
+    coverImgFileId: string | null;
+    logoFileId: string | null;
     _count: CollegeCountAggregateOutputType | null;
     _min: CollegeMinAggregateOutputType | null;
     _max: CollegeMaxAggregateOutputType | null;
@@ -3643,13 +3643,13 @@ export namespace Prisma {
       id?: boolean;
       name?: boolean;
       slug?: boolean;
-      logoFileId?: boolean;
-      coverImgFileId?: boolean;
       description?: boolean;
       location?: boolean;
       website?: boolean;
       createdAt?: boolean;
       updatedAt?: boolean;
+      coverImgFileId?: boolean;
+      logoFileId?: boolean;
       emailDomains?: boolean | College$emailDomainsArgs<ExtArgs>;
       projects?: boolean | College$projectsArgs<ExtArgs>;
       userColleges?: boolean | College$userCollegesArgs<ExtArgs>;
@@ -3665,13 +3665,13 @@ export namespace Prisma {
       id?: boolean;
       name?: boolean;
       slug?: boolean;
-      logoFileId?: boolean;
-      coverImgFileId?: boolean;
       description?: boolean;
       location?: boolean;
       website?: boolean;
       createdAt?: boolean;
       updatedAt?: boolean;
+      coverImgFileId?: boolean;
+      logoFileId?: boolean;
     },
     ExtArgs['result']['college']
   >;
@@ -3683,13 +3683,13 @@ export namespace Prisma {
       id?: boolean;
       name?: boolean;
       slug?: boolean;
-      logoFileId?: boolean;
-      coverImgFileId?: boolean;
       description?: boolean;
       location?: boolean;
       website?: boolean;
       createdAt?: boolean;
       updatedAt?: boolean;
+      coverImgFileId?: boolean;
+      logoFileId?: boolean;
     },
     ExtArgs['result']['college']
   >;
@@ -3698,13 +3698,13 @@ export namespace Prisma {
     id?: boolean;
     name?: boolean;
     slug?: boolean;
-    logoFileId?: boolean;
-    coverImgFileId?: boolean;
     description?: boolean;
     location?: boolean;
     website?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
+    coverImgFileId?: boolean;
+    logoFileId?: boolean;
   };
 
   export type CollegeOmit<
@@ -3713,13 +3713,13 @@ export namespace Prisma {
     | 'id'
     | 'name'
     | 'slug'
-    | 'logoFileId'
-    | 'coverImgFileId'
     | 'description'
     | 'location'
     | 'website'
     | 'createdAt'
-    | 'updatedAt',
+    | 'updatedAt'
+    | 'coverImgFileId'
+    | 'logoFileId',
     ExtArgs['result']['college']
   >;
   export type CollegeInclude<
@@ -3751,13 +3751,13 @@ export namespace Prisma {
         id: string;
         name: string;
         slug: string;
-        logoFileId: string | null;
-        coverImgFileId: string | null;
         description: string | null;
         location: string | null;
         website: string | null;
         createdAt: Date;
         updatedAt: Date;
+        coverImgFileId: string | null;
+        logoFileId: string | null;
       },
       ExtArgs['result']['college']
     >;
@@ -4380,13 +4380,13 @@ export namespace Prisma {
     readonly id: FieldRef<'College', 'String'>;
     readonly name: FieldRef<'College', 'String'>;
     readonly slug: FieldRef<'College', 'String'>;
-    readonly logoFileId: FieldRef<'College', 'String'>;
-    readonly coverImgFileId: FieldRef<'College', 'String'>;
     readonly description: FieldRef<'College', 'String'>;
     readonly location: FieldRef<'College', 'String'>;
     readonly website: FieldRef<'College', 'String'>;
     readonly createdAt: FieldRef<'College', 'DateTime'>;
     readonly updatedAt: FieldRef<'College', 'DateTime'>;
+    readonly coverImgFileId: FieldRef<'College', 'String'>;
+    readonly logoFileId: FieldRef<'College', 'String'>;
   }
 
   // Custom InputTypes
@@ -4931,11 +4931,11 @@ export namespace Prisma {
     isAdmin: boolean | null;
     degreeType: string | null;
     branch: string | null;
-    collegeEmail: string | null;
-    designation: string | null;
     verified: boolean | null;
     joinedAt: Date | null;
     leftAt: Date | null;
+    collegeEmail: string | null;
+    designation: string | null;
   };
 
   export type UserCollegeMaxAggregateOutputType = {
@@ -4946,11 +4946,11 @@ export namespace Prisma {
     isAdmin: boolean | null;
     degreeType: string | null;
     branch: string | null;
-    collegeEmail: string | null;
-    designation: string | null;
     verified: boolean | null;
     joinedAt: Date | null;
     leftAt: Date | null;
+    collegeEmail: string | null;
+    designation: string | null;
   };
 
   export type UserCollegeCountAggregateOutputType = {
@@ -4961,11 +4961,11 @@ export namespace Prisma {
     isAdmin: number;
     degreeType: number;
     branch: number;
-    collegeEmail: number;
-    designation: number;
     verified: number;
     joinedAt: number;
     leftAt: number;
+    collegeEmail: number;
+    designation: number;
     _all: number;
   };
 
@@ -4977,11 +4977,11 @@ export namespace Prisma {
     isAdmin?: true;
     degreeType?: true;
     branch?: true;
-    collegeEmail?: true;
-    designation?: true;
     verified?: true;
     joinedAt?: true;
     leftAt?: true;
+    collegeEmail?: true;
+    designation?: true;
   };
 
   export type UserCollegeMaxAggregateInputType = {
@@ -4992,11 +4992,11 @@ export namespace Prisma {
     isAdmin?: true;
     degreeType?: true;
     branch?: true;
-    collegeEmail?: true;
-    designation?: true;
     verified?: true;
     joinedAt?: true;
     leftAt?: true;
+    collegeEmail?: true;
+    designation?: true;
   };
 
   export type UserCollegeCountAggregateInputType = {
@@ -5007,11 +5007,11 @@ export namespace Prisma {
     isAdmin?: true;
     degreeType?: true;
     branch?: true;
-    collegeEmail?: true;
-    designation?: true;
     verified?: true;
     joinedAt?: true;
     leftAt?: true;
+    collegeEmail?: true;
+    designation?: true;
     _all?: true;
   };
 
@@ -5101,11 +5101,11 @@ export namespace Prisma {
     isAdmin: boolean;
     degreeType: string | null;
     branch: string | null;
-    collegeEmail: string;
-    designation: string | null;
     verified: boolean;
     joinedAt: Date;
     leftAt: Date;
+    collegeEmail: string;
+    designation: string | null;
     _count: UserCollegeCountAggregateOutputType | null;
     _min: UserCollegeMinAggregateOutputType | null;
     _max: UserCollegeMaxAggregateOutputType | null;
@@ -5136,11 +5136,11 @@ export namespace Prisma {
       isAdmin?: boolean;
       degreeType?: boolean;
       branch?: boolean;
-      collegeEmail?: boolean;
-      designation?: boolean;
       verified?: boolean;
       joinedAt?: boolean;
       leftAt?: boolean;
+      collegeEmail?: boolean;
+      designation?: boolean;
       college?: boolean | CollegeDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -5158,11 +5158,11 @@ export namespace Prisma {
       isAdmin?: boolean;
       degreeType?: boolean;
       branch?: boolean;
-      collegeEmail?: boolean;
-      designation?: boolean;
       verified?: boolean;
       joinedAt?: boolean;
       leftAt?: boolean;
+      collegeEmail?: boolean;
+      designation?: boolean;
       college?: boolean | CollegeDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -5180,11 +5180,11 @@ export namespace Prisma {
       isAdmin?: boolean;
       degreeType?: boolean;
       branch?: boolean;
-      collegeEmail?: boolean;
-      designation?: boolean;
       verified?: boolean;
       joinedAt?: boolean;
       leftAt?: boolean;
+      collegeEmail?: boolean;
+      designation?: boolean;
       college?: boolean | CollegeDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -5199,11 +5199,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: boolean;
     branch?: boolean;
-    collegeEmail?: boolean;
-    designation?: boolean;
     verified?: boolean;
     joinedAt?: boolean;
     leftAt?: boolean;
+    collegeEmail?: boolean;
+    designation?: boolean;
   };
 
   export type UserCollegeOmit<
@@ -5216,11 +5216,11 @@ export namespace Prisma {
     | 'isAdmin'
     | 'degreeType'
     | 'branch'
-    | 'collegeEmail'
-    | 'designation'
     | 'verified'
     | 'joinedAt'
-    | 'leftAt',
+    | 'leftAt'
+    | 'collegeEmail'
+    | 'designation',
     ExtArgs['result']['userCollege']
   >;
   export type UserCollegeInclude<
@@ -5259,11 +5259,11 @@ export namespace Prisma {
         isAdmin: boolean;
         degreeType: string | null;
         branch: string | null;
-        collegeEmail: string;
-        designation: string | null;
         verified: boolean;
         joinedAt: Date;
         leftAt: Date;
+        collegeEmail: string;
+        designation: string | null;
       },
       ExtArgs['result']['userCollege']
     >;
@@ -5889,11 +5889,11 @@ export namespace Prisma {
     readonly isAdmin: FieldRef<'UserCollege', 'Boolean'>;
     readonly degreeType: FieldRef<'UserCollege', 'String'>;
     readonly branch: FieldRef<'UserCollege', 'String'>;
-    readonly collegeEmail: FieldRef<'UserCollege', 'String'>;
-    readonly designation: FieldRef<'UserCollege', 'String'>;
     readonly verified: FieldRef<'UserCollege', 'Boolean'>;
     readonly joinedAt: FieldRef<'UserCollege', 'DateTime'>;
     readonly leftAt: FieldRef<'UserCollege', 'DateTime'>;
+    readonly collegeEmail: FieldRef<'UserCollege', 'String'>;
+    readonly designation: FieldRef<'UserCollege', 'String'>;
   }
 
   // Custom InputTypes
@@ -14475,7 +14475,7 @@ export namespace Prisma {
     username: 'username';
     email: 'email';
     appwriteid: 'appwriteid';
-    avatarUrl: 'avatarUrl';
+    avatarFileId: 'avatarFileId';
     isSuperAdmin: 'isSuperAdmin';
     githubUsername: 'githubUsername';
     createdAt: 'createdAt';
@@ -14489,13 +14489,13 @@ export namespace Prisma {
     id: 'id';
     name: 'name';
     slug: 'slug';
-    logoFileId: 'logoFileId';
-    coverImgFileId: 'coverImgFileId';
     description: 'description';
     location: 'location';
     website: 'website';
     createdAt: 'createdAt';
     updatedAt: 'updatedAt';
+    coverImgFileId: 'coverImgFileId';
+    logoFileId: 'logoFileId';
   };
 
   export type CollegeScalarFieldEnum =
@@ -14509,11 +14509,11 @@ export namespace Prisma {
     isAdmin: 'isAdmin';
     degreeType: 'degreeType';
     branch: 'branch';
-    collegeEmail: 'collegeEmail';
-    designation: 'designation';
     verified: 'verified';
     joinedAt: 'joinedAt';
     leftAt: 'leftAt';
+    collegeEmail: 'collegeEmail';
+    designation: 'designation';
   };
 
   export type UserCollegeScalarFieldEnum =
@@ -14720,7 +14720,7 @@ export namespace Prisma {
     username?: StringFilter<'User'> | string;
     email?: StringFilter<'User'> | string;
     appwriteid?: StringFilter<'User'> | string;
-    avatarUrl?: StringNullableFilter<'User'> | string | null;
+    avatarFileId?: StringNullableFilter<'User'> | string | null;
     isSuperAdmin?: BoolFilter<'User'> | boolean;
     githubUsername?: StringNullableFilter<'User'> | string | null;
     createdAt?: DateTimeFilter<'User'> | Date | string;
@@ -14738,7 +14738,7 @@ export namespace Prisma {
     username?: SortOrder;
     email?: SortOrder;
     appwriteid?: SortOrder;
-    avatarUrl?: SortOrderInput | SortOrder;
+    avatarFileId?: SortOrderInput | SortOrder;
     isSuperAdmin?: SortOrder;
     githubUsername?: SortOrderInput | SortOrder;
     createdAt?: SortOrder;
@@ -14760,7 +14760,7 @@ export namespace Prisma {
       firstName?: StringFilter<'User'> | string;
       middleName?: StringNullableFilter<'User'> | string | null;
       lastName?: StringNullableFilter<'User'> | string | null;
-      avatarUrl?: StringNullableFilter<'User'> | string | null;
+      avatarFileId?: StringNullableFilter<'User'> | string | null;
       isSuperAdmin?: BoolFilter<'User'> | boolean;
       githubUsername?: StringNullableFilter<'User'> | string | null;
       createdAt?: DateTimeFilter<'User'> | Date | string;
@@ -14780,7 +14780,7 @@ export namespace Prisma {
     username?: SortOrder;
     email?: SortOrder;
     appwriteid?: SortOrder;
-    avatarUrl?: SortOrderInput | SortOrder;
+    avatarFileId?: SortOrderInput | SortOrder;
     isSuperAdmin?: SortOrder;
     githubUsername?: SortOrderInput | SortOrder;
     createdAt?: SortOrder;
@@ -14805,7 +14805,7 @@ export namespace Prisma {
     username?: StringWithAggregatesFilter<'User'> | string;
     email?: StringWithAggregatesFilter<'User'> | string;
     appwriteid?: StringWithAggregatesFilter<'User'> | string;
-    avatarUrl?: StringNullableWithAggregatesFilter<'User'> | string | null;
+    avatarFileId?: StringNullableWithAggregatesFilter<'User'> | string | null;
     isSuperAdmin?: BoolWithAggregatesFilter<'User'> | boolean;
     githubUsername?: StringNullableWithAggregatesFilter<'User'> | string | null;
     createdAt?: DateTimeWithAggregatesFilter<'User'> | Date | string;
@@ -14819,13 +14819,13 @@ export namespace Prisma {
     id?: UuidFilter<'College'> | string;
     name?: StringFilter<'College'> | string;
     slug?: StringFilter<'College'> | string;
-    logoFileId?: StringNullableFilter<'College'> | string | null;
-    coverImgFileId?: StringNullableFilter<'College'> | string | null;
     description?: StringNullableFilter<'College'> | string | null;
     location?: StringNullableFilter<'College'> | string | null;
     website?: StringNullableFilter<'College'> | string | null;
     createdAt?: DateTimeFilter<'College'> | Date | string;
     updatedAt?: DateTimeFilter<'College'> | Date | string;
+    coverImgFileId?: StringNullableFilter<'College'> | string | null;
+    logoFileId?: StringNullableFilter<'College'> | string | null;
     emailDomains?: CollegeEmailDomainListRelationFilter;
     projects?: ProjectListRelationFilter;
     userColleges?: UserCollegeListRelationFilter;
@@ -14835,13 +14835,13 @@ export namespace Prisma {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
-    logoFileId?: SortOrderInput | SortOrder;
-    coverImgFileId?: SortOrderInput | SortOrder;
     description?: SortOrderInput | SortOrder;
     location?: SortOrderInput | SortOrder;
     website?: SortOrderInput | SortOrder;
     createdAt?: SortOrder;
     updatedAt?: SortOrder;
+    coverImgFileId?: SortOrderInput | SortOrder;
+    logoFileId?: SortOrderInput | SortOrder;
     emailDomains?: CollegeEmailDomainOrderByRelationAggregateInput;
     projects?: ProjectOrderByRelationAggregateInput;
     userColleges?: UserCollegeOrderByRelationAggregateInput;
@@ -14855,13 +14855,13 @@ export namespace Prisma {
       OR?: CollegeWhereInput[];
       NOT?: CollegeWhereInput | CollegeWhereInput[];
       name?: StringFilter<'College'> | string;
-      logoFileId?: StringNullableFilter<'College'> | string | null;
-      coverImgFileId?: StringNullableFilter<'College'> | string | null;
       description?: StringNullableFilter<'College'> | string | null;
       location?: StringNullableFilter<'College'> | string | null;
       website?: StringNullableFilter<'College'> | string | null;
       createdAt?: DateTimeFilter<'College'> | Date | string;
       updatedAt?: DateTimeFilter<'College'> | Date | string;
+      coverImgFileId?: StringNullableFilter<'College'> | string | null;
+      logoFileId?: StringNullableFilter<'College'> | string | null;
       emailDomains?: CollegeEmailDomainListRelationFilter;
       projects?: ProjectListRelationFilter;
       userColleges?: UserCollegeListRelationFilter;
@@ -14873,13 +14873,13 @@ export namespace Prisma {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
-    logoFileId?: SortOrderInput | SortOrder;
-    coverImgFileId?: SortOrderInput | SortOrder;
     description?: SortOrderInput | SortOrder;
     location?: SortOrderInput | SortOrder;
     website?: SortOrderInput | SortOrder;
     createdAt?: SortOrder;
     updatedAt?: SortOrder;
+    coverImgFileId?: SortOrderInput | SortOrder;
+    logoFileId?: SortOrderInput | SortOrder;
     _count?: CollegeCountOrderByAggregateInput;
     _max?: CollegeMaxOrderByAggregateInput;
     _min?: CollegeMinOrderByAggregateInput;
@@ -14896,16 +14896,16 @@ export namespace Prisma {
     id?: UuidWithAggregatesFilter<'College'> | string;
     name?: StringWithAggregatesFilter<'College'> | string;
     slug?: StringWithAggregatesFilter<'College'> | string;
-    logoFileId?: StringNullableWithAggregatesFilter<'College'> | string | null;
-    coverImgFileId?:
-      | StringNullableWithAggregatesFilter<'College'>
-      | string
-      | null;
     description?: StringNullableWithAggregatesFilter<'College'> | string | null;
     location?: StringNullableWithAggregatesFilter<'College'> | string | null;
     website?: StringNullableWithAggregatesFilter<'College'> | string | null;
     createdAt?: DateTimeWithAggregatesFilter<'College'> | Date | string;
     updatedAt?: DateTimeWithAggregatesFilter<'College'> | Date | string;
+    coverImgFileId?:
+      | StringNullableWithAggregatesFilter<'College'>
+      | string
+      | null;
+    logoFileId?: StringNullableWithAggregatesFilter<'College'> | string | null;
   };
 
   export type UserCollegeWhereInput = {
@@ -14919,11 +14919,11 @@ export namespace Prisma {
     isAdmin?: BoolFilter<'UserCollege'> | boolean;
     degreeType?: StringNullableFilter<'UserCollege'> | string | null;
     branch?: StringNullableFilter<'UserCollege'> | string | null;
-    collegeEmail?: StringFilter<'UserCollege'> | string;
-    designation?: StringNullableFilter<'UserCollege'> | string | null;
     verified?: BoolFilter<'UserCollege'> | boolean;
     joinedAt?: DateTimeFilter<'UserCollege'> | Date | string;
     leftAt?: DateTimeFilter<'UserCollege'> | Date | string;
+    collegeEmail?: StringFilter<'UserCollege'> | string;
+    designation?: StringNullableFilter<'UserCollege'> | string | null;
     college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
     user?: XOR<UserScalarRelationFilter, UserWhereInput>;
   };
@@ -14936,11 +14936,11 @@ export namespace Prisma {
     isAdmin?: SortOrder;
     degreeType?: SortOrderInput | SortOrder;
     branch?: SortOrderInput | SortOrder;
-    collegeEmail?: SortOrder;
-    designation?: SortOrderInput | SortOrder;
     verified?: SortOrder;
     joinedAt?: SortOrder;
     leftAt?: SortOrder;
+    collegeEmail?: SortOrder;
+    designation?: SortOrderInput | SortOrder;
     college?: CollegeOrderByWithRelationInput;
     user?: UserOrderByWithRelationInput;
   };
@@ -14958,10 +14958,10 @@ export namespace Prisma {
       isAdmin?: BoolFilter<'UserCollege'> | boolean;
       degreeType?: StringNullableFilter<'UserCollege'> | string | null;
       branch?: StringNullableFilter<'UserCollege'> | string | null;
-      designation?: StringNullableFilter<'UserCollege'> | string | null;
       verified?: BoolFilter<'UserCollege'> | boolean;
       joinedAt?: DateTimeFilter<'UserCollege'> | Date | string;
       leftAt?: DateTimeFilter<'UserCollege'> | Date | string;
+      designation?: StringNullableFilter<'UserCollege'> | string | null;
       college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
       user?: XOR<UserScalarRelationFilter, UserWhereInput>;
     },
@@ -14976,11 +14976,11 @@ export namespace Prisma {
     isAdmin?: SortOrder;
     degreeType?: SortOrderInput | SortOrder;
     branch?: SortOrderInput | SortOrder;
-    collegeEmail?: SortOrder;
-    designation?: SortOrderInput | SortOrder;
     verified?: SortOrder;
     joinedAt?: SortOrder;
     leftAt?: SortOrder;
+    collegeEmail?: SortOrder;
+    designation?: SortOrderInput | SortOrder;
     _count?: UserCollegeCountOrderByAggregateInput;
     _max?: UserCollegeMaxOrderByAggregateInput;
     _min?: UserCollegeMinOrderByAggregateInput;
@@ -15006,14 +15006,14 @@ export namespace Prisma {
       | string
       | null;
     branch?: StringNullableWithAggregatesFilter<'UserCollege'> | string | null;
+    verified?: BoolWithAggregatesFilter<'UserCollege'> | boolean;
+    joinedAt?: DateTimeWithAggregatesFilter<'UserCollege'> | Date | string;
+    leftAt?: DateTimeWithAggregatesFilter<'UserCollege'> | Date | string;
     collegeEmail?: StringWithAggregatesFilter<'UserCollege'> | string;
     designation?:
       | StringNullableWithAggregatesFilter<'UserCollege'>
       | string
       | null;
-    verified?: BoolWithAggregatesFilter<'UserCollege'> | boolean;
-    joinedAt?: DateTimeWithAggregatesFilter<'UserCollege'> | Date | string;
-    leftAt?: DateTimeWithAggregatesFilter<'UserCollege'> | Date | string;
   };
 
   export type CollegeEmailDomainWhereInput = {
@@ -15409,7 +15409,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl?: string | null;
+    avatarFileId?: string | null;
     isSuperAdmin?: boolean;
     githubUsername?: string | null;
     createdAt?: Date | string;
@@ -15427,7 +15427,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl?: string | null;
+    avatarFileId?: string | null;
     isSuperAdmin?: boolean;
     githubUsername?: string | null;
     createdAt?: Date | string;
@@ -15445,7 +15445,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -15463,7 +15463,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -15481,7 +15481,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl?: string | null;
+    avatarFileId?: string | null;
     isSuperAdmin?: boolean;
     githubUsername?: string | null;
     createdAt?: Date | string;
@@ -15496,7 +15496,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -15511,7 +15511,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -15522,13 +15522,13 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
-    logoFileId?: string | null;
-    coverImgFileId?: string | null;
     description?: string | null;
     location?: string | null;
     website?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    coverImgFileId?: string | null;
+    logoFileId?: string | null;
     emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput;
     projects?: ProjectCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput;
@@ -15538,13 +15538,13 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
-    logoFileId?: string | null;
-    coverImgFileId?: string | null;
     description?: string | null;
     location?: string | null;
     website?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    coverImgFileId?: string | null;
+    logoFileId?: string | null;
     emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput;
     projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput;
@@ -15554,13 +15554,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput;
     projects?: ProjectUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput;
@@ -15570,13 +15570,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput;
     projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput;
@@ -15586,39 +15586,39 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
-    logoFileId?: string | null;
-    coverImgFileId?: string | null;
     description?: string | null;
     location?: string | null;
     website?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    coverImgFileId?: string | null;
+    logoFileId?: string | null;
   };
 
   export type CollegeUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
   };
 
   export type CollegeUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
   };
 
   export type UserCollegeCreateInput = {
@@ -15627,11 +15627,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: string | null;
     branch?: string | null;
-    collegeEmail: string;
-    designation?: string | null;
     verified: boolean;
     joinedAt: Date | string;
     leftAt: Date | string;
+    collegeEmail: string;
+    designation?: string | null;
     college: CollegeCreateNestedOneWithoutUserCollegesInput;
     user: UserCreateNestedOneWithoutUserCollegesInput;
   };
@@ -15644,11 +15644,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: string | null;
     branch?: string | null;
-    collegeEmail: string;
-    designation?: string | null;
     verified: boolean;
     joinedAt: Date | string;
     leftAt: Date | string;
+    collegeEmail: string;
+    designation?: string | null;
   };
 
   export type UserCollegeUpdateInput = {
@@ -15657,11 +15657,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     college?: CollegeUpdateOneRequiredWithoutUserCollegesNestedInput;
     user?: UserUpdateOneRequiredWithoutUserCollegesNestedInput;
   };
@@ -15674,11 +15674,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
   };
 
   export type UserCollegeCreateManyInput = {
@@ -15689,11 +15689,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: string | null;
     branch?: string | null;
-    collegeEmail: string;
-    designation?: string | null;
     verified: boolean;
     joinedAt: Date | string;
     leftAt: Date | string;
+    collegeEmail: string;
+    designation?: string | null;
   };
 
   export type UserCollegeUpdateManyMutationInput = {
@@ -15702,11 +15702,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
   };
 
   export type UserCollegeUncheckedUpdateManyInput = {
@@ -15717,11 +15717,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
   };
 
   export type CollegeEmailDomainCreateInput = {
@@ -16141,7 +16141,7 @@ export namespace Prisma {
     username?: SortOrder;
     email?: SortOrder;
     appwriteid?: SortOrder;
-    avatarUrl?: SortOrder;
+    avatarFileId?: SortOrder;
     isSuperAdmin?: SortOrder;
     githubUsername?: SortOrder;
     createdAt?: SortOrder;
@@ -16156,7 +16156,7 @@ export namespace Prisma {
     username?: SortOrder;
     email?: SortOrder;
     appwriteid?: SortOrder;
-    avatarUrl?: SortOrder;
+    avatarFileId?: SortOrder;
     isSuperAdmin?: SortOrder;
     githubUsername?: SortOrder;
     createdAt?: SortOrder;
@@ -16171,7 +16171,7 @@ export namespace Prisma {
     username?: SortOrder;
     email?: SortOrder;
     appwriteid?: SortOrder;
-    avatarUrl?: SortOrder;
+    avatarFileId?: SortOrder;
     isSuperAdmin?: SortOrder;
     githubUsername?: SortOrder;
     createdAt?: SortOrder;
@@ -16278,39 +16278,39 @@ export namespace Prisma {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
-    logoFileId?: SortOrder;
-    coverImgFileId?: SortOrder;
     description?: SortOrder;
     location?: SortOrder;
     website?: SortOrder;
     createdAt?: SortOrder;
     updatedAt?: SortOrder;
+    coverImgFileId?: SortOrder;
+    logoFileId?: SortOrder;
   };
 
   export type CollegeMaxOrderByAggregateInput = {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
-    logoFileId?: SortOrder;
-    coverImgFileId?: SortOrder;
     description?: SortOrder;
     location?: SortOrder;
     website?: SortOrder;
     createdAt?: SortOrder;
     updatedAt?: SortOrder;
+    coverImgFileId?: SortOrder;
+    logoFileId?: SortOrder;
   };
 
   export type CollegeMinOrderByAggregateInput = {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
-    logoFileId?: SortOrder;
-    coverImgFileId?: SortOrder;
     description?: SortOrder;
     location?: SortOrder;
     website?: SortOrder;
     createdAt?: SortOrder;
     updatedAt?: SortOrder;
+    coverImgFileId?: SortOrder;
+    logoFileId?: SortOrder;
   };
 
   export type EnumUserTypeFilter<$PrismaModel = never> = {
@@ -16338,11 +16338,11 @@ export namespace Prisma {
     isAdmin?: SortOrder;
     degreeType?: SortOrder;
     branch?: SortOrder;
-    collegeEmail?: SortOrder;
-    designation?: SortOrder;
     verified?: SortOrder;
     joinedAt?: SortOrder;
     leftAt?: SortOrder;
+    collegeEmail?: SortOrder;
+    designation?: SortOrder;
   };
 
   export type UserCollegeMaxOrderByAggregateInput = {
@@ -16353,11 +16353,11 @@ export namespace Prisma {
     isAdmin?: SortOrder;
     degreeType?: SortOrder;
     branch?: SortOrder;
-    collegeEmail?: SortOrder;
-    designation?: SortOrder;
     verified?: SortOrder;
     joinedAt?: SortOrder;
     leftAt?: SortOrder;
+    collegeEmail?: SortOrder;
+    designation?: SortOrder;
   };
 
   export type UserCollegeMinOrderByAggregateInput = {
@@ -16368,11 +16368,11 @@ export namespace Prisma {
     isAdmin?: SortOrder;
     degreeType?: SortOrder;
     branch?: SortOrder;
-    collegeEmail?: SortOrder;
-    designation?: SortOrder;
     verified?: SortOrder;
     joinedAt?: SortOrder;
     leftAt?: SortOrder;
+    collegeEmail?: SortOrder;
+    designation?: SortOrder;
   };
 
   export type EnumUserTypeWithAggregatesFilter<$PrismaModel = never> = {
@@ -18207,11 +18207,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: string | null;
     branch?: string | null;
-    collegeEmail: string;
-    designation?: string | null;
     verified: boolean;
     joinedAt: Date | string;
     leftAt: Date | string;
+    collegeEmail: string;
+    designation?: string | null;
     college: CollegeCreateNestedOneWithoutUserCollegesInput;
   };
 
@@ -18222,11 +18222,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: string | null;
     branch?: string | null;
-    collegeEmail: string;
-    designation?: string | null;
     verified: boolean;
     joinedAt: Date | string;
     leftAt: Date | string;
+    collegeEmail: string;
+    designation?: string | null;
   };
 
   export type UserCollegeCreateOrConnectWithoutUserInput = {
@@ -18362,11 +18362,11 @@ export namespace Prisma {
     isAdmin?: BoolFilter<'UserCollege'> | boolean;
     degreeType?: StringNullableFilter<'UserCollege'> | string | null;
     branch?: StringNullableFilter<'UserCollege'> | string | null;
-    collegeEmail?: StringFilter<'UserCollege'> | string;
-    designation?: StringNullableFilter<'UserCollege'> | string | null;
     verified?: BoolFilter<'UserCollege'> | boolean;
     joinedAt?: DateTimeFilter<'UserCollege'> | Date | string;
     leftAt?: DateTimeFilter<'UserCollege'> | Date | string;
+    collegeEmail?: StringFilter<'UserCollege'> | string;
+    designation?: StringNullableFilter<'UserCollege'> | string | null;
   };
 
   export type CollegeEmailDomainCreateWithoutCollegeInput = {
@@ -18443,11 +18443,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: string | null;
     branch?: string | null;
-    collegeEmail: string;
-    designation?: string | null;
     verified: boolean;
     joinedAt: Date | string;
     leftAt: Date | string;
+    collegeEmail: string;
+    designation?: string | null;
     user: UserCreateNestedOneWithoutUserCollegesInput;
   };
 
@@ -18458,11 +18458,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: string | null;
     branch?: string | null;
-    collegeEmail: string;
-    designation?: string | null;
     verified: boolean;
     joinedAt: Date | string;
     leftAt: Date | string;
+    collegeEmail: string;
+    designation?: string | null;
   };
 
   export type UserCollegeCreateOrConnectWithoutCollegeInput = {
@@ -18597,13 +18597,13 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
-    logoFileId?: string | null;
-    coverImgFileId?: string | null;
     description?: string | null;
     location?: string | null;
     website?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    coverImgFileId?: string | null;
+    logoFileId?: string | null;
     emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput;
     projects?: ProjectCreateNestedManyWithoutCollegeInput;
   };
@@ -18612,13 +18612,13 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
-    logoFileId?: string | null;
-    coverImgFileId?: string | null;
     description?: string | null;
     location?: string | null;
     website?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    coverImgFileId?: string | null;
+    logoFileId?: string | null;
     emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput;
     projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput;
   };
@@ -18639,7 +18639,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl?: string | null;
+    avatarFileId?: string | null;
     isSuperAdmin?: boolean;
     githubUsername?: string | null;
     createdAt?: Date | string;
@@ -18656,7 +18656,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl?: string | null;
+    avatarFileId?: string | null;
     isSuperAdmin?: boolean;
     githubUsername?: string | null;
     createdAt?: Date | string;
@@ -18697,13 +18697,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput;
     projects?: ProjectUpdateManyWithoutCollegeNestedInput;
   };
@@ -18712,13 +18712,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput;
     projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput;
   };
@@ -18751,7 +18751,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -18768,7 +18768,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -18781,13 +18781,13 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
-    logoFileId?: string | null;
-    coverImgFileId?: string | null;
     description?: string | null;
     location?: string | null;
     website?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    coverImgFileId?: string | null;
+    logoFileId?: string | null;
     projects?: ProjectCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput;
   };
@@ -18796,13 +18796,13 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
-    logoFileId?: string | null;
-    coverImgFileId?: string | null;
     description?: string | null;
     location?: string | null;
     website?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    coverImgFileId?: string | null;
+    logoFileId?: string | null;
     projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput;
   };
@@ -18839,13 +18839,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     projects?: ProjectUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput;
   };
@@ -18854,13 +18854,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput;
   };
@@ -18869,13 +18869,13 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
-    logoFileId?: string | null;
-    coverImgFileId?: string | null;
     description?: string | null;
     location?: string | null;
     website?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    coverImgFileId?: string | null;
+    logoFileId?: string | null;
     emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput;
   };
@@ -18884,13 +18884,13 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
-    logoFileId?: string | null;
-    coverImgFileId?: string | null;
     description?: string | null;
     location?: string | null;
     website?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    coverImgFileId?: string | null;
+    logoFileId?: string | null;
     emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput;
   };
@@ -19000,13 +19000,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput;
   };
@@ -19015,13 +19015,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
-    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
-    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput;
   };
@@ -19164,7 +19164,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl?: string | null;
+    avatarFileId?: string | null;
     isSuperAdmin?: boolean;
     githubUsername?: string | null;
     createdAt?: Date | string;
@@ -19181,7 +19181,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl?: string | null;
+    avatarFileId?: string | null;
     isSuperAdmin?: boolean;
     githubUsername?: string | null;
     createdAt?: Date | string;
@@ -19276,7 +19276,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -19293,7 +19293,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -19348,7 +19348,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl?: string | null;
+    avatarFileId?: string | null;
     isSuperAdmin?: boolean;
     githubUsername?: string | null;
     createdAt?: Date | string;
@@ -19365,7 +19365,7 @@ export namespace Prisma {
     username: string;
     email: string;
     appwriteid: string;
-    avatarUrl?: string | null;
+    avatarFileId?: string | null;
     isSuperAdmin?: boolean;
     githubUsername?: string | null;
     createdAt?: Date | string;
@@ -19460,7 +19460,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -19477,7 +19477,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
     appwriteid?: StringFieldUpdateOperationsInput | string;
-    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
     githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
@@ -19693,11 +19693,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: string | null;
     branch?: string | null;
-    collegeEmail: string;
-    designation?: string | null;
     verified: boolean;
     joinedAt: Date | string;
     leftAt: Date | string;
+    collegeEmail: string;
+    designation?: string | null;
   };
 
   export type ProjectCollaboratorUpdateWithoutUserInput = {
@@ -19745,11 +19745,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     college?: CollegeUpdateOneRequiredWithoutUserCollegesNestedInput;
   };
 
@@ -19760,11 +19760,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
   };
 
   export type UserCollegeUncheckedUpdateManyWithoutUserInput = {
@@ -19774,11 +19774,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
   };
 
   export type CollegeEmailDomainCreateManyCollegeInput = {
@@ -19805,11 +19805,11 @@ export namespace Prisma {
     isAdmin?: boolean;
     degreeType?: string | null;
     branch?: string | null;
-    collegeEmail: string;
-    designation?: string | null;
     verified: boolean;
     joinedAt: Date | string;
     leftAt: Date | string;
+    collegeEmail: string;
+    designation?: string | null;
   };
 
   export type CollegeEmailDomainUpdateWithoutCollegeInput = {
@@ -19875,11 +19875,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     user?: UserUpdateOneRequiredWithoutUserCollegesNestedInput;
   };
 
@@ -19890,11 +19890,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
   };
 
   export type UserCollegeUncheckedUpdateManyWithoutCollegeInput = {
@@ -19904,11 +19904,11 @@ export namespace Prisma {
     isAdmin?: BoolFieldUpdateOperationsInput | boolean;
     degreeType?: NullableStringFieldUpdateOperationsInput | string | null;
     branch?: NullableStringFieldUpdateOperationsInput | string | null;
-    collegeEmail?: StringFieldUpdateOperationsInput | string;
-    designation?: NullableStringFieldUpdateOperationsInput | string | null;
     verified?: BoolFieldUpdateOperationsInput | boolean;
     joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    collegeEmail?: StringFieldUpdateOperationsInput | string;
+    designation?: NullableStringFieldUpdateOperationsInput | string | null;
   };
 
   export type ProjectCollaboratorCreateManyProjectInput = {

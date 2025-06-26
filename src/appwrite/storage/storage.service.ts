@@ -58,4 +58,22 @@ export class StorageService {
       throw new Error(`Failed to delete file: ${errorMessage}`);
     }
   }
+
+  /**
+   * Get file view URL using Appwrite configuration
+   * @param bucketId - The bucket ID
+   * @param fileId - The file ID
+   * @param token - Optional token for private files
+   * @returns The URL to view the file
+   */
+  getFileUrl(bucketId: string, fileId: string): string {
+    const endpoint = this.configService.getOrThrow<string>('APPWRITE_ENDPOINT');
+    const projectId = this.configService.getOrThrow<string>(
+      'APPWRITE_PROJECT_ID',
+    );
+
+    const url = `${endpoint}/storage/buckets/${bucketId}/files/${fileId}/view?project=${projectId}`;
+
+    return url;
+  }
 }

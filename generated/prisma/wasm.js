@@ -124,7 +124,7 @@ exports.Prisma.UserScalarFieldEnum = {
   username: 'username',
   email: 'email',
   appwriteid: 'appwriteid',
-  avatarUrl: 'avatarUrl',
+  avatarFileId: 'avatarFileId',
   isSuperAdmin: 'isSuperAdmin',
   githubUsername: 'githubUsername',
   createdAt: 'createdAt',
@@ -135,13 +135,13 @@ exports.Prisma.CollegeScalarFieldEnum = {
   id: 'id',
   name: 'name',
   slug: 'slug',
-  logoFileId: 'logoFileId',
-  coverImgFileId: 'coverImgFileId',
   description: 'description',
   location: 'location',
   website: 'website',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
+  coverImgFileId: 'coverImgFileId',
+  logoFileId: 'logoFileId',
 };
 
 exports.Prisma.UserCollegeScalarFieldEnum = {
@@ -152,11 +152,11 @@ exports.Prisma.UserCollegeScalarFieldEnum = {
   isAdmin: 'isAdmin',
   degreeType: 'degreeType',
   branch: 'branch',
-  collegeEmail: 'collegeEmail',
-  designation: 'designation',
   verified: 'verified',
   joinedAt: 'joinedAt',
   leftAt: 'leftAt',
+  collegeEmail: 'collegeEmail',
+  designation: 'designation',
 };
 
 exports.Prisma.CollegeEmailDomainScalarFieldEnum = {
