@@ -25,7 +25,7 @@ export class UsersService {
   async findByAppwriteId(appwriteId: string) {
     const user = await this.prisma.user.findUnique({
       where: {
-        appwriteid: appwriteId,
+        appwriteId,
       },
     });
 
@@ -61,7 +61,7 @@ export class UsersService {
     const existingUser = await this.prisma.user.findFirst({
       where: {
         OR: [
-          { appwriteid: onboardingData.appwriteId },
+          { appwriteId: onboardingData.appwriteId },
           { username: onboardingData.username },
           { email: onboardingData.primaryEmail },
         ],
@@ -147,7 +147,7 @@ export class UsersService {
         // Create user
         const user = await tx.user.create({
           data: {
-            appwriteid: onboardingData.appwriteId,
+            appwriteId: onboardingData.appwriteId,
             username: onboardingData.username,
             firstName: onboardingData.firstName,
             middleName: onboardingData.middleName,
