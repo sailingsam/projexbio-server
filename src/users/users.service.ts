@@ -8,6 +8,7 @@ import { PrismaService } from '../prisma/prisma.service';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
 import { UserStorageService } from '../appwrite/storage/user/userStorage.service';
+import { CollegeStorageService } from 'src/appwrite/storage/college/collegeStorage.service';
 import {
   OnboardingDto,
   UserRole,
@@ -20,6 +21,7 @@ export class UsersService {
     private prisma: PrismaService,
     @Inject(CACHE_MANAGER) private cache: Cache,
     private userStorageService: UserStorageService,
+    private collegeStorageService: CollegeStorageService,
   ) {}
 
   async findByAppwriteId(appwriteId: string) {
@@ -27,20 +29,83 @@ export class UsersService {
       where: {
         appwriteId,
       },
+      include: {
+        userSkillTags: {
+          include: {
+            skillTag: {
+              omit: {
+                createdAt: true,
+                updatedAt: true,
+              },
+            },
+          },
+        },
+        userSocialLinks: {
+          omit: {
+            id: true,
+            userId: true,
+            createdAt: true,
+            updatedAt: true,
+          },
+        },
+        userColleges: {
+          include: {
+            college: {
+              omit: {
+                id: true,
+                description: true,
+                location: true,
+                website: true,
+                coverImgFileId: true,
+                createdAt: true,
+                updatedAt: true,
+              },
+            },
+          },
+          omit: {
+            id: true,
+            userId: true,
+            createdAt: true,
+            updatedAt: true,
+          },
+        },
+      },
     });
 
     if (!user) {
       throw new NotFoundException('User not found');
     }
 
-    // Replace avatarFileId with avatarUrl
-    const { avatarFileId, ...userWithoutFileId } = user;
-
     return {
-      ...userWithoutFileId,
-      avatarUrl: avatarFileId
-        ? this.userStorageService.getUserAssetUrl(avatarFileId)
+      ...user,
+      avatarFileId: undefined,
+      avatarUrl: user.avatarFileId
+        ? this.userStorageService.getUserAssetUrl(user.avatarFileId)
         : null,
+      colleges: user.userColleges.map((userCollege) => ({
+        ...userCollege.college,
+        collegeId: userCollege.collegeId,
+        logoUrl: userCollege.college.logoFileId
+          ? this.collegeStorageService.getCollegeAssetUrl(
+              userCollege.college.logoFileId,
+            )
+          : null,
+        userType: userCollege.userType,
+        isAdmin: userCollege.isAdmin,
+        degreeType: userCollege.degreeType,
+        branch: userCollege.branch,
+        verified: userCollege.verified,
+        joinedAt: userCollege.joinedAt,
+        leftAt: userCollege.leftAt,
+        collegeEmail: userCollege.collegeEmail,
+        designation: userCollege.designation,
+        logoFileId: undefined,
+      })),
+      socialLinks: user.userSocialLinks,
+      skills: user.userSkillTags.map((userSkillTag) => userSkillTag.skillTag),
+      userSkillTags: undefined,
+      userSocialLinks: undefined,
+      userColleges: undefined,
     };
   }
 
