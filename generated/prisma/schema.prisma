@@ -81,31 +81,31 @@ model College {
 }
 
 model UserCollege {
-  id           String    @id @default(uuid()) @db.Uuid
-  userId       String    @db.Uuid
-  collegeId    String    @db.Uuid
+  id           String   @id @default(uuid()) @db.Uuid
+  userId       String   @db.Uuid
+  collegeId    String   @db.Uuid
   userType     UserType
-  isAdmin      Boolean   @default(false)
+  isAdmin      Boolean  @default(false)
   degreeType   String?
   branch       String?
   verified     Boolean
   joinedAt     DateTime
   leftAt       DateTime
-  collegeEmail String    @unique
+  collegeEmail String   @unique
   designation  String?
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime? @updatedAt
-  college      College   @relation(fields: [collegeId], references: [id])
-  user         User      @relation(fields: [userId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  college      College  @relation(fields: [collegeId], references: [id])
+  user         User     @relation(fields: [userId], references: [id])
 }
 
 model CollegeEmailDomain {
-  id        String    @id @default(uuid()) @db.Uuid
-  domain    String    @unique
-  collegeId String    @db.Uuid
-  createdAt DateTime  @default(now())
-  updatedAt DateTime? @updatedAt
-  college   College   @relation(fields: [collegeId], references: [id])
+  id        String   @id @default(uuid()) @db.Uuid
+  domain    String   @unique
+  collegeId String   @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  college   College  @relation(fields: [collegeId], references: [id])
 }
 
 model Project {

@@ -9552,7 +9552,7 @@ export namespace Prisma {
     collegeEmail: string;
     designation: string | null;
     createdAt: Date;
-    updatedAt: Date | null;
+    updatedAt: Date;
     _count: UserCollegeCountAggregateOutputType | null;
     _min: UserCollegeMinAggregateOutputType | null;
     _max: UserCollegeMaxAggregateOutputType | null;
@@ -9722,7 +9722,7 @@ export namespace Prisma {
         collegeEmail: string;
         designation: string | null;
         createdAt: Date;
-        updatedAt: Date | null;
+        updatedAt: Date;
       },
       ExtArgs['result']['userCollege']
     >;
@@ -10955,7 +10955,7 @@ export namespace Prisma {
     domain: string;
     collegeId: string;
     createdAt: Date;
-    updatedAt: Date | null;
+    updatedAt: Date;
     _count: CollegeEmailDomainCountAggregateOutputType | null;
     _min: CollegeEmailDomainMinAggregateOutputType | null;
     _max: CollegeEmailDomainMaxAggregateOutputType | null;
@@ -11061,7 +11061,7 @@ export namespace Prisma {
         domain: string;
         collegeId: string;
         createdAt: Date;
-        updatedAt: Date | null;
+        updatedAt: Date;
       },
       ExtArgs['result']['collegeEmailDomain']
     >;
@@ -19780,7 +19780,7 @@ export namespace Prisma {
     collegeEmail?: StringFilter<'UserCollege'> | string;
     designation?: StringNullableFilter<'UserCollege'> | string | null;
     createdAt?: DateTimeFilter<'UserCollege'> | Date | string;
-    updatedAt?: DateTimeNullableFilter<'UserCollege'> | Date | string | null;
+    updatedAt?: DateTimeFilter<'UserCollege'> | Date | string;
     college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
     user?: XOR<UserScalarRelationFilter, UserWhereInput>;
   };
@@ -19799,7 +19799,7 @@ export namespace Prisma {
     collegeEmail?: SortOrder;
     designation?: SortOrderInput | SortOrder;
     createdAt?: SortOrder;
-    updatedAt?: SortOrderInput | SortOrder;
+    updatedAt?: SortOrder;
     college?: CollegeOrderByWithRelationInput;
     user?: UserOrderByWithRelationInput;
   };
@@ -19822,7 +19822,7 @@ export namespace Prisma {
       leftAt?: DateTimeFilter<'UserCollege'> | Date | string;
       designation?: StringNullableFilter<'UserCollege'> | string | null;
       createdAt?: DateTimeFilter<'UserCollege'> | Date | string;
-      updatedAt?: DateTimeNullableFilter<'UserCollege'> | Date | string | null;
+      updatedAt?: DateTimeFilter<'UserCollege'> | Date | string;
       college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
       user?: XOR<UserScalarRelationFilter, UserWhereInput>;
     },
@@ -19843,7 +19843,7 @@ export namespace Prisma {
     collegeEmail?: SortOrder;
     designation?: SortOrderInput | SortOrder;
     createdAt?: SortOrder;
-    updatedAt?: SortOrderInput | SortOrder;
+    updatedAt?: SortOrder;
     _count?: UserCollegeCountOrderByAggregateInput;
     _max?: UserCollegeMaxOrderByAggregateInput;
     _min?: UserCollegeMinOrderByAggregateInput;
@@ -19878,11 +19878,7 @@ export namespace Prisma {
       | string
       | null;
     createdAt?: DateTimeWithAggregatesFilter<'UserCollege'> | Date | string;
-    updatedAt?:
-      | DateTimeNullableWithAggregatesFilter<'UserCollege'>
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeWithAggregatesFilter<'UserCollege'> | Date | string;
   };
 
   export type CollegeEmailDomainWhereInput = {
@@ -19893,11 +19889,7 @@ export namespace Prisma {
     domain?: StringFilter<'CollegeEmailDomain'> | string;
     collegeId?: UuidFilter<'CollegeEmailDomain'> | string;
     createdAt?: DateTimeFilter<'CollegeEmailDomain'> | Date | string;
-    updatedAt?:
-      | DateTimeNullableFilter<'CollegeEmailDomain'>
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFilter<'CollegeEmailDomain'> | Date | string;
     college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
   };
 
@@ -19906,7 +19898,7 @@ export namespace Prisma {
     domain?: SortOrder;
     collegeId?: SortOrder;
     createdAt?: SortOrder;
-    updatedAt?: SortOrderInput | SortOrder;
+    updatedAt?: SortOrder;
     college?: CollegeOrderByWithRelationInput;
   };
 
@@ -19919,11 +19911,7 @@ export namespace Prisma {
       NOT?: CollegeEmailDomainWhereInput | CollegeEmailDomainWhereInput[];
       collegeId?: UuidFilter<'CollegeEmailDomain'> | string;
       createdAt?: DateTimeFilter<'CollegeEmailDomain'> | Date | string;
-      updatedAt?:
-        | DateTimeNullableFilter<'CollegeEmailDomain'>
-        | Date
-        | string
-        | null;
+      updatedAt?: DateTimeFilter<'CollegeEmailDomain'> | Date | string;
       college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
     },
     'id' | 'domain'
@@ -19934,7 +19922,7 @@ export namespace Prisma {
     domain?: SortOrder;
     collegeId?: SortOrder;
     createdAt?: SortOrder;
-    updatedAt?: SortOrderInput | SortOrder;
+    updatedAt?: SortOrder;
     _count?: CollegeEmailDomainCountOrderByAggregateInput;
     _max?: CollegeEmailDomainMaxOrderByAggregateInput;
     _min?: CollegeEmailDomainMinOrderByAggregateInput;
@@ -19956,10 +19944,9 @@ export namespace Prisma {
       | Date
       | string;
     updatedAt?:
-      | DateTimeNullableWithAggregatesFilter<'CollegeEmailDomain'>
+      | DateTimeWithAggregatesFilter<'CollegeEmailDomain'>
       | Date
-      | string
-      | null;
+      | string;
   };
 
   export type ProjectWhereInput = {
@@ -20771,7 +20758,7 @@ export namespace Prisma {
     collegeEmail: string;
     designation?: string | null;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
     college: CollegeCreateNestedOneWithoutUserCollegesInput;
     user: UserCreateNestedOneWithoutUserCollegesInput;
   };
@@ -20790,7 +20777,7 @@ export namespace Prisma {
     collegeEmail: string;
     designation?: string | null;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type UserCollegeUpdateInput = {
@@ -20805,11 +20792,7 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     college?: CollegeUpdateOneRequiredWithoutUserCollegesNestedInput;
     user?: UserUpdateOneRequiredWithoutUserCollegesNestedInput;
   };
@@ -20828,11 +20811,7 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserCollegeCreateManyInput = {
@@ -20849,7 +20828,7 @@ export namespace Prisma {
     collegeEmail: string;
     designation?: string | null;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type UserCollegeUpdateManyMutationInput = {
@@ -20864,11 +20843,7 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserCollegeUncheckedUpdateManyInput = {
@@ -20885,18 +20860,14 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type CollegeEmailDomainCreateInput = {
     id?: string;
     domain: string;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
     college: CollegeCreateNestedOneWithoutEmailDomainsInput;
   };
 
@@ -20905,18 +20876,14 @@ export namespace Prisma {
     domain: string;
     collegeId: string;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type CollegeEmailDomainUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     college?: CollegeUpdateOneRequiredWithoutEmailDomainsNestedInput;
   };
 
@@ -20925,11 +20892,7 @@ export namespace Prisma {
     domain?: StringFieldUpdateOperationsInput | string;
     collegeId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type CollegeEmailDomainCreateManyInput = {
@@ -20937,18 +20900,14 @@ export namespace Prisma {
     domain: string;
     collegeId: string;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type CollegeEmailDomainUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type CollegeEmailDomainUncheckedUpdateManyInput = {
@@ -20956,11 +20915,7 @@ export namespace Prisma {
     domain?: StringFieldUpdateOperationsInput | string;
     collegeId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectCreateInput = {
@@ -21696,17 +21651,6 @@ export namespace Prisma {
     not?: NestedEnumUserTypeFilter<$PrismaModel> | $Enums.UserType;
   };
 
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null;
-  };
-
   export type CollegeScalarRelationFilter = {
     is?: CollegeWhereInput;
     isNot?: CollegeWhereInput;
@@ -21773,24 +21717,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>;
     _min?: NestedEnumUserTypeFilter<$PrismaModel>;
     _max?: NestedEnumUserTypeFilter<$PrismaModel>;
-  };
-
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    not?:
-      | NestedDateTimeNullableWithAggregatesFilter<$PrismaModel>
-      | Date
-      | string
-      | null;
-    _count?: NestedIntNullableFilter<$PrismaModel>;
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>;
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>;
   };
 
   export type CollegeEmailDomainCountOrderByAggregateInput = {
@@ -23041,10 +22967,6 @@ export namespace Prisma {
     set?: $Enums.UserType;
   };
 
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null;
-  };
-
   export type CollegeUpdateOneRequiredWithoutUserCollegesNestedInput = {
     create?: XOR<
       CollegeCreateWithoutUserCollegesInput,
@@ -23836,17 +23758,6 @@ export namespace Prisma {
     not?: NestedEnumUserTypeFilter<$PrismaModel> | $Enums.UserType;
   };
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null;
-  };
-
   export type NestedEnumUserTypeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.UserType | EnumUserTypeFieldRefInput<$PrismaModel>;
     in?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
@@ -23858,29 +23769,6 @@ export namespace Prisma {
     _min?: NestedEnumUserTypeFilter<$PrismaModel>;
     _max?: NestedEnumUserTypeFilter<$PrismaModel>;
   };
-
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> =
-    {
-      equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
-      in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-      notIn?:
-        | Date[]
-        | string[]
-        | ListDateTimeFieldRefInput<$PrismaModel>
-        | null;
-      lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-      lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-      gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-      gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-      not?:
-        | NestedDateTimeNullableWithAggregatesFilter<$PrismaModel>
-        | Date
-        | string
-        | null;
-      _count?: NestedIntNullableFilter<$PrismaModel>;
-      _min?: NestedDateTimeNullableFilter<$PrismaModel>;
-      _max?: NestedDateTimeNullableFilter<$PrismaModel>;
-    };
 
   export type NestedUuidNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null;
@@ -24037,7 +23925,7 @@ export namespace Prisma {
     collegeEmail: string;
     designation?: string | null;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
     college: CollegeCreateNestedOneWithoutUserCollegesInput;
   };
 
@@ -24054,7 +23942,7 @@ export namespace Prisma {
     collegeEmail: string;
     designation?: string | null;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type UserCollegeCreateOrConnectWithoutUserInput = {
@@ -24255,7 +24143,7 @@ export namespace Prisma {
     collegeEmail?: StringFilter<'UserCollege'> | string;
     designation?: StringNullableFilter<'UserCollege'> | string | null;
     createdAt?: DateTimeFilter<'UserCollege'> | Date | string;
-    updatedAt?: DateTimeNullableFilter<'UserCollege'> | Date | string | null;
+    updatedAt?: DateTimeFilter<'UserCollege'> | Date | string;
   };
 
   export type UserSocialLinkUpsertWithWhereUniqueWithoutUserInput = {
@@ -24687,14 +24575,14 @@ export namespace Prisma {
     id?: string;
     domain: string;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type CollegeEmailDomainUncheckedCreateWithoutCollegeInput = {
     id?: string;
     domain: string;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type CollegeEmailDomainCreateOrConnectWithoutCollegeInput = {
@@ -24769,7 +24657,7 @@ export namespace Prisma {
     collegeEmail: string;
     designation?: string | null;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
     user: UserCreateNestedOneWithoutUserCollegesInput;
   };
 
@@ -24786,7 +24674,7 @@ export namespace Prisma {
     collegeEmail: string;
     designation?: string | null;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type UserCollegeCreateOrConnectWithoutCollegeInput = {
@@ -24844,11 +24732,7 @@ export namespace Prisma {
     domain?: StringFilter<'CollegeEmailDomain'> | string;
     collegeId?: UuidFilter<'CollegeEmailDomain'> | string;
     createdAt?: DateTimeFilter<'CollegeEmailDomain'> | Date | string;
-    updatedAt?:
-      | DateTimeNullableFilter<'CollegeEmailDomain'>
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFilter<'CollegeEmailDomain'> | Date | string;
   };
 
   export type ProjectUpsertWithWhereUniqueWithoutCollegeInput = {
@@ -26129,7 +26013,7 @@ export namespace Prisma {
     collegeEmail: string;
     designation?: string | null;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type UserSocialLinkCreateManyUserInput = {
@@ -26206,11 +26090,7 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     college?: CollegeUpdateOneRequiredWithoutUserCollegesNestedInput;
   };
 
@@ -26227,11 +26107,7 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserCollegeUncheckedUpdateManyWithoutUserInput = {
@@ -26247,11 +26123,7 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSocialLinkUpdateWithoutUserInput = {
@@ -26324,7 +26196,7 @@ export namespace Prisma {
     id?: string;
     domain: string;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type ProjectCreateManyCollegeInput = {
@@ -26353,40 +26225,28 @@ export namespace Prisma {
     collegeEmail: string;
     designation?: string | null;
     createdAt?: Date | string;
-    updatedAt?: Date | string | null;
+    updatedAt?: Date | string;
   };
 
   export type CollegeEmailDomainUpdateWithoutCollegeInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type CollegeEmailDomainUncheckedUpdateWithoutCollegeInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type CollegeEmailDomainUncheckedUpdateManyWithoutCollegeInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectUpdateWithoutCollegeInput = {
@@ -26446,11 +26306,7 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     user?: UserUpdateOneRequiredWithoutUserCollegesNestedInput;
   };
 
@@ -26467,11 +26323,7 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserCollegeUncheckedUpdateManyWithoutCollegeInput = {
@@ -26487,11 +26339,7 @@ export namespace Prisma {
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectCollaboratorCreateManyProjectInput = {
