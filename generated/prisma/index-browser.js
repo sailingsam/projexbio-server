@@ -129,8 +129,8 @@ exports.Prisma.UserScalarFieldEnum = {
   bio: 'bio',
   resume: 'resume',
   appwriteId: 'appwriteId',
-  createdAt: 'createdAt',
   websiteUrl: 'websiteUrl',
+  createdAt: 'createdAt',
   updatedAt: 'updatedAt',
 };
 
@@ -139,17 +139,23 @@ exports.Prisma.UserSocialLinkScalarFieldEnum = {
   userId: 'userId',
   platform: 'platform',
   url: 'url',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.SkillTagScalarFieldEnum = {
   id: 'id',
   name: 'name',
   slug: 'slug',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.UserSkillTagScalarFieldEnum = {
   userId: 'userId',
   skillTagId: 'skillTagId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.CollegeScalarFieldEnum = {
@@ -159,10 +165,10 @@ exports.Prisma.CollegeScalarFieldEnum = {
   description: 'description',
   location: 'location',
   website: 'website',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
   coverImgFileId: 'coverImgFileId',
   logoFileId: 'logoFileId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.UserCollegeScalarFieldEnum = {
@@ -178,12 +184,16 @@ exports.Prisma.UserCollegeScalarFieldEnum = {
   leftAt: 'leftAt',
   collegeEmail: 'collegeEmail',
   designation: 'designation',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.CollegeEmailDomainScalarFieldEnum = {
   id: 'id',
   domain: 'domain',
   collegeId: 'collegeId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.ProjectScalarFieldEnum = {
@@ -197,30 +207,38 @@ exports.Prisma.ProjectScalarFieldEnum = {
   isLookingForContributors: 'isLookingForContributors',
   upvotesCount: 'upvotesCount',
   createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.ProjectUpvoteScalarFieldEnum = {
   userId: 'userId',
   projectId: 'projectId',
   createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.ProjectCollaboratorScalarFieldEnum = {
   userId: 'userId',
   projectId: 'projectId',
-  role: 'role',
   joinedAt: 'joinedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  role: 'role',
 };
 
 exports.Prisma.TagScalarFieldEnum = {
   id: 'id',
   name: 'name',
   slug: 'slug',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.ProjectTagScalarFieldEnum = {
   projectId: 'projectId',
   tagId: 'tagId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
 };
 
 exports.Prisma.SortOrder = {

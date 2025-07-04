@@ -2312,8 +2312,8 @@ export namespace Prisma {
     bio: string | null;
     resume: string | null;
     appwriteId: string | null;
-    createdAt: Date | null;
     websiteUrl: string | null;
+    createdAt: Date | null;
     updatedAt: Date | null;
   };
 
@@ -2330,8 +2330,8 @@ export namespace Prisma {
     bio: string | null;
     resume: string | null;
     appwriteId: string | null;
-    createdAt: Date | null;
     websiteUrl: string | null;
+    createdAt: Date | null;
     updatedAt: Date | null;
   };
 
@@ -2348,8 +2348,8 @@ export namespace Prisma {
     bio: number;
     resume: number;
     appwriteId: number;
-    createdAt: number;
     websiteUrl: number;
+    createdAt: number;
     updatedAt: number;
     _all: number;
   };
@@ -2367,8 +2367,8 @@ export namespace Prisma {
     bio?: true;
     resume?: true;
     appwriteId?: true;
-    createdAt?: true;
     websiteUrl?: true;
+    createdAt?: true;
     updatedAt?: true;
   };
 
@@ -2385,8 +2385,8 @@ export namespace Prisma {
     bio?: true;
     resume?: true;
     appwriteId?: true;
-    createdAt?: true;
     websiteUrl?: true;
+    createdAt?: true;
     updatedAt?: true;
   };
 
@@ -2403,8 +2403,8 @@ export namespace Prisma {
     bio?: true;
     resume?: true;
     appwriteId?: true;
-    createdAt?: true;
     websiteUrl?: true;
+    createdAt?: true;
     updatedAt?: true;
     _all?: true;
   };
@@ -2497,9 +2497,9 @@ export namespace Prisma {
     bio: string | null;
     resume: string | null;
     appwriteId: string;
-    createdAt: Date;
     websiteUrl: string | null;
-    updatedAt: Date | null;
+    createdAt: Date;
+    updatedAt: Date;
     _count: UserCountAggregateOutputType | null;
     _min: UserMinAggregateOutputType | null;
     _max: UserMaxAggregateOutputType | null;
@@ -2533,8 +2533,8 @@ export namespace Prisma {
       bio?: boolean;
       resume?: boolean;
       appwriteId?: boolean;
-      createdAt?: boolean;
       websiteUrl?: boolean;
+      createdAt?: boolean;
       updatedAt?: boolean;
       ProjectCollaborator?: boolean | User$ProjectCollaboratorArgs<ExtArgs>;
       projectUpvotes?: boolean | User$projectUpvotesArgs<ExtArgs>;
@@ -2562,8 +2562,8 @@ export namespace Prisma {
       bio?: boolean;
       resume?: boolean;
       appwriteId?: boolean;
-      createdAt?: boolean;
       websiteUrl?: boolean;
+      createdAt?: boolean;
       updatedAt?: boolean;
     },
     ExtArgs['result']['user']
@@ -2585,8 +2585,8 @@ export namespace Prisma {
       bio?: boolean;
       resume?: boolean;
       appwriteId?: boolean;
-      createdAt?: boolean;
       websiteUrl?: boolean;
+      createdAt?: boolean;
       updatedAt?: boolean;
     },
     ExtArgs['result']['user']
@@ -2605,8 +2605,8 @@ export namespace Prisma {
     bio?: boolean;
     resume?: boolean;
     appwriteId?: boolean;
-    createdAt?: boolean;
     websiteUrl?: boolean;
+    createdAt?: boolean;
     updatedAt?: boolean;
   };
 
@@ -2625,8 +2625,8 @@ export namespace Prisma {
     | 'bio'
     | 'resume'
     | 'appwriteId'
-    | 'createdAt'
     | 'websiteUrl'
+    | 'createdAt'
     | 'updatedAt',
     ExtArgs['result']['user']
   >;
@@ -2672,9 +2672,9 @@ export namespace Prisma {
         bio: string | null;
         resume: string | null;
         appwriteId: string;
-        createdAt: Date;
         websiteUrl: string | null;
-        updatedAt: Date | null;
+        createdAt: Date;
+        updatedAt: Date;
       },
       ExtArgs['result']['user']
     >;
@@ -3327,8 +3327,8 @@ export namespace Prisma {
     readonly bio: FieldRef<'User', 'String'>;
     readonly resume: FieldRef<'User', 'String'>;
     readonly appwriteId: FieldRef<'User', 'String'>;
-    readonly createdAt: FieldRef<'User', 'DateTime'>;
     readonly websiteUrl: FieldRef<'User', 'String'>;
+    readonly createdAt: FieldRef<'User', 'DateTime'>;
     readonly updatedAt: FieldRef<'User', 'DateTime'>;
   }
 
@@ -3921,6 +3921,8 @@ export namespace Prisma {
     userId: string | null;
     platform: string | null;
     url: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type UserSocialLinkMaxAggregateOutputType = {
@@ -3928,6 +3930,8 @@ export namespace Prisma {
     userId: string | null;
     platform: string | null;
     url: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type UserSocialLinkCountAggregateOutputType = {
@@ -3935,6 +3939,8 @@ export namespace Prisma {
     userId: number;
     platform: number;
     url: number;
+    createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
@@ -3943,6 +3949,8 @@ export namespace Prisma {
     userId?: true;
     platform?: true;
     url?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type UserSocialLinkMaxAggregateInputType = {
@@ -3950,6 +3958,8 @@ export namespace Prisma {
     userId?: true;
     platform?: true;
     url?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type UserSocialLinkCountAggregateInputType = {
@@ -3957,6 +3967,8 @@ export namespace Prisma {
     userId?: true;
     platform?: true;
     url?: true;
+    createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -4044,6 +4056,8 @@ export namespace Prisma {
     userId: string;
     platform: string;
     url: string;
+    createdAt: Date;
+    updatedAt: Date;
     _count: UserSocialLinkCountAggregateOutputType | null;
     _min: UserSocialLinkMinAggregateOutputType | null;
     _max: UserSocialLinkMaxAggregateOutputType | null;
@@ -4071,6 +4085,8 @@ export namespace Prisma {
       userId?: boolean;
       platform?: boolean;
       url?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
     ExtArgs['result']['userSocialLink']
@@ -4084,6 +4100,8 @@ export namespace Prisma {
       userId?: boolean;
       platform?: boolean;
       url?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
     ExtArgs['result']['userSocialLink']
@@ -4097,6 +4115,8 @@ export namespace Prisma {
       userId?: boolean;
       platform?: boolean;
       url?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
     ExtArgs['result']['userSocialLink']
@@ -4107,12 +4127,14 @@ export namespace Prisma {
     userId?: boolean;
     platform?: boolean;
     url?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type UserSocialLinkOmit<
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = $Extensions.GetOmit<
-    'id' | 'userId' | 'platform' | 'url',
+    'id' | 'userId' | 'platform' | 'url' | 'createdAt' | 'updatedAt',
     ExtArgs['result']['userSocialLink']
   >;
   export type UserSocialLinkInclude<
@@ -4144,6 +4166,8 @@ export namespace Prisma {
         userId: string;
         platform: string;
         url: string;
+        createdAt: Date;
+        updatedAt: Date;
       },
       ExtArgs['result']['userSocialLink']
     >;
@@ -4752,6 +4776,8 @@ export namespace Prisma {
     readonly userId: FieldRef<'UserSocialLink', 'String'>;
     readonly platform: FieldRef<'UserSocialLink', 'String'>;
     readonly url: FieldRef<'UserSocialLink', 'String'>;
+    readonly createdAt: FieldRef<'UserSocialLink', 'DateTime'>;
+    readonly updatedAt: FieldRef<'UserSocialLink', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -5220,18 +5246,24 @@ export namespace Prisma {
     id: string | null;
     name: string | null;
     slug: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type SkillTagMaxAggregateOutputType = {
     id: string | null;
     name: string | null;
     slug: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type SkillTagCountAggregateOutputType = {
     id: number;
     name: number;
     slug: number;
+    createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
@@ -5239,18 +5271,24 @@ export namespace Prisma {
     id?: true;
     name?: true;
     slug?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type SkillTagMaxAggregateInputType = {
     id?: true;
     name?: true;
     slug?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type SkillTagCountAggregateInputType = {
     id?: true;
     name?: true;
     slug?: true;
+    createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -5335,6 +5373,8 @@ export namespace Prisma {
     id: string;
     name: string;
     slug: string;
+    createdAt: Date;
+    updatedAt: Date;
     _count: SkillTagCountAggregateOutputType | null;
     _min: SkillTagMinAggregateOutputType | null;
     _max: SkillTagMaxAggregateOutputType | null;
@@ -5360,6 +5400,8 @@ export namespace Prisma {
       id?: boolean;
       name?: boolean;
       slug?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       users?: boolean | SkillTag$usersArgs<ExtArgs>;
       _count?: boolean | SkillTagCountOutputTypeDefaultArgs<ExtArgs>;
     },
@@ -5373,6 +5415,8 @@ export namespace Prisma {
       id?: boolean;
       name?: boolean;
       slug?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
     },
     ExtArgs['result']['skillTag']
   >;
@@ -5384,6 +5428,8 @@ export namespace Prisma {
       id?: boolean;
       name?: boolean;
       slug?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
     },
     ExtArgs['result']['skillTag']
   >;
@@ -5392,12 +5438,14 @@ export namespace Prisma {
     id?: boolean;
     name?: boolean;
     slug?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type SkillTagOmit<
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = $Extensions.GetOmit<
-    'id' | 'name' | 'slug',
+    'id' | 'name' | 'slug' | 'createdAt' | 'updatedAt',
     ExtArgs['result']['skillTag']
   >;
   export type SkillTagInclude<
@@ -5425,6 +5473,8 @@ export namespace Prisma {
         id: string;
         name: string;
         slug: string;
+        createdAt: Date;
+        updatedAt: Date;
       },
       ExtArgs['result']['skillTag']
     >;
@@ -6026,6 +6076,8 @@ export namespace Prisma {
     readonly id: FieldRef<'SkillTag', 'String'>;
     readonly name: FieldRef<'SkillTag', 'String'>;
     readonly slug: FieldRef<'SkillTag', 'String'>;
+    readonly createdAt: FieldRef<'SkillTag', 'DateTime'>;
+    readonly updatedAt: FieldRef<'SkillTag', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -6513,32 +6565,44 @@ export namespace Prisma {
   export type UserSkillTagMinAggregateOutputType = {
     userId: string | null;
     skillTagId: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type UserSkillTagMaxAggregateOutputType = {
     userId: string | null;
     skillTagId: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type UserSkillTagCountAggregateOutputType = {
     userId: number;
     skillTagId: number;
+    createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
   export type UserSkillTagMinAggregateInputType = {
     userId?: true;
     skillTagId?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type UserSkillTagMaxAggregateInputType = {
     userId?: true;
     skillTagId?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type UserSkillTagCountAggregateInputType = {
     userId?: true;
     skillTagId?: true;
+    createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -6624,6 +6688,8 @@ export namespace Prisma {
   export type UserSkillTagGroupByOutputType = {
     userId: string;
     skillTagId: string;
+    createdAt: Date;
+    updatedAt: Date;
     _count: UserSkillTagCountAggregateOutputType | null;
     _min: UserSkillTagMinAggregateOutputType | null;
     _max: UserSkillTagMaxAggregateOutputType | null;
@@ -6649,6 +6715,8 @@ export namespace Prisma {
     {
       userId?: boolean;
       skillTagId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       user?: boolean | UserDefaultArgs<ExtArgs>;
       skillTag?: boolean | SkillTagDefaultArgs<ExtArgs>;
     },
@@ -6661,6 +6729,8 @@ export namespace Prisma {
     {
       userId?: boolean;
       skillTagId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       user?: boolean | UserDefaultArgs<ExtArgs>;
       skillTag?: boolean | SkillTagDefaultArgs<ExtArgs>;
     },
@@ -6673,6 +6743,8 @@ export namespace Prisma {
     {
       userId?: boolean;
       skillTagId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       user?: boolean | UserDefaultArgs<ExtArgs>;
       skillTag?: boolean | SkillTagDefaultArgs<ExtArgs>;
     },
@@ -6682,12 +6754,14 @@ export namespace Prisma {
   export type UserSkillTagSelectScalar = {
     userId?: boolean;
     skillTagId?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type UserSkillTagOmit<
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = $Extensions.GetOmit<
-    'userId' | 'skillTagId',
+    'userId' | 'skillTagId' | 'createdAt' | 'updatedAt',
     ExtArgs['result']['userSkillTag']
   >;
   export type UserSkillTagInclude<
@@ -6721,6 +6795,8 @@ export namespace Prisma {
       {
         userId: string;
         skillTagId: string;
+        createdAt: Date;
+        updatedAt: Date;
       },
       ExtArgs['result']['userSkillTag']
     >;
@@ -7341,6 +7417,8 @@ export namespace Prisma {
   interface UserSkillTagFieldRefs {
     readonly userId: FieldRef<'UserSkillTag', 'String'>;
     readonly skillTagId: FieldRef<'UserSkillTag', 'String'>;
+    readonly createdAt: FieldRef<'UserSkillTag', 'DateTime'>;
+    readonly updatedAt: FieldRef<'UserSkillTag', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -7812,10 +7890,10 @@ export namespace Prisma {
     description: string | null;
     location: string | null;
     website: string | null;
-    createdAt: Date | null;
-    updatedAt: Date | null;
     coverImgFileId: string | null;
     logoFileId: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type CollegeMaxAggregateOutputType = {
@@ -7825,10 +7903,10 @@ export namespace Prisma {
     description: string | null;
     location: string | null;
     website: string | null;
-    createdAt: Date | null;
-    updatedAt: Date | null;
     coverImgFileId: string | null;
     logoFileId: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type CollegeCountAggregateOutputType = {
@@ -7838,10 +7916,10 @@ export namespace Prisma {
     description: number;
     location: number;
     website: number;
-    createdAt: number;
-    updatedAt: number;
     coverImgFileId: number;
     logoFileId: number;
+    createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
@@ -7852,10 +7930,10 @@ export namespace Prisma {
     description?: true;
     location?: true;
     website?: true;
-    createdAt?: true;
-    updatedAt?: true;
     coverImgFileId?: true;
     logoFileId?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type CollegeMaxAggregateInputType = {
@@ -7865,10 +7943,10 @@ export namespace Prisma {
     description?: true;
     location?: true;
     website?: true;
-    createdAt?: true;
-    updatedAt?: true;
     coverImgFileId?: true;
     logoFileId?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type CollegeCountAggregateInputType = {
@@ -7878,10 +7956,10 @@ export namespace Prisma {
     description?: true;
     location?: true;
     website?: true;
-    createdAt?: true;
-    updatedAt?: true;
     coverImgFileId?: true;
     logoFileId?: true;
+    createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -7969,10 +8047,10 @@ export namespace Prisma {
     description: string | null;
     location: string | null;
     website: string | null;
-    createdAt: Date;
-    updatedAt: Date;
     coverImgFileId: string | null;
     logoFileId: string | null;
+    createdAt: Date;
+    updatedAt: Date;
     _count: CollegeCountAggregateOutputType | null;
     _min: CollegeMinAggregateOutputType | null;
     _max: CollegeMaxAggregateOutputType | null;
@@ -8001,10 +8079,10 @@ export namespace Prisma {
       description?: boolean;
       location?: boolean;
       website?: boolean;
-      createdAt?: boolean;
-      updatedAt?: boolean;
       coverImgFileId?: boolean;
       logoFileId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       emailDomains?: boolean | College$emailDomainsArgs<ExtArgs>;
       projects?: boolean | College$projectsArgs<ExtArgs>;
       userColleges?: boolean | College$userCollegesArgs<ExtArgs>;
@@ -8023,10 +8101,10 @@ export namespace Prisma {
       description?: boolean;
       location?: boolean;
       website?: boolean;
-      createdAt?: boolean;
-      updatedAt?: boolean;
       coverImgFileId?: boolean;
       logoFileId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
     },
     ExtArgs['result']['college']
   >;
@@ -8041,10 +8119,10 @@ export namespace Prisma {
       description?: boolean;
       location?: boolean;
       website?: boolean;
-      createdAt?: boolean;
-      updatedAt?: boolean;
       coverImgFileId?: boolean;
       logoFileId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
     },
     ExtArgs['result']['college']
   >;
@@ -8056,10 +8134,10 @@ export namespace Prisma {
     description?: boolean;
     location?: boolean;
     website?: boolean;
-    createdAt?: boolean;
-    updatedAt?: boolean;
     coverImgFileId?: boolean;
     logoFileId?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type CollegeOmit<
@@ -8071,10 +8149,10 @@ export namespace Prisma {
     | 'description'
     | 'location'
     | 'website'
-    | 'createdAt'
-    | 'updatedAt'
     | 'coverImgFileId'
-    | 'logoFileId',
+    | 'logoFileId'
+    | 'createdAt'
+    | 'updatedAt',
     ExtArgs['result']['college']
   >;
   export type CollegeInclude<
@@ -8109,10 +8187,10 @@ export namespace Prisma {
         description: string | null;
         location: string | null;
         website: string | null;
-        createdAt: Date;
-        updatedAt: Date;
         coverImgFileId: string | null;
         logoFileId: string | null;
+        createdAt: Date;
+        updatedAt: Date;
       },
       ExtArgs['result']['college']
     >;
@@ -8738,10 +8816,10 @@ export namespace Prisma {
     readonly description: FieldRef<'College', 'String'>;
     readonly location: FieldRef<'College', 'String'>;
     readonly website: FieldRef<'College', 'String'>;
-    readonly createdAt: FieldRef<'College', 'DateTime'>;
-    readonly updatedAt: FieldRef<'College', 'DateTime'>;
     readonly coverImgFileId: FieldRef<'College', 'String'>;
     readonly logoFileId: FieldRef<'College', 'String'>;
+    readonly createdAt: FieldRef<'College', 'DateTime'>;
+    readonly updatedAt: FieldRef<'College', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -9291,6 +9369,8 @@ export namespace Prisma {
     leftAt: Date | null;
     collegeEmail: string | null;
     designation: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type UserCollegeMaxAggregateOutputType = {
@@ -9306,6 +9386,8 @@ export namespace Prisma {
     leftAt: Date | null;
     collegeEmail: string | null;
     designation: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type UserCollegeCountAggregateOutputType = {
@@ -9321,6 +9403,8 @@ export namespace Prisma {
     leftAt: number;
     collegeEmail: number;
     designation: number;
+    createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
@@ -9337,6 +9421,8 @@ export namespace Prisma {
     leftAt?: true;
     collegeEmail?: true;
     designation?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type UserCollegeMaxAggregateInputType = {
@@ -9352,6 +9438,8 @@ export namespace Prisma {
     leftAt?: true;
     collegeEmail?: true;
     designation?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type UserCollegeCountAggregateInputType = {
@@ -9367,6 +9455,8 @@ export namespace Prisma {
     leftAt?: true;
     collegeEmail?: true;
     designation?: true;
+    createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -9461,6 +9551,8 @@ export namespace Prisma {
     leftAt: Date;
     collegeEmail: string;
     designation: string | null;
+    createdAt: Date;
+    updatedAt: Date | null;
     _count: UserCollegeCountAggregateOutputType | null;
     _min: UserCollegeMinAggregateOutputType | null;
     _max: UserCollegeMaxAggregateOutputType | null;
@@ -9496,6 +9588,8 @@ export namespace Prisma {
       leftAt?: boolean;
       collegeEmail?: boolean;
       designation?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       college?: boolean | CollegeDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -9518,6 +9612,8 @@ export namespace Prisma {
       leftAt?: boolean;
       collegeEmail?: boolean;
       designation?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       college?: boolean | CollegeDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -9540,6 +9636,8 @@ export namespace Prisma {
       leftAt?: boolean;
       collegeEmail?: boolean;
       designation?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       college?: boolean | CollegeDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -9559,6 +9657,8 @@ export namespace Prisma {
     leftAt?: boolean;
     collegeEmail?: boolean;
     designation?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type UserCollegeOmit<
@@ -9575,7 +9675,9 @@ export namespace Prisma {
     | 'joinedAt'
     | 'leftAt'
     | 'collegeEmail'
-    | 'designation',
+    | 'designation'
+    | 'createdAt'
+    | 'updatedAt',
     ExtArgs['result']['userCollege']
   >;
   export type UserCollegeInclude<
@@ -9619,6 +9721,8 @@ export namespace Prisma {
         leftAt: Date;
         collegeEmail: string;
         designation: string | null;
+        createdAt: Date;
+        updatedAt: Date | null;
       },
       ExtArgs['result']['userCollege']
     >;
@@ -10249,6 +10353,8 @@ export namespace Prisma {
     readonly leftAt: FieldRef<'UserCollege', 'DateTime'>;
     readonly collegeEmail: FieldRef<'UserCollege', 'String'>;
     readonly designation: FieldRef<'UserCollege', 'String'>;
+    readonly createdAt: FieldRef<'UserCollege', 'DateTime'>;
+    readonly updatedAt: FieldRef<'UserCollege', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -10717,18 +10823,24 @@ export namespace Prisma {
     id: string | null;
     domain: string | null;
     collegeId: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type CollegeEmailDomainMaxAggregateOutputType = {
     id: string | null;
     domain: string | null;
     collegeId: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type CollegeEmailDomainCountAggregateOutputType = {
     id: number;
     domain: number;
     collegeId: number;
+    createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
@@ -10736,18 +10848,24 @@ export namespace Prisma {
     id?: true;
     domain?: true;
     collegeId?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type CollegeEmailDomainMaxAggregateInputType = {
     id?: true;
     domain?: true;
     collegeId?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type CollegeEmailDomainCountAggregateInputType = {
     id?: true;
     domain?: true;
     collegeId?: true;
+    createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -10836,6 +10954,8 @@ export namespace Prisma {
     id: string;
     domain: string;
     collegeId: string;
+    createdAt: Date;
+    updatedAt: Date | null;
     _count: CollegeEmailDomainCountAggregateOutputType | null;
     _min: CollegeEmailDomainMinAggregateOutputType | null;
     _max: CollegeEmailDomainMaxAggregateOutputType | null;
@@ -10863,6 +10983,8 @@ export namespace Prisma {
       id?: boolean;
       domain?: boolean;
       collegeId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       college?: boolean | CollegeDefaultArgs<ExtArgs>;
     },
     ExtArgs['result']['collegeEmailDomain']
@@ -10875,6 +10997,8 @@ export namespace Prisma {
       id?: boolean;
       domain?: boolean;
       collegeId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       college?: boolean | CollegeDefaultArgs<ExtArgs>;
     },
     ExtArgs['result']['collegeEmailDomain']
@@ -10887,6 +11011,8 @@ export namespace Prisma {
       id?: boolean;
       domain?: boolean;
       collegeId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       college?: boolean | CollegeDefaultArgs<ExtArgs>;
     },
     ExtArgs['result']['collegeEmailDomain']
@@ -10896,12 +11022,14 @@ export namespace Prisma {
     id?: boolean;
     domain?: boolean;
     collegeId?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type CollegeEmailDomainOmit<
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = $Extensions.GetOmit<
-    'id' | 'domain' | 'collegeId',
+    'id' | 'domain' | 'collegeId' | 'createdAt' | 'updatedAt',
     ExtArgs['result']['collegeEmailDomain']
   >;
   export type CollegeEmailDomainInclude<
@@ -10932,6 +11060,8 @@ export namespace Prisma {
         id: string;
         domain: string;
         collegeId: string;
+        createdAt: Date;
+        updatedAt: Date | null;
       },
       ExtArgs['result']['collegeEmailDomain']
     >;
@@ -11545,6 +11675,8 @@ export namespace Prisma {
     readonly id: FieldRef<'CollegeEmailDomain', 'String'>;
     readonly domain: FieldRef<'CollegeEmailDomain', 'String'>;
     readonly collegeId: FieldRef<'CollegeEmailDomain', 'String'>;
+    readonly createdAt: FieldRef<'CollegeEmailDomain', 'DateTime'>;
+    readonly updatedAt: FieldRef<'CollegeEmailDomain', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -12052,6 +12184,7 @@ export namespace Prisma {
     isLookingForContributors: boolean | null;
     upvotesCount: number | null;
     createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type ProjectMaxAggregateOutputType = {
@@ -12065,6 +12198,7 @@ export namespace Prisma {
     isLookingForContributors: boolean | null;
     upvotesCount: number | null;
     createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type ProjectCountAggregateOutputType = {
@@ -12078,6 +12212,7 @@ export namespace Prisma {
     isLookingForContributors: number;
     upvotesCount: number;
     createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
@@ -12100,6 +12235,7 @@ export namespace Prisma {
     isLookingForContributors?: true;
     upvotesCount?: true;
     createdAt?: true;
+    updatedAt?: true;
   };
 
   export type ProjectMaxAggregateInputType = {
@@ -12113,6 +12249,7 @@ export namespace Prisma {
     isLookingForContributors?: true;
     upvotesCount?: true;
     createdAt?: true;
+    updatedAt?: true;
   };
 
   export type ProjectCountAggregateInputType = {
@@ -12126,6 +12263,7 @@ export namespace Prisma {
     isLookingForContributors?: true;
     upvotesCount?: true;
     createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -12231,6 +12369,7 @@ export namespace Prisma {
     isLookingForContributors: boolean;
     upvotesCount: number;
     createdAt: Date;
+    updatedAt: Date;
     _count: ProjectCountAggregateOutputType | null;
     _avg: ProjectAvgAggregateOutputType | null;
     _sum: ProjectSumAggregateOutputType | null;
@@ -12265,6 +12404,7 @@ export namespace Prisma {
       isLookingForContributors?: boolean;
       upvotesCount?: boolean;
       createdAt?: boolean;
+      updatedAt?: boolean;
       college?: boolean | Project$collegeArgs<ExtArgs>;
       collaborators?: boolean | Project$collaboratorsArgs<ExtArgs>;
       tags?: boolean | Project$tagsArgs<ExtArgs>;
@@ -12288,6 +12428,7 @@ export namespace Prisma {
       isLookingForContributors?: boolean;
       upvotesCount?: boolean;
       createdAt?: boolean;
+      updatedAt?: boolean;
       college?: boolean | Project$collegeArgs<ExtArgs>;
     },
     ExtArgs['result']['project']
@@ -12307,6 +12448,7 @@ export namespace Prisma {
       isLookingForContributors?: boolean;
       upvotesCount?: boolean;
       createdAt?: boolean;
+      updatedAt?: boolean;
       college?: boolean | Project$collegeArgs<ExtArgs>;
     },
     ExtArgs['result']['project']
@@ -12323,6 +12465,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: boolean;
     createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type ProjectOmit<
@@ -12337,7 +12480,8 @@ export namespace Prisma {
     | 'isCollaborative'
     | 'isLookingForContributors'
     | 'upvotesCount'
-    | 'createdAt',
+    | 'createdAt'
+    | 'updatedAt',
     ExtArgs['result']['project']
   >;
   export type ProjectInclude<
@@ -12382,6 +12526,7 @@ export namespace Prisma {
         isLookingForContributors: boolean;
         upvotesCount: number;
         createdAt: Date;
+        updatedAt: Date;
       },
       ExtArgs['result']['project']
     >;
@@ -13024,6 +13169,7 @@ export namespace Prisma {
     readonly isLookingForContributors: FieldRef<'Project', 'Boolean'>;
     readonly upvotesCount: FieldRef<'Project', 'Int'>;
     readonly createdAt: FieldRef<'Project', 'DateTime'>;
+    readonly updatedAt: FieldRef<'Project', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -13593,18 +13739,21 @@ export namespace Prisma {
     userId: string | null;
     projectId: string | null;
     createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type ProjectUpvoteMaxAggregateOutputType = {
     userId: string | null;
     projectId: string | null;
     createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type ProjectUpvoteCountAggregateOutputType = {
     userId: number;
     projectId: number;
     createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
@@ -13612,18 +13761,21 @@ export namespace Prisma {
     userId?: true;
     projectId?: true;
     createdAt?: true;
+    updatedAt?: true;
   };
 
   export type ProjectUpvoteMaxAggregateInputType = {
     userId?: true;
     projectId?: true;
     createdAt?: true;
+    updatedAt?: true;
   };
 
   export type ProjectUpvoteCountAggregateInputType = {
     userId?: true;
     projectId?: true;
     createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -13710,6 +13862,7 @@ export namespace Prisma {
     userId: string;
     projectId: string;
     createdAt: Date;
+    updatedAt: Date;
     _count: ProjectUpvoteCountAggregateOutputType | null;
     _min: ProjectUpvoteMinAggregateOutputType | null;
     _max: ProjectUpvoteMaxAggregateOutputType | null;
@@ -13736,6 +13889,7 @@ export namespace Prisma {
       userId?: boolean;
       projectId?: boolean;
       createdAt?: boolean;
+      updatedAt?: boolean;
       project?: boolean | ProjectDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -13749,6 +13903,7 @@ export namespace Prisma {
       userId?: boolean;
       projectId?: boolean;
       createdAt?: boolean;
+      updatedAt?: boolean;
       project?: boolean | ProjectDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -13762,6 +13917,7 @@ export namespace Prisma {
       userId?: boolean;
       projectId?: boolean;
       createdAt?: boolean;
+      updatedAt?: boolean;
       project?: boolean | ProjectDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -13772,12 +13928,13 @@ export namespace Prisma {
     userId?: boolean;
     projectId?: boolean;
     createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type ProjectUpvoteOmit<
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = $Extensions.GetOmit<
-    'userId' | 'projectId' | 'createdAt',
+    'userId' | 'projectId' | 'createdAt' | 'updatedAt',
     ExtArgs['result']['projectUpvote']
   >;
   export type ProjectUpvoteInclude<
@@ -13812,6 +13969,7 @@ export namespace Prisma {
         userId: string;
         projectId: string;
         createdAt: Date;
+        updatedAt: Date;
       },
       ExtArgs['result']['projectUpvote']
     >;
@@ -14433,6 +14591,7 @@ export namespace Prisma {
     readonly userId: FieldRef<'ProjectUpvote', 'String'>;
     readonly projectId: FieldRef<'ProjectUpvote', 'String'>;
     readonly createdAt: FieldRef<'ProjectUpvote', 'DateTime'>;
+    readonly updatedAt: FieldRef<'ProjectUpvote', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -14900,44 +15059,56 @@ export namespace Prisma {
   export type ProjectCollaboratorMinAggregateOutputType = {
     userId: string | null;
     projectId: string | null;
-    role: $Enums.ProjectUserRole | null;
     joinedAt: Date | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
+    role: $Enums.ProjectUserRole | null;
   };
 
   export type ProjectCollaboratorMaxAggregateOutputType = {
     userId: string | null;
     projectId: string | null;
-    role: $Enums.ProjectUserRole | null;
     joinedAt: Date | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
+    role: $Enums.ProjectUserRole | null;
   };
 
   export type ProjectCollaboratorCountAggregateOutputType = {
     userId: number;
     projectId: number;
-    role: number;
     joinedAt: number;
+    createdAt: number;
+    updatedAt: number;
+    role: number;
     _all: number;
   };
 
   export type ProjectCollaboratorMinAggregateInputType = {
     userId?: true;
     projectId?: true;
-    role?: true;
     joinedAt?: true;
+    createdAt?: true;
+    updatedAt?: true;
+    role?: true;
   };
 
   export type ProjectCollaboratorMaxAggregateInputType = {
     userId?: true;
     projectId?: true;
-    role?: true;
     joinedAt?: true;
+    createdAt?: true;
+    updatedAt?: true;
+    role?: true;
   };
 
   export type ProjectCollaboratorCountAggregateInputType = {
     userId?: true;
     projectId?: true;
-    role?: true;
     joinedAt?: true;
+    createdAt?: true;
+    updatedAt?: true;
+    role?: true;
     _all?: true;
   };
 
@@ -15027,8 +15198,10 @@ export namespace Prisma {
   export type ProjectCollaboratorGroupByOutputType = {
     userId: string;
     projectId: string;
-    role: $Enums.ProjectUserRole;
     joinedAt: Date;
+    createdAt: Date;
+    updatedAt: Date;
+    role: $Enums.ProjectUserRole;
     _count: ProjectCollaboratorCountAggregateOutputType | null;
     _min: ProjectCollaboratorMinAggregateOutputType | null;
     _max: ProjectCollaboratorMaxAggregateOutputType | null;
@@ -15055,8 +15228,10 @@ export namespace Prisma {
     {
       userId?: boolean;
       projectId?: boolean;
-      role?: boolean;
       joinedAt?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
+      role?: boolean;
       project?: boolean | ProjectDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -15069,8 +15244,10 @@ export namespace Prisma {
     {
       userId?: boolean;
       projectId?: boolean;
-      role?: boolean;
       joinedAt?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
+      role?: boolean;
       project?: boolean | ProjectDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -15083,8 +15260,10 @@ export namespace Prisma {
     {
       userId?: boolean;
       projectId?: boolean;
-      role?: boolean;
       joinedAt?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
+      role?: boolean;
       project?: boolean | ProjectDefaultArgs<ExtArgs>;
       user?: boolean | UserDefaultArgs<ExtArgs>;
     },
@@ -15094,14 +15273,16 @@ export namespace Prisma {
   export type ProjectCollaboratorSelectScalar = {
     userId?: boolean;
     projectId?: boolean;
-    role?: boolean;
     joinedAt?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
+    role?: boolean;
   };
 
   export type ProjectCollaboratorOmit<
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = $Extensions.GetOmit<
-    'userId' | 'projectId' | 'role' | 'joinedAt',
+    'userId' | 'projectId' | 'joinedAt' | 'createdAt' | 'updatedAt' | 'role',
     ExtArgs['result']['projectCollaborator']
   >;
   export type ProjectCollaboratorInclude<
@@ -15135,8 +15316,10 @@ export namespace Prisma {
       {
         userId: string;
         projectId: string;
-        role: $Enums.ProjectUserRole;
         joinedAt: Date;
+        createdAt: Date;
+        updatedAt: Date;
+        role: $Enums.ProjectUserRole;
       },
       ExtArgs['result']['projectCollaborator']
     >;
@@ -15766,8 +15949,10 @@ export namespace Prisma {
   interface ProjectCollaboratorFieldRefs {
     readonly userId: FieldRef<'ProjectCollaborator', 'String'>;
     readonly projectId: FieldRef<'ProjectCollaborator', 'String'>;
-    readonly role: FieldRef<'ProjectCollaborator', 'ProjectUserRole'>;
     readonly joinedAt: FieldRef<'ProjectCollaborator', 'DateTime'>;
+    readonly createdAt: FieldRef<'ProjectCollaborator', 'DateTime'>;
+    readonly updatedAt: FieldRef<'ProjectCollaborator', 'DateTime'>;
+    readonly role: FieldRef<'ProjectCollaborator', 'ProjectUserRole'>;
   }
 
   // Custom InputTypes
@@ -16258,18 +16443,24 @@ export namespace Prisma {
     id: string | null;
     name: string | null;
     slug: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type TagMaxAggregateOutputType = {
     id: string | null;
     name: string | null;
     slug: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type TagCountAggregateOutputType = {
     id: number;
     name: number;
     slug: number;
+    createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
@@ -16277,18 +16468,24 @@ export namespace Prisma {
     id?: true;
     name?: true;
     slug?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type TagMaxAggregateInputType = {
     id?: true;
     name?: true;
     slug?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type TagCountAggregateInputType = {
     id?: true;
     name?: true;
     slug?: true;
+    createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -16369,6 +16566,8 @@ export namespace Prisma {
     id: string;
     name: string;
     slug: string;
+    createdAt: Date;
+    updatedAt: Date;
     _count: TagCountAggregateOutputType | null;
     _min: TagMinAggregateOutputType | null;
     _max: TagMaxAggregateOutputType | null;
@@ -16393,6 +16592,8 @@ export namespace Prisma {
       id?: boolean;
       name?: boolean;
       slug?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       projects?: boolean | Tag$projectsArgs<ExtArgs>;
       _count?: boolean | TagCountOutputTypeDefaultArgs<ExtArgs>;
     },
@@ -16406,6 +16607,8 @@ export namespace Prisma {
       id?: boolean;
       name?: boolean;
       slug?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
     },
     ExtArgs['result']['tag']
   >;
@@ -16417,6 +16620,8 @@ export namespace Prisma {
       id?: boolean;
       name?: boolean;
       slug?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
     },
     ExtArgs['result']['tag']
   >;
@@ -16425,11 +16630,16 @@ export namespace Prisma {
     id?: boolean;
     name?: boolean;
     slug?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type TagOmit<
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
-  > = $Extensions.GetOmit<'id' | 'name' | 'slug', ExtArgs['result']['tag']>;
+  > = $Extensions.GetOmit<
+    'id' | 'name' | 'slug' | 'createdAt' | 'updatedAt',
+    ExtArgs['result']['tag']
+  >;
   export type TagInclude<
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = {
@@ -16455,6 +16665,8 @@ export namespace Prisma {
         id: string;
         name: string;
         slug: string;
+        createdAt: Date;
+        updatedAt: Date;
       },
       ExtArgs['result']['tag']
     >;
@@ -17054,6 +17266,8 @@ export namespace Prisma {
     readonly id: FieldRef<'Tag', 'String'>;
     readonly name: FieldRef<'Tag', 'String'>;
     readonly slug: FieldRef<'Tag', 'String'>;
+    readonly createdAt: FieldRef<'Tag', 'DateTime'>;
+    readonly updatedAt: FieldRef<'Tag', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -17529,32 +17743,44 @@ export namespace Prisma {
   export type ProjectTagMinAggregateOutputType = {
     projectId: string | null;
     tagId: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type ProjectTagMaxAggregateOutputType = {
     projectId: string | null;
     tagId: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
   };
 
   export type ProjectTagCountAggregateOutputType = {
     projectId: number;
     tagId: number;
+    createdAt: number;
+    updatedAt: number;
     _all: number;
   };
 
   export type ProjectTagMinAggregateInputType = {
     projectId?: true;
     tagId?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type ProjectTagMaxAggregateInputType = {
     projectId?: true;
     tagId?: true;
+    createdAt?: true;
+    updatedAt?: true;
   };
 
   export type ProjectTagCountAggregateInputType = {
     projectId?: true;
     tagId?: true;
+    createdAt?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -17638,6 +17864,8 @@ export namespace Prisma {
   export type ProjectTagGroupByOutputType = {
     projectId: string;
     tagId: string;
+    createdAt: Date;
+    updatedAt: Date;
     _count: ProjectTagCountAggregateOutputType | null;
     _min: ProjectTagMinAggregateOutputType | null;
     _max: ProjectTagMaxAggregateOutputType | null;
@@ -17662,6 +17890,8 @@ export namespace Prisma {
     {
       projectId?: boolean;
       tagId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       project?: boolean | ProjectDefaultArgs<ExtArgs>;
       tag?: boolean | TagDefaultArgs<ExtArgs>;
     },
@@ -17674,6 +17904,8 @@ export namespace Prisma {
     {
       projectId?: boolean;
       tagId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       project?: boolean | ProjectDefaultArgs<ExtArgs>;
       tag?: boolean | TagDefaultArgs<ExtArgs>;
     },
@@ -17686,6 +17918,8 @@ export namespace Prisma {
     {
       projectId?: boolean;
       tagId?: boolean;
+      createdAt?: boolean;
+      updatedAt?: boolean;
       project?: boolean | ProjectDefaultArgs<ExtArgs>;
       tag?: boolean | TagDefaultArgs<ExtArgs>;
     },
@@ -17695,12 +17929,14 @@ export namespace Prisma {
   export type ProjectTagSelectScalar = {
     projectId?: boolean;
     tagId?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
   };
 
   export type ProjectTagOmit<
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = $Extensions.GetOmit<
-    'projectId' | 'tagId',
+    'projectId' | 'tagId' | 'createdAt' | 'updatedAt',
     ExtArgs['result']['projectTag']
   >;
   export type ProjectTagInclude<
@@ -17734,6 +17970,8 @@ export namespace Prisma {
       {
         projectId: string;
         tagId: string;
+        createdAt: Date;
+        updatedAt: Date;
       },
       ExtArgs['result']['projectTag']
     >;
@@ -18354,6 +18592,8 @@ export namespace Prisma {
   interface ProjectTagFieldRefs {
     readonly projectId: FieldRef<'ProjectTag', 'String'>;
     readonly tagId: FieldRef<'ProjectTag', 'String'>;
+    readonly createdAt: FieldRef<'ProjectTag', 'DateTime'>;
+    readonly updatedAt: FieldRef<'ProjectTag', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -18835,8 +19075,8 @@ export namespace Prisma {
     bio: 'bio';
     resume: 'resume';
     appwriteId: 'appwriteId';
-    createdAt: 'createdAt';
     websiteUrl: 'websiteUrl';
+    createdAt: 'createdAt';
     updatedAt: 'updatedAt';
   };
 
@@ -18848,6 +19088,8 @@ export namespace Prisma {
     userId: 'userId';
     platform: 'platform';
     url: 'url';
+    createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type UserSocialLinkScalarFieldEnum =
@@ -18857,6 +19099,8 @@ export namespace Prisma {
     id: 'id';
     name: 'name';
     slug: 'slug';
+    createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type SkillTagScalarFieldEnum =
@@ -18865,6 +19109,8 @@ export namespace Prisma {
   export const UserSkillTagScalarFieldEnum: {
     userId: 'userId';
     skillTagId: 'skillTagId';
+    createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type UserSkillTagScalarFieldEnum =
@@ -18877,10 +19123,10 @@ export namespace Prisma {
     description: 'description';
     location: 'location';
     website: 'website';
-    createdAt: 'createdAt';
-    updatedAt: 'updatedAt';
     coverImgFileId: 'coverImgFileId';
     logoFileId: 'logoFileId';
+    createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type CollegeScalarFieldEnum =
@@ -18899,6 +19145,8 @@ export namespace Prisma {
     leftAt: 'leftAt';
     collegeEmail: 'collegeEmail';
     designation: 'designation';
+    createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type UserCollegeScalarFieldEnum =
@@ -18908,6 +19156,8 @@ export namespace Prisma {
     id: 'id';
     domain: 'domain';
     collegeId: 'collegeId';
+    createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type CollegeEmailDomainScalarFieldEnum =
@@ -18924,6 +19174,7 @@ export namespace Prisma {
     isLookingForContributors: 'isLookingForContributors';
     upvotesCount: 'upvotesCount';
     createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type ProjectScalarFieldEnum =
@@ -18933,6 +19184,7 @@ export namespace Prisma {
     userId: 'userId';
     projectId: 'projectId';
     createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type ProjectUpvoteScalarFieldEnum =
@@ -18941,8 +19193,10 @@ export namespace Prisma {
   export const ProjectCollaboratorScalarFieldEnum: {
     userId: 'userId';
     projectId: 'projectId';
-    role: 'role';
     joinedAt: 'joinedAt';
+    createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
+    role: 'role';
   };
 
   export type ProjectCollaboratorScalarFieldEnum =
@@ -18952,6 +19206,8 @@ export namespace Prisma {
     id: 'id';
     name: 'name';
     slug: 'slug';
+    createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type TagScalarFieldEnum =
@@ -18960,6 +19216,8 @@ export namespace Prisma {
   export const ProjectTagScalarFieldEnum: {
     projectId: 'projectId';
     tagId: 'tagId';
+    createdAt: 'createdAt';
+    updatedAt: 'updatedAt';
   };
 
   export type ProjectTagScalarFieldEnum =
@@ -19110,9 +19368,9 @@ export namespace Prisma {
     bio?: StringNullableFilter<'User'> | string | null;
     resume?: StringNullableFilter<'User'> | string | null;
     appwriteId?: StringFilter<'User'> | string;
-    createdAt?: DateTimeFilter<'User'> | Date | string;
     websiteUrl?: StringNullableFilter<'User'> | string | null;
-    updatedAt?: DateTimeNullableFilter<'User'> | Date | string | null;
+    createdAt?: DateTimeFilter<'User'> | Date | string;
+    updatedAt?: DateTimeFilter<'User'> | Date | string;
     ProjectCollaborator?: ProjectCollaboratorListRelationFilter;
     projectUpvotes?: ProjectUpvoteListRelationFilter;
     userColleges?: UserCollegeListRelationFilter;
@@ -19133,9 +19391,9 @@ export namespace Prisma {
     bio?: SortOrderInput | SortOrder;
     resume?: SortOrderInput | SortOrder;
     appwriteId?: SortOrder;
-    createdAt?: SortOrder;
     websiteUrl?: SortOrderInput | SortOrder;
-    updatedAt?: SortOrderInput | SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     ProjectCollaborator?: ProjectCollaboratorOrderByRelationAggregateInput;
     projectUpvotes?: ProjectUpvoteOrderByRelationAggregateInput;
     userColleges?: UserCollegeOrderByRelationAggregateInput;
@@ -19160,9 +19418,9 @@ export namespace Prisma {
       tagline?: StringNullableFilter<'User'> | string | null;
       bio?: StringNullableFilter<'User'> | string | null;
       resume?: StringNullableFilter<'User'> | string | null;
-      createdAt?: DateTimeFilter<'User'> | Date | string;
       websiteUrl?: StringNullableFilter<'User'> | string | null;
-      updatedAt?: DateTimeNullableFilter<'User'> | Date | string | null;
+      createdAt?: DateTimeFilter<'User'> | Date | string;
+      updatedAt?: DateTimeFilter<'User'> | Date | string;
       ProjectCollaborator?: ProjectCollaboratorListRelationFilter;
       projectUpvotes?: ProjectUpvoteListRelationFilter;
       userColleges?: UserCollegeListRelationFilter;
@@ -19185,9 +19443,9 @@ export namespace Prisma {
     bio?: SortOrderInput | SortOrder;
     resume?: SortOrderInput | SortOrder;
     appwriteId?: SortOrder;
-    createdAt?: SortOrder;
     websiteUrl?: SortOrderInput | SortOrder;
-    updatedAt?: SortOrderInput | SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     _count?: UserCountOrderByAggregateInput;
     _max?: UserMaxOrderByAggregateInput;
     _min?: UserMinOrderByAggregateInput;
@@ -19213,13 +19471,9 @@ export namespace Prisma {
     bio?: StringNullableWithAggregatesFilter<'User'> | string | null;
     resume?: StringNullableWithAggregatesFilter<'User'> | string | null;
     appwriteId?: StringWithAggregatesFilter<'User'> | string;
-    createdAt?: DateTimeWithAggregatesFilter<'User'> | Date | string;
     websiteUrl?: StringNullableWithAggregatesFilter<'User'> | string | null;
-    updatedAt?:
-      | DateTimeNullableWithAggregatesFilter<'User'>
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeWithAggregatesFilter<'User'> | Date | string;
+    updatedAt?: DateTimeWithAggregatesFilter<'User'> | Date | string;
   };
 
   export type UserSocialLinkWhereInput = {
@@ -19230,6 +19484,8 @@ export namespace Prisma {
     userId?: UuidFilter<'UserSocialLink'> | string;
     platform?: StringFilter<'UserSocialLink'> | string;
     url?: StringFilter<'UserSocialLink'> | string;
+    createdAt?: DateTimeFilter<'UserSocialLink'> | Date | string;
+    updatedAt?: DateTimeFilter<'UserSocialLink'> | Date | string;
     user?: XOR<UserScalarRelationFilter, UserWhereInput>;
   };
 
@@ -19238,6 +19494,8 @@ export namespace Prisma {
     userId?: SortOrder;
     platform?: SortOrder;
     url?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     user?: UserOrderByWithRelationInput;
   };
 
@@ -19251,6 +19509,8 @@ export namespace Prisma {
       userId?: UuidFilter<'UserSocialLink'> | string;
       platform?: StringFilter<'UserSocialLink'> | string;
       url?: StringFilter<'UserSocialLink'> | string;
+      createdAt?: DateTimeFilter<'UserSocialLink'> | Date | string;
+      updatedAt?: DateTimeFilter<'UserSocialLink'> | Date | string;
       user?: XOR<UserScalarRelationFilter, UserWhereInput>;
     },
     'id' | 'userId_platform'
@@ -19261,6 +19521,8 @@ export namespace Prisma {
     userId?: SortOrder;
     platform?: SortOrder;
     url?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     _count?: UserSocialLinkCountOrderByAggregateInput;
     _max?: UserSocialLinkMaxOrderByAggregateInput;
     _min?: UserSocialLinkMinOrderByAggregateInput;
@@ -19278,6 +19540,8 @@ export namespace Prisma {
     userId?: UuidWithAggregatesFilter<'UserSocialLink'> | string;
     platform?: StringWithAggregatesFilter<'UserSocialLink'> | string;
     url?: StringWithAggregatesFilter<'UserSocialLink'> | string;
+    createdAt?: DateTimeWithAggregatesFilter<'UserSocialLink'> | Date | string;
+    updatedAt?: DateTimeWithAggregatesFilter<'UserSocialLink'> | Date | string;
   };
 
   export type SkillTagWhereInput = {
@@ -19287,6 +19551,8 @@ export namespace Prisma {
     id?: UuidFilter<'SkillTag'> | string;
     name?: StringFilter<'SkillTag'> | string;
     slug?: StringFilter<'SkillTag'> | string;
+    createdAt?: DateTimeFilter<'SkillTag'> | Date | string;
+    updatedAt?: DateTimeFilter<'SkillTag'> | Date | string;
     users?: UserSkillTagListRelationFilter;
   };
 
@@ -19294,6 +19560,8 @@ export namespace Prisma {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     users?: UserSkillTagOrderByRelationAggregateInput;
   };
 
@@ -19305,6 +19573,8 @@ export namespace Prisma {
       AND?: SkillTagWhereInput | SkillTagWhereInput[];
       OR?: SkillTagWhereInput[];
       NOT?: SkillTagWhereInput | SkillTagWhereInput[];
+      createdAt?: DateTimeFilter<'SkillTag'> | Date | string;
+      updatedAt?: DateTimeFilter<'SkillTag'> | Date | string;
       users?: UserSkillTagListRelationFilter;
     },
     'id' | 'name' | 'slug'
@@ -19314,6 +19584,8 @@ export namespace Prisma {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     _count?: SkillTagCountOrderByAggregateInput;
     _max?: SkillTagMaxOrderByAggregateInput;
     _min?: SkillTagMinOrderByAggregateInput;
@@ -19330,6 +19602,8 @@ export namespace Prisma {
     id?: UuidWithAggregatesFilter<'SkillTag'> | string;
     name?: StringWithAggregatesFilter<'SkillTag'> | string;
     slug?: StringWithAggregatesFilter<'SkillTag'> | string;
+    createdAt?: DateTimeWithAggregatesFilter<'SkillTag'> | Date | string;
+    updatedAt?: DateTimeWithAggregatesFilter<'SkillTag'> | Date | string;
   };
 
   export type UserSkillTagWhereInput = {
@@ -19338,6 +19612,8 @@ export namespace Prisma {
     NOT?: UserSkillTagWhereInput | UserSkillTagWhereInput[];
     userId?: UuidFilter<'UserSkillTag'> | string;
     skillTagId?: UuidFilter<'UserSkillTag'> | string;
+    createdAt?: DateTimeFilter<'UserSkillTag'> | Date | string;
+    updatedAt?: DateTimeFilter<'UserSkillTag'> | Date | string;
     user?: XOR<UserScalarRelationFilter, UserWhereInput>;
     skillTag?: XOR<SkillTagScalarRelationFilter, SkillTagWhereInput>;
   };
@@ -19345,6 +19621,8 @@ export namespace Prisma {
   export type UserSkillTagOrderByWithRelationInput = {
     userId?: SortOrder;
     skillTagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     user?: UserOrderByWithRelationInput;
     skillTag?: SkillTagOrderByWithRelationInput;
   };
@@ -19357,6 +19635,8 @@ export namespace Prisma {
       NOT?: UserSkillTagWhereInput | UserSkillTagWhereInput[];
       userId?: UuidFilter<'UserSkillTag'> | string;
       skillTagId?: UuidFilter<'UserSkillTag'> | string;
+      createdAt?: DateTimeFilter<'UserSkillTag'> | Date | string;
+      updatedAt?: DateTimeFilter<'UserSkillTag'> | Date | string;
       user?: XOR<UserScalarRelationFilter, UserWhereInput>;
       skillTag?: XOR<SkillTagScalarRelationFilter, SkillTagWhereInput>;
     },
@@ -19366,6 +19646,8 @@ export namespace Prisma {
   export type UserSkillTagOrderByWithAggregationInput = {
     userId?: SortOrder;
     skillTagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     _count?: UserSkillTagCountOrderByAggregateInput;
     _max?: UserSkillTagMaxOrderByAggregateInput;
     _min?: UserSkillTagMinOrderByAggregateInput;
@@ -19381,6 +19663,8 @@ export namespace Prisma {
       | UserSkillTagScalarWhereWithAggregatesInput[];
     userId?: UuidWithAggregatesFilter<'UserSkillTag'> | string;
     skillTagId?: UuidWithAggregatesFilter<'UserSkillTag'> | string;
+    createdAt?: DateTimeWithAggregatesFilter<'UserSkillTag'> | Date | string;
+    updatedAt?: DateTimeWithAggregatesFilter<'UserSkillTag'> | Date | string;
   };
 
   export type CollegeWhereInput = {
@@ -19393,10 +19677,10 @@ export namespace Prisma {
     description?: StringNullableFilter<'College'> | string | null;
     location?: StringNullableFilter<'College'> | string | null;
     website?: StringNullableFilter<'College'> | string | null;
-    createdAt?: DateTimeFilter<'College'> | Date | string;
-    updatedAt?: DateTimeFilter<'College'> | Date | string;
     coverImgFileId?: StringNullableFilter<'College'> | string | null;
     logoFileId?: StringNullableFilter<'College'> | string | null;
+    createdAt?: DateTimeFilter<'College'> | Date | string;
+    updatedAt?: DateTimeFilter<'College'> | Date | string;
     emailDomains?: CollegeEmailDomainListRelationFilter;
     projects?: ProjectListRelationFilter;
     userColleges?: UserCollegeListRelationFilter;
@@ -19409,10 +19693,10 @@ export namespace Prisma {
     description?: SortOrderInput | SortOrder;
     location?: SortOrderInput | SortOrder;
     website?: SortOrderInput | SortOrder;
-    createdAt?: SortOrder;
-    updatedAt?: SortOrder;
     coverImgFileId?: SortOrderInput | SortOrder;
     logoFileId?: SortOrderInput | SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     emailDomains?: CollegeEmailDomainOrderByRelationAggregateInput;
     projects?: ProjectOrderByRelationAggregateInput;
     userColleges?: UserCollegeOrderByRelationAggregateInput;
@@ -19429,10 +19713,10 @@ export namespace Prisma {
       description?: StringNullableFilter<'College'> | string | null;
       location?: StringNullableFilter<'College'> | string | null;
       website?: StringNullableFilter<'College'> | string | null;
-      createdAt?: DateTimeFilter<'College'> | Date | string;
-      updatedAt?: DateTimeFilter<'College'> | Date | string;
       coverImgFileId?: StringNullableFilter<'College'> | string | null;
       logoFileId?: StringNullableFilter<'College'> | string | null;
+      createdAt?: DateTimeFilter<'College'> | Date | string;
+      updatedAt?: DateTimeFilter<'College'> | Date | string;
       emailDomains?: CollegeEmailDomainListRelationFilter;
       projects?: ProjectListRelationFilter;
       userColleges?: UserCollegeListRelationFilter;
@@ -19447,10 +19731,10 @@ export namespace Prisma {
     description?: SortOrderInput | SortOrder;
     location?: SortOrderInput | SortOrder;
     website?: SortOrderInput | SortOrder;
-    createdAt?: SortOrder;
-    updatedAt?: SortOrder;
     coverImgFileId?: SortOrderInput | SortOrder;
     logoFileId?: SortOrderInput | SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     _count?: CollegeCountOrderByAggregateInput;
     _max?: CollegeMaxOrderByAggregateInput;
     _min?: CollegeMinOrderByAggregateInput;
@@ -19470,13 +19754,13 @@ export namespace Prisma {
     description?: StringNullableWithAggregatesFilter<'College'> | string | null;
     location?: StringNullableWithAggregatesFilter<'College'> | string | null;
     website?: StringNullableWithAggregatesFilter<'College'> | string | null;
-    createdAt?: DateTimeWithAggregatesFilter<'College'> | Date | string;
-    updatedAt?: DateTimeWithAggregatesFilter<'College'> | Date | string;
     coverImgFileId?:
       | StringNullableWithAggregatesFilter<'College'>
       | string
       | null;
     logoFileId?: StringNullableWithAggregatesFilter<'College'> | string | null;
+    createdAt?: DateTimeWithAggregatesFilter<'College'> | Date | string;
+    updatedAt?: DateTimeWithAggregatesFilter<'College'> | Date | string;
   };
 
   export type UserCollegeWhereInput = {
@@ -19495,6 +19779,8 @@ export namespace Prisma {
     leftAt?: DateTimeFilter<'UserCollege'> | Date | string;
     collegeEmail?: StringFilter<'UserCollege'> | string;
     designation?: StringNullableFilter<'UserCollege'> | string | null;
+    createdAt?: DateTimeFilter<'UserCollege'> | Date | string;
+    updatedAt?: DateTimeNullableFilter<'UserCollege'> | Date | string | null;
     college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
     user?: XOR<UserScalarRelationFilter, UserWhereInput>;
   };
@@ -19512,6 +19798,8 @@ export namespace Prisma {
     leftAt?: SortOrder;
     collegeEmail?: SortOrder;
     designation?: SortOrderInput | SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrderInput | SortOrder;
     college?: CollegeOrderByWithRelationInput;
     user?: UserOrderByWithRelationInput;
   };
@@ -19533,6 +19821,8 @@ export namespace Prisma {
       joinedAt?: DateTimeFilter<'UserCollege'> | Date | string;
       leftAt?: DateTimeFilter<'UserCollege'> | Date | string;
       designation?: StringNullableFilter<'UserCollege'> | string | null;
+      createdAt?: DateTimeFilter<'UserCollege'> | Date | string;
+      updatedAt?: DateTimeNullableFilter<'UserCollege'> | Date | string | null;
       college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
       user?: XOR<UserScalarRelationFilter, UserWhereInput>;
     },
@@ -19552,6 +19842,8 @@ export namespace Prisma {
     leftAt?: SortOrder;
     collegeEmail?: SortOrder;
     designation?: SortOrderInput | SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrderInput | SortOrder;
     _count?: UserCollegeCountOrderByAggregateInput;
     _max?: UserCollegeMaxOrderByAggregateInput;
     _min?: UserCollegeMinOrderByAggregateInput;
@@ -19585,6 +19877,12 @@ export namespace Prisma {
       | StringNullableWithAggregatesFilter<'UserCollege'>
       | string
       | null;
+    createdAt?: DateTimeWithAggregatesFilter<'UserCollege'> | Date | string;
+    updatedAt?:
+      | DateTimeNullableWithAggregatesFilter<'UserCollege'>
+      | Date
+      | string
+      | null;
   };
 
   export type CollegeEmailDomainWhereInput = {
@@ -19594,6 +19892,12 @@ export namespace Prisma {
     id?: UuidFilter<'CollegeEmailDomain'> | string;
     domain?: StringFilter<'CollegeEmailDomain'> | string;
     collegeId?: UuidFilter<'CollegeEmailDomain'> | string;
+    createdAt?: DateTimeFilter<'CollegeEmailDomain'> | Date | string;
+    updatedAt?:
+      | DateTimeNullableFilter<'CollegeEmailDomain'>
+      | Date
+      | string
+      | null;
     college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
   };
 
@@ -19601,6 +19905,8 @@ export namespace Prisma {
     id?: SortOrder;
     domain?: SortOrder;
     collegeId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrderInput | SortOrder;
     college?: CollegeOrderByWithRelationInput;
   };
 
@@ -19612,6 +19918,12 @@ export namespace Prisma {
       OR?: CollegeEmailDomainWhereInput[];
       NOT?: CollegeEmailDomainWhereInput | CollegeEmailDomainWhereInput[];
       collegeId?: UuidFilter<'CollegeEmailDomain'> | string;
+      createdAt?: DateTimeFilter<'CollegeEmailDomain'> | Date | string;
+      updatedAt?:
+        | DateTimeNullableFilter<'CollegeEmailDomain'>
+        | Date
+        | string
+        | null;
       college?: XOR<CollegeScalarRelationFilter, CollegeWhereInput>;
     },
     'id' | 'domain'
@@ -19621,6 +19933,8 @@ export namespace Prisma {
     id?: SortOrder;
     domain?: SortOrder;
     collegeId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrderInput | SortOrder;
     _count?: CollegeEmailDomainCountOrderByAggregateInput;
     _max?: CollegeEmailDomainMaxOrderByAggregateInput;
     _min?: CollegeEmailDomainMinOrderByAggregateInput;
@@ -19637,6 +19951,15 @@ export namespace Prisma {
     id?: UuidWithAggregatesFilter<'CollegeEmailDomain'> | string;
     domain?: StringWithAggregatesFilter<'CollegeEmailDomain'> | string;
     collegeId?: UuidWithAggregatesFilter<'CollegeEmailDomain'> | string;
+    createdAt?:
+      | DateTimeWithAggregatesFilter<'CollegeEmailDomain'>
+      | Date
+      | string;
+    updatedAt?:
+      | DateTimeNullableWithAggregatesFilter<'CollegeEmailDomain'>
+      | Date
+      | string
+      | null;
   };
 
   export type ProjectWhereInput = {
@@ -19653,6 +19976,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFilter<'Project'> | boolean;
     upvotesCount?: IntFilter<'Project'> | number;
     createdAt?: DateTimeFilter<'Project'> | Date | string;
+    updatedAt?: DateTimeFilter<'Project'> | Date | string;
     college?: XOR<
       CollegeNullableScalarRelationFilter,
       CollegeWhereInput
@@ -19673,6 +19997,7 @@ export namespace Prisma {
     isLookingForContributors?: SortOrder;
     upvotesCount?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     college?: CollegeOrderByWithRelationInput;
     collaborators?: ProjectCollaboratorOrderByRelationAggregateInput;
     tags?: ProjectTagOrderByRelationAggregateInput;
@@ -19694,6 +20019,7 @@ export namespace Prisma {
       isLookingForContributors?: BoolFilter<'Project'> | boolean;
       upvotesCount?: IntFilter<'Project'> | number;
       createdAt?: DateTimeFilter<'Project'> | Date | string;
+      updatedAt?: DateTimeFilter<'Project'> | Date | string;
       college?: XOR<
         CollegeNullableScalarRelationFilter,
         CollegeWhereInput
@@ -19716,6 +20042,7 @@ export namespace Prisma {
     isLookingForContributors?: SortOrder;
     upvotesCount?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     _count?: ProjectCountOrderByAggregateInput;
     _avg?: ProjectAvgOrderByAggregateInput;
     _max?: ProjectMaxOrderByAggregateInput;
@@ -19741,6 +20068,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolWithAggregatesFilter<'Project'> | boolean;
     upvotesCount?: IntWithAggregatesFilter<'Project'> | number;
     createdAt?: DateTimeWithAggregatesFilter<'Project'> | Date | string;
+    updatedAt?: DateTimeWithAggregatesFilter<'Project'> | Date | string;
   };
 
   export type ProjectUpvoteWhereInput = {
@@ -19750,6 +20078,7 @@ export namespace Prisma {
     userId?: UuidFilter<'ProjectUpvote'> | string;
     projectId?: UuidFilter<'ProjectUpvote'> | string;
     createdAt?: DateTimeFilter<'ProjectUpvote'> | Date | string;
+    updatedAt?: DateTimeFilter<'ProjectUpvote'> | Date | string;
     project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>;
     user?: XOR<UserScalarRelationFilter, UserWhereInput>;
   };
@@ -19758,6 +20087,7 @@ export namespace Prisma {
     userId?: SortOrder;
     projectId?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     project?: ProjectOrderByWithRelationInput;
     user?: UserOrderByWithRelationInput;
   };
@@ -19771,6 +20101,7 @@ export namespace Prisma {
       userId?: UuidFilter<'ProjectUpvote'> | string;
       projectId?: UuidFilter<'ProjectUpvote'> | string;
       createdAt?: DateTimeFilter<'ProjectUpvote'> | Date | string;
+      updatedAt?: DateTimeFilter<'ProjectUpvote'> | Date | string;
       project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>;
       user?: XOR<UserScalarRelationFilter, UserWhereInput>;
     },
@@ -19781,6 +20112,7 @@ export namespace Prisma {
     userId?: SortOrder;
     projectId?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     _count?: ProjectUpvoteCountOrderByAggregateInput;
     _max?: ProjectUpvoteMaxOrderByAggregateInput;
     _min?: ProjectUpvoteMinOrderByAggregateInput;
@@ -19797,6 +20129,7 @@ export namespace Prisma {
     userId?: UuidWithAggregatesFilter<'ProjectUpvote'> | string;
     projectId?: UuidWithAggregatesFilter<'ProjectUpvote'> | string;
     createdAt?: DateTimeWithAggregatesFilter<'ProjectUpvote'> | Date | string;
+    updatedAt?: DateTimeWithAggregatesFilter<'ProjectUpvote'> | Date | string;
   };
 
   export type ProjectCollaboratorWhereInput = {
@@ -19805,10 +20138,12 @@ export namespace Prisma {
     NOT?: ProjectCollaboratorWhereInput | ProjectCollaboratorWhereInput[];
     userId?: UuidFilter<'ProjectCollaborator'> | string;
     projectId?: UuidFilter<'ProjectCollaborator'> | string;
+    joinedAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
+    createdAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
+    updatedAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
     role?:
       | EnumProjectUserRoleFilter<'ProjectCollaborator'>
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
     project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>;
     user?: XOR<UserScalarRelationFilter, UserWhereInput>;
   };
@@ -19816,8 +20151,10 @@ export namespace Prisma {
   export type ProjectCollaboratorOrderByWithRelationInput = {
     userId?: SortOrder;
     projectId?: SortOrder;
-    role?: SortOrder;
     joinedAt?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
+    role?: SortOrder;
     project?: ProjectOrderByWithRelationInput;
     user?: UserOrderByWithRelationInput;
   };
@@ -19830,10 +20167,12 @@ export namespace Prisma {
       NOT?: ProjectCollaboratorWhereInput | ProjectCollaboratorWhereInput[];
       userId?: UuidFilter<'ProjectCollaborator'> | string;
       projectId?: UuidFilter<'ProjectCollaborator'> | string;
+      joinedAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
+      createdAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
+      updatedAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
       role?:
         | EnumProjectUserRoleFilter<'ProjectCollaborator'>
         | $Enums.ProjectUserRole;
-      joinedAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
       project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>;
       user?: XOR<UserScalarRelationFilter, UserWhereInput>;
     },
@@ -19843,8 +20182,10 @@ export namespace Prisma {
   export type ProjectCollaboratorOrderByWithAggregationInput = {
     userId?: SortOrder;
     projectId?: SortOrder;
-    role?: SortOrder;
     joinedAt?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
+    role?: SortOrder;
     _count?: ProjectCollaboratorCountOrderByAggregateInput;
     _max?: ProjectCollaboratorMaxOrderByAggregateInput;
     _min?: ProjectCollaboratorMinOrderByAggregateInput;
@@ -19860,13 +20201,21 @@ export namespace Prisma {
       | ProjectCollaboratorScalarWhereWithAggregatesInput[];
     userId?: UuidWithAggregatesFilter<'ProjectCollaborator'> | string;
     projectId?: UuidWithAggregatesFilter<'ProjectCollaborator'> | string;
-    role?:
-      | EnumProjectUserRoleWithAggregatesFilter<'ProjectCollaborator'>
-      | $Enums.ProjectUserRole;
     joinedAt?:
       | DateTimeWithAggregatesFilter<'ProjectCollaborator'>
       | Date
       | string;
+    createdAt?:
+      | DateTimeWithAggregatesFilter<'ProjectCollaborator'>
+      | Date
+      | string;
+    updatedAt?:
+      | DateTimeWithAggregatesFilter<'ProjectCollaborator'>
+      | Date
+      | string;
+    role?:
+      | EnumProjectUserRoleWithAggregatesFilter<'ProjectCollaborator'>
+      | $Enums.ProjectUserRole;
   };
 
   export type TagWhereInput = {
@@ -19876,6 +20225,8 @@ export namespace Prisma {
     id?: UuidFilter<'Tag'> | string;
     name?: StringFilter<'Tag'> | string;
     slug?: StringFilter<'Tag'> | string;
+    createdAt?: DateTimeFilter<'Tag'> | Date | string;
+    updatedAt?: DateTimeFilter<'Tag'> | Date | string;
     projects?: ProjectTagListRelationFilter;
   };
 
@@ -19883,6 +20234,8 @@ export namespace Prisma {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     projects?: ProjectTagOrderByRelationAggregateInput;
   };
 
@@ -19894,6 +20247,8 @@ export namespace Prisma {
       AND?: TagWhereInput | TagWhereInput[];
       OR?: TagWhereInput[];
       NOT?: TagWhereInput | TagWhereInput[];
+      createdAt?: DateTimeFilter<'Tag'> | Date | string;
+      updatedAt?: DateTimeFilter<'Tag'> | Date | string;
       projects?: ProjectTagListRelationFilter;
     },
     'id' | 'name' | 'slug'
@@ -19903,6 +20258,8 @@ export namespace Prisma {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     _count?: TagCountOrderByAggregateInput;
     _max?: TagMaxOrderByAggregateInput;
     _min?: TagMinOrderByAggregateInput;
@@ -19919,6 +20276,8 @@ export namespace Prisma {
     id?: UuidWithAggregatesFilter<'Tag'> | string;
     name?: StringWithAggregatesFilter<'Tag'> | string;
     slug?: StringWithAggregatesFilter<'Tag'> | string;
+    createdAt?: DateTimeWithAggregatesFilter<'Tag'> | Date | string;
+    updatedAt?: DateTimeWithAggregatesFilter<'Tag'> | Date | string;
   };
 
   export type ProjectTagWhereInput = {
@@ -19927,6 +20286,8 @@ export namespace Prisma {
     NOT?: ProjectTagWhereInput | ProjectTagWhereInput[];
     projectId?: UuidFilter<'ProjectTag'> | string;
     tagId?: UuidFilter<'ProjectTag'> | string;
+    createdAt?: DateTimeFilter<'ProjectTag'> | Date | string;
+    updatedAt?: DateTimeFilter<'ProjectTag'> | Date | string;
     project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>;
     tag?: XOR<TagScalarRelationFilter, TagWhereInput>;
   };
@@ -19934,6 +20295,8 @@ export namespace Prisma {
   export type ProjectTagOrderByWithRelationInput = {
     projectId?: SortOrder;
     tagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     project?: ProjectOrderByWithRelationInput;
     tag?: TagOrderByWithRelationInput;
   };
@@ -19946,6 +20309,8 @@ export namespace Prisma {
       NOT?: ProjectTagWhereInput | ProjectTagWhereInput[];
       projectId?: UuidFilter<'ProjectTag'> | string;
       tagId?: UuidFilter<'ProjectTag'> | string;
+      createdAt?: DateTimeFilter<'ProjectTag'> | Date | string;
+      updatedAt?: DateTimeFilter<'ProjectTag'> | Date | string;
       project?: XOR<ProjectScalarRelationFilter, ProjectWhereInput>;
       tag?: XOR<TagScalarRelationFilter, TagWhereInput>;
     },
@@ -19955,6 +20320,8 @@ export namespace Prisma {
   export type ProjectTagOrderByWithAggregationInput = {
     projectId?: SortOrder;
     tagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
     _count?: ProjectTagCountOrderByAggregateInput;
     _max?: ProjectTagMaxOrderByAggregateInput;
     _min?: ProjectTagMinOrderByAggregateInput;
@@ -19970,6 +20337,8 @@ export namespace Prisma {
       | ProjectTagScalarWhereWithAggregatesInput[];
     projectId?: UuidWithAggregatesFilter<'ProjectTag'> | string;
     tagId?: UuidWithAggregatesFilter<'ProjectTag'> | string;
+    createdAt?: DateTimeWithAggregatesFilter<'ProjectTag'> | Date | string;
+    updatedAt?: DateTimeWithAggregatesFilter<'ProjectTag'> | Date | string;
   };
 
   export type UserCreateInput = {
@@ -19985,9 +20354,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
@@ -20008,9 +20377,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
@@ -20031,13 +20400,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
@@ -20058,13 +20423,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
@@ -20085,9 +20446,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserUpdateManyMutationInput = {
@@ -20103,13 +20464,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserUncheckedUpdateManyInput = {
@@ -20125,19 +20482,17 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSocialLinkCreateInput = {
     id?: string;
     platform: string;
     url: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     user: UserCreateNestedOneWithoutUserSocialLinksInput;
   };
 
@@ -20146,12 +20501,16 @@ export namespace Prisma {
     userId: string;
     platform: string;
     url: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserSocialLinkUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string;
     platform?: StringFieldUpdateOperationsInput | string;
     url?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     user?: UserUpdateOneRequiredWithoutUserSocialLinksNestedInput;
   };
 
@@ -20160,6 +20519,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string;
     platform?: StringFieldUpdateOperationsInput | string;
     url?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSocialLinkCreateManyInput = {
@@ -20167,12 +20528,16 @@ export namespace Prisma {
     userId: string;
     platform: string;
     url: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserSocialLinkUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string;
     platform?: StringFieldUpdateOperationsInput | string;
     url?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSocialLinkUncheckedUpdateManyInput = {
@@ -20180,12 +20545,16 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string;
     platform?: StringFieldUpdateOperationsInput | string;
     url?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type SkillTagCreateInput = {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     users?: UserSkillTagCreateNestedManyWithoutSkillTagInput;
   };
 
@@ -20193,6 +20562,8 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     users?: UserSkillTagUncheckedCreateNestedManyWithoutSkillTagInput;
   };
 
@@ -20200,6 +20571,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     users?: UserSkillTagUpdateManyWithoutSkillTagNestedInput;
   };
 
@@ -20207,6 +20580,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     users?: UserSkillTagUncheckedUpdateManyWithoutSkillTagNestedInput;
   };
 
@@ -20214,21 +20589,29 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type SkillTagUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type SkillTagUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSkillTagCreateInput = {
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     user: UserCreateNestedOneWithoutUserSkillTagsInput;
     skillTag: SkillTagCreateNestedOneWithoutUsersInput;
   };
@@ -20236,9 +20619,13 @@ export namespace Prisma {
   export type UserSkillTagUncheckedCreateInput = {
     userId: string;
     skillTagId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserSkillTagUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     user?: UserUpdateOneRequiredWithoutUserSkillTagsNestedInput;
     skillTag?: SkillTagUpdateOneRequiredWithoutUsersNestedInput;
   };
@@ -20246,18 +20633,27 @@ export namespace Prisma {
   export type UserSkillTagUncheckedUpdateInput = {
     userId?: StringFieldUpdateOperationsInput | string;
     skillTagId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSkillTagCreateManyInput = {
     userId: string;
     skillTagId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
-  export type UserSkillTagUpdateManyMutationInput = {};
+  export type UserSkillTagUpdateManyMutationInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+  };
 
   export type UserSkillTagUncheckedUpdateManyInput = {
     userId?: StringFieldUpdateOperationsInput | string;
     skillTagId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type CollegeCreateInput = {
@@ -20267,10 +20663,10 @@ export namespace Prisma {
     description?: string | null;
     location?: string | null;
     website?: string | null;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     coverImgFileId?: string | null;
     logoFileId?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput;
     projects?: ProjectCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput;
@@ -20283,10 +20679,10 @@ export namespace Prisma {
     description?: string | null;
     location?: string | null;
     website?: string | null;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     coverImgFileId?: string | null;
     logoFileId?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput;
     projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput;
@@ -20299,10 +20695,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput;
     projects?: ProjectUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput;
@@ -20315,10 +20711,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput;
     projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput;
@@ -20331,10 +20727,10 @@ export namespace Prisma {
     description?: string | null;
     location?: string | null;
     website?: string | null;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     coverImgFileId?: string | null;
     logoFileId?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type CollegeUpdateManyMutationInput = {
@@ -20344,10 +20740,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type CollegeUncheckedUpdateManyInput = {
@@ -20357,10 +20753,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserCollegeCreateInput = {
@@ -20374,6 +20770,8 @@ export namespace Prisma {
     leftAt: Date | string;
     collegeEmail: string;
     designation?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
     college: CollegeCreateNestedOneWithoutUserCollegesInput;
     user: UserCreateNestedOneWithoutUserCollegesInput;
   };
@@ -20391,6 +20789,8 @@ export namespace Prisma {
     leftAt: Date | string;
     collegeEmail: string;
     designation?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type UserCollegeUpdateInput = {
@@ -20404,6 +20804,12 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     college?: CollegeUpdateOneRequiredWithoutUserCollegesNestedInput;
     user?: UserUpdateOneRequiredWithoutUserCollegesNestedInput;
   };
@@ -20421,6 +20827,12 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type UserCollegeCreateManyInput = {
@@ -20436,6 +20848,8 @@ export namespace Prisma {
     leftAt: Date | string;
     collegeEmail: string;
     designation?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type UserCollegeUpdateManyMutationInput = {
@@ -20449,6 +20863,12 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type UserCollegeUncheckedUpdateManyInput = {
@@ -20464,11 +20884,19 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type CollegeEmailDomainCreateInput = {
     id?: string;
     domain: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
     college: CollegeCreateNestedOneWithoutEmailDomainsInput;
   };
 
@@ -20476,11 +20904,19 @@ export namespace Prisma {
     id?: string;
     domain: string;
     collegeId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type CollegeEmailDomainUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     college?: CollegeUpdateOneRequiredWithoutEmailDomainsNestedInput;
   };
 
@@ -20488,23 +20924,43 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
     collegeId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type CollegeEmailDomainCreateManyInput = {
     id?: string;
     domain: string;
     collegeId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type CollegeEmailDomainUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type CollegeEmailDomainUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
     collegeId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type ProjectCreateInput = {
@@ -20517,6 +20973,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     college?: CollegeCreateNestedOneWithoutProjectsInput;
     collaborators?: ProjectCollaboratorCreateNestedManyWithoutProjectInput;
     tags?: ProjectTagCreateNestedManyWithoutProjectInput;
@@ -20534,6 +20991,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     collaborators?: ProjectCollaboratorUncheckedCreateNestedManyWithoutProjectInput;
     tags?: ProjectTagUncheckedCreateNestedManyWithoutProjectInput;
     upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput;
@@ -20549,6 +21007,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     college?: CollegeUpdateOneWithoutProjectsNestedInput;
     collaborators?: ProjectCollaboratorUpdateManyWithoutProjectNestedInput;
     tags?: ProjectTagUpdateManyWithoutProjectNestedInput;
@@ -20566,6 +21025,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collaborators?: ProjectCollaboratorUncheckedUpdateManyWithoutProjectNestedInput;
     tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput;
     upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput;
@@ -20582,6 +21042,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectUpdateManyMutationInput = {
@@ -20594,6 +21055,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectUncheckedUpdateManyInput = {
@@ -20607,10 +21069,12 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectUpvoteCreateInput = {
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     project: ProjectCreateNestedOneWithoutUpvotesInput;
     user: UserCreateNestedOneWithoutProjectUpvotesInput;
   };
@@ -20619,10 +21083,12 @@ export namespace Prisma {
     userId: string;
     projectId: string;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectUpvoteUpdateInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     project?: ProjectUpdateOneRequiredWithoutUpvotesNestedInput;
     user?: UserUpdateOneRequiredWithoutProjectUpvotesNestedInput;
   };
@@ -20631,27 +21097,33 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string;
     projectId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectUpvoteCreateManyInput = {
     userId: string;
     projectId: string;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectUpvoteUpdateManyMutationInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectUpvoteUncheckedUpdateManyInput = {
     userId?: StringFieldUpdateOperationsInput | string;
     projectId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectCollaboratorCreateInput = {
-    role: $Enums.ProjectUserRole;
     joinedAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    role: $Enums.ProjectUserRole;
     project: ProjectCreateNestedOneWithoutCollaboratorsInput;
     user: UserCreateNestedOneWithoutProjectCollaboratorInput;
   };
@@ -20659,15 +21131,19 @@ export namespace Prisma {
   export type ProjectCollaboratorUncheckedCreateInput = {
     userId: string;
     projectId: string;
-    role: $Enums.ProjectUserRole;
     joinedAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    role: $Enums.ProjectUserRole;
   };
 
   export type ProjectCollaboratorUpdateInput = {
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     project?: ProjectUpdateOneRequiredWithoutCollaboratorsNestedInput;
     user?: UserUpdateOneRequiredWithoutProjectCollaboratorNestedInput;
   };
@@ -20675,39 +21151,49 @@ export namespace Prisma {
   export type ProjectCollaboratorUncheckedUpdateInput = {
     userId?: StringFieldUpdateOperationsInput | string;
     projectId?: StringFieldUpdateOperationsInput | string;
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectCollaboratorCreateManyInput = {
     userId: string;
     projectId: string;
-    role: $Enums.ProjectUserRole;
     joinedAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    role: $Enums.ProjectUserRole;
   };
 
   export type ProjectCollaboratorUpdateManyMutationInput = {
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectCollaboratorUncheckedUpdateManyInput = {
     userId?: StringFieldUpdateOperationsInput | string;
     projectId?: StringFieldUpdateOperationsInput | string;
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type TagCreateInput = {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     projects?: ProjectTagCreateNestedManyWithoutTagInput;
   };
 
@@ -20715,6 +21201,8 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     projects?: ProjectTagUncheckedCreateNestedManyWithoutTagInput;
   };
 
@@ -20722,6 +21210,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     projects?: ProjectTagUpdateManyWithoutTagNestedInput;
   };
 
@@ -20729,6 +21219,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     projects?: ProjectTagUncheckedUpdateManyWithoutTagNestedInput;
   };
 
@@ -20736,21 +21228,29 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type TagUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type TagUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectTagCreateInput = {
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     project: ProjectCreateNestedOneWithoutTagsInput;
     tag: TagCreateNestedOneWithoutProjectsInput;
   };
@@ -20758,9 +21258,13 @@ export namespace Prisma {
   export type ProjectTagUncheckedCreateInput = {
     projectId: string;
     tagId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectTagUpdateInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     project?: ProjectUpdateOneRequiredWithoutTagsNestedInput;
     tag?: TagUpdateOneRequiredWithoutProjectsNestedInput;
   };
@@ -20768,18 +21272,27 @@ export namespace Prisma {
   export type ProjectTagUncheckedUpdateInput = {
     projectId?: StringFieldUpdateOperationsInput | string;
     tagId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectTagCreateManyInput = {
     projectId: string;
     tagId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
-  export type ProjectTagUpdateManyMutationInput = {};
+  export type ProjectTagUpdateManyMutationInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+  };
 
   export type ProjectTagUncheckedUpdateManyInput = {
     projectId?: StringFieldUpdateOperationsInput | string;
     tagId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UuidFilter<$PrismaModel = never> = {
@@ -20838,17 +21351,6 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string;
-  };
-
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null;
   };
 
   export type ProjectCollaboratorListRelationFilter = {
@@ -20919,8 +21421,8 @@ export namespace Prisma {
     bio?: SortOrder;
     resume?: SortOrder;
     appwriteId?: SortOrder;
-    createdAt?: SortOrder;
     websiteUrl?: SortOrder;
+    createdAt?: SortOrder;
     updatedAt?: SortOrder;
   };
 
@@ -20937,8 +21439,8 @@ export namespace Prisma {
     bio?: SortOrder;
     resume?: SortOrder;
     appwriteId?: SortOrder;
-    createdAt?: SortOrder;
     websiteUrl?: SortOrder;
+    createdAt?: SortOrder;
     updatedAt?: SortOrder;
   };
 
@@ -20955,8 +21457,8 @@ export namespace Prisma {
     bio?: SortOrder;
     resume?: SortOrder;
     appwriteId?: SortOrder;
-    createdAt?: SortOrder;
     websiteUrl?: SortOrder;
+    createdAt?: SortOrder;
     updatedAt?: SortOrder;
   };
 
@@ -21036,24 +21538,6 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>;
   };
 
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    not?:
-      | NestedDateTimeNullableWithAggregatesFilter<$PrismaModel>
-      | Date
-      | string
-      | null;
-    _count?: NestedIntNullableFilter<$PrismaModel>;
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>;
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>;
-  };
-
   export type UserScalarRelationFilter = {
     is?: UserWhereInput;
     isNot?: UserWhereInput;
@@ -21069,6 +21553,8 @@ export namespace Prisma {
     userId?: SortOrder;
     platform?: SortOrder;
     url?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UserSocialLinkMaxOrderByAggregateInput = {
@@ -21076,6 +21562,8 @@ export namespace Prisma {
     userId?: SortOrder;
     platform?: SortOrder;
     url?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UserSocialLinkMinOrderByAggregateInput = {
@@ -21083,24 +21571,32 @@ export namespace Prisma {
     userId?: SortOrder;
     platform?: SortOrder;
     url?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type SkillTagCountOrderByAggregateInput = {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type SkillTagMaxOrderByAggregateInput = {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type SkillTagMinOrderByAggregateInput = {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type SkillTagScalarRelationFilter = {
@@ -21116,16 +21612,22 @@ export namespace Prisma {
   export type UserSkillTagCountOrderByAggregateInput = {
     userId?: SortOrder;
     skillTagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UserSkillTagMaxOrderByAggregateInput = {
     userId?: SortOrder;
     skillTagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UserSkillTagMinOrderByAggregateInput = {
     userId?: SortOrder;
     skillTagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type CollegeEmailDomainListRelationFilter = {
@@ -21155,10 +21657,10 @@ export namespace Prisma {
     description?: SortOrder;
     location?: SortOrder;
     website?: SortOrder;
-    createdAt?: SortOrder;
-    updatedAt?: SortOrder;
     coverImgFileId?: SortOrder;
     logoFileId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type CollegeMaxOrderByAggregateInput = {
@@ -21168,10 +21670,10 @@ export namespace Prisma {
     description?: SortOrder;
     location?: SortOrder;
     website?: SortOrder;
-    createdAt?: SortOrder;
-    updatedAt?: SortOrder;
     coverImgFileId?: SortOrder;
     logoFileId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type CollegeMinOrderByAggregateInput = {
@@ -21181,10 +21683,10 @@ export namespace Prisma {
     description?: SortOrder;
     location?: SortOrder;
     website?: SortOrder;
-    createdAt?: SortOrder;
-    updatedAt?: SortOrder;
     coverImgFileId?: SortOrder;
     logoFileId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type EnumUserTypeFilter<$PrismaModel = never> = {
@@ -21192,6 +21694,17 @@ export namespace Prisma {
     in?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
     notIn?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
     not?: NestedEnumUserTypeFilter<$PrismaModel> | $Enums.UserType;
+  };
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null;
   };
 
   export type CollegeScalarRelationFilter = {
@@ -21212,6 +21725,8 @@ export namespace Prisma {
     leftAt?: SortOrder;
     collegeEmail?: SortOrder;
     designation?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UserCollegeMaxOrderByAggregateInput = {
@@ -21227,6 +21742,8 @@ export namespace Prisma {
     leftAt?: SortOrder;
     collegeEmail?: SortOrder;
     designation?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UserCollegeMinOrderByAggregateInput = {
@@ -21242,6 +21759,8 @@ export namespace Prisma {
     leftAt?: SortOrder;
     collegeEmail?: SortOrder;
     designation?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type EnumUserTypeWithAggregatesFilter<$PrismaModel = never> = {
@@ -21256,22 +21775,46 @@ export namespace Prisma {
     _max?: NestedEnumUserTypeFilter<$PrismaModel>;
   };
 
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    not?:
+      | NestedDateTimeNullableWithAggregatesFilter<$PrismaModel>
+      | Date
+      | string
+      | null;
+    _count?: NestedIntNullableFilter<$PrismaModel>;
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>;
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>;
+  };
+
   export type CollegeEmailDomainCountOrderByAggregateInput = {
     id?: SortOrder;
     domain?: SortOrder;
     collegeId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type CollegeEmailDomainMaxOrderByAggregateInput = {
     id?: SortOrder;
     domain?: SortOrder;
     collegeId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type CollegeEmailDomainMinOrderByAggregateInput = {
     id?: SortOrder;
     domain?: SortOrder;
     collegeId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UuidNullableFilter<$PrismaModel = never> = {
@@ -21323,6 +21866,7 @@ export namespace Prisma {
     isLookingForContributors?: SortOrder;
     upvotesCount?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type ProjectAvgOrderByAggregateInput = {
@@ -21340,6 +21884,7 @@ export namespace Prisma {
     isLookingForContributors?: SortOrder;
     upvotesCount?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type ProjectMinOrderByAggregateInput = {
@@ -21353,6 +21898,7 @@ export namespace Prisma {
     isLookingForContributors?: SortOrder;
     upvotesCount?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type ProjectSumOrderByAggregateInput = {
@@ -21404,18 +21950,21 @@ export namespace Prisma {
     userId?: SortOrder;
     projectId?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type ProjectUpvoteMaxOrderByAggregateInput = {
     userId?: SortOrder;
     projectId?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type ProjectUpvoteMinOrderByAggregateInput = {
     userId?: SortOrder;
     projectId?: SortOrder;
     createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type EnumProjectUserRoleFilter<$PrismaModel = never> = {
@@ -21441,22 +21990,28 @@ export namespace Prisma {
   export type ProjectCollaboratorCountOrderByAggregateInput = {
     userId?: SortOrder;
     projectId?: SortOrder;
-    role?: SortOrder;
     joinedAt?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
+    role?: SortOrder;
   };
 
   export type ProjectCollaboratorMaxOrderByAggregateInput = {
     userId?: SortOrder;
     projectId?: SortOrder;
-    role?: SortOrder;
     joinedAt?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
+    role?: SortOrder;
   };
 
   export type ProjectCollaboratorMinOrderByAggregateInput = {
     userId?: SortOrder;
     projectId?: SortOrder;
-    role?: SortOrder;
     joinedAt?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
+    role?: SortOrder;
   };
 
   export type EnumProjectUserRoleWithAggregatesFilter<$PrismaModel = never> = {
@@ -21481,18 +22036,24 @@ export namespace Prisma {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type TagMaxOrderByAggregateInput = {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type TagMinOrderByAggregateInput = {
     id?: SortOrder;
     name?: SortOrder;
     slug?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type TagScalarRelationFilter = {
@@ -21508,16 +22069,22 @@ export namespace Prisma {
   export type ProjectTagCountOrderByAggregateInput = {
     projectId?: SortOrder;
     tagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type ProjectTagMaxOrderByAggregateInput = {
     projectId?: SortOrder;
     tagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type ProjectTagMinOrderByAggregateInput = {
     projectId?: SortOrder;
     tagId?: SortOrder;
+    createdAt?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type ProjectCollaboratorCreateNestedManyWithoutUserInput = {
@@ -21688,10 +22255,6 @@ export namespace Prisma {
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string;
-  };
-
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null;
   };
 
   export type ProjectCollaboratorUpdateManyWithoutUserNestedInput = {
@@ -22478,6 +23041,10 @@ export namespace Prisma {
     set?: $Enums.UserType;
   };
 
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null;
+  };
+
   export type CollegeUpdateOneRequiredWithoutUserCollegesNestedInput = {
     create?: XOR<
       CollegeCreateWithoutUserCollegesInput,
@@ -23167,17 +23734,6 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string;
   };
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null;
-  };
-
   export type NestedUuidWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>;
     in?: string[] | ListStringFieldRefInput<$PrismaModel>;
@@ -23273,6 +23829,36 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>;
   };
 
+  export type NestedEnumUserTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.UserType | EnumUserTypeFieldRefInput<$PrismaModel>;
+    in?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
+    notIn?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
+    not?: NestedEnumUserTypeFilter<$PrismaModel> | $Enums.UserType;
+  };
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null;
+  };
+
+  export type NestedEnumUserTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.UserType | EnumUserTypeFieldRefInput<$PrismaModel>;
+    in?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
+    notIn?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
+    not?:
+      | NestedEnumUserTypeWithAggregatesFilter<$PrismaModel>
+      | $Enums.UserType;
+    _count?: NestedIntFilter<$PrismaModel>;
+    _min?: NestedEnumUserTypeFilter<$PrismaModel>;
+    _max?: NestedEnumUserTypeFilter<$PrismaModel>;
+  };
+
   export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> =
     {
       equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
@@ -23295,25 +23881,6 @@ export namespace Prisma {
       _min?: NestedDateTimeNullableFilter<$PrismaModel>;
       _max?: NestedDateTimeNullableFilter<$PrismaModel>;
     };
-
-  export type NestedEnumUserTypeFilter<$PrismaModel = never> = {
-    equals?: $Enums.UserType | EnumUserTypeFieldRefInput<$PrismaModel>;
-    in?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
-    notIn?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
-    not?: NestedEnumUserTypeFilter<$PrismaModel> | $Enums.UserType;
-  };
-
-  export type NestedEnumUserTypeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.UserType | EnumUserTypeFieldRefInput<$PrismaModel>;
-    in?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
-    notIn?: $Enums.UserType[] | ListEnumUserTypeFieldRefInput<$PrismaModel>;
-    not?:
-      | NestedEnumUserTypeWithAggregatesFilter<$PrismaModel>
-      | $Enums.UserType;
-    _count?: NestedIntFilter<$PrismaModel>;
-    _min?: NestedEnumUserTypeFilter<$PrismaModel>;
-    _max?: NestedEnumUserTypeFilter<$PrismaModel>;
-  };
 
   export type NestedUuidNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null;
@@ -23403,15 +23970,19 @@ export namespace Prisma {
   };
 
   export type ProjectCollaboratorCreateWithoutUserInput = {
-    role: $Enums.ProjectUserRole;
     joinedAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    role: $Enums.ProjectUserRole;
     project: ProjectCreateNestedOneWithoutCollaboratorsInput;
   };
 
   export type ProjectCollaboratorUncheckedCreateWithoutUserInput = {
     projectId: string;
-    role: $Enums.ProjectUserRole;
     joinedAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    role: $Enums.ProjectUserRole;
   };
 
   export type ProjectCollaboratorCreateOrConnectWithoutUserInput = {
@@ -23431,12 +24002,14 @@ export namespace Prisma {
 
   export type ProjectUpvoteCreateWithoutUserInput = {
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     project: ProjectCreateNestedOneWithoutUpvotesInput;
   };
 
   export type ProjectUpvoteUncheckedCreateWithoutUserInput = {
     projectId: string;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectUpvoteCreateOrConnectWithoutUserInput = {
@@ -23463,6 +24036,8 @@ export namespace Prisma {
     leftAt: Date | string;
     collegeEmail: string;
     designation?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
     college: CollegeCreateNestedOneWithoutUserCollegesInput;
   };
 
@@ -23478,6 +24053,8 @@ export namespace Prisma {
     leftAt: Date | string;
     collegeEmail: string;
     designation?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type UserCollegeCreateOrConnectWithoutUserInput = {
@@ -23497,12 +24074,16 @@ export namespace Prisma {
     id?: string;
     platform: string;
     url: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserSocialLinkUncheckedCreateWithoutUserInput = {
     id?: string;
     platform: string;
     url: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserSocialLinkCreateOrConnectWithoutUserInput = {
@@ -23521,11 +24102,15 @@ export namespace Prisma {
   };
 
   export type UserSkillTagCreateWithoutUserInput = {
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     skillTag: SkillTagCreateNestedOneWithoutUsersInput;
   };
 
   export type UserSkillTagUncheckedCreateWithoutUserInput = {
     skillTagId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserSkillTagCreateOrConnectWithoutUserInput = {
@@ -23579,10 +24164,12 @@ export namespace Prisma {
       | ProjectCollaboratorScalarWhereInput[];
     userId?: UuidFilter<'ProjectCollaborator'> | string;
     projectId?: UuidFilter<'ProjectCollaborator'> | string;
+    joinedAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
+    createdAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
+    updatedAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
     role?:
       | EnumProjectUserRoleFilter<'ProjectCollaborator'>
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFilter<'ProjectCollaborator'> | Date | string;
   };
 
   export type ProjectUpvoteUpsertWithWhereUniqueWithoutUserInput = {
@@ -23620,6 +24207,7 @@ export namespace Prisma {
     userId?: UuidFilter<'ProjectUpvote'> | string;
     projectId?: UuidFilter<'ProjectUpvote'> | string;
     createdAt?: DateTimeFilter<'ProjectUpvote'> | Date | string;
+    updatedAt?: DateTimeFilter<'ProjectUpvote'> | Date | string;
   };
 
   export type UserCollegeUpsertWithWhereUniqueWithoutUserInput = {
@@ -23666,6 +24254,8 @@ export namespace Prisma {
     leftAt?: DateTimeFilter<'UserCollege'> | Date | string;
     collegeEmail?: StringFilter<'UserCollege'> | string;
     designation?: StringNullableFilter<'UserCollege'> | string | null;
+    createdAt?: DateTimeFilter<'UserCollege'> | Date | string;
+    updatedAt?: DateTimeNullableFilter<'UserCollege'> | Date | string | null;
   };
 
   export type UserSocialLinkUpsertWithWhereUniqueWithoutUserInput = {
@@ -23704,6 +24294,8 @@ export namespace Prisma {
     userId?: UuidFilter<'UserSocialLink'> | string;
     platform?: StringFilter<'UserSocialLink'> | string;
     url?: StringFilter<'UserSocialLink'> | string;
+    createdAt?: DateTimeFilter<'UserSocialLink'> | Date | string;
+    updatedAt?: DateTimeFilter<'UserSocialLink'> | Date | string;
   };
 
   export type UserSkillTagUpsertWithWhereUniqueWithoutUserInput = {
@@ -23740,6 +24332,8 @@ export namespace Prisma {
     NOT?: UserSkillTagScalarWhereInput | UserSkillTagScalarWhereInput[];
     userId?: UuidFilter<'UserSkillTag'> | string;
     skillTagId?: UuidFilter<'UserSkillTag'> | string;
+    createdAt?: DateTimeFilter<'UserSkillTag'> | Date | string;
+    updatedAt?: DateTimeFilter<'UserSkillTag'> | Date | string;
   };
 
   export type UserCreateWithoutUserSocialLinksInput = {
@@ -23755,9 +24349,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
@@ -23777,9 +24371,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
@@ -23827,13 +24421,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
@@ -23853,13 +24443,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
@@ -23867,11 +24453,15 @@ export namespace Prisma {
   };
 
   export type UserSkillTagCreateWithoutSkillTagInput = {
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     user: UserCreateNestedOneWithoutUserSkillTagsInput;
   };
 
   export type UserSkillTagUncheckedCreateWithoutSkillTagInput = {
     userId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserSkillTagCreateOrConnectWithoutSkillTagInput = {
@@ -23930,9 +24520,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
@@ -23952,9 +24542,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
@@ -23973,12 +24563,16 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type SkillTagUncheckedCreateWithoutUsersInput = {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type SkillTagCreateOrConnectWithoutUsersInput = {
@@ -24022,13 +24616,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
@@ -24048,13 +24638,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
@@ -24085,22 +24671,30 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type SkillTagUncheckedUpdateWithoutUsersInput = {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type CollegeEmailDomainCreateWithoutCollegeInput = {
     id?: string;
     domain: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type CollegeEmailDomainUncheckedCreateWithoutCollegeInput = {
     id?: string;
     domain: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type CollegeEmailDomainCreateOrConnectWithoutCollegeInput = {
@@ -24128,6 +24722,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     collaborators?: ProjectCollaboratorCreateNestedManyWithoutProjectInput;
     tags?: ProjectTagCreateNestedManyWithoutProjectInput;
     upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput;
@@ -24143,6 +24738,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     collaborators?: ProjectCollaboratorUncheckedCreateNestedManyWithoutProjectInput;
     tags?: ProjectTagUncheckedCreateNestedManyWithoutProjectInput;
     upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput;
@@ -24172,6 +24768,8 @@ export namespace Prisma {
     leftAt: Date | string;
     collegeEmail: string;
     designation?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
     user: UserCreateNestedOneWithoutUserCollegesInput;
   };
 
@@ -24187,6 +24785,8 @@ export namespace Prisma {
     leftAt: Date | string;
     collegeEmail: string;
     designation?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type UserCollegeCreateOrConnectWithoutCollegeInput = {
@@ -24243,6 +24843,12 @@ export namespace Prisma {
     id?: UuidFilter<'CollegeEmailDomain'> | string;
     domain?: StringFilter<'CollegeEmailDomain'> | string;
     collegeId?: UuidFilter<'CollegeEmailDomain'> | string;
+    createdAt?: DateTimeFilter<'CollegeEmailDomain'> | Date | string;
+    updatedAt?:
+      | DateTimeNullableFilter<'CollegeEmailDomain'>
+      | Date
+      | string
+      | null;
   };
 
   export type ProjectUpsertWithWhereUniqueWithoutCollegeInput = {
@@ -24287,6 +24893,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFilter<'Project'> | boolean;
     upvotesCount?: IntFilter<'Project'> | number;
     createdAt?: DateTimeFilter<'Project'> | Date | string;
+    updatedAt?: DateTimeFilter<'Project'> | Date | string;
   };
 
   export type UserCollegeUpsertWithWhereUniqueWithoutCollegeInput = {
@@ -24324,10 +24931,10 @@ export namespace Prisma {
     description?: string | null;
     location?: string | null;
     website?: string | null;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     coverImgFileId?: string | null;
     logoFileId?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput;
     projects?: ProjectCreateNestedManyWithoutCollegeInput;
   };
@@ -24339,10 +24946,10 @@ export namespace Prisma {
     description?: string | null;
     location?: string | null;
     website?: string | null;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     coverImgFileId?: string | null;
     logoFileId?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput;
     projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput;
   };
@@ -24368,9 +24975,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
     userSocialLinks?: UserSocialLinkCreateNestedManyWithoutUserInput;
@@ -24390,9 +24997,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
     userSocialLinks?: UserSocialLinkUncheckedCreateNestedManyWithoutUserInput;
@@ -24434,10 +25041,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput;
     projects?: ProjectUpdateManyWithoutCollegeNestedInput;
   };
@@ -24449,10 +25056,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput;
     projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput;
   };
@@ -24490,13 +25097,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
     userSocialLinks?: UserSocialLinkUpdateManyWithoutUserNestedInput;
@@ -24516,13 +25119,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
     userSocialLinks?: UserSocialLinkUncheckedUpdateManyWithoutUserNestedInput;
@@ -24536,10 +25135,10 @@ export namespace Prisma {
     description?: string | null;
     location?: string | null;
     website?: string | null;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     coverImgFileId?: string | null;
     logoFileId?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     projects?: ProjectCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput;
   };
@@ -24551,10 +25150,10 @@ export namespace Prisma {
     description?: string | null;
     location?: string | null;
     website?: string | null;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     coverImgFileId?: string | null;
     logoFileId?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     projects?: ProjectUncheckedCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput;
   };
@@ -24594,10 +25193,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     projects?: ProjectUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput;
   };
@@ -24609,10 +25208,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     projects?: ProjectUncheckedUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput;
   };
@@ -24624,10 +25223,10 @@ export namespace Prisma {
     description?: string | null;
     location?: string | null;
     website?: string | null;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     coverImgFileId?: string | null;
     logoFileId?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     emailDomains?: CollegeEmailDomainCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeCreateNestedManyWithoutCollegeInput;
   };
@@ -24639,10 +25238,10 @@ export namespace Prisma {
     description?: string | null;
     location?: string | null;
     website?: string | null;
-    createdAt?: Date | string;
-    updatedAt?: Date | string;
     coverImgFileId?: string | null;
     logoFileId?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     emailDomains?: CollegeEmailDomainUncheckedCreateNestedManyWithoutCollegeInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutCollegeInput;
   };
@@ -24656,15 +25255,19 @@ export namespace Prisma {
   };
 
   export type ProjectCollaboratorCreateWithoutProjectInput = {
-    role: $Enums.ProjectUserRole;
     joinedAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    role: $Enums.ProjectUserRole;
     user: UserCreateNestedOneWithoutProjectCollaboratorInput;
   };
 
   export type ProjectCollaboratorUncheckedCreateWithoutProjectInput = {
     userId: string;
-    role: $Enums.ProjectUserRole;
     joinedAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    role: $Enums.ProjectUserRole;
   };
 
   export type ProjectCollaboratorCreateOrConnectWithoutProjectInput = {
@@ -24683,11 +25286,15 @@ export namespace Prisma {
   };
 
   export type ProjectTagCreateWithoutProjectInput = {
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     tag: TagCreateNestedOneWithoutProjectsInput;
   };
 
   export type ProjectTagUncheckedCreateWithoutProjectInput = {
     tagId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectTagCreateOrConnectWithoutProjectInput = {
@@ -24705,12 +25312,14 @@ export namespace Prisma {
 
   export type ProjectUpvoteCreateWithoutProjectInput = {
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     user: UserCreateNestedOneWithoutProjectUpvotesInput;
   };
 
   export type ProjectUpvoteUncheckedCreateWithoutProjectInput = {
     userId: string;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectUpvoteCreateOrConnectWithoutProjectInput = {
@@ -24755,10 +25364,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     emailDomains?: CollegeEmailDomainUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutCollegeNestedInput;
   };
@@ -24770,10 +25379,10 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null;
     location?: NullableStringFieldUpdateOperationsInput | string | null;
     website?: NullableStringFieldUpdateOperationsInput | string | null;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     coverImgFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     logoFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     emailDomains?: CollegeEmailDomainUncheckedUpdateManyWithoutCollegeNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutCollegeNestedInput;
   };
@@ -24840,6 +25449,8 @@ export namespace Prisma {
     NOT?: ProjectTagScalarWhereInput | ProjectTagScalarWhereInput[];
     projectId?: UuidFilter<'ProjectTag'> | string;
     tagId?: UuidFilter<'ProjectTag'> | string;
+    createdAt?: DateTimeFilter<'ProjectTag'> | Date | string;
+    updatedAt?: DateTimeFilter<'ProjectTag'> | Date | string;
   };
 
   export type ProjectUpvoteUpsertWithWhereUniqueWithoutProjectInput = {
@@ -24880,6 +25491,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     college?: CollegeCreateNestedOneWithoutProjectsInput;
     collaborators?: ProjectCollaboratorCreateNestedManyWithoutProjectInput;
     tags?: ProjectTagCreateNestedManyWithoutProjectInput;
@@ -24896,6 +25508,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     collaborators?: ProjectCollaboratorUncheckedCreateNestedManyWithoutProjectInput;
     tags?: ProjectTagUncheckedCreateNestedManyWithoutProjectInput;
   };
@@ -24921,9 +25534,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
     userSocialLinks?: UserSocialLinkCreateNestedManyWithoutUserInput;
@@ -24943,9 +25556,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
     userSocialLinks?: UserSocialLinkUncheckedCreateNestedManyWithoutUserInput;
@@ -24990,6 +25603,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     college?: CollegeUpdateOneWithoutProjectsNestedInput;
     collaborators?: ProjectCollaboratorUpdateManyWithoutProjectNestedInput;
     tags?: ProjectTagUpdateManyWithoutProjectNestedInput;
@@ -25006,6 +25620,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collaborators?: ProjectCollaboratorUncheckedUpdateManyWithoutProjectNestedInput;
     tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput;
   };
@@ -25043,13 +25658,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
     userSocialLinks?: UserSocialLinkUpdateManyWithoutUserNestedInput;
@@ -25069,13 +25680,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
     userSocialLinks?: UserSocialLinkUncheckedUpdateManyWithoutUserNestedInput;
@@ -25092,6 +25699,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     college?: CollegeCreateNestedOneWithoutProjectsInput;
     tags?: ProjectTagCreateNestedManyWithoutProjectInput;
     upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput;
@@ -25108,6 +25716,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     tags?: ProjectTagUncheckedCreateNestedManyWithoutProjectInput;
     upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput;
   };
@@ -25133,9 +25742,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
     userSocialLinks?: UserSocialLinkCreateNestedManyWithoutUserInput;
@@ -25155,9 +25764,9 @@ export namespace Prisma {
     bio?: string | null;
     resume?: string | null;
     appwriteId: string;
-    createdAt?: Date | string;
     websiteUrl?: string | null;
-    updatedAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
     userSocialLinks?: UserSocialLinkUncheckedCreateNestedManyWithoutUserInput;
@@ -25202,6 +25811,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     college?: CollegeUpdateOneWithoutProjectsNestedInput;
     tags?: ProjectTagUpdateManyWithoutProjectNestedInput;
     upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput;
@@ -25218,6 +25828,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput;
     upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput;
   };
@@ -25255,13 +25866,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
     userSocialLinks?: UserSocialLinkUpdateManyWithoutUserNestedInput;
@@ -25281,13 +25888,9 @@ export namespace Prisma {
     bio?: NullableStringFieldUpdateOperationsInput | string | null;
     resume?: NullableStringFieldUpdateOperationsInput | string | null;
     appwriteId?: StringFieldUpdateOperationsInput | string;
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
-    updatedAt?:
-      | NullableDateTimeFieldUpdateOperationsInput
-      | Date
-      | string
-      | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
     userSocialLinks?: UserSocialLinkUncheckedUpdateManyWithoutUserNestedInput;
@@ -25295,11 +25898,15 @@ export namespace Prisma {
   };
 
   export type ProjectTagCreateWithoutTagInput = {
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     project: ProjectCreateNestedOneWithoutTagsInput;
   };
 
   export type ProjectTagUncheckedCreateWithoutTagInput = {
     projectId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectTagCreateOrConnectWithoutTagInput = {
@@ -25353,6 +25960,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     college?: CollegeCreateNestedOneWithoutProjectsInput;
     collaborators?: ProjectCollaboratorCreateNestedManyWithoutProjectInput;
     upvotes?: ProjectUpvoteCreateNestedManyWithoutProjectInput;
@@ -25369,6 +25977,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
     collaborators?: ProjectCollaboratorUncheckedCreateNestedManyWithoutProjectInput;
     upvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutProjectInput;
   };
@@ -25385,12 +25994,16 @@ export namespace Prisma {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type TagUncheckedCreateWithoutProjectsInput = {
     id?: string;
     name: string;
     slug: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type TagCreateOrConnectWithoutProjectsInput = {
@@ -25431,6 +26044,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     college?: CollegeUpdateOneWithoutProjectsNestedInput;
     collaborators?: ProjectCollaboratorUpdateManyWithoutProjectNestedInput;
     upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput;
@@ -25447,6 +26061,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collaborators?: ProjectCollaboratorUncheckedUpdateManyWithoutProjectNestedInput;
     upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput;
   };
@@ -25475,23 +26090,30 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type TagUncheckedUpdateWithoutProjectsInput = {
     id?: StringFieldUpdateOperationsInput | string;
     name?: StringFieldUpdateOperationsInput | string;
     slug?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectCollaboratorCreateManyUserInput = {
     projectId: string;
-    role: $Enums.ProjectUserRole;
     joinedAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    role: $Enums.ProjectUserRole;
   };
 
   export type ProjectUpvoteCreateManyUserInput = {
     projectId: string;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserCollegeCreateManyUserInput = {
@@ -25506,55 +26128,70 @@ export namespace Prisma {
     leftAt: Date | string;
     collegeEmail: string;
     designation?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type UserSocialLinkCreateManyUserInput = {
     id?: string;
     platform: string;
     url: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserSkillTagCreateManyUserInput = {
     skillTagId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectCollaboratorUpdateWithoutUserInput = {
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     project?: ProjectUpdateOneRequiredWithoutCollaboratorsNestedInput;
   };
 
   export type ProjectCollaboratorUncheckedUpdateWithoutUserInput = {
     projectId?: StringFieldUpdateOperationsInput | string;
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectCollaboratorUncheckedUpdateManyWithoutUserInput = {
     projectId?: StringFieldUpdateOperationsInput | string;
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectUpvoteUpdateWithoutUserInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     project?: ProjectUpdateOneRequiredWithoutUpvotesNestedInput;
   };
 
   export type ProjectUpvoteUncheckedUpdateWithoutUserInput = {
     projectId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectUpvoteUncheckedUpdateManyWithoutUserInput = {
     projectId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserCollegeUpdateWithoutUserInput = {
@@ -25568,6 +26205,12 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     college?: CollegeUpdateOneRequiredWithoutUserCollegesNestedInput;
   };
 
@@ -25583,6 +26226,12 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type UserCollegeUncheckedUpdateManyWithoutUserInput = {
@@ -25597,57 +26246,85 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type UserSocialLinkUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string;
     platform?: StringFieldUpdateOperationsInput | string;
     url?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSocialLinkUncheckedUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string;
     platform?: StringFieldUpdateOperationsInput | string;
     url?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSocialLinkUncheckedUpdateManyWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string;
     platform?: StringFieldUpdateOperationsInput | string;
     url?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSkillTagUpdateWithoutUserInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     skillTag?: SkillTagUpdateOneRequiredWithoutUsersNestedInput;
   };
 
   export type UserSkillTagUncheckedUpdateWithoutUserInput = {
     skillTagId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSkillTagUncheckedUpdateManyWithoutUserInput = {
     skillTagId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSkillTagCreateManySkillTagInput = {
     userId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserSkillTagUpdateWithoutSkillTagInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     user?: UserUpdateOneRequiredWithoutUserSkillTagsNestedInput;
   };
 
   export type UserSkillTagUncheckedUpdateWithoutSkillTagInput = {
     userId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserSkillTagUncheckedUpdateManyWithoutSkillTagInput = {
     userId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type CollegeEmailDomainCreateManyCollegeInput = {
     id?: string;
     domain: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type ProjectCreateManyCollegeInput = {
@@ -25660,6 +26337,7 @@ export namespace Prisma {
     isLookingForContributors?: boolean;
     upvotesCount?: number;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type UserCollegeCreateManyCollegeInput = {
@@ -25674,21 +26352,41 @@ export namespace Prisma {
     leftAt: Date | string;
     collegeEmail: string;
     designation?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string | null;
   };
 
   export type CollegeEmailDomainUpdateWithoutCollegeInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type CollegeEmailDomainUncheckedUpdateWithoutCollegeInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type CollegeEmailDomainUncheckedUpdateManyWithoutCollegeInput = {
     id?: StringFieldUpdateOperationsInput | string;
     domain?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type ProjectUpdateWithoutCollegeInput = {
@@ -25701,6 +26399,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collaborators?: ProjectCollaboratorUpdateManyWithoutProjectNestedInput;
     tags?: ProjectTagUpdateManyWithoutProjectNestedInput;
     upvotes?: ProjectUpvoteUpdateManyWithoutProjectNestedInput;
@@ -25716,6 +26415,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collaborators?: ProjectCollaboratorUncheckedUpdateManyWithoutProjectNestedInput;
     tags?: ProjectTagUncheckedUpdateManyWithoutProjectNestedInput;
     upvotes?: ProjectUpvoteUncheckedUpdateManyWithoutProjectNestedInput;
@@ -25731,6 +26431,7 @@ export namespace Prisma {
     isLookingForContributors?: BoolFieldUpdateOperationsInput | boolean;
     upvotesCount?: IntFieldUpdateOperationsInput | number;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type UserCollegeUpdateWithoutCollegeInput = {
@@ -25744,6 +26445,12 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     user?: UserUpdateOneRequiredWithoutUserCollegesNestedInput;
   };
 
@@ -25759,6 +26466,12 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type UserCollegeUncheckedUpdateManyWithoutCollegeInput = {
@@ -25773,88 +26486,122 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type ProjectCollaboratorCreateManyProjectInput = {
     userId: string;
-    role: $Enums.ProjectUserRole;
     joinedAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    role: $Enums.ProjectUserRole;
   };
 
   export type ProjectTagCreateManyProjectInput = {
     tagId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectUpvoteCreateManyProjectInput = {
     userId: string;
     createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectCollaboratorUpdateWithoutProjectInput = {
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     user?: UserUpdateOneRequiredWithoutProjectCollaboratorNestedInput;
   };
 
   export type ProjectCollaboratorUncheckedUpdateWithoutProjectInput = {
     userId?: StringFieldUpdateOperationsInput | string;
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectCollaboratorUncheckedUpdateManyWithoutProjectInput = {
     userId?: StringFieldUpdateOperationsInput | string;
+    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
       | $Enums.ProjectUserRole;
-    joinedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectTagUpdateWithoutProjectInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     tag?: TagUpdateOneRequiredWithoutProjectsNestedInput;
   };
 
   export type ProjectTagUncheckedUpdateWithoutProjectInput = {
     tagId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectTagUncheckedUpdateManyWithoutProjectInput = {
     tagId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectUpvoteUpdateWithoutProjectInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     user?: UserUpdateOneRequiredWithoutProjectUpvotesNestedInput;
   };
 
   export type ProjectUpvoteUncheckedUpdateWithoutProjectInput = {
     userId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectUpvoteUncheckedUpdateManyWithoutProjectInput = {
     userId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectTagCreateManyTagInput = {
     projectId: string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
   };
 
   export type ProjectTagUpdateWithoutTagInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     project?: ProjectUpdateOneRequiredWithoutTagsNestedInput;
   };
 
   export type ProjectTagUncheckedUpdateWithoutTagInput = {
     projectId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   export type ProjectTagUncheckedUpdateManyWithoutTagInput = {
     projectId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string;
   };
 
   /**

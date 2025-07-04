@@ -22,9 +22,9 @@ model User {
   bio                 String?
   resume              String?
   appwriteId          String                @unique
-  createdAt           DateTime              @default(now())
   websiteUrl          String?
-  updatedAt           DateTime?              @updatedAt 
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime              @updatedAt 
   ProjectCollaborator ProjectCollaborator[]
   projectUpvotes      ProjectUpvote[]
   userColleges        UserCollege[]
@@ -37,6 +37,8 @@ model UserSocialLink {
   userId   String   @db.Uuid
   platform String   // e.g., "github", "linkedin", "randomshit"
   url      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   user     User     @relation(fields: [userId], references: [id])
   @@unique([userId, platform])
 }
@@ -45,6 +47,8 @@ model SkillTag {
   id    String   @id @default(uuid()) @db.Uuid
   name  String   @unique
   slug  String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   users UserSkillTag[]
 }
 
@@ -53,7 +57,8 @@ model UserSkillTag {
   skillTagId String   @db.Uuid
   user       User     @relation(fields: [userId], references: [id])
   skillTag   SkillTag @relation(fields: [skillTagId], references: [id])
-
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   @@id([userId, skillTagId])
 }
 
@@ -64,10 +69,10 @@ model College {
   description    String?
   location       String?
   website        String?
-  createdAt      DateTime             @default(now())
-  updatedAt      DateTime             @updatedAt
   coverImgFileId String?
   logoFileId     String?
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
   emailDomains   CollegeEmailDomain[]
   projects       Project[]
   userColleges   UserCollege[]
@@ -86,6 +91,8 @@ model UserCollege {
   leftAt       DateTime
   collegeEmail String   @unique
   designation  String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime? @updatedAt
   college      College  @relation(fields: [collegeId], references: [id])
   user         User     @relation(fields: [userId], references: [id])
 }
@@ -94,6 +101,8 @@ model CollegeEmailDomain {
   id        String  @id @default(uuid()) @db.Uuid
   domain    String  @unique
   collegeId String  @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
   college   College @relation(fields: [collegeId], references: [id])
 }
 
@@ -108,6 +117,7 @@ model Project {
   isLookingForContributors Boolean               @default(false)
   upvotesCount             Int                   @default(0)
   createdAt                DateTime              @default(now())
+  updatedAt                DateTime              @updatedAt
   college                  College?              @relation(fields: [collegeId], references: [id])
   collaborators            ProjectCollaborator[]
   tags                     ProjectTag[]
@@ -118,6 +128,7 @@ model ProjectUpvote {
   userId    String   @db.Uuid
   projectId String   @db.Uuid
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   project   Project  @relation(fields: [projectId], references: [id])
   user      User     @relation(fields: [userId], references: [id])
 
@@ -127,8 +138,10 @@ model ProjectUpvote {
 model ProjectCollaborator {
   userId    String          @db.Uuid
   projectId String          @db.Uuid
-  role      ProjectUserRole
   joinedAt  DateTime        @default(now())
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  role      ProjectUserRole
   project   Project         @relation(fields: [projectId], references: [id])
   user      User            @relation(fields: [userId], references: [id])
 
@@ -139,12 +152,16 @@ model Tag {
   id       String       @id @default(uuid()) @db.Uuid
   name     String       @unique
   slug     String       @unique
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
   projects ProjectTag[]
 }
 
 model ProjectTag {
   projectId String  @db.Uuid
   tagId     String  @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   project   Project @relation(fields: [projectId], references: [id])
   tag       Tag     @relation(fields: [tagId], references: [id])
 
