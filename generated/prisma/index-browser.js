@@ -123,12 +123,33 @@ exports.Prisma.UserScalarFieldEnum = {
   lastName: 'lastName',
   username: 'username',
   email: 'email',
-  appwriteid: 'appwriteid',
   avatarFileId: 'avatarFileId',
   isSuperAdmin: 'isSuperAdmin',
-  githubUsername: 'githubUsername',
+  tagline: 'tagline',
+  bio: 'bio',
+  resume: 'resume',
+  appwriteId: 'appwriteId',
   createdAt: 'createdAt',
   websiteUrl: 'websiteUrl',
+  updatedAt: 'updatedAt',
+};
+
+exports.Prisma.UserSocialLinkScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  platform: 'platform',
+  url: 'url',
+};
+
+exports.Prisma.SkillTagScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug',
+};
+
+exports.Prisma.UserSkillTagScalarFieldEnum = {
+  userId: 'userId',
+  skillTagId: 'skillTagId',
 };
 
 exports.Prisma.CollegeScalarFieldEnum = {
@@ -230,6 +251,9 @@ exports.ProjectUserRole = exports.$Enums.ProjectUserRole = {
 
 exports.Prisma.ModelName = {
   User: 'User',
+  UserSocialLink: 'UserSocialLink',
+  SkillTag: 'SkillTag',
+  UserSkillTag: 'UserSkillTag',
   College: 'College',
   UserCollege: 'UserCollege',
   CollegeEmailDomain: 'CollegeEmailDomain',

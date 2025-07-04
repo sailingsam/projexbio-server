@@ -17,6 +17,23 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>;
  */
 export type User = $Result.DefaultSelection<Prisma.$UserPayload>;
 /**
+ * Model UserSocialLink
+ *
+ */
+export type UserSocialLink =
+  $Result.DefaultSelection<Prisma.$UserSocialLinkPayload>;
+/**
+ * Model SkillTag
+ *
+ */
+export type SkillTag = $Result.DefaultSelection<Prisma.$SkillTagPayload>;
+/**
+ * Model UserSkillTag
+ *
+ */
+export type UserSkillTag =
+  $Result.DefaultSelection<Prisma.$UserSkillTagPayload>;
+/**
  * Model College
  *
  */
@@ -265,6 +282,36 @@ export class PrismaClient<
    * ```
    */
   get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.userSocialLink`: Exposes CRUD operations for the **UserSocialLink** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more UserSocialLinks
+   * const userSocialLinks = await prisma.userSocialLink.findMany()
+   * ```
+   */
+  get userSocialLink(): Prisma.UserSocialLinkDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.skillTag`: Exposes CRUD operations for the **SkillTag** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more SkillTags
+   * const skillTags = await prisma.skillTag.findMany()
+   * ```
+   */
+  get skillTag(): Prisma.SkillTagDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.userSkillTag`: Exposes CRUD operations for the **UserSkillTag** model.
+   * Example usage:
+   * ```ts
+   * // Fetch zero or more UserSkillTags
+   * const userSkillTags = await prisma.userSkillTag.findMany()
+   * ```
+   */
+  get userSkillTag(): Prisma.UserSkillTagDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.college`: Exposes CRUD operations for the **College** model.
@@ -810,6 +857,9 @@ export namespace Prisma {
 
   export const ModelName: {
     User: 'User';
+    UserSocialLink: 'UserSocialLink';
+    SkillTag: 'SkillTag';
+    UserSkillTag: 'UserSkillTag';
     College: 'College';
     UserCollege: 'UserCollege';
     CollegeEmailDomain: 'CollegeEmailDomain';
@@ -847,6 +897,9 @@ export namespace Prisma {
     meta: {
       modelProps:
         | 'user'
+        | 'userSocialLink'
+        | 'skillTag'
+        | 'userSkillTag'
         | 'college'
         | 'userCollege'
         | 'collegeEmailDomain'
@@ -929,6 +982,232 @@ export namespace Prisma {
           count: {
             args: Prisma.UserCountArgs<ExtArgs>;
             result: $Utils.Optional<UserCountAggregateOutputType> | number;
+          };
+        };
+      };
+      UserSocialLink: {
+        payload: Prisma.$UserSocialLinkPayload<ExtArgs>;
+        fields: Prisma.UserSocialLinkFieldRefs;
+        operations: {
+          findUnique: {
+            args: Prisma.UserSocialLinkFindUniqueArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload> | null;
+          };
+          findUniqueOrThrow: {
+            args: Prisma.UserSocialLinkFindUniqueOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload>;
+          };
+          findFirst: {
+            args: Prisma.UserSocialLinkFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.UserSocialLinkFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload>;
+          };
+          findMany: {
+            args: Prisma.UserSocialLinkFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload>[];
+          };
+          create: {
+            args: Prisma.UserSocialLinkCreateArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload>;
+          };
+          createMany: {
+            args: Prisma.UserSocialLinkCreateManyArgs<ExtArgs>;
+            result: BatchPayload;
+          };
+          createManyAndReturn: {
+            args: Prisma.UserSocialLinkCreateManyAndReturnArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload>[];
+          };
+          delete: {
+            args: Prisma.UserSocialLinkDeleteArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload>;
+          };
+          update: {
+            args: Prisma.UserSocialLinkUpdateArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload>;
+          };
+          deleteMany: {
+            args: Prisma.UserSocialLinkDeleteManyArgs<ExtArgs>;
+            result: BatchPayload;
+          };
+          updateMany: {
+            args: Prisma.UserSocialLinkUpdateManyArgs<ExtArgs>;
+            result: BatchPayload;
+          };
+          updateManyAndReturn: {
+            args: Prisma.UserSocialLinkUpdateManyAndReturnArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload>[];
+          };
+          upsert: {
+            args: Prisma.UserSocialLinkUpsertArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSocialLinkPayload>;
+          };
+          aggregate: {
+            args: Prisma.UserSocialLinkAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateUserSocialLink>;
+          };
+          groupBy: {
+            args: Prisma.UserSocialLinkGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<UserSocialLinkGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.UserSocialLinkCountArgs<ExtArgs>;
+            result:
+              | $Utils.Optional<UserSocialLinkCountAggregateOutputType>
+              | number;
+          };
+        };
+      };
+      SkillTag: {
+        payload: Prisma.$SkillTagPayload<ExtArgs>;
+        fields: Prisma.SkillTagFieldRefs;
+        operations: {
+          findUnique: {
+            args: Prisma.SkillTagFindUniqueArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload> | null;
+          };
+          findUniqueOrThrow: {
+            args: Prisma.SkillTagFindUniqueOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload>;
+          };
+          findFirst: {
+            args: Prisma.SkillTagFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.SkillTagFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload>;
+          };
+          findMany: {
+            args: Prisma.SkillTagFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload>[];
+          };
+          create: {
+            args: Prisma.SkillTagCreateArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload>;
+          };
+          createMany: {
+            args: Prisma.SkillTagCreateManyArgs<ExtArgs>;
+            result: BatchPayload;
+          };
+          createManyAndReturn: {
+            args: Prisma.SkillTagCreateManyAndReturnArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload>[];
+          };
+          delete: {
+            args: Prisma.SkillTagDeleteArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload>;
+          };
+          update: {
+            args: Prisma.SkillTagUpdateArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload>;
+          };
+          deleteMany: {
+            args: Prisma.SkillTagDeleteManyArgs<ExtArgs>;
+            result: BatchPayload;
+          };
+          updateMany: {
+            args: Prisma.SkillTagUpdateManyArgs<ExtArgs>;
+            result: BatchPayload;
+          };
+          updateManyAndReturn: {
+            args: Prisma.SkillTagUpdateManyAndReturnArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload>[];
+          };
+          upsert: {
+            args: Prisma.SkillTagUpsertArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$SkillTagPayload>;
+          };
+          aggregate: {
+            args: Prisma.SkillTagAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateSkillTag>;
+          };
+          groupBy: {
+            args: Prisma.SkillTagGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<SkillTagGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.SkillTagCountArgs<ExtArgs>;
+            result: $Utils.Optional<SkillTagCountAggregateOutputType> | number;
+          };
+        };
+      };
+      UserSkillTag: {
+        payload: Prisma.$UserSkillTagPayload<ExtArgs>;
+        fields: Prisma.UserSkillTagFieldRefs;
+        operations: {
+          findUnique: {
+            args: Prisma.UserSkillTagFindUniqueArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload> | null;
+          };
+          findUniqueOrThrow: {
+            args: Prisma.UserSkillTagFindUniqueOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload>;
+          };
+          findFirst: {
+            args: Prisma.UserSkillTagFindFirstArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload> | null;
+          };
+          findFirstOrThrow: {
+            args: Prisma.UserSkillTagFindFirstOrThrowArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload>;
+          };
+          findMany: {
+            args: Prisma.UserSkillTagFindManyArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload>[];
+          };
+          create: {
+            args: Prisma.UserSkillTagCreateArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload>;
+          };
+          createMany: {
+            args: Prisma.UserSkillTagCreateManyArgs<ExtArgs>;
+            result: BatchPayload;
+          };
+          createManyAndReturn: {
+            args: Prisma.UserSkillTagCreateManyAndReturnArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload>[];
+          };
+          delete: {
+            args: Prisma.UserSkillTagDeleteArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload>;
+          };
+          update: {
+            args: Prisma.UserSkillTagUpdateArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload>;
+          };
+          deleteMany: {
+            args: Prisma.UserSkillTagDeleteManyArgs<ExtArgs>;
+            result: BatchPayload;
+          };
+          updateMany: {
+            args: Prisma.UserSkillTagUpdateManyArgs<ExtArgs>;
+            result: BatchPayload;
+          };
+          updateManyAndReturn: {
+            args: Prisma.UserSkillTagUpdateManyAndReturnArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload>[];
+          };
+          upsert: {
+            args: Prisma.UserSkillTagUpsertArgs<ExtArgs>;
+            result: $Utils.PayloadToResult<Prisma.$UserSkillTagPayload>;
+          };
+          aggregate: {
+            args: Prisma.UserSkillTagAggregateArgs<ExtArgs>;
+            result: $Utils.Optional<AggregateUserSkillTag>;
+          };
+          groupBy: {
+            args: Prisma.UserSkillTagGroupByArgs<ExtArgs>;
+            result: $Utils.Optional<UserSkillTagGroupByOutputType>[];
+          };
+          count: {
+            args: Prisma.UserSkillTagCountArgs<ExtArgs>;
+            result:
+              | $Utils.Optional<UserSkillTagCountAggregateOutputType>
+              | number;
           };
         };
       };
@@ -1623,6 +1902,9 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     user?: UserOmit;
+    userSocialLink?: UserSocialLinkOmit;
+    skillTag?: SkillTagOmit;
+    userSkillTag?: UserSkillTagOmit;
     college?: CollegeOmit;
     userCollege?: UserCollegeOmit;
     collegeEmailDomain?: CollegeEmailDomainOmit;
@@ -1741,6 +2023,8 @@ export namespace Prisma {
     ProjectCollaborator: number;
     projectUpvotes: number;
     userColleges: number;
+    userSocialLinks: number;
+    userSkillTags: number;
   };
 
   export type UserCountOutputTypeSelect<
@@ -1751,6 +2035,8 @@ export namespace Prisma {
       | UserCountOutputTypeCountProjectCollaboratorArgs;
     projectUpvotes?: boolean | UserCountOutputTypeCountProjectUpvotesArgs;
     userColleges?: boolean | UserCountOutputTypeCountUserCollegesArgs;
+    userSocialLinks?: boolean | UserCountOutputTypeCountUserSocialLinksArgs;
+    userSkillTags?: boolean | UserCountOutputTypeCountUserSkillTagsArgs;
   };
 
   // Custom InputTypes
@@ -1791,6 +2077,60 @@ export namespace Prisma {
     ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
   > = {
     where?: UserCollegeWhereInput;
+  };
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountUserSocialLinksArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: UserSocialLinkWhereInput;
+  };
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountUserSkillTagsArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: UserSkillTagWhereInput;
+  };
+
+  /**
+   * Count Type SkillTagCountOutputType
+   */
+
+  export type SkillTagCountOutputType = {
+    users: number;
+  };
+
+  export type SkillTagCountOutputTypeSelect<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    users?: boolean | SkillTagCountOutputTypeCountUsersArgs;
+  };
+
+  // Custom InputTypes
+  /**
+   * SkillTagCountOutputType without action
+   */
+  export type SkillTagCountOutputTypeDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTagCountOutputType
+     */
+    select?: SkillTagCountOutputTypeSelect<ExtArgs> | null;
+  };
+
+  /**
+   * SkillTagCountOutputType without action
+   */
+  export type SkillTagCountOutputTypeCountUsersArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: UserSkillTagWhereInput;
   };
 
   /**
@@ -1966,12 +2306,15 @@ export namespace Prisma {
     lastName: string | null;
     username: string | null;
     email: string | null;
-    appwriteid: string | null;
     avatarFileId: string | null;
     isSuperAdmin: boolean | null;
-    githubUsername: string | null;
+    tagline: string | null;
+    bio: string | null;
+    resume: string | null;
+    appwriteId: string | null;
     createdAt: Date | null;
     websiteUrl: string | null;
+    updatedAt: Date | null;
   };
 
   export type UserMaxAggregateOutputType = {
@@ -1981,12 +2324,15 @@ export namespace Prisma {
     lastName: string | null;
     username: string | null;
     email: string | null;
-    appwriteid: string | null;
     avatarFileId: string | null;
     isSuperAdmin: boolean | null;
-    githubUsername: string | null;
+    tagline: string | null;
+    bio: string | null;
+    resume: string | null;
+    appwriteId: string | null;
     createdAt: Date | null;
     websiteUrl: string | null;
+    updatedAt: Date | null;
   };
 
   export type UserCountAggregateOutputType = {
@@ -1996,12 +2342,15 @@ export namespace Prisma {
     lastName: number;
     username: number;
     email: number;
-    appwriteid: number;
     avatarFileId: number;
     isSuperAdmin: number;
-    githubUsername: number;
+    tagline: number;
+    bio: number;
+    resume: number;
+    appwriteId: number;
     createdAt: number;
     websiteUrl: number;
+    updatedAt: number;
     _all: number;
   };
 
@@ -2012,12 +2361,15 @@ export namespace Prisma {
     lastName?: true;
     username?: true;
     email?: true;
-    appwriteid?: true;
     avatarFileId?: true;
     isSuperAdmin?: true;
-    githubUsername?: true;
+    tagline?: true;
+    bio?: true;
+    resume?: true;
+    appwriteId?: true;
     createdAt?: true;
     websiteUrl?: true;
+    updatedAt?: true;
   };
 
   export type UserMaxAggregateInputType = {
@@ -2027,12 +2379,15 @@ export namespace Prisma {
     lastName?: true;
     username?: true;
     email?: true;
-    appwriteid?: true;
     avatarFileId?: true;
     isSuperAdmin?: true;
-    githubUsername?: true;
+    tagline?: true;
+    bio?: true;
+    resume?: true;
+    appwriteId?: true;
     createdAt?: true;
     websiteUrl?: true;
+    updatedAt?: true;
   };
 
   export type UserCountAggregateInputType = {
@@ -2042,12 +2397,15 @@ export namespace Prisma {
     lastName?: true;
     username?: true;
     email?: true;
-    appwriteid?: true;
     avatarFileId?: true;
     isSuperAdmin?: true;
-    githubUsername?: true;
+    tagline?: true;
+    bio?: true;
+    resume?: true;
+    appwriteId?: true;
     createdAt?: true;
     websiteUrl?: true;
+    updatedAt?: true;
     _all?: true;
   };
 
@@ -2133,12 +2491,15 @@ export namespace Prisma {
     lastName: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId: string | null;
     isSuperAdmin: boolean;
-    githubUsername: string | null;
+    tagline: string | null;
+    bio: string | null;
+    resume: string | null;
+    appwriteId: string;
     createdAt: Date;
     websiteUrl: string | null;
+    updatedAt: Date | null;
     _count: UserCountAggregateOutputType | null;
     _min: UserMinAggregateOutputType | null;
     _max: UserMaxAggregateOutputType | null;
@@ -2166,15 +2527,20 @@ export namespace Prisma {
       lastName?: boolean;
       username?: boolean;
       email?: boolean;
-      appwriteid?: boolean;
       avatarFileId?: boolean;
       isSuperAdmin?: boolean;
-      githubUsername?: boolean;
+      tagline?: boolean;
+      bio?: boolean;
+      resume?: boolean;
+      appwriteId?: boolean;
       createdAt?: boolean;
       websiteUrl?: boolean;
+      updatedAt?: boolean;
       ProjectCollaborator?: boolean | User$ProjectCollaboratorArgs<ExtArgs>;
       projectUpvotes?: boolean | User$projectUpvotesArgs<ExtArgs>;
       userColleges?: boolean | User$userCollegesArgs<ExtArgs>;
+      userSocialLinks?: boolean | User$userSocialLinksArgs<ExtArgs>;
+      userSkillTags?: boolean | User$userSkillTagsArgs<ExtArgs>;
       _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>;
     },
     ExtArgs['result']['user']
@@ -2190,12 +2556,15 @@ export namespace Prisma {
       lastName?: boolean;
       username?: boolean;
       email?: boolean;
-      appwriteid?: boolean;
       avatarFileId?: boolean;
       isSuperAdmin?: boolean;
-      githubUsername?: boolean;
+      tagline?: boolean;
+      bio?: boolean;
+      resume?: boolean;
+      appwriteId?: boolean;
       createdAt?: boolean;
       websiteUrl?: boolean;
+      updatedAt?: boolean;
     },
     ExtArgs['result']['user']
   >;
@@ -2210,12 +2579,15 @@ export namespace Prisma {
       lastName?: boolean;
       username?: boolean;
       email?: boolean;
-      appwriteid?: boolean;
       avatarFileId?: boolean;
       isSuperAdmin?: boolean;
-      githubUsername?: boolean;
+      tagline?: boolean;
+      bio?: boolean;
+      resume?: boolean;
+      appwriteId?: boolean;
       createdAt?: boolean;
       websiteUrl?: boolean;
+      updatedAt?: boolean;
     },
     ExtArgs['result']['user']
   >;
@@ -2227,12 +2599,15 @@ export namespace Prisma {
     lastName?: boolean;
     username?: boolean;
     email?: boolean;
-    appwriteid?: boolean;
     avatarFileId?: boolean;
     isSuperAdmin?: boolean;
-    githubUsername?: boolean;
+    tagline?: boolean;
+    bio?: boolean;
+    resume?: boolean;
+    appwriteId?: boolean;
     createdAt?: boolean;
     websiteUrl?: boolean;
+    updatedAt?: boolean;
   };
 
   export type UserOmit<
@@ -2244,12 +2619,15 @@ export namespace Prisma {
     | 'lastName'
     | 'username'
     | 'email'
-    | 'appwriteid'
     | 'avatarFileId'
     | 'isSuperAdmin'
-    | 'githubUsername'
+    | 'tagline'
+    | 'bio'
+    | 'resume'
+    | 'appwriteId'
     | 'createdAt'
-    | 'websiteUrl',
+    | 'websiteUrl'
+    | 'updatedAt',
     ExtArgs['result']['user']
   >;
   export type UserInclude<
@@ -2258,6 +2636,8 @@ export namespace Prisma {
     ProjectCollaborator?: boolean | User$ProjectCollaboratorArgs<ExtArgs>;
     projectUpvotes?: boolean | User$projectUpvotesArgs<ExtArgs>;
     userColleges?: boolean | User$userCollegesArgs<ExtArgs>;
+    userSocialLinks?: boolean | User$userSocialLinksArgs<ExtArgs>;
+    userSkillTags?: boolean | User$userSkillTagsArgs<ExtArgs>;
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>;
   };
   export type UserIncludeCreateManyAndReturn<
@@ -2275,6 +2655,8 @@ export namespace Prisma {
       ProjectCollaborator: Prisma.$ProjectCollaboratorPayload<ExtArgs>[];
       projectUpvotes: Prisma.$ProjectUpvotePayload<ExtArgs>[];
       userColleges: Prisma.$UserCollegePayload<ExtArgs>[];
+      userSocialLinks: Prisma.$UserSocialLinkPayload<ExtArgs>[];
+      userSkillTags: Prisma.$UserSkillTagPayload<ExtArgs>[];
     };
     scalars: $Extensions.GetPayloadResult<
       {
@@ -2284,12 +2666,15 @@ export namespace Prisma {
         lastName: string | null;
         username: string;
         email: string;
-        appwriteid: string;
         avatarFileId: string | null;
         isSuperAdmin: boolean;
-        githubUsername: string | null;
+        tagline: string | null;
+        bio: string | null;
+        resume: string | null;
+        appwriteId: string;
         createdAt: Date;
         websiteUrl: string | null;
+        updatedAt: Date | null;
       },
       ExtArgs['result']['user']
     >;
@@ -2868,6 +3253,28 @@ export namespace Prisma {
         >
       | Null
     >;
+    userSocialLinks<T extends User$userSocialLinksArgs<ExtArgs> = {}>(
+      args?: Subset<T, User$userSocialLinksArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      | $Result.GetResult<
+          Prisma.$UserSocialLinkPayload<ExtArgs>,
+          T,
+          'findMany',
+          GlobalOmitOptions
+        >
+      | Null
+    >;
+    userSkillTags<T extends User$userSkillTagsArgs<ExtArgs> = {}>(
+      args?: Subset<T, User$userSkillTagsArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      | $Result.GetResult<
+          Prisma.$UserSkillTagPayload<ExtArgs>,
+          T,
+          'findMany',
+          GlobalOmitOptions
+        >
+      | Null
+    >;
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2914,12 +3321,15 @@ export namespace Prisma {
     readonly lastName: FieldRef<'User', 'String'>;
     readonly username: FieldRef<'User', 'String'>;
     readonly email: FieldRef<'User', 'String'>;
-    readonly appwriteid: FieldRef<'User', 'String'>;
     readonly avatarFileId: FieldRef<'User', 'String'>;
     readonly isSuperAdmin: FieldRef<'User', 'Boolean'>;
-    readonly githubUsername: FieldRef<'User', 'String'>;
+    readonly tagline: FieldRef<'User', 'String'>;
+    readonly bio: FieldRef<'User', 'String'>;
+    readonly resume: FieldRef<'User', 'String'>;
+    readonly appwriteId: FieldRef<'User', 'String'>;
     readonly createdAt: FieldRef<'User', 'DateTime'>;
     readonly websiteUrl: FieldRef<'User', 'String'>;
+    readonly updatedAt: FieldRef<'User', 'DateTime'>;
   }
 
   // Custom InputTypes
@@ -3421,6 +3831,62 @@ export namespace Prisma {
   };
 
   /**
+   * User.userSocialLinks
+   */
+  export type User$userSocialLinksArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    where?: UserSocialLinkWhereInput;
+    orderBy?:
+      | UserSocialLinkOrderByWithRelationInput
+      | UserSocialLinkOrderByWithRelationInput[];
+    cursor?: UserSocialLinkWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: UserSocialLinkScalarFieldEnum | UserSocialLinkScalarFieldEnum[];
+  };
+
+  /**
+   * User.userSkillTags
+   */
+  export type User$userSkillTagsArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    where?: UserSkillTagWhereInput;
+    orderBy?:
+      | UserSkillTagOrderByWithRelationInput
+      | UserSkillTagOrderByWithRelationInput[];
+    cursor?: UserSkillTagWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: UserSkillTagScalarFieldEnum | UserSkillTagScalarFieldEnum[];
+  };
+
+  /**
    * User without action
    */
   export type UserDefaultArgs<
@@ -3438,6 +3904,3895 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: UserInclude<ExtArgs> | null;
+  };
+
+  /**
+   * Model UserSocialLink
+   */
+
+  export type AggregateUserSocialLink = {
+    _count: UserSocialLinkCountAggregateOutputType | null;
+    _min: UserSocialLinkMinAggregateOutputType | null;
+    _max: UserSocialLinkMaxAggregateOutputType | null;
+  };
+
+  export type UserSocialLinkMinAggregateOutputType = {
+    id: string | null;
+    userId: string | null;
+    platform: string | null;
+    url: string | null;
+  };
+
+  export type UserSocialLinkMaxAggregateOutputType = {
+    id: string | null;
+    userId: string | null;
+    platform: string | null;
+    url: string | null;
+  };
+
+  export type UserSocialLinkCountAggregateOutputType = {
+    id: number;
+    userId: number;
+    platform: number;
+    url: number;
+    _all: number;
+  };
+
+  export type UserSocialLinkMinAggregateInputType = {
+    id?: true;
+    userId?: true;
+    platform?: true;
+    url?: true;
+  };
+
+  export type UserSocialLinkMaxAggregateInputType = {
+    id?: true;
+    userId?: true;
+    platform?: true;
+    url?: true;
+  };
+
+  export type UserSocialLinkCountAggregateInputType = {
+    id?: true;
+    userId?: true;
+    platform?: true;
+    url?: true;
+    _all?: true;
+  };
+
+  export type UserSocialLinkAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which UserSocialLink to aggregate.
+     */
+    where?: UserSocialLinkWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of UserSocialLinks to fetch.
+     */
+    orderBy?:
+      | UserSocialLinkOrderByWithRelationInput
+      | UserSocialLinkOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: UserSocialLinkWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` UserSocialLinks from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` UserSocialLinks.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned UserSocialLinks
+     **/
+    _count?: true | UserSocialLinkCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: UserSocialLinkMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: UserSocialLinkMaxAggregateInputType;
+  };
+
+  export type GetUserSocialLinkAggregateType<
+    T extends UserSocialLinkAggregateArgs,
+  > = {
+    [P in keyof T & keyof AggregateUserSocialLink]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateUserSocialLink[P]>
+      : GetScalarType<T[P], AggregateUserSocialLink[P]>;
+  };
+
+  export type UserSocialLinkGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: UserSocialLinkWhereInput;
+    orderBy?:
+      | UserSocialLinkOrderByWithAggregationInput
+      | UserSocialLinkOrderByWithAggregationInput[];
+    by: UserSocialLinkScalarFieldEnum[] | UserSocialLinkScalarFieldEnum;
+    having?: UserSocialLinkScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: UserSocialLinkCountAggregateInputType | true;
+    _min?: UserSocialLinkMinAggregateInputType;
+    _max?: UserSocialLinkMaxAggregateInputType;
+  };
+
+  export type UserSocialLinkGroupByOutputType = {
+    id: string;
+    userId: string;
+    platform: string;
+    url: string;
+    _count: UserSocialLinkCountAggregateOutputType | null;
+    _min: UserSocialLinkMinAggregateOutputType | null;
+    _max: UserSocialLinkMaxAggregateOutputType | null;
+  };
+
+  type GetUserSocialLinkGroupByPayload<T extends UserSocialLinkGroupByArgs> =
+    Prisma.PrismaPromise<
+      Array<
+        PickEnumerable<UserSocialLinkGroupByOutputType, T['by']> & {
+          [P in keyof T &
+            keyof UserSocialLinkGroupByOutputType]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], UserSocialLinkGroupByOutputType[P]>
+            : GetScalarType<T[P], UserSocialLinkGroupByOutputType[P]>;
+        }
+      >
+    >;
+
+  export type UserSocialLinkSelect<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      id?: boolean;
+      userId?: boolean;
+      platform?: boolean;
+      url?: boolean;
+      user?: boolean | UserDefaultArgs<ExtArgs>;
+    },
+    ExtArgs['result']['userSocialLink']
+  >;
+
+  export type UserSocialLinkSelectCreateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      id?: boolean;
+      userId?: boolean;
+      platform?: boolean;
+      url?: boolean;
+      user?: boolean | UserDefaultArgs<ExtArgs>;
+    },
+    ExtArgs['result']['userSocialLink']
+  >;
+
+  export type UserSocialLinkSelectUpdateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      id?: boolean;
+      userId?: boolean;
+      platform?: boolean;
+      url?: boolean;
+      user?: boolean | UserDefaultArgs<ExtArgs>;
+    },
+    ExtArgs['result']['userSocialLink']
+  >;
+
+  export type UserSocialLinkSelectScalar = {
+    id?: boolean;
+    userId?: boolean;
+    platform?: boolean;
+    url?: boolean;
+  };
+
+  export type UserSocialLinkOmit<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetOmit<
+    'id' | 'userId' | 'platform' | 'url',
+    ExtArgs['result']['userSocialLink']
+  >;
+  export type UserSocialLinkInclude<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    user?: boolean | UserDefaultArgs<ExtArgs>;
+  };
+  export type UserSocialLinkIncludeCreateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    user?: boolean | UserDefaultArgs<ExtArgs>;
+  };
+  export type UserSocialLinkIncludeUpdateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    user?: boolean | UserDefaultArgs<ExtArgs>;
+  };
+
+  export type $UserSocialLinkPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'UserSocialLink';
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>;
+    };
+    scalars: $Extensions.GetPayloadResult<
+      {
+        id: string;
+        userId: string;
+        platform: string;
+        url: string;
+      },
+      ExtArgs['result']['userSocialLink']
+    >;
+    composites: {};
+  };
+
+  type UserSocialLinkGetPayload<
+    S extends boolean | null | undefined | UserSocialLinkDefaultArgs,
+  > = $Result.GetResult<Prisma.$UserSocialLinkPayload, S>;
+
+  type UserSocialLinkCountArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = Omit<
+    UserSocialLinkFindManyArgs,
+    'select' | 'include' | 'distinct' | 'omit'
+  > & {
+    select?: UserSocialLinkCountAggregateInputType | true;
+  };
+
+  export interface UserSocialLinkDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['UserSocialLink'];
+      meta: { name: 'UserSocialLink' };
+    };
+    /**
+     * Find zero or one UserSocialLink that matches the filter.
+     * @param {UserSocialLinkFindUniqueArgs} args - Arguments to find a UserSocialLink
+     * @example
+     * // Get one UserSocialLink
+     * const userSocialLink = await prisma.userSocialLink.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends UserSocialLinkFindUniqueArgs>(
+      args: SelectSubset<T, UserSocialLinkFindUniqueArgs<ExtArgs>>,
+    ): Prisma__UserSocialLinkClient<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'findUnique',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find one UserSocialLink that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {UserSocialLinkFindUniqueOrThrowArgs} args - Arguments to find a UserSocialLink
+     * @example
+     * // Get one UserSocialLink
+     * const userSocialLink = await prisma.userSocialLink.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends UserSocialLinkFindUniqueOrThrowArgs>(
+      args: SelectSubset<T, UserSocialLinkFindUniqueOrThrowArgs<ExtArgs>>,
+    ): Prisma__UserSocialLinkClient<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'findUniqueOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first UserSocialLink that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSocialLinkFindFirstArgs} args - Arguments to find a UserSocialLink
+     * @example
+     * // Get one UserSocialLink
+     * const userSocialLink = await prisma.userSocialLink.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends UserSocialLinkFindFirstArgs>(
+      args?: SelectSubset<T, UserSocialLinkFindFirstArgs<ExtArgs>>,
+    ): Prisma__UserSocialLinkClient<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first UserSocialLink that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSocialLinkFindFirstOrThrowArgs} args - Arguments to find a UserSocialLink
+     * @example
+     * // Get one UserSocialLink
+     * const userSocialLink = await prisma.userSocialLink.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends UserSocialLinkFindFirstOrThrowArgs>(
+      args?: SelectSubset<T, UserSocialLinkFindFirstOrThrowArgs<ExtArgs>>,
+    ): Prisma__UserSocialLinkClient<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more UserSocialLinks that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSocialLinkFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all UserSocialLinks
+     * const userSocialLinks = await prisma.userSocialLink.findMany()
+     *
+     * // Get first 10 UserSocialLinks
+     * const userSocialLinks = await prisma.userSocialLink.findMany({ take: 10 })
+     *
+     * // Only select the `id`
+     * const userSocialLinkWithIdOnly = await prisma.userSocialLink.findMany({ select: { id: true } })
+     *
+     */
+    findMany<T extends UserSocialLinkFindManyArgs>(
+      args?: SelectSubset<T, UserSocialLinkFindManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'findMany',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Create a UserSocialLink.
+     * @param {UserSocialLinkCreateArgs} args - Arguments to create a UserSocialLink.
+     * @example
+     * // Create one UserSocialLink
+     * const UserSocialLink = await prisma.userSocialLink.create({
+     *   data: {
+     *     // ... data to create a UserSocialLink
+     *   }
+     * })
+     *
+     */
+    create<T extends UserSocialLinkCreateArgs>(
+      args: SelectSubset<T, UserSocialLinkCreateArgs<ExtArgs>>,
+    ): Prisma__UserSocialLinkClient<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'create',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Create many UserSocialLinks.
+     * @param {UserSocialLinkCreateManyArgs} args - Arguments to create many UserSocialLinks.
+     * @example
+     * // Create many UserSocialLinks
+     * const userSocialLink = await prisma.userSocialLink.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends UserSocialLinkCreateManyArgs>(
+      args?: SelectSubset<T, UserSocialLinkCreateManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<BatchPayload>;
+
+    /**
+     * Create many UserSocialLinks and returns the data saved in the database.
+     * @param {UserSocialLinkCreateManyAndReturnArgs} args - Arguments to create many UserSocialLinks.
+     * @example
+     * // Create many UserSocialLinks
+     * const userSocialLink = await prisma.userSocialLink.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many UserSocialLinks and only return the `id`
+     * const userSocialLinkWithIdOnly = await prisma.userSocialLink.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends UserSocialLinkCreateManyAndReturnArgs>(
+      args?: SelectSubset<T, UserSocialLinkCreateManyAndReturnArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'createManyAndReturn',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Delete a UserSocialLink.
+     * @param {UserSocialLinkDeleteArgs} args - Arguments to delete one UserSocialLink.
+     * @example
+     * // Delete one UserSocialLink
+     * const UserSocialLink = await prisma.userSocialLink.delete({
+     *   where: {
+     *     // ... filter to delete one UserSocialLink
+     *   }
+     * })
+     *
+     */
+    delete<T extends UserSocialLinkDeleteArgs>(
+      args: SelectSubset<T, UserSocialLinkDeleteArgs<ExtArgs>>,
+    ): Prisma__UserSocialLinkClient<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'delete',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Update one UserSocialLink.
+     * @param {UserSocialLinkUpdateArgs} args - Arguments to update one UserSocialLink.
+     * @example
+     * // Update one UserSocialLink
+     * const userSocialLink = await prisma.userSocialLink.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends UserSocialLinkUpdateArgs>(
+      args: SelectSubset<T, UserSocialLinkUpdateArgs<ExtArgs>>,
+    ): Prisma__UserSocialLinkClient<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'update',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Delete zero or more UserSocialLinks.
+     * @param {UserSocialLinkDeleteManyArgs} args - Arguments to filter UserSocialLinks to delete.
+     * @example
+     * // Delete a few UserSocialLinks
+     * const { count } = await prisma.userSocialLink.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends UserSocialLinkDeleteManyArgs>(
+      args?: SelectSubset<T, UserSocialLinkDeleteManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<BatchPayload>;
+
+    /**
+     * Update zero or more UserSocialLinks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSocialLinkUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many UserSocialLinks
+     * const userSocialLink = await prisma.userSocialLink.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends UserSocialLinkUpdateManyArgs>(
+      args: SelectSubset<T, UserSocialLinkUpdateManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<BatchPayload>;
+
+    /**
+     * Update zero or more UserSocialLinks and returns the data updated in the database.
+     * @param {UserSocialLinkUpdateManyAndReturnArgs} args - Arguments to update many UserSocialLinks.
+     * @example
+     * // Update many UserSocialLinks
+     * const userSocialLink = await prisma.userSocialLink.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more UserSocialLinks and only return the `id`
+     * const userSocialLinkWithIdOnly = await prisma.userSocialLink.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends UserSocialLinkUpdateManyAndReturnArgs>(
+      args: SelectSubset<T, UserSocialLinkUpdateManyAndReturnArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'updateManyAndReturn',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Create or update one UserSocialLink.
+     * @param {UserSocialLinkUpsertArgs} args - Arguments to update or create a UserSocialLink.
+     * @example
+     * // Update or create a UserSocialLink
+     * const userSocialLink = await prisma.userSocialLink.upsert({
+     *   create: {
+     *     // ... data to create a UserSocialLink
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the UserSocialLink we want to update
+     *   }
+     * })
+     */
+    upsert<T extends UserSocialLinkUpsertArgs>(
+      args: SelectSubset<T, UserSocialLinkUpsertArgs<ExtArgs>>,
+    ): Prisma__UserSocialLinkClient<
+      $Result.GetResult<
+        Prisma.$UserSocialLinkPayload<ExtArgs>,
+        T,
+        'upsert',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Count the number of UserSocialLinks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSocialLinkCountArgs} args - Arguments to filter UserSocialLinks to count.
+     * @example
+     * // Count the number of UserSocialLinks
+     * const count = await prisma.userSocialLink.count({
+     *   where: {
+     *     // ... the filter for the UserSocialLinks we want to count
+     *   }
+     * })
+     **/
+    count<T extends UserSocialLinkCountArgs>(
+      args?: Subset<T, UserSocialLinkCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], UserSocialLinkCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a UserSocialLink.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSocialLinkAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends UserSocialLinkAggregateArgs>(
+      args: Subset<T, UserSocialLinkAggregateArgs>,
+    ): Prisma.PrismaPromise<GetUserSocialLinkAggregateType<T>>;
+
+    /**
+     * Group by UserSocialLink.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSocialLinkGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends UserSocialLinkGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: UserSocialLinkGroupByArgs['orderBy'] }
+        : { orderBy?: UserSocialLinkGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<
+        Keys<MaybeTupleToUnion<T['orderBy']>>
+      >,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [
+                      Error,
+                      'Field ',
+                      P,
+                      ` in "having" needs to be provided in "by"`,
+                    ];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, UserSocialLinkGroupByArgs, OrderByArg> &
+        InputErrors,
+    ): {} extends InputErrors
+      ? GetUserSocialLinkGroupByPayload<T>
+      : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the UserSocialLink model
+     */
+    readonly fields: UserSocialLinkFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for UserSocialLink.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__UserSocialLinkClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(
+      args?: Subset<T, UserDefaultArgs<ExtArgs>>,
+    ): Prisma__UserClient<
+      | $Result.GetResult<
+          Prisma.$UserPayload<ExtArgs>,
+          T,
+          'findUniqueOrThrow',
+          GlobalOmitOptions
+        >
+      | Null,
+      Null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?:
+        | ((value: T) => TResult1 | PromiseLike<TResult1>)
+        | undefined
+        | null,
+      onrejected?:
+        | ((reason: any) => TResult2 | PromiseLike<TResult2>)
+        | undefined
+        | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?:
+        | ((reason: any) => TResult | PromiseLike<TResult>)
+        | undefined
+        | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the UserSocialLink model
+   */
+  interface UserSocialLinkFieldRefs {
+    readonly id: FieldRef<'UserSocialLink', 'String'>;
+    readonly userId: FieldRef<'UserSocialLink', 'String'>;
+    readonly platform: FieldRef<'UserSocialLink', 'String'>;
+    readonly url: FieldRef<'UserSocialLink', 'String'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * UserSocialLink findUnique
+   */
+  export type UserSocialLinkFindUniqueArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSocialLink to fetch.
+     */
+    where: UserSocialLinkWhereUniqueInput;
+  };
+
+  /**
+   * UserSocialLink findUniqueOrThrow
+   */
+  export type UserSocialLinkFindUniqueOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSocialLink to fetch.
+     */
+    where: UserSocialLinkWhereUniqueInput;
+  };
+
+  /**
+   * UserSocialLink findFirst
+   */
+  export type UserSocialLinkFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSocialLink to fetch.
+     */
+    where?: UserSocialLinkWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of UserSocialLinks to fetch.
+     */
+    orderBy?:
+      | UserSocialLinkOrderByWithRelationInput
+      | UserSocialLinkOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for UserSocialLinks.
+     */
+    cursor?: UserSocialLinkWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` UserSocialLinks from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` UserSocialLinks.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of UserSocialLinks.
+     */
+    distinct?: UserSocialLinkScalarFieldEnum | UserSocialLinkScalarFieldEnum[];
+  };
+
+  /**
+   * UserSocialLink findFirstOrThrow
+   */
+  export type UserSocialLinkFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSocialLink to fetch.
+     */
+    where?: UserSocialLinkWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of UserSocialLinks to fetch.
+     */
+    orderBy?:
+      | UserSocialLinkOrderByWithRelationInput
+      | UserSocialLinkOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for UserSocialLinks.
+     */
+    cursor?: UserSocialLinkWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` UserSocialLinks from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` UserSocialLinks.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of UserSocialLinks.
+     */
+    distinct?: UserSocialLinkScalarFieldEnum | UserSocialLinkScalarFieldEnum[];
+  };
+
+  /**
+   * UserSocialLink findMany
+   */
+  export type UserSocialLinkFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSocialLinks to fetch.
+     */
+    where?: UserSocialLinkWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of UserSocialLinks to fetch.
+     */
+    orderBy?:
+      | UserSocialLinkOrderByWithRelationInput
+      | UserSocialLinkOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing UserSocialLinks.
+     */
+    cursor?: UserSocialLinkWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` UserSocialLinks from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` UserSocialLinks.
+     */
+    skip?: number;
+    distinct?: UserSocialLinkScalarFieldEnum | UserSocialLinkScalarFieldEnum[];
+  };
+
+  /**
+   * UserSocialLink create
+   */
+  export type UserSocialLinkCreateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    /**
+     * The data needed to create a UserSocialLink.
+     */
+    data: XOR<UserSocialLinkCreateInput, UserSocialLinkUncheckedCreateInput>;
+  };
+
+  /**
+   * UserSocialLink createMany
+   */
+  export type UserSocialLinkCreateManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * The data used to create many UserSocialLinks.
+     */
+    data: UserSocialLinkCreateManyInput | UserSocialLinkCreateManyInput[];
+    skipDuplicates?: boolean;
+  };
+
+  /**
+   * UserSocialLink createManyAndReturn
+   */
+  export type UserSocialLinkCreateManyAndReturnArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * The data used to create many UserSocialLinks.
+     */
+    data: UserSocialLinkCreateManyInput | UserSocialLinkCreateManyInput[];
+    skipDuplicates?: boolean;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkIncludeCreateManyAndReturn<ExtArgs> | null;
+  };
+
+  /**
+   * UserSocialLink update
+   */
+  export type UserSocialLinkUpdateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    /**
+     * The data needed to update a UserSocialLink.
+     */
+    data: XOR<UserSocialLinkUpdateInput, UserSocialLinkUncheckedUpdateInput>;
+    /**
+     * Choose, which UserSocialLink to update.
+     */
+    where: UserSocialLinkWhereUniqueInput;
+  };
+
+  /**
+   * UserSocialLink updateMany
+   */
+  export type UserSocialLinkUpdateManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * The data used to update UserSocialLinks.
+     */
+    data: XOR<
+      UserSocialLinkUpdateManyMutationInput,
+      UserSocialLinkUncheckedUpdateManyInput
+    >;
+    /**
+     * Filter which UserSocialLinks to update
+     */
+    where?: UserSocialLinkWhereInput;
+    /**
+     * Limit how many UserSocialLinks to update.
+     */
+    limit?: number;
+  };
+
+  /**
+   * UserSocialLink updateManyAndReturn
+   */
+  export type UserSocialLinkUpdateManyAndReturnArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * The data used to update UserSocialLinks.
+     */
+    data: XOR<
+      UserSocialLinkUpdateManyMutationInput,
+      UserSocialLinkUncheckedUpdateManyInput
+    >;
+    /**
+     * Filter which UserSocialLinks to update
+     */
+    where?: UserSocialLinkWhereInput;
+    /**
+     * Limit how many UserSocialLinks to update.
+     */
+    limit?: number;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkIncludeUpdateManyAndReturn<ExtArgs> | null;
+  };
+
+  /**
+   * UserSocialLink upsert
+   */
+  export type UserSocialLinkUpsertArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    /**
+     * The filter to search for the UserSocialLink to update in case it exists.
+     */
+    where: UserSocialLinkWhereUniqueInput;
+    /**
+     * In case the UserSocialLink found by the `where` argument doesn't exist, create a new UserSocialLink with this data.
+     */
+    create: XOR<UserSocialLinkCreateInput, UserSocialLinkUncheckedCreateInput>;
+    /**
+     * In case the UserSocialLink was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<UserSocialLinkUpdateInput, UserSocialLinkUncheckedUpdateInput>;
+  };
+
+  /**
+   * UserSocialLink delete
+   */
+  export type UserSocialLinkDeleteArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+    /**
+     * Filter which UserSocialLink to delete.
+     */
+    where: UserSocialLinkWhereUniqueInput;
+  };
+
+  /**
+   * UserSocialLink deleteMany
+   */
+  export type UserSocialLinkDeleteManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which UserSocialLinks to delete
+     */
+    where?: UserSocialLinkWhereInput;
+    /**
+     * Limit how many UserSocialLinks to delete.
+     */
+    limit?: number;
+  };
+
+  /**
+   * UserSocialLink without action
+   */
+  export type UserSocialLinkDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSocialLink
+     */
+    select?: UserSocialLinkSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSocialLink
+     */
+    omit?: UserSocialLinkOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSocialLinkInclude<ExtArgs> | null;
+  };
+
+  /**
+   * Model SkillTag
+   */
+
+  export type AggregateSkillTag = {
+    _count: SkillTagCountAggregateOutputType | null;
+    _min: SkillTagMinAggregateOutputType | null;
+    _max: SkillTagMaxAggregateOutputType | null;
+  };
+
+  export type SkillTagMinAggregateOutputType = {
+    id: string | null;
+    name: string | null;
+    slug: string | null;
+  };
+
+  export type SkillTagMaxAggregateOutputType = {
+    id: string | null;
+    name: string | null;
+    slug: string | null;
+  };
+
+  export type SkillTagCountAggregateOutputType = {
+    id: number;
+    name: number;
+    slug: number;
+    _all: number;
+  };
+
+  export type SkillTagMinAggregateInputType = {
+    id?: true;
+    name?: true;
+    slug?: true;
+  };
+
+  export type SkillTagMaxAggregateInputType = {
+    id?: true;
+    name?: true;
+    slug?: true;
+  };
+
+  export type SkillTagCountAggregateInputType = {
+    id?: true;
+    name?: true;
+    slug?: true;
+    _all?: true;
+  };
+
+  export type SkillTagAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which SkillTag to aggregate.
+     */
+    where?: SkillTagWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of SkillTags to fetch.
+     */
+    orderBy?:
+      | SkillTagOrderByWithRelationInput
+      | SkillTagOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: SkillTagWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` SkillTags from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` SkillTags.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned SkillTags
+     **/
+    _count?: true | SkillTagCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: SkillTagMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: SkillTagMaxAggregateInputType;
+  };
+
+  export type GetSkillTagAggregateType<T extends SkillTagAggregateArgs> = {
+    [P in keyof T & keyof AggregateSkillTag]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSkillTag[P]>
+      : GetScalarType<T[P], AggregateSkillTag[P]>;
+  };
+
+  export type SkillTagGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: SkillTagWhereInput;
+    orderBy?:
+      | SkillTagOrderByWithAggregationInput
+      | SkillTagOrderByWithAggregationInput[];
+    by: SkillTagScalarFieldEnum[] | SkillTagScalarFieldEnum;
+    having?: SkillTagScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: SkillTagCountAggregateInputType | true;
+    _min?: SkillTagMinAggregateInputType;
+    _max?: SkillTagMaxAggregateInputType;
+  };
+
+  export type SkillTagGroupByOutputType = {
+    id: string;
+    name: string;
+    slug: string;
+    _count: SkillTagCountAggregateOutputType | null;
+    _min: SkillTagMinAggregateOutputType | null;
+    _max: SkillTagMaxAggregateOutputType | null;
+  };
+
+  type GetSkillTagGroupByPayload<T extends SkillTagGroupByArgs> =
+    Prisma.PrismaPromise<
+      Array<
+        PickEnumerable<SkillTagGroupByOutputType, T['by']> & {
+          [P in keyof T & keyof SkillTagGroupByOutputType]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SkillTagGroupByOutputType[P]>
+            : GetScalarType<T[P], SkillTagGroupByOutputType[P]>;
+        }
+      >
+    >;
+
+  export type SkillTagSelect<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      id?: boolean;
+      name?: boolean;
+      slug?: boolean;
+      users?: boolean | SkillTag$usersArgs<ExtArgs>;
+      _count?: boolean | SkillTagCountOutputTypeDefaultArgs<ExtArgs>;
+    },
+    ExtArgs['result']['skillTag']
+  >;
+
+  export type SkillTagSelectCreateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      id?: boolean;
+      name?: boolean;
+      slug?: boolean;
+    },
+    ExtArgs['result']['skillTag']
+  >;
+
+  export type SkillTagSelectUpdateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      id?: boolean;
+      name?: boolean;
+      slug?: boolean;
+    },
+    ExtArgs['result']['skillTag']
+  >;
+
+  export type SkillTagSelectScalar = {
+    id?: boolean;
+    name?: boolean;
+    slug?: boolean;
+  };
+
+  export type SkillTagOmit<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetOmit<
+    'id' | 'name' | 'slug',
+    ExtArgs['result']['skillTag']
+  >;
+  export type SkillTagInclude<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    users?: boolean | SkillTag$usersArgs<ExtArgs>;
+    _count?: boolean | SkillTagCountOutputTypeDefaultArgs<ExtArgs>;
+  };
+  export type SkillTagIncludeCreateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {};
+  export type SkillTagIncludeUpdateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {};
+
+  export type $SkillTagPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'SkillTag';
+    objects: {
+      users: Prisma.$UserSkillTagPayload<ExtArgs>[];
+    };
+    scalars: $Extensions.GetPayloadResult<
+      {
+        id: string;
+        name: string;
+        slug: string;
+      },
+      ExtArgs['result']['skillTag']
+    >;
+    composites: {};
+  };
+
+  type SkillTagGetPayload<
+    S extends boolean | null | undefined | SkillTagDefaultArgs,
+  > = $Result.GetResult<Prisma.$SkillTagPayload, S>;
+
+  type SkillTagCountArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = Omit<SkillTagFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: SkillTagCountAggregateInputType | true;
+  };
+
+  export interface SkillTagDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['SkillTag'];
+      meta: { name: 'SkillTag' };
+    };
+    /**
+     * Find zero or one SkillTag that matches the filter.
+     * @param {SkillTagFindUniqueArgs} args - Arguments to find a SkillTag
+     * @example
+     * // Get one SkillTag
+     * const skillTag = await prisma.skillTag.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SkillTagFindUniqueArgs>(
+      args: SelectSubset<T, SkillTagFindUniqueArgs<ExtArgs>>,
+    ): Prisma__SkillTagClient<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'findUnique',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find one SkillTag that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SkillTagFindUniqueOrThrowArgs} args - Arguments to find a SkillTag
+     * @example
+     * // Get one SkillTag
+     * const skillTag = await prisma.skillTag.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SkillTagFindUniqueOrThrowArgs>(
+      args: SelectSubset<T, SkillTagFindUniqueOrThrowArgs<ExtArgs>>,
+    ): Prisma__SkillTagClient<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'findUniqueOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first SkillTag that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SkillTagFindFirstArgs} args - Arguments to find a SkillTag
+     * @example
+     * // Get one SkillTag
+     * const skillTag = await prisma.skillTag.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SkillTagFindFirstArgs>(
+      args?: SelectSubset<T, SkillTagFindFirstArgs<ExtArgs>>,
+    ): Prisma__SkillTagClient<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first SkillTag that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SkillTagFindFirstOrThrowArgs} args - Arguments to find a SkillTag
+     * @example
+     * // Get one SkillTag
+     * const skillTag = await prisma.skillTag.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SkillTagFindFirstOrThrowArgs>(
+      args?: SelectSubset<T, SkillTagFindFirstOrThrowArgs<ExtArgs>>,
+    ): Prisma__SkillTagClient<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more SkillTags that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SkillTagFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all SkillTags
+     * const skillTags = await prisma.skillTag.findMany()
+     *
+     * // Get first 10 SkillTags
+     * const skillTags = await prisma.skillTag.findMany({ take: 10 })
+     *
+     * // Only select the `id`
+     * const skillTagWithIdOnly = await prisma.skillTag.findMany({ select: { id: true } })
+     *
+     */
+    findMany<T extends SkillTagFindManyArgs>(
+      args?: SelectSubset<T, SkillTagFindManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'findMany',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Create a SkillTag.
+     * @param {SkillTagCreateArgs} args - Arguments to create a SkillTag.
+     * @example
+     * // Create one SkillTag
+     * const SkillTag = await prisma.skillTag.create({
+     *   data: {
+     *     // ... data to create a SkillTag
+     *   }
+     * })
+     *
+     */
+    create<T extends SkillTagCreateArgs>(
+      args: SelectSubset<T, SkillTagCreateArgs<ExtArgs>>,
+    ): Prisma__SkillTagClient<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'create',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Create many SkillTags.
+     * @param {SkillTagCreateManyArgs} args - Arguments to create many SkillTags.
+     * @example
+     * // Create many SkillTags
+     * const skillTag = await prisma.skillTag.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends SkillTagCreateManyArgs>(
+      args?: SelectSubset<T, SkillTagCreateManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<BatchPayload>;
+
+    /**
+     * Create many SkillTags and returns the data saved in the database.
+     * @param {SkillTagCreateManyAndReturnArgs} args - Arguments to create many SkillTags.
+     * @example
+     * // Create many SkillTags
+     * const skillTag = await prisma.skillTag.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many SkillTags and only return the `id`
+     * const skillTagWithIdOnly = await prisma.skillTag.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends SkillTagCreateManyAndReturnArgs>(
+      args?: SelectSubset<T, SkillTagCreateManyAndReturnArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'createManyAndReturn',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Delete a SkillTag.
+     * @param {SkillTagDeleteArgs} args - Arguments to delete one SkillTag.
+     * @example
+     * // Delete one SkillTag
+     * const SkillTag = await prisma.skillTag.delete({
+     *   where: {
+     *     // ... filter to delete one SkillTag
+     *   }
+     * })
+     *
+     */
+    delete<T extends SkillTagDeleteArgs>(
+      args: SelectSubset<T, SkillTagDeleteArgs<ExtArgs>>,
+    ): Prisma__SkillTagClient<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'delete',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Update one SkillTag.
+     * @param {SkillTagUpdateArgs} args - Arguments to update one SkillTag.
+     * @example
+     * // Update one SkillTag
+     * const skillTag = await prisma.skillTag.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends SkillTagUpdateArgs>(
+      args: SelectSubset<T, SkillTagUpdateArgs<ExtArgs>>,
+    ): Prisma__SkillTagClient<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'update',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Delete zero or more SkillTags.
+     * @param {SkillTagDeleteManyArgs} args - Arguments to filter SkillTags to delete.
+     * @example
+     * // Delete a few SkillTags
+     * const { count } = await prisma.skillTag.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends SkillTagDeleteManyArgs>(
+      args?: SelectSubset<T, SkillTagDeleteManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<BatchPayload>;
+
+    /**
+     * Update zero or more SkillTags.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SkillTagUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many SkillTags
+     * const skillTag = await prisma.skillTag.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends SkillTagUpdateManyArgs>(
+      args: SelectSubset<T, SkillTagUpdateManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<BatchPayload>;
+
+    /**
+     * Update zero or more SkillTags and returns the data updated in the database.
+     * @param {SkillTagUpdateManyAndReturnArgs} args - Arguments to update many SkillTags.
+     * @example
+     * // Update many SkillTags
+     * const skillTag = await prisma.skillTag.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more SkillTags and only return the `id`
+     * const skillTagWithIdOnly = await prisma.skillTag.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends SkillTagUpdateManyAndReturnArgs>(
+      args: SelectSubset<T, SkillTagUpdateManyAndReturnArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'updateManyAndReturn',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Create or update one SkillTag.
+     * @param {SkillTagUpsertArgs} args - Arguments to update or create a SkillTag.
+     * @example
+     * // Update or create a SkillTag
+     * const skillTag = await prisma.skillTag.upsert({
+     *   create: {
+     *     // ... data to create a SkillTag
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the SkillTag we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SkillTagUpsertArgs>(
+      args: SelectSubset<T, SkillTagUpsertArgs<ExtArgs>>,
+    ): Prisma__SkillTagClient<
+      $Result.GetResult<
+        Prisma.$SkillTagPayload<ExtArgs>,
+        T,
+        'upsert',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Count the number of SkillTags.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SkillTagCountArgs} args - Arguments to filter SkillTags to count.
+     * @example
+     * // Count the number of SkillTags
+     * const count = await prisma.skillTag.count({
+     *   where: {
+     *     // ... the filter for the SkillTags we want to count
+     *   }
+     * })
+     **/
+    count<T extends SkillTagCountArgs>(
+      args?: Subset<T, SkillTagCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SkillTagCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a SkillTag.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SkillTagAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends SkillTagAggregateArgs>(
+      args: Subset<T, SkillTagAggregateArgs>,
+    ): Prisma.PrismaPromise<GetSkillTagAggregateType<T>>;
+
+    /**
+     * Group by SkillTag.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SkillTagGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends SkillTagGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SkillTagGroupByArgs['orderBy'] }
+        : { orderBy?: SkillTagGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<
+        Keys<MaybeTupleToUnion<T['orderBy']>>
+      >,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [
+                      Error,
+                      'Field ',
+                      P,
+                      ` in "having" needs to be provided in "by"`,
+                    ];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, SkillTagGroupByArgs, OrderByArg> &
+        InputErrors,
+    ): {} extends InputErrors
+      ? GetSkillTagGroupByPayload<T>
+      : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the SkillTag model
+     */
+    readonly fields: SkillTagFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for SkillTag.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SkillTagClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    users<T extends SkillTag$usersArgs<ExtArgs> = {}>(
+      args?: Subset<T, SkillTag$usersArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      | $Result.GetResult<
+          Prisma.$UserSkillTagPayload<ExtArgs>,
+          T,
+          'findMany',
+          GlobalOmitOptions
+        >
+      | Null
+    >;
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?:
+        | ((value: T) => TResult1 | PromiseLike<TResult1>)
+        | undefined
+        | null,
+      onrejected?:
+        | ((reason: any) => TResult2 | PromiseLike<TResult2>)
+        | undefined
+        | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?:
+        | ((reason: any) => TResult | PromiseLike<TResult>)
+        | undefined
+        | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the SkillTag model
+   */
+  interface SkillTagFieldRefs {
+    readonly id: FieldRef<'SkillTag', 'String'>;
+    readonly name: FieldRef<'SkillTag', 'String'>;
+    readonly slug: FieldRef<'SkillTag', 'String'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * SkillTag findUnique
+   */
+  export type SkillTagFindUniqueArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which SkillTag to fetch.
+     */
+    where: SkillTagWhereUniqueInput;
+  };
+
+  /**
+   * SkillTag findUniqueOrThrow
+   */
+  export type SkillTagFindUniqueOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which SkillTag to fetch.
+     */
+    where: SkillTagWhereUniqueInput;
+  };
+
+  /**
+   * SkillTag findFirst
+   */
+  export type SkillTagFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which SkillTag to fetch.
+     */
+    where?: SkillTagWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of SkillTags to fetch.
+     */
+    orderBy?:
+      | SkillTagOrderByWithRelationInput
+      | SkillTagOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for SkillTags.
+     */
+    cursor?: SkillTagWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` SkillTags from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` SkillTags.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of SkillTags.
+     */
+    distinct?: SkillTagScalarFieldEnum | SkillTagScalarFieldEnum[];
+  };
+
+  /**
+   * SkillTag findFirstOrThrow
+   */
+  export type SkillTagFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which SkillTag to fetch.
+     */
+    where?: SkillTagWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of SkillTags to fetch.
+     */
+    orderBy?:
+      | SkillTagOrderByWithRelationInput
+      | SkillTagOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for SkillTags.
+     */
+    cursor?: SkillTagWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` SkillTags from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` SkillTags.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of SkillTags.
+     */
+    distinct?: SkillTagScalarFieldEnum | SkillTagScalarFieldEnum[];
+  };
+
+  /**
+   * SkillTag findMany
+   */
+  export type SkillTagFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which SkillTags to fetch.
+     */
+    where?: SkillTagWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of SkillTags to fetch.
+     */
+    orderBy?:
+      | SkillTagOrderByWithRelationInput
+      | SkillTagOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing SkillTags.
+     */
+    cursor?: SkillTagWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` SkillTags from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` SkillTags.
+     */
+    skip?: number;
+    distinct?: SkillTagScalarFieldEnum | SkillTagScalarFieldEnum[];
+  };
+
+  /**
+   * SkillTag create
+   */
+  export type SkillTagCreateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+    /**
+     * The data needed to create a SkillTag.
+     */
+    data: XOR<SkillTagCreateInput, SkillTagUncheckedCreateInput>;
+  };
+
+  /**
+   * SkillTag createMany
+   */
+  export type SkillTagCreateManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * The data used to create many SkillTags.
+     */
+    data: SkillTagCreateManyInput | SkillTagCreateManyInput[];
+    skipDuplicates?: boolean;
+  };
+
+  /**
+   * SkillTag createManyAndReturn
+   */
+  export type SkillTagCreateManyAndReturnArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * The data used to create many SkillTags.
+     */
+    data: SkillTagCreateManyInput | SkillTagCreateManyInput[];
+    skipDuplicates?: boolean;
+  };
+
+  /**
+   * SkillTag update
+   */
+  export type SkillTagUpdateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+    /**
+     * The data needed to update a SkillTag.
+     */
+    data: XOR<SkillTagUpdateInput, SkillTagUncheckedUpdateInput>;
+    /**
+     * Choose, which SkillTag to update.
+     */
+    where: SkillTagWhereUniqueInput;
+  };
+
+  /**
+   * SkillTag updateMany
+   */
+  export type SkillTagUpdateManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * The data used to update SkillTags.
+     */
+    data: XOR<
+      SkillTagUpdateManyMutationInput,
+      SkillTagUncheckedUpdateManyInput
+    >;
+    /**
+     * Filter which SkillTags to update
+     */
+    where?: SkillTagWhereInput;
+    /**
+     * Limit how many SkillTags to update.
+     */
+    limit?: number;
+  };
+
+  /**
+   * SkillTag updateManyAndReturn
+   */
+  export type SkillTagUpdateManyAndReturnArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * The data used to update SkillTags.
+     */
+    data: XOR<
+      SkillTagUpdateManyMutationInput,
+      SkillTagUncheckedUpdateManyInput
+    >;
+    /**
+     * Filter which SkillTags to update
+     */
+    where?: SkillTagWhereInput;
+    /**
+     * Limit how many SkillTags to update.
+     */
+    limit?: number;
+  };
+
+  /**
+   * SkillTag upsert
+   */
+  export type SkillTagUpsertArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+    /**
+     * The filter to search for the SkillTag to update in case it exists.
+     */
+    where: SkillTagWhereUniqueInput;
+    /**
+     * In case the SkillTag found by the `where` argument doesn't exist, create a new SkillTag with this data.
+     */
+    create: XOR<SkillTagCreateInput, SkillTagUncheckedCreateInput>;
+    /**
+     * In case the SkillTag was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SkillTagUpdateInput, SkillTagUncheckedUpdateInput>;
+  };
+
+  /**
+   * SkillTag delete
+   */
+  export type SkillTagDeleteArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter which SkillTag to delete.
+     */
+    where: SkillTagWhereUniqueInput;
+  };
+
+  /**
+   * SkillTag deleteMany
+   */
+  export type SkillTagDeleteManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which SkillTags to delete
+     */
+    where?: SkillTagWhereInput;
+    /**
+     * Limit how many SkillTags to delete.
+     */
+    limit?: number;
+  };
+
+  /**
+   * SkillTag.users
+   */
+  export type SkillTag$usersArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    where?: UserSkillTagWhereInput;
+    orderBy?:
+      | UserSkillTagOrderByWithRelationInput
+      | UserSkillTagOrderByWithRelationInput[];
+    cursor?: UserSkillTagWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: UserSkillTagScalarFieldEnum | UserSkillTagScalarFieldEnum[];
+  };
+
+  /**
+   * SkillTag without action
+   */
+  export type SkillTagDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the SkillTag
+     */
+    select?: SkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the SkillTag
+     */
+    omit?: SkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SkillTagInclude<ExtArgs> | null;
+  };
+
+  /**
+   * Model UserSkillTag
+   */
+
+  export type AggregateUserSkillTag = {
+    _count: UserSkillTagCountAggregateOutputType | null;
+    _min: UserSkillTagMinAggregateOutputType | null;
+    _max: UserSkillTagMaxAggregateOutputType | null;
+  };
+
+  export type UserSkillTagMinAggregateOutputType = {
+    userId: string | null;
+    skillTagId: string | null;
+  };
+
+  export type UserSkillTagMaxAggregateOutputType = {
+    userId: string | null;
+    skillTagId: string | null;
+  };
+
+  export type UserSkillTagCountAggregateOutputType = {
+    userId: number;
+    skillTagId: number;
+    _all: number;
+  };
+
+  export type UserSkillTagMinAggregateInputType = {
+    userId?: true;
+    skillTagId?: true;
+  };
+
+  export type UserSkillTagMaxAggregateInputType = {
+    userId?: true;
+    skillTagId?: true;
+  };
+
+  export type UserSkillTagCountAggregateInputType = {
+    userId?: true;
+    skillTagId?: true;
+    _all?: true;
+  };
+
+  export type UserSkillTagAggregateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which UserSkillTag to aggregate.
+     */
+    where?: UserSkillTagWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of UserSkillTags to fetch.
+     */
+    orderBy?:
+      | UserSkillTagOrderByWithRelationInput
+      | UserSkillTagOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: UserSkillTagWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` UserSkillTags from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` UserSkillTags.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned UserSkillTags
+     **/
+    _count?: true | UserSkillTagCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+     **/
+    _min?: UserSkillTagMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+     **/
+    _max?: UserSkillTagMaxAggregateInputType;
+  };
+
+  export type GetUserSkillTagAggregateType<
+    T extends UserSkillTagAggregateArgs,
+  > = {
+    [P in keyof T & keyof AggregateUserSkillTag]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateUserSkillTag[P]>
+      : GetScalarType<T[P], AggregateUserSkillTag[P]>;
+  };
+
+  export type UserSkillTagGroupByArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    where?: UserSkillTagWhereInput;
+    orderBy?:
+      | UserSkillTagOrderByWithAggregationInput
+      | UserSkillTagOrderByWithAggregationInput[];
+    by: UserSkillTagScalarFieldEnum[] | UserSkillTagScalarFieldEnum;
+    having?: UserSkillTagScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: UserSkillTagCountAggregateInputType | true;
+    _min?: UserSkillTagMinAggregateInputType;
+    _max?: UserSkillTagMaxAggregateInputType;
+  };
+
+  export type UserSkillTagGroupByOutputType = {
+    userId: string;
+    skillTagId: string;
+    _count: UserSkillTagCountAggregateOutputType | null;
+    _min: UserSkillTagMinAggregateOutputType | null;
+    _max: UserSkillTagMaxAggregateOutputType | null;
+  };
+
+  type GetUserSkillTagGroupByPayload<T extends UserSkillTagGroupByArgs> =
+    Prisma.PrismaPromise<
+      Array<
+        PickEnumerable<UserSkillTagGroupByOutputType, T['by']> & {
+          [P in keyof T &
+            keyof UserSkillTagGroupByOutputType]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], UserSkillTagGroupByOutputType[P]>
+            : GetScalarType<T[P], UserSkillTagGroupByOutputType[P]>;
+        }
+      >
+    >;
+
+  export type UserSkillTagSelect<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      userId?: boolean;
+      skillTagId?: boolean;
+      user?: boolean | UserDefaultArgs<ExtArgs>;
+      skillTag?: boolean | SkillTagDefaultArgs<ExtArgs>;
+    },
+    ExtArgs['result']['userSkillTag']
+  >;
+
+  export type UserSkillTagSelectCreateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      userId?: boolean;
+      skillTagId?: boolean;
+      user?: boolean | UserDefaultArgs<ExtArgs>;
+      skillTag?: boolean | SkillTagDefaultArgs<ExtArgs>;
+    },
+    ExtArgs['result']['userSkillTag']
+  >;
+
+  export type UserSkillTagSelectUpdateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetSelect<
+    {
+      userId?: boolean;
+      skillTagId?: boolean;
+      user?: boolean | UserDefaultArgs<ExtArgs>;
+      skillTag?: boolean | SkillTagDefaultArgs<ExtArgs>;
+    },
+    ExtArgs['result']['userSkillTag']
+  >;
+
+  export type UserSkillTagSelectScalar = {
+    userId?: boolean;
+    skillTagId?: boolean;
+  };
+
+  export type UserSkillTagOmit<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = $Extensions.GetOmit<
+    'userId' | 'skillTagId',
+    ExtArgs['result']['userSkillTag']
+  >;
+  export type UserSkillTagInclude<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    user?: boolean | UserDefaultArgs<ExtArgs>;
+    skillTag?: boolean | SkillTagDefaultArgs<ExtArgs>;
+  };
+  export type UserSkillTagIncludeCreateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    user?: boolean | UserDefaultArgs<ExtArgs>;
+    skillTag?: boolean | SkillTagDefaultArgs<ExtArgs>;
+  };
+  export type UserSkillTagIncludeUpdateManyAndReturn<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    user?: boolean | UserDefaultArgs<ExtArgs>;
+    skillTag?: boolean | SkillTagDefaultArgs<ExtArgs>;
+  };
+
+  export type $UserSkillTagPayload<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    name: 'UserSkillTag';
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>;
+      skillTag: Prisma.$SkillTagPayload<ExtArgs>;
+    };
+    scalars: $Extensions.GetPayloadResult<
+      {
+        userId: string;
+        skillTagId: string;
+      },
+      ExtArgs['result']['userSkillTag']
+    >;
+    composites: {};
+  };
+
+  type UserSkillTagGetPayload<
+    S extends boolean | null | undefined | UserSkillTagDefaultArgs,
+  > = $Result.GetResult<Prisma.$UserSkillTagPayload, S>;
+
+  type UserSkillTagCountArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = Omit<
+    UserSkillTagFindManyArgs,
+    'select' | 'include' | 'distinct' | 'omit'
+  > & {
+    select?: UserSkillTagCountAggregateInputType | true;
+  };
+
+  export interface UserSkillTagDelegate<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > {
+    [K: symbol]: {
+      types: Prisma.TypeMap<ExtArgs>['model']['UserSkillTag'];
+      meta: { name: 'UserSkillTag' };
+    };
+    /**
+     * Find zero or one UserSkillTag that matches the filter.
+     * @param {UserSkillTagFindUniqueArgs} args - Arguments to find a UserSkillTag
+     * @example
+     * // Get one UserSkillTag
+     * const userSkillTag = await prisma.userSkillTag.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends UserSkillTagFindUniqueArgs>(
+      args: SelectSubset<T, UserSkillTagFindUniqueArgs<ExtArgs>>,
+    ): Prisma__UserSkillTagClient<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'findUnique',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find one UserSkillTag that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {UserSkillTagFindUniqueOrThrowArgs} args - Arguments to find a UserSkillTag
+     * @example
+     * // Get one UserSkillTag
+     * const userSkillTag = await prisma.userSkillTag.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends UserSkillTagFindUniqueOrThrowArgs>(
+      args: SelectSubset<T, UserSkillTagFindUniqueOrThrowArgs<ExtArgs>>,
+    ): Prisma__UserSkillTagClient<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'findUniqueOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first UserSkillTag that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSkillTagFindFirstArgs} args - Arguments to find a UserSkillTag
+     * @example
+     * // Get one UserSkillTag
+     * const userSkillTag = await prisma.userSkillTag.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends UserSkillTagFindFirstArgs>(
+      args?: SelectSubset<T, UserSkillTagFindFirstArgs<ExtArgs>>,
+    ): Prisma__UserSkillTagClient<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'findFirst',
+        GlobalOmitOptions
+      > | null,
+      null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find the first UserSkillTag that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSkillTagFindFirstOrThrowArgs} args - Arguments to find a UserSkillTag
+     * @example
+     * // Get one UserSkillTag
+     * const userSkillTag = await prisma.userSkillTag.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends UserSkillTagFindFirstOrThrowArgs>(
+      args?: SelectSubset<T, UserSkillTagFindFirstOrThrowArgs<ExtArgs>>,
+    ): Prisma__UserSkillTagClient<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'findFirstOrThrow',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Find zero or more UserSkillTags that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSkillTagFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all UserSkillTags
+     * const userSkillTags = await prisma.userSkillTag.findMany()
+     *
+     * // Get first 10 UserSkillTags
+     * const userSkillTags = await prisma.userSkillTag.findMany({ take: 10 })
+     *
+     * // Only select the `userId`
+     * const userSkillTagWithUserIdOnly = await prisma.userSkillTag.findMany({ select: { userId: true } })
+     *
+     */
+    findMany<T extends UserSkillTagFindManyArgs>(
+      args?: SelectSubset<T, UserSkillTagFindManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'findMany',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Create a UserSkillTag.
+     * @param {UserSkillTagCreateArgs} args - Arguments to create a UserSkillTag.
+     * @example
+     * // Create one UserSkillTag
+     * const UserSkillTag = await prisma.userSkillTag.create({
+     *   data: {
+     *     // ... data to create a UserSkillTag
+     *   }
+     * })
+     *
+     */
+    create<T extends UserSkillTagCreateArgs>(
+      args: SelectSubset<T, UserSkillTagCreateArgs<ExtArgs>>,
+    ): Prisma__UserSkillTagClient<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'create',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Create many UserSkillTags.
+     * @param {UserSkillTagCreateManyArgs} args - Arguments to create many UserSkillTags.
+     * @example
+     * // Create many UserSkillTags
+     * const userSkillTag = await prisma.userSkillTag.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends UserSkillTagCreateManyArgs>(
+      args?: SelectSubset<T, UserSkillTagCreateManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<BatchPayload>;
+
+    /**
+     * Create many UserSkillTags and returns the data saved in the database.
+     * @param {UserSkillTagCreateManyAndReturnArgs} args - Arguments to create many UserSkillTags.
+     * @example
+     * // Create many UserSkillTags
+     * const userSkillTag = await prisma.userSkillTag.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many UserSkillTags and only return the `userId`
+     * const userSkillTagWithUserIdOnly = await prisma.userSkillTag.createManyAndReturn({
+     *   select: { userId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends UserSkillTagCreateManyAndReturnArgs>(
+      args?: SelectSubset<T, UserSkillTagCreateManyAndReturnArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'createManyAndReturn',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Delete a UserSkillTag.
+     * @param {UserSkillTagDeleteArgs} args - Arguments to delete one UserSkillTag.
+     * @example
+     * // Delete one UserSkillTag
+     * const UserSkillTag = await prisma.userSkillTag.delete({
+     *   where: {
+     *     // ... filter to delete one UserSkillTag
+     *   }
+     * })
+     *
+     */
+    delete<T extends UserSkillTagDeleteArgs>(
+      args: SelectSubset<T, UserSkillTagDeleteArgs<ExtArgs>>,
+    ): Prisma__UserSkillTagClient<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'delete',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Update one UserSkillTag.
+     * @param {UserSkillTagUpdateArgs} args - Arguments to update one UserSkillTag.
+     * @example
+     * // Update one UserSkillTag
+     * const userSkillTag = await prisma.userSkillTag.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends UserSkillTagUpdateArgs>(
+      args: SelectSubset<T, UserSkillTagUpdateArgs<ExtArgs>>,
+    ): Prisma__UserSkillTagClient<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'update',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Delete zero or more UserSkillTags.
+     * @param {UserSkillTagDeleteManyArgs} args - Arguments to filter UserSkillTags to delete.
+     * @example
+     * // Delete a few UserSkillTags
+     * const { count } = await prisma.userSkillTag.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends UserSkillTagDeleteManyArgs>(
+      args?: SelectSubset<T, UserSkillTagDeleteManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<BatchPayload>;
+
+    /**
+     * Update zero or more UserSkillTags.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSkillTagUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many UserSkillTags
+     * const userSkillTag = await prisma.userSkillTag.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends UserSkillTagUpdateManyArgs>(
+      args: SelectSubset<T, UserSkillTagUpdateManyArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<BatchPayload>;
+
+    /**
+     * Update zero or more UserSkillTags and returns the data updated in the database.
+     * @param {UserSkillTagUpdateManyAndReturnArgs} args - Arguments to update many UserSkillTags.
+     * @example
+     * // Update many UserSkillTags
+     * const userSkillTag = await prisma.userSkillTag.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more UserSkillTags and only return the `userId`
+     * const userSkillTagWithUserIdOnly = await prisma.userSkillTag.updateManyAndReturn({
+     *   select: { userId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends UserSkillTagUpdateManyAndReturnArgs>(
+      args: SelectSubset<T, UserSkillTagUpdateManyAndReturnArgs<ExtArgs>>,
+    ): Prisma.PrismaPromise<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'updateManyAndReturn',
+        GlobalOmitOptions
+      >
+    >;
+
+    /**
+     * Create or update one UserSkillTag.
+     * @param {UserSkillTagUpsertArgs} args - Arguments to update or create a UserSkillTag.
+     * @example
+     * // Update or create a UserSkillTag
+     * const userSkillTag = await prisma.userSkillTag.upsert({
+     *   create: {
+     *     // ... data to create a UserSkillTag
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the UserSkillTag we want to update
+     *   }
+     * })
+     */
+    upsert<T extends UserSkillTagUpsertArgs>(
+      args: SelectSubset<T, UserSkillTagUpsertArgs<ExtArgs>>,
+    ): Prisma__UserSkillTagClient<
+      $Result.GetResult<
+        Prisma.$UserSkillTagPayload<ExtArgs>,
+        T,
+        'upsert',
+        GlobalOmitOptions
+      >,
+      never,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+
+    /**
+     * Count the number of UserSkillTags.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSkillTagCountArgs} args - Arguments to filter UserSkillTags to count.
+     * @example
+     * // Count the number of UserSkillTags
+     * const count = await prisma.userSkillTag.count({
+     *   where: {
+     *     // ... the filter for the UserSkillTags we want to count
+     *   }
+     * })
+     **/
+    count<T extends UserSkillTagCountArgs>(
+      args?: Subset<T, UserSkillTagCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], UserSkillTagCountAggregateOutputType>
+        : number
+    >;
+
+    /**
+     * Allows you to perform aggregations operations on a UserSkillTag.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSkillTagAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+     **/
+    aggregate<T extends UserSkillTagAggregateArgs>(
+      args: Subset<T, UserSkillTagAggregateArgs>,
+    ): Prisma.PrismaPromise<GetUserSkillTagAggregateType<T>>;
+
+    /**
+     * Group by UserSkillTag.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UserSkillTagGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+     **/
+    groupBy<
+      T extends UserSkillTagGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: UserSkillTagGroupByArgs['orderBy'] }
+        : { orderBy?: UserSkillTagGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<
+        Keys<MaybeTupleToUnion<T['orderBy']>>
+      >,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+        ? `Error: "by" must not be empty.`
+        : HavingValid extends False
+          ? {
+              [P in HavingFields]: P extends ByFields
+                ? never
+                : P extends string
+                  ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+                  : [
+                      Error,
+                      'Field ',
+                      P,
+                      ` in "having" needs to be provided in "by"`,
+                    ];
+            }[HavingFields]
+          : 'take' extends Keys<T>
+            ? 'orderBy' extends Keys<T>
+              ? ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields]
+              : 'Error: If you provide "take", you also need to provide "orderBy"'
+            : 'skip' extends Keys<T>
+              ? 'orderBy' extends Keys<T>
+                ? ByValid extends True
+                  ? {}
+                  : {
+                      [P in OrderFields]: P extends ByFields
+                        ? never
+                        : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                    }[OrderFields]
+                : 'Error: If you provide "skip", you also need to provide "orderBy"'
+              : ByValid extends True
+                ? {}
+                : {
+                    [P in OrderFields]: P extends ByFields
+                      ? never
+                      : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+                  }[OrderFields],
+    >(
+      args: SubsetIntersection<T, UserSkillTagGroupByArgs, OrderByArg> &
+        InputErrors,
+    ): {} extends InputErrors
+      ? GetUserSkillTagGroupByPayload<T>
+      : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the UserSkillTag model
+     */
+    readonly fields: UserSkillTagFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for UserSkillTag.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__UserSkillTagClient<
+    T,
+    Null = never,
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+    GlobalOmitOptions = {},
+  > extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(
+      args?: Subset<T, UserDefaultArgs<ExtArgs>>,
+    ): Prisma__UserClient<
+      | $Result.GetResult<
+          Prisma.$UserPayload<ExtArgs>,
+          T,
+          'findUniqueOrThrow',
+          GlobalOmitOptions
+        >
+      | Null,
+      Null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+    skillTag<T extends SkillTagDefaultArgs<ExtArgs> = {}>(
+      args?: Subset<T, SkillTagDefaultArgs<ExtArgs>>,
+    ): Prisma__SkillTagClient<
+      | $Result.GetResult<
+          Prisma.$SkillTagPayload<ExtArgs>,
+          T,
+          'findUniqueOrThrow',
+          GlobalOmitOptions
+        >
+      | Null,
+      Null,
+      ExtArgs,
+      GlobalOmitOptions
+    >;
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+      onfulfilled?:
+        | ((value: T) => TResult1 | PromiseLike<TResult1>)
+        | undefined
+        | null,
+      onrejected?:
+        | ((reason: any) => TResult2 | PromiseLike<TResult2>)
+        | undefined
+        | null,
+    ): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(
+      onrejected?:
+        | ((reason: any) => TResult | PromiseLike<TResult>)
+        | undefined
+        | null,
+    ): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+  /**
+   * Fields of the UserSkillTag model
+   */
+  interface UserSkillTagFieldRefs {
+    readonly userId: FieldRef<'UserSkillTag', 'String'>;
+    readonly skillTagId: FieldRef<'UserSkillTag', 'String'>;
+  }
+
+  // Custom InputTypes
+  /**
+   * UserSkillTag findUnique
+   */
+  export type UserSkillTagFindUniqueArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSkillTag to fetch.
+     */
+    where: UserSkillTagWhereUniqueInput;
+  };
+
+  /**
+   * UserSkillTag findUniqueOrThrow
+   */
+  export type UserSkillTagFindUniqueOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSkillTag to fetch.
+     */
+    where: UserSkillTagWhereUniqueInput;
+  };
+
+  /**
+   * UserSkillTag findFirst
+   */
+  export type UserSkillTagFindFirstArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSkillTag to fetch.
+     */
+    where?: UserSkillTagWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of UserSkillTags to fetch.
+     */
+    orderBy?:
+      | UserSkillTagOrderByWithRelationInput
+      | UserSkillTagOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for UserSkillTags.
+     */
+    cursor?: UserSkillTagWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` UserSkillTags from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` UserSkillTags.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of UserSkillTags.
+     */
+    distinct?: UserSkillTagScalarFieldEnum | UserSkillTagScalarFieldEnum[];
+  };
+
+  /**
+   * UserSkillTag findFirstOrThrow
+   */
+  export type UserSkillTagFindFirstOrThrowArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSkillTag to fetch.
+     */
+    where?: UserSkillTagWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of UserSkillTags to fetch.
+     */
+    orderBy?:
+      | UserSkillTagOrderByWithRelationInput
+      | UserSkillTagOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for UserSkillTags.
+     */
+    cursor?: UserSkillTagWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` UserSkillTags from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` UserSkillTags.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of UserSkillTags.
+     */
+    distinct?: UserSkillTagScalarFieldEnum | UserSkillTagScalarFieldEnum[];
+  };
+
+  /**
+   * UserSkillTag findMany
+   */
+  export type UserSkillTagFindManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter, which UserSkillTags to fetch.
+     */
+    where?: UserSkillTagWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of UserSkillTags to fetch.
+     */
+    orderBy?:
+      | UserSkillTagOrderByWithRelationInput
+      | UserSkillTagOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing UserSkillTags.
+     */
+    cursor?: UserSkillTagWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` UserSkillTags from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` UserSkillTags.
+     */
+    skip?: number;
+    distinct?: UserSkillTagScalarFieldEnum | UserSkillTagScalarFieldEnum[];
+  };
+
+  /**
+   * UserSkillTag create
+   */
+  export type UserSkillTagCreateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    /**
+     * The data needed to create a UserSkillTag.
+     */
+    data: XOR<UserSkillTagCreateInput, UserSkillTagUncheckedCreateInput>;
+  };
+
+  /**
+   * UserSkillTag createMany
+   */
+  export type UserSkillTagCreateManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * The data used to create many UserSkillTags.
+     */
+    data: UserSkillTagCreateManyInput | UserSkillTagCreateManyInput[];
+    skipDuplicates?: boolean;
+  };
+
+  /**
+   * UserSkillTag createManyAndReturn
+   */
+  export type UserSkillTagCreateManyAndReturnArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * The data used to create many UserSkillTags.
+     */
+    data: UserSkillTagCreateManyInput | UserSkillTagCreateManyInput[];
+    skipDuplicates?: boolean;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagIncludeCreateManyAndReturn<ExtArgs> | null;
+  };
+
+  /**
+   * UserSkillTag update
+   */
+  export type UserSkillTagUpdateArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    /**
+     * The data needed to update a UserSkillTag.
+     */
+    data: XOR<UserSkillTagUpdateInput, UserSkillTagUncheckedUpdateInput>;
+    /**
+     * Choose, which UserSkillTag to update.
+     */
+    where: UserSkillTagWhereUniqueInput;
+  };
+
+  /**
+   * UserSkillTag updateMany
+   */
+  export type UserSkillTagUpdateManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * The data used to update UserSkillTags.
+     */
+    data: XOR<
+      UserSkillTagUpdateManyMutationInput,
+      UserSkillTagUncheckedUpdateManyInput
+    >;
+    /**
+     * Filter which UserSkillTags to update
+     */
+    where?: UserSkillTagWhereInput;
+    /**
+     * Limit how many UserSkillTags to update.
+     */
+    limit?: number;
+  };
+
+  /**
+   * UserSkillTag updateManyAndReturn
+   */
+  export type UserSkillTagUpdateManyAndReturnArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * The data used to update UserSkillTags.
+     */
+    data: XOR<
+      UserSkillTagUpdateManyMutationInput,
+      UserSkillTagUncheckedUpdateManyInput
+    >;
+    /**
+     * Filter which UserSkillTags to update
+     */
+    where?: UserSkillTagWhereInput;
+    /**
+     * Limit how many UserSkillTags to update.
+     */
+    limit?: number;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagIncludeUpdateManyAndReturn<ExtArgs> | null;
+  };
+
+  /**
+   * UserSkillTag upsert
+   */
+  export type UserSkillTagUpsertArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    /**
+     * The filter to search for the UserSkillTag to update in case it exists.
+     */
+    where: UserSkillTagWhereUniqueInput;
+    /**
+     * In case the UserSkillTag found by the `where` argument doesn't exist, create a new UserSkillTag with this data.
+     */
+    create: XOR<UserSkillTagCreateInput, UserSkillTagUncheckedCreateInput>;
+    /**
+     * In case the UserSkillTag was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<UserSkillTagUpdateInput, UserSkillTagUncheckedUpdateInput>;
+  };
+
+  /**
+   * UserSkillTag delete
+   */
+  export type UserSkillTagDeleteArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
+    /**
+     * Filter which UserSkillTag to delete.
+     */
+    where: UserSkillTagWhereUniqueInput;
+  };
+
+  /**
+   * UserSkillTag deleteMany
+   */
+  export type UserSkillTagDeleteManyArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Filter which UserSkillTags to delete
+     */
+    where?: UserSkillTagWhereInput;
+    /**
+     * Limit how many UserSkillTags to delete.
+     */
+    limit?: number;
+  };
+
+  /**
+   * UserSkillTag without action
+   */
+  export type UserSkillTagDefaultArgs<
+    ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs,
+  > = {
+    /**
+     * Select specific fields to fetch from the UserSkillTag
+     */
+    select?: UserSkillTagSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the UserSkillTag
+     */
+    omit?: UserSkillTagOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserSkillTagInclude<ExtArgs> | null;
   };
 
   /**
@@ -14474,16 +18829,46 @@ export namespace Prisma {
     lastName: 'lastName';
     username: 'username';
     email: 'email';
-    appwriteid: 'appwriteid';
     avatarFileId: 'avatarFileId';
     isSuperAdmin: 'isSuperAdmin';
-    githubUsername: 'githubUsername';
+    tagline: 'tagline';
+    bio: 'bio';
+    resume: 'resume';
+    appwriteId: 'appwriteId';
     createdAt: 'createdAt';
     websiteUrl: 'websiteUrl';
+    updatedAt: 'updatedAt';
   };
 
   export type UserScalarFieldEnum =
     (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum];
+
+  export const UserSocialLinkScalarFieldEnum: {
+    id: 'id';
+    userId: 'userId';
+    platform: 'platform';
+    url: 'url';
+  };
+
+  export type UserSocialLinkScalarFieldEnum =
+    (typeof UserSocialLinkScalarFieldEnum)[keyof typeof UserSocialLinkScalarFieldEnum];
+
+  export const SkillTagScalarFieldEnum: {
+    id: 'id';
+    name: 'name';
+    slug: 'slug';
+  };
+
+  export type SkillTagScalarFieldEnum =
+    (typeof SkillTagScalarFieldEnum)[keyof typeof SkillTagScalarFieldEnum];
+
+  export const UserSkillTagScalarFieldEnum: {
+    userId: 'userId';
+    skillTagId: 'skillTagId';
+  };
+
+  export type UserSkillTagScalarFieldEnum =
+    (typeof UserSkillTagScalarFieldEnum)[keyof typeof UserSkillTagScalarFieldEnum];
 
   export const CollegeScalarFieldEnum: {
     id: 'id';
@@ -14719,15 +19104,20 @@ export namespace Prisma {
     lastName?: StringNullableFilter<'User'> | string | null;
     username?: StringFilter<'User'> | string;
     email?: StringFilter<'User'> | string;
-    appwriteid?: StringFilter<'User'> | string;
     avatarFileId?: StringNullableFilter<'User'> | string | null;
     isSuperAdmin?: BoolFilter<'User'> | boolean;
-    githubUsername?: StringNullableFilter<'User'> | string | null;
+    tagline?: StringNullableFilter<'User'> | string | null;
+    bio?: StringNullableFilter<'User'> | string | null;
+    resume?: StringNullableFilter<'User'> | string | null;
+    appwriteId?: StringFilter<'User'> | string;
     createdAt?: DateTimeFilter<'User'> | Date | string;
     websiteUrl?: StringNullableFilter<'User'> | string | null;
+    updatedAt?: DateTimeNullableFilter<'User'> | Date | string | null;
     ProjectCollaborator?: ProjectCollaboratorListRelationFilter;
     projectUpvotes?: ProjectUpvoteListRelationFilter;
     userColleges?: UserCollegeListRelationFilter;
+    userSocialLinks?: UserSocialLinkListRelationFilter;
+    userSkillTags?: UserSkillTagListRelationFilter;
   };
 
   export type UserOrderByWithRelationInput = {
@@ -14737,15 +19127,20 @@ export namespace Prisma {
     lastName?: SortOrderInput | SortOrder;
     username?: SortOrder;
     email?: SortOrder;
-    appwriteid?: SortOrder;
     avatarFileId?: SortOrderInput | SortOrder;
     isSuperAdmin?: SortOrder;
-    githubUsername?: SortOrderInput | SortOrder;
+    tagline?: SortOrderInput | SortOrder;
+    bio?: SortOrderInput | SortOrder;
+    resume?: SortOrderInput | SortOrder;
+    appwriteId?: SortOrder;
     createdAt?: SortOrder;
     websiteUrl?: SortOrderInput | SortOrder;
+    updatedAt?: SortOrderInput | SortOrder;
     ProjectCollaborator?: ProjectCollaboratorOrderByRelationAggregateInput;
     projectUpvotes?: ProjectUpvoteOrderByRelationAggregateInput;
     userColleges?: UserCollegeOrderByRelationAggregateInput;
+    userSocialLinks?: UserSocialLinkOrderByRelationAggregateInput;
+    userSkillTags?: UserSkillTagOrderByRelationAggregateInput;
   };
 
   export type UserWhereUniqueInput = Prisma.AtLeast<
@@ -14753,7 +19148,7 @@ export namespace Prisma {
       id?: string;
       username?: string;
       email?: string;
-      appwriteid?: string;
+      appwriteId?: string;
       AND?: UserWhereInput | UserWhereInput[];
       OR?: UserWhereInput[];
       NOT?: UserWhereInput | UserWhereInput[];
@@ -14762,14 +19157,19 @@ export namespace Prisma {
       lastName?: StringNullableFilter<'User'> | string | null;
       avatarFileId?: StringNullableFilter<'User'> | string | null;
       isSuperAdmin?: BoolFilter<'User'> | boolean;
-      githubUsername?: StringNullableFilter<'User'> | string | null;
+      tagline?: StringNullableFilter<'User'> | string | null;
+      bio?: StringNullableFilter<'User'> | string | null;
+      resume?: StringNullableFilter<'User'> | string | null;
       createdAt?: DateTimeFilter<'User'> | Date | string;
       websiteUrl?: StringNullableFilter<'User'> | string | null;
+      updatedAt?: DateTimeNullableFilter<'User'> | Date | string | null;
       ProjectCollaborator?: ProjectCollaboratorListRelationFilter;
       projectUpvotes?: ProjectUpvoteListRelationFilter;
       userColleges?: UserCollegeListRelationFilter;
+      userSocialLinks?: UserSocialLinkListRelationFilter;
+      userSkillTags?: UserSkillTagListRelationFilter;
     },
-    'id' | 'username' | 'email' | 'appwriteid'
+    'id' | 'username' | 'email' | 'appwriteId'
   >;
 
   export type UserOrderByWithAggregationInput = {
@@ -14779,12 +19179,15 @@ export namespace Prisma {
     lastName?: SortOrderInput | SortOrder;
     username?: SortOrder;
     email?: SortOrder;
-    appwriteid?: SortOrder;
     avatarFileId?: SortOrderInput | SortOrder;
     isSuperAdmin?: SortOrder;
-    githubUsername?: SortOrderInput | SortOrder;
+    tagline?: SortOrderInput | SortOrder;
+    bio?: SortOrderInput | SortOrder;
+    resume?: SortOrderInput | SortOrder;
+    appwriteId?: SortOrder;
     createdAt?: SortOrder;
     websiteUrl?: SortOrderInput | SortOrder;
+    updatedAt?: SortOrderInput | SortOrder;
     _count?: UserCountOrderByAggregateInput;
     _max?: UserMaxOrderByAggregateInput;
     _min?: UserMinOrderByAggregateInput;
@@ -14804,12 +19207,180 @@ export namespace Prisma {
     lastName?: StringNullableWithAggregatesFilter<'User'> | string | null;
     username?: StringWithAggregatesFilter<'User'> | string;
     email?: StringWithAggregatesFilter<'User'> | string;
-    appwriteid?: StringWithAggregatesFilter<'User'> | string;
     avatarFileId?: StringNullableWithAggregatesFilter<'User'> | string | null;
     isSuperAdmin?: BoolWithAggregatesFilter<'User'> | boolean;
-    githubUsername?: StringNullableWithAggregatesFilter<'User'> | string | null;
+    tagline?: StringNullableWithAggregatesFilter<'User'> | string | null;
+    bio?: StringNullableWithAggregatesFilter<'User'> | string | null;
+    resume?: StringNullableWithAggregatesFilter<'User'> | string | null;
+    appwriteId?: StringWithAggregatesFilter<'User'> | string;
     createdAt?: DateTimeWithAggregatesFilter<'User'> | Date | string;
     websiteUrl?: StringNullableWithAggregatesFilter<'User'> | string | null;
+    updatedAt?:
+      | DateTimeNullableWithAggregatesFilter<'User'>
+      | Date
+      | string
+      | null;
+  };
+
+  export type UserSocialLinkWhereInput = {
+    AND?: UserSocialLinkWhereInput | UserSocialLinkWhereInput[];
+    OR?: UserSocialLinkWhereInput[];
+    NOT?: UserSocialLinkWhereInput | UserSocialLinkWhereInput[];
+    id?: UuidFilter<'UserSocialLink'> | string;
+    userId?: UuidFilter<'UserSocialLink'> | string;
+    platform?: StringFilter<'UserSocialLink'> | string;
+    url?: StringFilter<'UserSocialLink'> | string;
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>;
+  };
+
+  export type UserSocialLinkOrderByWithRelationInput = {
+    id?: SortOrder;
+    userId?: SortOrder;
+    platform?: SortOrder;
+    url?: SortOrder;
+    user?: UserOrderByWithRelationInput;
+  };
+
+  export type UserSocialLinkWhereUniqueInput = Prisma.AtLeast<
+    {
+      id?: string;
+      userId_platform?: UserSocialLinkUserIdPlatformCompoundUniqueInput;
+      AND?: UserSocialLinkWhereInput | UserSocialLinkWhereInput[];
+      OR?: UserSocialLinkWhereInput[];
+      NOT?: UserSocialLinkWhereInput | UserSocialLinkWhereInput[];
+      userId?: UuidFilter<'UserSocialLink'> | string;
+      platform?: StringFilter<'UserSocialLink'> | string;
+      url?: StringFilter<'UserSocialLink'> | string;
+      user?: XOR<UserScalarRelationFilter, UserWhereInput>;
+    },
+    'id' | 'userId_platform'
+  >;
+
+  export type UserSocialLinkOrderByWithAggregationInput = {
+    id?: SortOrder;
+    userId?: SortOrder;
+    platform?: SortOrder;
+    url?: SortOrder;
+    _count?: UserSocialLinkCountOrderByAggregateInput;
+    _max?: UserSocialLinkMaxOrderByAggregateInput;
+    _min?: UserSocialLinkMinOrderByAggregateInput;
+  };
+
+  export type UserSocialLinkScalarWhereWithAggregatesInput = {
+    AND?:
+      | UserSocialLinkScalarWhereWithAggregatesInput
+      | UserSocialLinkScalarWhereWithAggregatesInput[];
+    OR?: UserSocialLinkScalarWhereWithAggregatesInput[];
+    NOT?:
+      | UserSocialLinkScalarWhereWithAggregatesInput
+      | UserSocialLinkScalarWhereWithAggregatesInput[];
+    id?: UuidWithAggregatesFilter<'UserSocialLink'> | string;
+    userId?: UuidWithAggregatesFilter<'UserSocialLink'> | string;
+    platform?: StringWithAggregatesFilter<'UserSocialLink'> | string;
+    url?: StringWithAggregatesFilter<'UserSocialLink'> | string;
+  };
+
+  export type SkillTagWhereInput = {
+    AND?: SkillTagWhereInput | SkillTagWhereInput[];
+    OR?: SkillTagWhereInput[];
+    NOT?: SkillTagWhereInput | SkillTagWhereInput[];
+    id?: UuidFilter<'SkillTag'> | string;
+    name?: StringFilter<'SkillTag'> | string;
+    slug?: StringFilter<'SkillTag'> | string;
+    users?: UserSkillTagListRelationFilter;
+  };
+
+  export type SkillTagOrderByWithRelationInput = {
+    id?: SortOrder;
+    name?: SortOrder;
+    slug?: SortOrder;
+    users?: UserSkillTagOrderByRelationAggregateInput;
+  };
+
+  export type SkillTagWhereUniqueInput = Prisma.AtLeast<
+    {
+      id?: string;
+      name?: string;
+      slug?: string;
+      AND?: SkillTagWhereInput | SkillTagWhereInput[];
+      OR?: SkillTagWhereInput[];
+      NOT?: SkillTagWhereInput | SkillTagWhereInput[];
+      users?: UserSkillTagListRelationFilter;
+    },
+    'id' | 'name' | 'slug'
+  >;
+
+  export type SkillTagOrderByWithAggregationInput = {
+    id?: SortOrder;
+    name?: SortOrder;
+    slug?: SortOrder;
+    _count?: SkillTagCountOrderByAggregateInput;
+    _max?: SkillTagMaxOrderByAggregateInput;
+    _min?: SkillTagMinOrderByAggregateInput;
+  };
+
+  export type SkillTagScalarWhereWithAggregatesInput = {
+    AND?:
+      | SkillTagScalarWhereWithAggregatesInput
+      | SkillTagScalarWhereWithAggregatesInput[];
+    OR?: SkillTagScalarWhereWithAggregatesInput[];
+    NOT?:
+      | SkillTagScalarWhereWithAggregatesInput
+      | SkillTagScalarWhereWithAggregatesInput[];
+    id?: UuidWithAggregatesFilter<'SkillTag'> | string;
+    name?: StringWithAggregatesFilter<'SkillTag'> | string;
+    slug?: StringWithAggregatesFilter<'SkillTag'> | string;
+  };
+
+  export type UserSkillTagWhereInput = {
+    AND?: UserSkillTagWhereInput | UserSkillTagWhereInput[];
+    OR?: UserSkillTagWhereInput[];
+    NOT?: UserSkillTagWhereInput | UserSkillTagWhereInput[];
+    userId?: UuidFilter<'UserSkillTag'> | string;
+    skillTagId?: UuidFilter<'UserSkillTag'> | string;
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>;
+    skillTag?: XOR<SkillTagScalarRelationFilter, SkillTagWhereInput>;
+  };
+
+  export type UserSkillTagOrderByWithRelationInput = {
+    userId?: SortOrder;
+    skillTagId?: SortOrder;
+    user?: UserOrderByWithRelationInput;
+    skillTag?: SkillTagOrderByWithRelationInput;
+  };
+
+  export type UserSkillTagWhereUniqueInput = Prisma.AtLeast<
+    {
+      userId_skillTagId?: UserSkillTagUserIdSkillTagIdCompoundUniqueInput;
+      AND?: UserSkillTagWhereInput | UserSkillTagWhereInput[];
+      OR?: UserSkillTagWhereInput[];
+      NOT?: UserSkillTagWhereInput | UserSkillTagWhereInput[];
+      userId?: UuidFilter<'UserSkillTag'> | string;
+      skillTagId?: UuidFilter<'UserSkillTag'> | string;
+      user?: XOR<UserScalarRelationFilter, UserWhereInput>;
+      skillTag?: XOR<SkillTagScalarRelationFilter, SkillTagWhereInput>;
+    },
+    'userId_skillTagId'
+  >;
+
+  export type UserSkillTagOrderByWithAggregationInput = {
+    userId?: SortOrder;
+    skillTagId?: SortOrder;
+    _count?: UserSkillTagCountOrderByAggregateInput;
+    _max?: UserSkillTagMaxOrderByAggregateInput;
+    _min?: UserSkillTagMinOrderByAggregateInput;
+  };
+
+  export type UserSkillTagScalarWhereWithAggregatesInput = {
+    AND?:
+      | UserSkillTagScalarWhereWithAggregatesInput
+      | UserSkillTagScalarWhereWithAggregatesInput[];
+    OR?: UserSkillTagScalarWhereWithAggregatesInput[];
+    NOT?:
+      | UserSkillTagScalarWhereWithAggregatesInput
+      | UserSkillTagScalarWhereWithAggregatesInput[];
+    userId?: UuidWithAggregatesFilter<'UserSkillTag'> | string;
+    skillTagId?: UuidWithAggregatesFilter<'UserSkillTag'> | string;
   };
 
   export type CollegeWhereInput = {
@@ -15408,15 +19979,20 @@ export namespace Prisma {
     lastName?: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId?: string | null;
     isSuperAdmin?: boolean;
-    githubUsername?: string | null;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
     createdAt?: Date | string;
     websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagCreateNestedManyWithoutUserInput;
   };
 
   export type UserUncheckedCreateInput = {
@@ -15426,15 +20002,20 @@ export namespace Prisma {
     lastName?: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId?: string | null;
     isSuperAdmin?: boolean;
-    githubUsername?: string | null;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
     createdAt?: Date | string;
     websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkUncheckedCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagUncheckedCreateNestedManyWithoutUserInput;
   };
 
   export type UserUpdateInput = {
@@ -15444,15 +20025,24 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUpdateManyWithoutUserNestedInput;
   };
 
   export type UserUncheckedUpdateInput = {
@@ -15462,15 +20052,24 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUncheckedUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUncheckedUpdateManyWithoutUserNestedInput;
   };
 
   export type UserCreateManyInput = {
@@ -15480,12 +20079,15 @@ export namespace Prisma {
     lastName?: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId?: string | null;
     isSuperAdmin?: boolean;
-    githubUsername?: string | null;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
     createdAt?: Date | string;
     websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
   };
 
   export type UserUpdateManyMutationInput = {
@@ -15495,12 +20097,19 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
   };
 
   export type UserUncheckedUpdateManyInput = {
@@ -15510,12 +20119,145 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
+  };
+
+  export type UserSocialLinkCreateInput = {
+    id?: string;
+    platform: string;
+    url: string;
+    user: UserCreateNestedOneWithoutUserSocialLinksInput;
+  };
+
+  export type UserSocialLinkUncheckedCreateInput = {
+    id?: string;
+    userId: string;
+    platform: string;
+    url: string;
+  };
+
+  export type UserSocialLinkUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    platform?: StringFieldUpdateOperationsInput | string;
+    url?: StringFieldUpdateOperationsInput | string;
+    user?: UserUpdateOneRequiredWithoutUserSocialLinksNestedInput;
+  };
+
+  export type UserSocialLinkUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    userId?: StringFieldUpdateOperationsInput | string;
+    platform?: StringFieldUpdateOperationsInput | string;
+    url?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSocialLinkCreateManyInput = {
+    id?: string;
+    userId: string;
+    platform: string;
+    url: string;
+  };
+
+  export type UserSocialLinkUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    platform?: StringFieldUpdateOperationsInput | string;
+    url?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSocialLinkUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    userId?: StringFieldUpdateOperationsInput | string;
+    platform?: StringFieldUpdateOperationsInput | string;
+    url?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type SkillTagCreateInput = {
+    id?: string;
+    name: string;
+    slug: string;
+    users?: UserSkillTagCreateNestedManyWithoutSkillTagInput;
+  };
+
+  export type SkillTagUncheckedCreateInput = {
+    id?: string;
+    name: string;
+    slug: string;
+    users?: UserSkillTagUncheckedCreateNestedManyWithoutSkillTagInput;
+  };
+
+  export type SkillTagUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    name?: StringFieldUpdateOperationsInput | string;
+    slug?: StringFieldUpdateOperationsInput | string;
+    users?: UserSkillTagUpdateManyWithoutSkillTagNestedInput;
+  };
+
+  export type SkillTagUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    name?: StringFieldUpdateOperationsInput | string;
+    slug?: StringFieldUpdateOperationsInput | string;
+    users?: UserSkillTagUncheckedUpdateManyWithoutSkillTagNestedInput;
+  };
+
+  export type SkillTagCreateManyInput = {
+    id?: string;
+    name: string;
+    slug: string;
+  };
+
+  export type SkillTagUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    name?: StringFieldUpdateOperationsInput | string;
+    slug?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type SkillTagUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    name?: StringFieldUpdateOperationsInput | string;
+    slug?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSkillTagCreateInput = {
+    user: UserCreateNestedOneWithoutUserSkillTagsInput;
+    skillTag: SkillTagCreateNestedOneWithoutUsersInput;
+  };
+
+  export type UserSkillTagUncheckedCreateInput = {
+    userId: string;
+    skillTagId: string;
+  };
+
+  export type UserSkillTagUpdateInput = {
+    user?: UserUpdateOneRequiredWithoutUserSkillTagsNestedInput;
+    skillTag?: SkillTagUpdateOneRequiredWithoutUsersNestedInput;
+  };
+
+  export type UserSkillTagUncheckedUpdateInput = {
+    userId?: StringFieldUpdateOperationsInput | string;
+    skillTagId?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSkillTagCreateManyInput = {
+    userId: string;
+    skillTagId: string;
+  };
+
+  export type UserSkillTagUpdateManyMutationInput = {};
+
+  export type UserSkillTagUncheckedUpdateManyInput = {
+    userId?: StringFieldUpdateOperationsInput | string;
+    skillTagId?: StringFieldUpdateOperationsInput | string;
   };
 
   export type CollegeCreateInput = {
@@ -16098,6 +20840,17 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string;
   };
 
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null;
+  };
+
   export type ProjectCollaboratorListRelationFilter = {
     every?: ProjectCollaboratorWhereInput;
     some?: ProjectCollaboratorWhereInput;
@@ -16114,6 +20867,18 @@ export namespace Prisma {
     every?: UserCollegeWhereInput;
     some?: UserCollegeWhereInput;
     none?: UserCollegeWhereInput;
+  };
+
+  export type UserSocialLinkListRelationFilter = {
+    every?: UserSocialLinkWhereInput;
+    some?: UserSocialLinkWhereInput;
+    none?: UserSocialLinkWhereInput;
+  };
+
+  export type UserSkillTagListRelationFilter = {
+    every?: UserSkillTagWhereInput;
+    some?: UserSkillTagWhereInput;
+    none?: UserSkillTagWhereInput;
   };
 
   export type SortOrderInput = {
@@ -16133,6 +20898,14 @@ export namespace Prisma {
     _count?: SortOrder;
   };
 
+  export type UserSocialLinkOrderByRelationAggregateInput = {
+    _count?: SortOrder;
+  };
+
+  export type UserSkillTagOrderByRelationAggregateInput = {
+    _count?: SortOrder;
+  };
+
   export type UserCountOrderByAggregateInput = {
     id?: SortOrder;
     firstName?: SortOrder;
@@ -16140,12 +20913,15 @@ export namespace Prisma {
     lastName?: SortOrder;
     username?: SortOrder;
     email?: SortOrder;
-    appwriteid?: SortOrder;
     avatarFileId?: SortOrder;
     isSuperAdmin?: SortOrder;
-    githubUsername?: SortOrder;
+    tagline?: SortOrder;
+    bio?: SortOrder;
+    resume?: SortOrder;
+    appwriteId?: SortOrder;
     createdAt?: SortOrder;
     websiteUrl?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UserMaxOrderByAggregateInput = {
@@ -16155,12 +20931,15 @@ export namespace Prisma {
     lastName?: SortOrder;
     username?: SortOrder;
     email?: SortOrder;
-    appwriteid?: SortOrder;
     avatarFileId?: SortOrder;
     isSuperAdmin?: SortOrder;
-    githubUsername?: SortOrder;
+    tagline?: SortOrder;
+    bio?: SortOrder;
+    resume?: SortOrder;
+    appwriteId?: SortOrder;
     createdAt?: SortOrder;
     websiteUrl?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UserMinOrderByAggregateInput = {
@@ -16170,12 +20949,15 @@ export namespace Prisma {
     lastName?: SortOrder;
     username?: SortOrder;
     email?: SortOrder;
-    appwriteid?: SortOrder;
     avatarFileId?: SortOrder;
     isSuperAdmin?: SortOrder;
-    githubUsername?: SortOrder;
+    tagline?: SortOrder;
+    bio?: SortOrder;
+    resume?: SortOrder;
+    appwriteId?: SortOrder;
     createdAt?: SortOrder;
     websiteUrl?: SortOrder;
+    updatedAt?: SortOrder;
   };
 
   export type UuidWithAggregatesFilter<$PrismaModel = never> = {
@@ -16254,6 +21036,98 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>;
   };
 
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    not?:
+      | NestedDateTimeNullableWithAggregatesFilter<$PrismaModel>
+      | Date
+      | string
+      | null;
+    _count?: NestedIntNullableFilter<$PrismaModel>;
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>;
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>;
+  };
+
+  export type UserScalarRelationFilter = {
+    is?: UserWhereInput;
+    isNot?: UserWhereInput;
+  };
+
+  export type UserSocialLinkUserIdPlatformCompoundUniqueInput = {
+    userId: string;
+    platform: string;
+  };
+
+  export type UserSocialLinkCountOrderByAggregateInput = {
+    id?: SortOrder;
+    userId?: SortOrder;
+    platform?: SortOrder;
+    url?: SortOrder;
+  };
+
+  export type UserSocialLinkMaxOrderByAggregateInput = {
+    id?: SortOrder;
+    userId?: SortOrder;
+    platform?: SortOrder;
+    url?: SortOrder;
+  };
+
+  export type UserSocialLinkMinOrderByAggregateInput = {
+    id?: SortOrder;
+    userId?: SortOrder;
+    platform?: SortOrder;
+    url?: SortOrder;
+  };
+
+  export type SkillTagCountOrderByAggregateInput = {
+    id?: SortOrder;
+    name?: SortOrder;
+    slug?: SortOrder;
+  };
+
+  export type SkillTagMaxOrderByAggregateInput = {
+    id?: SortOrder;
+    name?: SortOrder;
+    slug?: SortOrder;
+  };
+
+  export type SkillTagMinOrderByAggregateInput = {
+    id?: SortOrder;
+    name?: SortOrder;
+    slug?: SortOrder;
+  };
+
+  export type SkillTagScalarRelationFilter = {
+    is?: SkillTagWhereInput;
+    isNot?: SkillTagWhereInput;
+  };
+
+  export type UserSkillTagUserIdSkillTagIdCompoundUniqueInput = {
+    userId: string;
+    skillTagId: string;
+  };
+
+  export type UserSkillTagCountOrderByAggregateInput = {
+    userId?: SortOrder;
+    skillTagId?: SortOrder;
+  };
+
+  export type UserSkillTagMaxOrderByAggregateInput = {
+    userId?: SortOrder;
+    skillTagId?: SortOrder;
+  };
+
+  export type UserSkillTagMinOrderByAggregateInput = {
+    userId?: SortOrder;
+    skillTagId?: SortOrder;
+  };
+
   export type CollegeEmailDomainListRelationFilter = {
     every?: CollegeEmailDomainWhereInput;
     some?: CollegeEmailDomainWhereInput;
@@ -16323,11 +21197,6 @@ export namespace Prisma {
   export type CollegeScalarRelationFilter = {
     is?: CollegeWhereInput;
     isNot?: CollegeWhereInput;
-  };
-
-  export type UserScalarRelationFilter = {
-    is?: UserWhereInput;
-    isNot?: UserWhereInput;
   };
 
   export type UserCollegeCountOrderByAggregateInput = {
@@ -16698,6 +21567,36 @@ export namespace Prisma {
     connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[];
   };
 
+  export type UserSocialLinkCreateNestedManyWithoutUserInput = {
+    create?:
+      | XOR<
+          UserSocialLinkCreateWithoutUserInput,
+          UserSocialLinkUncheckedCreateWithoutUserInput
+        >
+      | UserSocialLinkCreateWithoutUserInput[]
+      | UserSocialLinkUncheckedCreateWithoutUserInput[];
+    connectOrCreate?:
+      | UserSocialLinkCreateOrConnectWithoutUserInput
+      | UserSocialLinkCreateOrConnectWithoutUserInput[];
+    createMany?: UserSocialLinkCreateManyUserInputEnvelope;
+    connect?: UserSocialLinkWhereUniqueInput | UserSocialLinkWhereUniqueInput[];
+  };
+
+  export type UserSkillTagCreateNestedManyWithoutUserInput = {
+    create?:
+      | XOR<
+          UserSkillTagCreateWithoutUserInput,
+          UserSkillTagUncheckedCreateWithoutUserInput
+        >
+      | UserSkillTagCreateWithoutUserInput[]
+      | UserSkillTagUncheckedCreateWithoutUserInput[];
+    connectOrCreate?:
+      | UserSkillTagCreateOrConnectWithoutUserInput
+      | UserSkillTagCreateOrConnectWithoutUserInput[];
+    createMany?: UserSkillTagCreateManyUserInputEnvelope;
+    connect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+  };
+
   export type ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput = {
     create?:
       | XOR<
@@ -16745,6 +21644,36 @@ export namespace Prisma {
     connect?: UserCollegeWhereUniqueInput | UserCollegeWhereUniqueInput[];
   };
 
+  export type UserSocialLinkUncheckedCreateNestedManyWithoutUserInput = {
+    create?:
+      | XOR<
+          UserSocialLinkCreateWithoutUserInput,
+          UserSocialLinkUncheckedCreateWithoutUserInput
+        >
+      | UserSocialLinkCreateWithoutUserInput[]
+      | UserSocialLinkUncheckedCreateWithoutUserInput[];
+    connectOrCreate?:
+      | UserSocialLinkCreateOrConnectWithoutUserInput
+      | UserSocialLinkCreateOrConnectWithoutUserInput[];
+    createMany?: UserSocialLinkCreateManyUserInputEnvelope;
+    connect?: UserSocialLinkWhereUniqueInput | UserSocialLinkWhereUniqueInput[];
+  };
+
+  export type UserSkillTagUncheckedCreateNestedManyWithoutUserInput = {
+    create?:
+      | XOR<
+          UserSkillTagCreateWithoutUserInput,
+          UserSkillTagUncheckedCreateWithoutUserInput
+        >
+      | UserSkillTagCreateWithoutUserInput[]
+      | UserSkillTagUncheckedCreateWithoutUserInput[];
+    connectOrCreate?:
+      | UserSkillTagCreateOrConnectWithoutUserInput
+      | UserSkillTagCreateOrConnectWithoutUserInput[];
+    createMany?: UserSkillTagCreateManyUserInputEnvelope;
+    connect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+  };
+
   export type StringFieldUpdateOperationsInput = {
     set?: string;
   };
@@ -16759,6 +21688,10 @@ export namespace Prisma {
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string;
+  };
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null;
   };
 
   export type ProjectCollaboratorUpdateManyWithoutUserNestedInput = {
@@ -16859,6 +21792,66 @@ export namespace Prisma {
     deleteMany?: UserCollegeScalarWhereInput | UserCollegeScalarWhereInput[];
   };
 
+  export type UserSocialLinkUpdateManyWithoutUserNestedInput = {
+    create?:
+      | XOR<
+          UserSocialLinkCreateWithoutUserInput,
+          UserSocialLinkUncheckedCreateWithoutUserInput
+        >
+      | UserSocialLinkCreateWithoutUserInput[]
+      | UserSocialLinkUncheckedCreateWithoutUserInput[];
+    connectOrCreate?:
+      | UserSocialLinkCreateOrConnectWithoutUserInput
+      | UserSocialLinkCreateOrConnectWithoutUserInput[];
+    upsert?:
+      | UserSocialLinkUpsertWithWhereUniqueWithoutUserInput
+      | UserSocialLinkUpsertWithWhereUniqueWithoutUserInput[];
+    createMany?: UserSocialLinkCreateManyUserInputEnvelope;
+    set?: UserSocialLinkWhereUniqueInput | UserSocialLinkWhereUniqueInput[];
+    disconnect?:
+      | UserSocialLinkWhereUniqueInput
+      | UserSocialLinkWhereUniqueInput[];
+    delete?: UserSocialLinkWhereUniqueInput | UserSocialLinkWhereUniqueInput[];
+    connect?: UserSocialLinkWhereUniqueInput | UserSocialLinkWhereUniqueInput[];
+    update?:
+      | UserSocialLinkUpdateWithWhereUniqueWithoutUserInput
+      | UserSocialLinkUpdateWithWhereUniqueWithoutUserInput[];
+    updateMany?:
+      | UserSocialLinkUpdateManyWithWhereWithoutUserInput
+      | UserSocialLinkUpdateManyWithWhereWithoutUserInput[];
+    deleteMany?:
+      | UserSocialLinkScalarWhereInput
+      | UserSocialLinkScalarWhereInput[];
+  };
+
+  export type UserSkillTagUpdateManyWithoutUserNestedInput = {
+    create?:
+      | XOR<
+          UserSkillTagCreateWithoutUserInput,
+          UserSkillTagUncheckedCreateWithoutUserInput
+        >
+      | UserSkillTagCreateWithoutUserInput[]
+      | UserSkillTagUncheckedCreateWithoutUserInput[];
+    connectOrCreate?:
+      | UserSkillTagCreateOrConnectWithoutUserInput
+      | UserSkillTagCreateOrConnectWithoutUserInput[];
+    upsert?:
+      | UserSkillTagUpsertWithWhereUniqueWithoutUserInput
+      | UserSkillTagUpsertWithWhereUniqueWithoutUserInput[];
+    createMany?: UserSkillTagCreateManyUserInputEnvelope;
+    set?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    disconnect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    delete?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    connect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    update?:
+      | UserSkillTagUpdateWithWhereUniqueWithoutUserInput
+      | UserSkillTagUpdateWithWhereUniqueWithoutUserInput[];
+    updateMany?:
+      | UserSkillTagUpdateManyWithWhereWithoutUserInput
+      | UserSkillTagUpdateManyWithWhereWithoutUserInput[];
+    deleteMany?: UserSkillTagScalarWhereInput | UserSkillTagScalarWhereInput[];
+  };
+
   export type ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput = {
     create?:
       | XOR<
@@ -16955,6 +21948,230 @@ export namespace Prisma {
       | UserCollegeUpdateManyWithWhereWithoutUserInput
       | UserCollegeUpdateManyWithWhereWithoutUserInput[];
     deleteMany?: UserCollegeScalarWhereInput | UserCollegeScalarWhereInput[];
+  };
+
+  export type UserSocialLinkUncheckedUpdateManyWithoutUserNestedInput = {
+    create?:
+      | XOR<
+          UserSocialLinkCreateWithoutUserInput,
+          UserSocialLinkUncheckedCreateWithoutUserInput
+        >
+      | UserSocialLinkCreateWithoutUserInput[]
+      | UserSocialLinkUncheckedCreateWithoutUserInput[];
+    connectOrCreate?:
+      | UserSocialLinkCreateOrConnectWithoutUserInput
+      | UserSocialLinkCreateOrConnectWithoutUserInput[];
+    upsert?:
+      | UserSocialLinkUpsertWithWhereUniqueWithoutUserInput
+      | UserSocialLinkUpsertWithWhereUniqueWithoutUserInput[];
+    createMany?: UserSocialLinkCreateManyUserInputEnvelope;
+    set?: UserSocialLinkWhereUniqueInput | UserSocialLinkWhereUniqueInput[];
+    disconnect?:
+      | UserSocialLinkWhereUniqueInput
+      | UserSocialLinkWhereUniqueInput[];
+    delete?: UserSocialLinkWhereUniqueInput | UserSocialLinkWhereUniqueInput[];
+    connect?: UserSocialLinkWhereUniqueInput | UserSocialLinkWhereUniqueInput[];
+    update?:
+      | UserSocialLinkUpdateWithWhereUniqueWithoutUserInput
+      | UserSocialLinkUpdateWithWhereUniqueWithoutUserInput[];
+    updateMany?:
+      | UserSocialLinkUpdateManyWithWhereWithoutUserInput
+      | UserSocialLinkUpdateManyWithWhereWithoutUserInput[];
+    deleteMany?:
+      | UserSocialLinkScalarWhereInput
+      | UserSocialLinkScalarWhereInput[];
+  };
+
+  export type UserSkillTagUncheckedUpdateManyWithoutUserNestedInput = {
+    create?:
+      | XOR<
+          UserSkillTagCreateWithoutUserInput,
+          UserSkillTagUncheckedCreateWithoutUserInput
+        >
+      | UserSkillTagCreateWithoutUserInput[]
+      | UserSkillTagUncheckedCreateWithoutUserInput[];
+    connectOrCreate?:
+      | UserSkillTagCreateOrConnectWithoutUserInput
+      | UserSkillTagCreateOrConnectWithoutUserInput[];
+    upsert?:
+      | UserSkillTagUpsertWithWhereUniqueWithoutUserInput
+      | UserSkillTagUpsertWithWhereUniqueWithoutUserInput[];
+    createMany?: UserSkillTagCreateManyUserInputEnvelope;
+    set?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    disconnect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    delete?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    connect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    update?:
+      | UserSkillTagUpdateWithWhereUniqueWithoutUserInput
+      | UserSkillTagUpdateWithWhereUniqueWithoutUserInput[];
+    updateMany?:
+      | UserSkillTagUpdateManyWithWhereWithoutUserInput
+      | UserSkillTagUpdateManyWithWhereWithoutUserInput[];
+    deleteMany?: UserSkillTagScalarWhereInput | UserSkillTagScalarWhereInput[];
+  };
+
+  export type UserCreateNestedOneWithoutUserSocialLinksInput = {
+    create?: XOR<
+      UserCreateWithoutUserSocialLinksInput,
+      UserUncheckedCreateWithoutUserSocialLinksInput
+    >;
+    connectOrCreate?: UserCreateOrConnectWithoutUserSocialLinksInput;
+    connect?: UserWhereUniqueInput;
+  };
+
+  export type UserUpdateOneRequiredWithoutUserSocialLinksNestedInput = {
+    create?: XOR<
+      UserCreateWithoutUserSocialLinksInput,
+      UserUncheckedCreateWithoutUserSocialLinksInput
+    >;
+    connectOrCreate?: UserCreateOrConnectWithoutUserSocialLinksInput;
+    upsert?: UserUpsertWithoutUserSocialLinksInput;
+    connect?: UserWhereUniqueInput;
+    update?: XOR<
+      XOR<
+        UserUpdateToOneWithWhereWithoutUserSocialLinksInput,
+        UserUpdateWithoutUserSocialLinksInput
+      >,
+      UserUncheckedUpdateWithoutUserSocialLinksInput
+    >;
+  };
+
+  export type UserSkillTagCreateNestedManyWithoutSkillTagInput = {
+    create?:
+      | XOR<
+          UserSkillTagCreateWithoutSkillTagInput,
+          UserSkillTagUncheckedCreateWithoutSkillTagInput
+        >
+      | UserSkillTagCreateWithoutSkillTagInput[]
+      | UserSkillTagUncheckedCreateWithoutSkillTagInput[];
+    connectOrCreate?:
+      | UserSkillTagCreateOrConnectWithoutSkillTagInput
+      | UserSkillTagCreateOrConnectWithoutSkillTagInput[];
+    createMany?: UserSkillTagCreateManySkillTagInputEnvelope;
+    connect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+  };
+
+  export type UserSkillTagUncheckedCreateNestedManyWithoutSkillTagInput = {
+    create?:
+      | XOR<
+          UserSkillTagCreateWithoutSkillTagInput,
+          UserSkillTagUncheckedCreateWithoutSkillTagInput
+        >
+      | UserSkillTagCreateWithoutSkillTagInput[]
+      | UserSkillTagUncheckedCreateWithoutSkillTagInput[];
+    connectOrCreate?:
+      | UserSkillTagCreateOrConnectWithoutSkillTagInput
+      | UserSkillTagCreateOrConnectWithoutSkillTagInput[];
+    createMany?: UserSkillTagCreateManySkillTagInputEnvelope;
+    connect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+  };
+
+  export type UserSkillTagUpdateManyWithoutSkillTagNestedInput = {
+    create?:
+      | XOR<
+          UserSkillTagCreateWithoutSkillTagInput,
+          UserSkillTagUncheckedCreateWithoutSkillTagInput
+        >
+      | UserSkillTagCreateWithoutSkillTagInput[]
+      | UserSkillTagUncheckedCreateWithoutSkillTagInput[];
+    connectOrCreate?:
+      | UserSkillTagCreateOrConnectWithoutSkillTagInput
+      | UserSkillTagCreateOrConnectWithoutSkillTagInput[];
+    upsert?:
+      | UserSkillTagUpsertWithWhereUniqueWithoutSkillTagInput
+      | UserSkillTagUpsertWithWhereUniqueWithoutSkillTagInput[];
+    createMany?: UserSkillTagCreateManySkillTagInputEnvelope;
+    set?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    disconnect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    delete?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    connect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    update?:
+      | UserSkillTagUpdateWithWhereUniqueWithoutSkillTagInput
+      | UserSkillTagUpdateWithWhereUniqueWithoutSkillTagInput[];
+    updateMany?:
+      | UserSkillTagUpdateManyWithWhereWithoutSkillTagInput
+      | UserSkillTagUpdateManyWithWhereWithoutSkillTagInput[];
+    deleteMany?: UserSkillTagScalarWhereInput | UserSkillTagScalarWhereInput[];
+  };
+
+  export type UserSkillTagUncheckedUpdateManyWithoutSkillTagNestedInput = {
+    create?:
+      | XOR<
+          UserSkillTagCreateWithoutSkillTagInput,
+          UserSkillTagUncheckedCreateWithoutSkillTagInput
+        >
+      | UserSkillTagCreateWithoutSkillTagInput[]
+      | UserSkillTagUncheckedCreateWithoutSkillTagInput[];
+    connectOrCreate?:
+      | UserSkillTagCreateOrConnectWithoutSkillTagInput
+      | UserSkillTagCreateOrConnectWithoutSkillTagInput[];
+    upsert?:
+      | UserSkillTagUpsertWithWhereUniqueWithoutSkillTagInput
+      | UserSkillTagUpsertWithWhereUniqueWithoutSkillTagInput[];
+    createMany?: UserSkillTagCreateManySkillTagInputEnvelope;
+    set?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    disconnect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    delete?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    connect?: UserSkillTagWhereUniqueInput | UserSkillTagWhereUniqueInput[];
+    update?:
+      | UserSkillTagUpdateWithWhereUniqueWithoutSkillTagInput
+      | UserSkillTagUpdateWithWhereUniqueWithoutSkillTagInput[];
+    updateMany?:
+      | UserSkillTagUpdateManyWithWhereWithoutSkillTagInput
+      | UserSkillTagUpdateManyWithWhereWithoutSkillTagInput[];
+    deleteMany?: UserSkillTagScalarWhereInput | UserSkillTagScalarWhereInput[];
+  };
+
+  export type UserCreateNestedOneWithoutUserSkillTagsInput = {
+    create?: XOR<
+      UserCreateWithoutUserSkillTagsInput,
+      UserUncheckedCreateWithoutUserSkillTagsInput
+    >;
+    connectOrCreate?: UserCreateOrConnectWithoutUserSkillTagsInput;
+    connect?: UserWhereUniqueInput;
+  };
+
+  export type SkillTagCreateNestedOneWithoutUsersInput = {
+    create?: XOR<
+      SkillTagCreateWithoutUsersInput,
+      SkillTagUncheckedCreateWithoutUsersInput
+    >;
+    connectOrCreate?: SkillTagCreateOrConnectWithoutUsersInput;
+    connect?: SkillTagWhereUniqueInput;
+  };
+
+  export type UserUpdateOneRequiredWithoutUserSkillTagsNestedInput = {
+    create?: XOR<
+      UserCreateWithoutUserSkillTagsInput,
+      UserUncheckedCreateWithoutUserSkillTagsInput
+    >;
+    connectOrCreate?: UserCreateOrConnectWithoutUserSkillTagsInput;
+    upsert?: UserUpsertWithoutUserSkillTagsInput;
+    connect?: UserWhereUniqueInput;
+    update?: XOR<
+      XOR<
+        UserUpdateToOneWithWhereWithoutUserSkillTagsInput,
+        UserUpdateWithoutUserSkillTagsInput
+      >,
+      UserUncheckedUpdateWithoutUserSkillTagsInput
+    >;
+  };
+
+  export type SkillTagUpdateOneRequiredWithoutUsersNestedInput = {
+    create?: XOR<
+      SkillTagCreateWithoutUsersInput,
+      SkillTagUncheckedCreateWithoutUsersInput
+    >;
+    connectOrCreate?: SkillTagCreateOrConnectWithoutUsersInput;
+    upsert?: SkillTagUpsertWithoutUsersInput;
+    connect?: SkillTagWhereUniqueInput;
+    update?: XOR<
+      XOR<
+        SkillTagUpdateToOneWithWhereWithoutUsersInput,
+        SkillTagUpdateWithoutUsersInput
+      >,
+      SkillTagUncheckedUpdateWithoutUsersInput
+    >;
   };
 
   export type CollegeEmailDomainCreateNestedManyWithoutCollegeInput = {
@@ -17950,6 +23167,17 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string;
   };
 
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null;
+  };
+
   export type NestedUuidWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>;
     in?: string[] | ListStringFieldRefInput<$PrismaModel>;
@@ -18044,6 +23272,29 @@ export namespace Prisma {
     _min?: NestedDateTimeFilter<$PrismaModel>;
     _max?: NestedDateTimeFilter<$PrismaModel>;
   };
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> =
+    {
+      equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null;
+      in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null;
+      notIn?:
+        | Date[]
+        | string[]
+        | ListDateTimeFieldRefInput<$PrismaModel>
+        | null;
+      lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+      lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+      gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+      gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>;
+      not?:
+        | NestedDateTimeNullableWithAggregatesFilter<$PrismaModel>
+        | Date
+        | string
+        | null;
+      _count?: NestedIntNullableFilter<$PrismaModel>;
+      _min?: NestedDateTimeNullableFilter<$PrismaModel>;
+      _max?: NestedDateTimeNullableFilter<$PrismaModel>;
+    };
 
   export type NestedEnumUserTypeFilter<$PrismaModel = never> = {
     equals?: $Enums.UserType | EnumUserTypeFieldRefInput<$PrismaModel>;
@@ -18242,6 +23493,54 @@ export namespace Prisma {
     skipDuplicates?: boolean;
   };
 
+  export type UserSocialLinkCreateWithoutUserInput = {
+    id?: string;
+    platform: string;
+    url: string;
+  };
+
+  export type UserSocialLinkUncheckedCreateWithoutUserInput = {
+    id?: string;
+    platform: string;
+    url: string;
+  };
+
+  export type UserSocialLinkCreateOrConnectWithoutUserInput = {
+    where: UserSocialLinkWhereUniqueInput;
+    create: XOR<
+      UserSocialLinkCreateWithoutUserInput,
+      UserSocialLinkUncheckedCreateWithoutUserInput
+    >;
+  };
+
+  export type UserSocialLinkCreateManyUserInputEnvelope = {
+    data:
+      | UserSocialLinkCreateManyUserInput
+      | UserSocialLinkCreateManyUserInput[];
+    skipDuplicates?: boolean;
+  };
+
+  export type UserSkillTagCreateWithoutUserInput = {
+    skillTag: SkillTagCreateNestedOneWithoutUsersInput;
+  };
+
+  export type UserSkillTagUncheckedCreateWithoutUserInput = {
+    skillTagId: string;
+  };
+
+  export type UserSkillTagCreateOrConnectWithoutUserInput = {
+    where: UserSkillTagWhereUniqueInput;
+    create: XOR<
+      UserSkillTagCreateWithoutUserInput,
+      UserSkillTagUncheckedCreateWithoutUserInput
+    >;
+  };
+
+  export type UserSkillTagCreateManyUserInputEnvelope = {
+    data: UserSkillTagCreateManyUserInput | UserSkillTagCreateManyUserInput[];
+    skipDuplicates?: boolean;
+  };
+
   export type ProjectCollaboratorUpsertWithWhereUniqueWithoutUserInput = {
     where: ProjectCollaboratorWhereUniqueInput;
     update: XOR<
@@ -18367,6 +23666,431 @@ export namespace Prisma {
     leftAt?: DateTimeFilter<'UserCollege'> | Date | string;
     collegeEmail?: StringFilter<'UserCollege'> | string;
     designation?: StringNullableFilter<'UserCollege'> | string | null;
+  };
+
+  export type UserSocialLinkUpsertWithWhereUniqueWithoutUserInput = {
+    where: UserSocialLinkWhereUniqueInput;
+    update: XOR<
+      UserSocialLinkUpdateWithoutUserInput,
+      UserSocialLinkUncheckedUpdateWithoutUserInput
+    >;
+    create: XOR<
+      UserSocialLinkCreateWithoutUserInput,
+      UserSocialLinkUncheckedCreateWithoutUserInput
+    >;
+  };
+
+  export type UserSocialLinkUpdateWithWhereUniqueWithoutUserInput = {
+    where: UserSocialLinkWhereUniqueInput;
+    data: XOR<
+      UserSocialLinkUpdateWithoutUserInput,
+      UserSocialLinkUncheckedUpdateWithoutUserInput
+    >;
+  };
+
+  export type UserSocialLinkUpdateManyWithWhereWithoutUserInput = {
+    where: UserSocialLinkScalarWhereInput;
+    data: XOR<
+      UserSocialLinkUpdateManyMutationInput,
+      UserSocialLinkUncheckedUpdateManyWithoutUserInput
+    >;
+  };
+
+  export type UserSocialLinkScalarWhereInput = {
+    AND?: UserSocialLinkScalarWhereInput | UserSocialLinkScalarWhereInput[];
+    OR?: UserSocialLinkScalarWhereInput[];
+    NOT?: UserSocialLinkScalarWhereInput | UserSocialLinkScalarWhereInput[];
+    id?: UuidFilter<'UserSocialLink'> | string;
+    userId?: UuidFilter<'UserSocialLink'> | string;
+    platform?: StringFilter<'UserSocialLink'> | string;
+    url?: StringFilter<'UserSocialLink'> | string;
+  };
+
+  export type UserSkillTagUpsertWithWhereUniqueWithoutUserInput = {
+    where: UserSkillTagWhereUniqueInput;
+    update: XOR<
+      UserSkillTagUpdateWithoutUserInput,
+      UserSkillTagUncheckedUpdateWithoutUserInput
+    >;
+    create: XOR<
+      UserSkillTagCreateWithoutUserInput,
+      UserSkillTagUncheckedCreateWithoutUserInput
+    >;
+  };
+
+  export type UserSkillTagUpdateWithWhereUniqueWithoutUserInput = {
+    where: UserSkillTagWhereUniqueInput;
+    data: XOR<
+      UserSkillTagUpdateWithoutUserInput,
+      UserSkillTagUncheckedUpdateWithoutUserInput
+    >;
+  };
+
+  export type UserSkillTagUpdateManyWithWhereWithoutUserInput = {
+    where: UserSkillTagScalarWhereInput;
+    data: XOR<
+      UserSkillTagUpdateManyMutationInput,
+      UserSkillTagUncheckedUpdateManyWithoutUserInput
+    >;
+  };
+
+  export type UserSkillTagScalarWhereInput = {
+    AND?: UserSkillTagScalarWhereInput | UserSkillTagScalarWhereInput[];
+    OR?: UserSkillTagScalarWhereInput[];
+    NOT?: UserSkillTagScalarWhereInput | UserSkillTagScalarWhereInput[];
+    userId?: UuidFilter<'UserSkillTag'> | string;
+    skillTagId?: UuidFilter<'UserSkillTag'> | string;
+  };
+
+  export type UserCreateWithoutUserSocialLinksInput = {
+    id?: string;
+    firstName: string;
+    middleName?: string | null;
+    lastName?: string | null;
+    username: string;
+    email: string;
+    avatarFileId?: string | null;
+    isSuperAdmin?: boolean;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
+    createdAt?: Date | string;
+    websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
+    ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
+    projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
+    userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagCreateNestedManyWithoutUserInput;
+  };
+
+  export type UserUncheckedCreateWithoutUserSocialLinksInput = {
+    id?: string;
+    firstName: string;
+    middleName?: string | null;
+    lastName?: string | null;
+    username: string;
+    email: string;
+    avatarFileId?: string | null;
+    isSuperAdmin?: boolean;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
+    createdAt?: Date | string;
+    websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
+    ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
+    projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
+    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagUncheckedCreateNestedManyWithoutUserInput;
+  };
+
+  export type UserCreateOrConnectWithoutUserSocialLinksInput = {
+    where: UserWhereUniqueInput;
+    create: XOR<
+      UserCreateWithoutUserSocialLinksInput,
+      UserUncheckedCreateWithoutUserSocialLinksInput
+    >;
+  };
+
+  export type UserUpsertWithoutUserSocialLinksInput = {
+    update: XOR<
+      UserUpdateWithoutUserSocialLinksInput,
+      UserUncheckedUpdateWithoutUserSocialLinksInput
+    >;
+    create: XOR<
+      UserCreateWithoutUserSocialLinksInput,
+      UserUncheckedCreateWithoutUserSocialLinksInput
+    >;
+    where?: UserWhereInput;
+  };
+
+  export type UserUpdateToOneWithWhereWithoutUserSocialLinksInput = {
+    where?: UserWhereInput;
+    data: XOR<
+      UserUpdateWithoutUserSocialLinksInput,
+      UserUncheckedUpdateWithoutUserSocialLinksInput
+    >;
+  };
+
+  export type UserUpdateWithoutUserSocialLinksInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    firstName?: StringFieldUpdateOperationsInput | string;
+    middleName?: NullableStringFieldUpdateOperationsInput | string | null;
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null;
+    username?: StringFieldUpdateOperationsInput | string;
+    email?: StringFieldUpdateOperationsInput | string;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
+    ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
+    projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
+    userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUpdateManyWithoutUserNestedInput;
+  };
+
+  export type UserUncheckedUpdateWithoutUserSocialLinksInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    firstName?: StringFieldUpdateOperationsInput | string;
+    middleName?: NullableStringFieldUpdateOperationsInput | string | null;
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null;
+    username?: StringFieldUpdateOperationsInput | string;
+    email?: StringFieldUpdateOperationsInput | string;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
+    ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
+    projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
+    userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUncheckedUpdateManyWithoutUserNestedInput;
+  };
+
+  export type UserSkillTagCreateWithoutSkillTagInput = {
+    user: UserCreateNestedOneWithoutUserSkillTagsInput;
+  };
+
+  export type UserSkillTagUncheckedCreateWithoutSkillTagInput = {
+    userId: string;
+  };
+
+  export type UserSkillTagCreateOrConnectWithoutSkillTagInput = {
+    where: UserSkillTagWhereUniqueInput;
+    create: XOR<
+      UserSkillTagCreateWithoutSkillTagInput,
+      UserSkillTagUncheckedCreateWithoutSkillTagInput
+    >;
+  };
+
+  export type UserSkillTagCreateManySkillTagInputEnvelope = {
+    data:
+      | UserSkillTagCreateManySkillTagInput
+      | UserSkillTagCreateManySkillTagInput[];
+    skipDuplicates?: boolean;
+  };
+
+  export type UserSkillTagUpsertWithWhereUniqueWithoutSkillTagInput = {
+    where: UserSkillTagWhereUniqueInput;
+    update: XOR<
+      UserSkillTagUpdateWithoutSkillTagInput,
+      UserSkillTagUncheckedUpdateWithoutSkillTagInput
+    >;
+    create: XOR<
+      UserSkillTagCreateWithoutSkillTagInput,
+      UserSkillTagUncheckedCreateWithoutSkillTagInput
+    >;
+  };
+
+  export type UserSkillTagUpdateWithWhereUniqueWithoutSkillTagInput = {
+    where: UserSkillTagWhereUniqueInput;
+    data: XOR<
+      UserSkillTagUpdateWithoutSkillTagInput,
+      UserSkillTagUncheckedUpdateWithoutSkillTagInput
+    >;
+  };
+
+  export type UserSkillTagUpdateManyWithWhereWithoutSkillTagInput = {
+    where: UserSkillTagScalarWhereInput;
+    data: XOR<
+      UserSkillTagUpdateManyMutationInput,
+      UserSkillTagUncheckedUpdateManyWithoutSkillTagInput
+    >;
+  };
+
+  export type UserCreateWithoutUserSkillTagsInput = {
+    id?: string;
+    firstName: string;
+    middleName?: string | null;
+    lastName?: string | null;
+    username: string;
+    email: string;
+    avatarFileId?: string | null;
+    isSuperAdmin?: boolean;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
+    createdAt?: Date | string;
+    websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
+    ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
+    projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
+    userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkCreateNestedManyWithoutUserInput;
+  };
+
+  export type UserUncheckedCreateWithoutUserSkillTagsInput = {
+    id?: string;
+    firstName: string;
+    middleName?: string | null;
+    lastName?: string | null;
+    username: string;
+    email: string;
+    avatarFileId?: string | null;
+    isSuperAdmin?: boolean;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
+    createdAt?: Date | string;
+    websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
+    ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
+    projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
+    userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkUncheckedCreateNestedManyWithoutUserInput;
+  };
+
+  export type UserCreateOrConnectWithoutUserSkillTagsInput = {
+    where: UserWhereUniqueInput;
+    create: XOR<
+      UserCreateWithoutUserSkillTagsInput,
+      UserUncheckedCreateWithoutUserSkillTagsInput
+    >;
+  };
+
+  export type SkillTagCreateWithoutUsersInput = {
+    id?: string;
+    name: string;
+    slug: string;
+  };
+
+  export type SkillTagUncheckedCreateWithoutUsersInput = {
+    id?: string;
+    name: string;
+    slug: string;
+  };
+
+  export type SkillTagCreateOrConnectWithoutUsersInput = {
+    where: SkillTagWhereUniqueInput;
+    create: XOR<
+      SkillTagCreateWithoutUsersInput,
+      SkillTagUncheckedCreateWithoutUsersInput
+    >;
+  };
+
+  export type UserUpsertWithoutUserSkillTagsInput = {
+    update: XOR<
+      UserUpdateWithoutUserSkillTagsInput,
+      UserUncheckedUpdateWithoutUserSkillTagsInput
+    >;
+    create: XOR<
+      UserCreateWithoutUserSkillTagsInput,
+      UserUncheckedCreateWithoutUserSkillTagsInput
+    >;
+    where?: UserWhereInput;
+  };
+
+  export type UserUpdateToOneWithWhereWithoutUserSkillTagsInput = {
+    where?: UserWhereInput;
+    data: XOR<
+      UserUpdateWithoutUserSkillTagsInput,
+      UserUncheckedUpdateWithoutUserSkillTagsInput
+    >;
+  };
+
+  export type UserUpdateWithoutUserSkillTagsInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    firstName?: StringFieldUpdateOperationsInput | string;
+    middleName?: NullableStringFieldUpdateOperationsInput | string | null;
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null;
+    username?: StringFieldUpdateOperationsInput | string;
+    email?: StringFieldUpdateOperationsInput | string;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
+    ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
+    projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
+    userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUpdateManyWithoutUserNestedInput;
+  };
+
+  export type UserUncheckedUpdateWithoutUserSkillTagsInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    firstName?: StringFieldUpdateOperationsInput | string;
+    middleName?: NullableStringFieldUpdateOperationsInput | string | null;
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null;
+    username?: StringFieldUpdateOperationsInput | string;
+    email?: StringFieldUpdateOperationsInput | string;
+    avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
+    isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
+    websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
+    ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
+    projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
+    userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUncheckedUpdateManyWithoutUserNestedInput;
+  };
+
+  export type SkillTagUpsertWithoutUsersInput = {
+    update: XOR<
+      SkillTagUpdateWithoutUsersInput,
+      SkillTagUncheckedUpdateWithoutUsersInput
+    >;
+    create: XOR<
+      SkillTagCreateWithoutUsersInput,
+      SkillTagUncheckedCreateWithoutUsersInput
+    >;
+    where?: SkillTagWhereInput;
+  };
+
+  export type SkillTagUpdateToOneWithWhereWithoutUsersInput = {
+    where?: SkillTagWhereInput;
+    data: XOR<
+      SkillTagUpdateWithoutUsersInput,
+      SkillTagUncheckedUpdateWithoutUsersInput
+    >;
+  };
+
+  export type SkillTagUpdateWithoutUsersInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    name?: StringFieldUpdateOperationsInput | string;
+    slug?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type SkillTagUncheckedUpdateWithoutUsersInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    name?: StringFieldUpdateOperationsInput | string;
+    slug?: StringFieldUpdateOperationsInput | string;
   };
 
   export type CollegeEmailDomainCreateWithoutCollegeInput = {
@@ -18638,14 +24362,19 @@ export namespace Prisma {
     lastName?: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId?: string | null;
     isSuperAdmin?: boolean;
-    githubUsername?: string | null;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
     createdAt?: Date | string;
     websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagCreateNestedManyWithoutUserInput;
   };
 
   export type UserUncheckedCreateWithoutUserCollegesInput = {
@@ -18655,14 +24384,19 @@ export namespace Prisma {
     lastName?: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId?: string | null;
     isSuperAdmin?: boolean;
-    githubUsername?: string | null;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
     createdAt?: Date | string;
     websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
     projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkUncheckedCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagUncheckedCreateNestedManyWithoutUserInput;
   };
 
   export type UserCreateOrConnectWithoutUserCollegesInput = {
@@ -18750,14 +24484,23 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUpdateManyWithoutUserNestedInput;
   };
 
   export type UserUncheckedUpdateWithoutUserCollegesInput = {
@@ -18767,14 +24510,23 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
     projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUncheckedUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUncheckedUpdateManyWithoutUserNestedInput;
   };
 
   export type CollegeCreateWithoutEmailDomainsInput = {
@@ -19163,14 +24915,19 @@ export namespace Prisma {
     lastName?: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId?: string | null;
     isSuperAdmin?: boolean;
-    githubUsername?: string | null;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
     createdAt?: Date | string;
     websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
     ProjectCollaborator?: ProjectCollaboratorCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagCreateNestedManyWithoutUserInput;
   };
 
   export type UserUncheckedCreateWithoutProjectUpvotesInput = {
@@ -19180,14 +24937,19 @@ export namespace Prisma {
     lastName?: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId?: string | null;
     isSuperAdmin?: boolean;
-    githubUsername?: string | null;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
     createdAt?: Date | string;
     websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
     ProjectCollaborator?: ProjectCollaboratorUncheckedCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkUncheckedCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagUncheckedCreateNestedManyWithoutUserInput;
   };
 
   export type UserCreateOrConnectWithoutProjectUpvotesInput = {
@@ -19275,14 +25037,23 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     ProjectCollaborator?: ProjectCollaboratorUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUpdateManyWithoutUserNestedInput;
   };
 
   export type UserUncheckedUpdateWithoutProjectUpvotesInput = {
@@ -19292,14 +25063,23 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     ProjectCollaborator?: ProjectCollaboratorUncheckedUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUncheckedUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUncheckedUpdateManyWithoutUserNestedInput;
   };
 
   export type ProjectCreateWithoutCollaboratorsInput = {
@@ -19347,14 +25127,19 @@ export namespace Prisma {
     lastName?: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId?: string | null;
     isSuperAdmin?: boolean;
-    githubUsername?: string | null;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
     createdAt?: Date | string;
     websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
     projectUpvotes?: ProjectUpvoteCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagCreateNestedManyWithoutUserInput;
   };
 
   export type UserUncheckedCreateWithoutProjectCollaboratorInput = {
@@ -19364,14 +25149,19 @@ export namespace Prisma {
     lastName?: string | null;
     username: string;
     email: string;
-    appwriteid: string;
     avatarFileId?: string | null;
     isSuperAdmin?: boolean;
-    githubUsername?: string | null;
+    tagline?: string | null;
+    bio?: string | null;
+    resume?: string | null;
+    appwriteId: string;
     createdAt?: Date | string;
     websiteUrl?: string | null;
+    updatedAt?: Date | string | null;
     projectUpvotes?: ProjectUpvoteUncheckedCreateNestedManyWithoutUserInput;
     userColleges?: UserCollegeUncheckedCreateNestedManyWithoutUserInput;
+    userSocialLinks?: UserSocialLinkUncheckedCreateNestedManyWithoutUserInput;
+    userSkillTags?: UserSkillTagUncheckedCreateNestedManyWithoutUserInput;
   };
 
   export type UserCreateOrConnectWithoutProjectCollaboratorInput = {
@@ -19459,14 +25249,23 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     projectUpvotes?: ProjectUpvoteUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUpdateManyWithoutUserNestedInput;
   };
 
   export type UserUncheckedUpdateWithoutProjectCollaboratorInput = {
@@ -19476,14 +25275,23 @@ export namespace Prisma {
     lastName?: NullableStringFieldUpdateOperationsInput | string | null;
     username?: StringFieldUpdateOperationsInput | string;
     email?: StringFieldUpdateOperationsInput | string;
-    appwriteid?: StringFieldUpdateOperationsInput | string;
     avatarFileId?: NullableStringFieldUpdateOperationsInput | string | null;
     isSuperAdmin?: BoolFieldUpdateOperationsInput | boolean;
-    githubUsername?: NullableStringFieldUpdateOperationsInput | string | null;
+    tagline?: NullableStringFieldUpdateOperationsInput | string | null;
+    bio?: NullableStringFieldUpdateOperationsInput | string | null;
+    resume?: NullableStringFieldUpdateOperationsInput | string | null;
+    appwriteId?: StringFieldUpdateOperationsInput | string;
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     websiteUrl?: NullableStringFieldUpdateOperationsInput | string | null;
+    updatedAt?:
+      | NullableDateTimeFieldUpdateOperationsInput
+      | Date
+      | string
+      | null;
     projectUpvotes?: ProjectUpvoteUncheckedUpdateManyWithoutUserNestedInput;
     userColleges?: UserCollegeUncheckedUpdateManyWithoutUserNestedInput;
+    userSocialLinks?: UserSocialLinkUncheckedUpdateManyWithoutUserNestedInput;
+    userSkillTags?: UserSkillTagUncheckedUpdateManyWithoutUserNestedInput;
   };
 
   export type ProjectTagCreateWithoutTagInput = {
@@ -19700,6 +25508,16 @@ export namespace Prisma {
     designation?: string | null;
   };
 
+  export type UserSocialLinkCreateManyUserInput = {
+    id?: string;
+    platform: string;
+    url: string;
+  };
+
+  export type UserSkillTagCreateManyUserInput = {
+    skillTagId: string;
+  };
+
   export type ProjectCollaboratorUpdateWithoutUserInput = {
     role?:
       | EnumProjectUserRoleFieldUpdateOperationsInput
@@ -19779,6 +25597,52 @@ export namespace Prisma {
     leftAt?: DateTimeFieldUpdateOperationsInput | Date | string;
     collegeEmail?: StringFieldUpdateOperationsInput | string;
     designation?: NullableStringFieldUpdateOperationsInput | string | null;
+  };
+
+  export type UserSocialLinkUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    platform?: StringFieldUpdateOperationsInput | string;
+    url?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSocialLinkUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    platform?: StringFieldUpdateOperationsInput | string;
+    url?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSocialLinkUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string;
+    platform?: StringFieldUpdateOperationsInput | string;
+    url?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSkillTagUpdateWithoutUserInput = {
+    skillTag?: SkillTagUpdateOneRequiredWithoutUsersNestedInput;
+  };
+
+  export type UserSkillTagUncheckedUpdateWithoutUserInput = {
+    skillTagId?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSkillTagUncheckedUpdateManyWithoutUserInput = {
+    skillTagId?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSkillTagCreateManySkillTagInput = {
+    userId: string;
+  };
+
+  export type UserSkillTagUpdateWithoutSkillTagInput = {
+    user?: UserUpdateOneRequiredWithoutUserSkillTagsNestedInput;
+  };
+
+  export type UserSkillTagUncheckedUpdateWithoutSkillTagInput = {
+    userId?: StringFieldUpdateOperationsInput | string;
+  };
+
+  export type UserSkillTagUncheckedUpdateManyWithoutSkillTagInput = {
+    userId?: StringFieldUpdateOperationsInput | string;
   };
 
   export type CollegeEmailDomainCreateManyCollegeInput = {

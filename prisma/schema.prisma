@@ -16,15 +16,45 @@ model User {
   lastName            String?
   username            String                @unique
   email               String                @unique
-  appwriteid          String                @unique
   avatarFileId        String?
   isSuperAdmin        Boolean               @default(false)
-  githubUsername      String?
+  tagline             String?
+  bio                 String?
+  resume              String?
+  appwriteId          String                @unique
   createdAt           DateTime              @default(now())
   websiteUrl          String?
+  updatedAt           DateTime?              @updatedAt 
   ProjectCollaborator ProjectCollaborator[]
   projectUpvotes      ProjectUpvote[]
   userColleges        UserCollege[]
+  userSocialLinks     UserSocialLink[]
+  userSkillTags       UserSkillTag[]
+}
+
+model UserSocialLink {
+  id       String   @id @default(uuid()) @db.Uuid
+  userId   String   @db.Uuid
+  platform String   // e.g., "github", "linkedin", "randomshit"
+  url      String
+  user     User     @relation(fields: [userId], references: [id])
+  @@unique([userId, platform])
+}
+
+model SkillTag {
+  id    String   @id @default(uuid()) @db.Uuid
+  name  String   @unique
+  slug  String   @unique
+  users UserSkillTag[]
+}
+
+model UserSkillTag {
+  userId     String   @db.Uuid
+  skillTagId String   @db.Uuid
+  user       User     @relation(fields: [userId], references: [id])
+  skillTag   SkillTag @relation(fields: [skillTagId], references: [id])
+
+  @@id([userId, skillTagId])
 }
 
 model College {
