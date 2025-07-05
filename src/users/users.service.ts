@@ -14,6 +14,7 @@ import {
   UserRole,
   OnboardingResponseDto,
 } from './dto/onboarding.dto';
+import { UserResponseDto } from './dto/user-response.dto';
 
 @Injectable()
 export class UsersService {
@@ -24,7 +25,7 @@ export class UsersService {
     private collegeStorageService: CollegeStorageService,
   ) {}
 
-  async findByAppwriteId(appwriteId: string) {
+  async findByAppwriteId(appwriteId: string): Promise<UserResponseDto> {
     const user = await this.prisma.user.findUnique({
       where: {
         appwriteId,
@@ -77,35 +78,42 @@ export class UsersService {
     }
 
     return {
-      ...user,
-      avatarFileId: undefined,
+      id: user.id,
+      firstName: user.firstName,
+      middleName: user.middleName || undefined,
+      lastName: user.lastName || undefined,
+      username: user.username,
+      email: user.email,
+      isSuperAdmin: user.isSuperAdmin,
+      tagline: user.tagline || undefined,
+      bio: user.bio || undefined,
+      resume: user.resume || undefined,
+      appwriteId: user.appwriteId,
+      websiteUrl: user.websiteUrl || undefined,
       avatarUrl: user.avatarFileId
         ? this.userStorageService.getUserAssetUrl(user.avatarFileId)
-        : null,
+        : undefined,
+      skills: user.userSkillTags.map((userSkillTag) => userSkillTag.skillTag),
+      socialLinks: user.userSocialLinks,
       colleges: user.userColleges.map((userCollege) => ({
-        ...userCollege.college,
         collegeId: userCollege.collegeId,
         logoUrl: userCollege.college.logoFileId
           ? this.collegeStorageService.getCollegeAssetUrl(
               userCollege.college.logoFileId,
             )
-          : null,
+          : undefined,
         userType: userCollege.userType,
         isAdmin: userCollege.isAdmin,
-        degreeType: userCollege.degreeType,
-        branch: userCollege.branch,
+        degreeType: userCollege.degreeType || undefined,
+        branch: userCollege.branch || undefined,
         verified: userCollege.verified,
         joinedAt: userCollege.joinedAt,
         leftAt: userCollege.leftAt,
         collegeEmail: userCollege.collegeEmail,
-        designation: userCollege.designation,
-        logoFileId: undefined,
+        designation: userCollege.designation || undefined,
+        name: userCollege.college.name,
+        slug: userCollege.college.slug,
       })),
-      socialLinks: user.userSocialLinks,
-      skills: user.userSkillTags.map((userSkillTag) => userSkillTag.skillTag),
-      userSkillTags: undefined,
-      userSocialLinks: undefined,
-      userColleges: undefined,
     };
   }
 
