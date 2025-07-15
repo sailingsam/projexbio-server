@@ -97,6 +97,8 @@ export class UsersService {
       socialLinks: user.userSocialLinks,
       colleges: user.userColleges.map((userCollege) => ({
         collegeId: userCollege.collegeId,
+        name: userCollege.college.name,
+        slug: userCollege.college.slug,
         logoUrl: userCollege.college.logoFileId
           ? this.collegeStorageService.getCollegeAssetUrl(
               userCollege.college.logoFileId,
@@ -111,8 +113,6 @@ export class UsersService {
         leftAt: userCollege.leftAt,
         collegeEmail: userCollege.collegeEmail,
         designation: userCollege.designation || undefined,
-        name: userCollege.college.name,
-        slug: userCollege.college.slug,
       })),
     };
   }
@@ -124,6 +124,7 @@ export class UsersService {
       },
     });
     // agar user null mila mtlb exist nhi krta
+    // TODO: Also add checker if username is valid or not (allowed characters only)
     return user === null;
   }
 
@@ -214,6 +215,8 @@ export class UsersService {
           onboardingData.avatar,
         );
       }
+
+      // TODO: Add checker if username is valid or not (allowed characters only)
 
       // Create user and user-college relationship in a transaction
       const result = await this.prisma.$transaction(async (tx) => {
