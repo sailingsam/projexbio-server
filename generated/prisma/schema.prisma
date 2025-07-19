@@ -56,10 +56,10 @@ model SkillTag {
 model UserSkillTag {
   userId     String   @db.Uuid
   skillTagId String   @db.Uuid
-  user       User     @relation(fields: [userId], references: [id])
-  skillTag   SkillTag @relation(fields: [skillTagId], references: [id])
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+  skillTag   SkillTag @relation(fields: [skillTagId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
 
   @@id([userId, skillTagId])
 }
