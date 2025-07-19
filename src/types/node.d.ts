@@ -1,16 +1,16 @@
-// declare global {
-//   namespace NodeJS {
-//     interface Process {
-//       cwd(): string;
-//       env: ProcessEnv;
-//     }
+declare global {
+  namespace NodeJS {
+    interface Process {
+      cwd(): string;
+      env: ProcessEnv;
+    }
 
-//     interface ProcessEnv {
-//       [key: string]: string | undefined;
-//     }
-//   }
+    interface ProcessEnv {
+      [key: string]: string | undefined;
+    }
+  }
 
-//   var process: NodeJS.Process;
-// }
+  var process: NodeJS.Process;
+}
 
-// export {};
+export {};
