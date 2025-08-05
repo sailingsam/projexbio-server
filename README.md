@@ -35,9 +35,12 @@ cd projexbio-server
 # Copy environment variables
 cp env.example .env
 # Edit .env with your configuration
+```
+Run Docker desktop
 
+```bash
 # Start the application with Docker Compose
-docker-compose up -d
+docker-compose up --build
 
 # The application will be available at:
 # - API: http://localhost:3002

@@ -1,3 +1,6 @@
+# Husky
+.husky
+
 # Dependencies
 node_modules
 npm-debug.log*
@@ -99,9 +102,6 @@ jspm_packages/
 # Temporary folders
 tmp/
 temp/
-
-# Husky
-.husky
 
 # Generated Prisma client (will be generated in container)
 generated/ 
