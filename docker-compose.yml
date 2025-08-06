@@ -1,13 +1,52 @@
 services:
   postgres:
-    image: postgres:latest
+    image: postgres:15-alpine
     container_name: projexbio-postgres
-    env_file:
-      - .env
+    environment:
+      POSTGRES_DB: projexbio
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - '5433:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - projexbio-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: projexbio-app
+    env_file:
+      - .env
+    ports:
+      - '3002:4000'
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/projexbio
+      DIRECT_URL: postgresql://postgres:postgres@postgres:5432/projexbio
+      PORT: 4000
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/generated
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - projexbio-network
+    restart: unless-stopped
+    command: sh -c "npx prisma migrate deploy && npm run dev"
 
 volumes:
   postgres_data:
+
+networks:
+  projexbio-network:
+    driver: bridge
